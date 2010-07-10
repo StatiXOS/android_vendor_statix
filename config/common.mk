@@ -46,6 +46,10 @@ PRODUCT_COPY_FILES += \
     vendor/statix/build/tools/backuptool.functions:install/bin/backuptool.functions \
     vendor/statix/build/tools/50-statix.sh:system/addon.d/50-statix.sh
 
+# Statix-specific init file
+PRODUCT_COPY_FILES += \
+    vendor/statix/prebuilt/etc/init.statix.rc:system/etc/init/init.statix.rc
+
 # Packages
 include vendor/statix/config/packages.mk
 
