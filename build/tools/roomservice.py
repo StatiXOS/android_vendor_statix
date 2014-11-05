@@ -34,9 +34,9 @@ except ImportError:
 
 # Config
 # set this to the default remote to use in repo
-default_rem = "github"
+default_rem = "du"
 # set this to the default revision to use (branch/tag name)
-default_rev = "android-4.3"
+default_rev = "n"
 # set this to the remote that you use for projects from your team repos
 # example fetch="https://github.com/dirtyunicorns"
 default_team_rem = "du"
