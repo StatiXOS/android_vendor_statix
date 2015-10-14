@@ -4,6 +4,9 @@
 define qcom-set-path-variant
 $(call project-set-path-variant,qcom-$(2),TARGET_QCOM_$(1)_VARIANT,hardware/qcom/$(2))
 endef
+define wlan-set-path-variant
+$(call project-set-path-variant,wlan,TARGET_WLAN_VARIANT,hardware/qcom/$(1))
+endef
 define gps-hal-set-path-variant
 $(call project-set-path-variant,gps-hal,TARGET_GPS_HAL_PATH,$(1))
 endef
@@ -65,6 +68,7 @@ $(call project-set-path,qcom-display,hardware/qcom/display-caf/$(QCOM_HARDWARE_V
 $(call qcom-set-path-variant,GPS,gps)
 $(call project-set-path,qcom-media,hardware/qcom/media-caf/$(QCOM_HARDWARE_VARIANT))
 $(call qcom-set-path-variant,SENSORS,sensors)
+$(call wlan-set-path-variant,wlan)
 $(call loc-api-set-path-variant,vendor/qcom/opensource/location)
 $(call gps-hal-set-path-variant,hardware/qcom/gps)
 else
@@ -74,6 +78,7 @@ $(call project-set-path,qcom-display,hardware/qcom/display/$(TARGET_BOARD_PLATFO
 $(call qcom-set-path-variant,GPS,gps)
 $(call project-set-path,qcom-media,hardware/qcom/media/default)
 $(call qcom-set-path-variant,SENSORS,sensors)
+$(call wlan-set-path-variant,wlan)
 $(call loc-api-set-path-variant,vendor/qcom/opensource/location)
 $(call gps-hal-set-path-variant,hardware/qcom/gps)
 endif
