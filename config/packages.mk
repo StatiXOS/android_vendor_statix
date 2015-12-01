@@ -1,3 +1,4 @@
+# Accent packages
 PRODUCT_PACKAGES += \
     AmberTheme \
     BlueTheme \
@@ -30,3 +31,7 @@ PRODUCT_PACKAGES += \
     SystemSettingsIconTint \
 	SysuiQsBlackTheme \
     SysuiQsDarkTheme
+
+# Include librsjni explicitly to workaround GMS issue
+PRODUCT_PACKAGES += \
+    librsjni
