@@ -12,7 +12,46 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+
 # Android makefile to build kernel as a part of Android Build
+#
+# Configuration
+# =============
+#
+# These config vars are usually set in BoardConfig.mk:
+#
+#   TARGET_KERNEL_SOURCE               = Kernel source dir, optional, defaults
+#                                        to kernel/$(TARGET_DEVICE_DIR)
+#   TARGET_KERNEL_CONFIG               = Kernel defconfig
+#   TARGET_KERNEL_VARIANT_CONFIG       = Variant defconfig, optional
+#   TARGET_KERNEL_SELINUX_CONFIG       = SELinux defconfig, optional
+#   TARGET_KERNEL_ADDITIONAL_CONFIG    = Additional defconfig, optional
+#   TARGET_KERNEL_ARCH                 = Kernel Arch
+#   TARGET_KERNEL_HEADER_ARCH          = Optional Arch for kernel headers if
+#                                          different from TARGET_KERNEL_ARCH
+#   TARGET_USES_UNCOMPRESSED_KERNEL    = 'true' if Kernel is uncompressed,
+#                                          optional, defaults to false
+#   TARGET_KERNEL_CROSS_COMPILE_PREFIX = Compiler prefix (e.g. arm-eabi-)
+#                                          defaults to arm-linux-androideabi- for arm
+#                                                      aarch64-linux-android- for arm64
+#                                                      x86_64-linux-android- for x86
+#
+#   BOARD_KERNEL_IMAGE_NAME            = Built image name, optional,
+#                                          defaults to Image.gz on arm64
+#                                          defaults to Image if TARGET_USES_UNCOMPRESSED_KERNEL
+#                                          defaults to zImage otherwise
+#
+#   KERNEL_TOOLCHAIN_PREFIX            = Overrides TARGET_KERNEL_CROSS_COMPILE_PREFIX,
+#                                          Set this var in shell to override
+#                                          toolchain specified in BoardConfig.mk
+#   KERNEL_TOOLCHAIN                   = Path to toolchain, if unset, assumes
+#                                          TARGET_KERNEL_CROSS_COMPILE_PREFIX
+#                                          is in PATH
+#   USE_CCACHE                         = Enable ccache (global Android flag)
+#
+#   NEED_KERNEL_MODULE_ROOT            = Optional, if true, install kernel
+#                                          modules in root instead of system
+
 
 TARGET_AUTO_KDIR := $(shell echo $(TARGET_DEVICE_DIR) | sed -e 's/^device/kernel/g')
 
