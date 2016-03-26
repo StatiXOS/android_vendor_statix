@@ -30,7 +30,7 @@ upstream=()
 failed=()
 
 # This is the array of repos to blacklist and not merge
-blacklist=('manifest' 'prebuilt')
+blacklist=('manifest' 'prebuilt' 'packages/apps/DeskClock')
 
 # Colors
 COLOR_RED='\033[0;31m'
@@ -108,7 +108,7 @@ function print_result() {
   if [ ${#failed[@]} -eq 0 ]; then
     echo ""
     echo "========== "$BRANCH" is merged sucessfully =========="
-    echo "===== Compile and test before pushing to github ====="
+    echo "========= Compile and test before pushing to github ========="
     echo ""
   else
     echo -e $COLOR_RED
