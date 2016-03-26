@@ -29,9 +29,22 @@ upstream=()
 # This is the array of repos with merge errors
 failed=()
 
+# This is the array of repos to blacklist and not merge
+blacklist=('manifest' 'prebuilt')
+
 # Colors
 COLOR_RED='\033[0;31m'
 COLOR_BLANK='\033[0m'
+
+function is_in_blacklist() {
+  for j in ${blacklist[@]}
+  do
+    if [ "$j" == "$1" ]; then
+      return 0;
+    fi
+  done
+  return 1;
+}
 
 function warn_user() {
   echo "Using this script may cause you to lose unsaved work"
@@ -52,7 +65,11 @@ function get_repos() {
     if grep -q "$i" /tmp/rebase.tmp; then # If Google has it and
       if grep -q "$i" $WORKING_DIR/.repo/manifest.xml; then # If we have it in our manifest and
         if grep "$i" $WORKING_DIR/.repo/manifest.xml | grep -q "remote="; then # If we track our own copy of it
-          upstream+=("$i") # Then we need to update it
+          if ! is_in_blacklist $i; then # If it's not in our blacklist
+            upstream+=("$i") # Then we need to update it
+          else
+            echo "$i is in blacklist"
+          fi
         fi
       fi
     fi
