@@ -1,5 +1,6 @@
 #!/bin/bash
 # Copyright (C) 2016 DirtyUnicorns
+# Copyright (C) 2016 Jacob McSwain
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,106 +14,119 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#Your source directory goes here
+# Your source directory goes here
 WORKING_DIR=/home/mazda/du-mm
 
-#The tag you want to merge in goes here
+# The tag you want to merge in goes here
 BRANCH=android-6.0.1_r22
 
-#Google source url
-REPO=https://android.googlesource.com/platform
+# Google source url
+REPO=https://android.googlesource.com/platform/
 
-function merge_packages () {
-  declare -a array=($@)
-  for i in `seq 0 $(( ${#array[@]} - 1 ))`
+# This is the array of upstream repos we track
+upstream=()
+
+# This is the array of repos with merge errors
+failed=()
+
+# Colors
+COLOR_RED='\033[0;31m'
+COLOR_BLANK='\033[0m'
+
+function warn_user() {
+  echo "Using this script may cause you to lose unsaved work"
+  read -r -p "Do you want to continue? [y/N] " response
+  if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    echo "You've been warned"
+  else
+    exit 1
+  fi
+}
+
+function get_repos() {
+  declare -a repos=( $(repo list | cut -d: -f1) )
+  curl --output /tmp/rebase.tmp $REPO --silent # Download the html source of the Android source page
+  # Since their projects are listed, we can grep for them
+  for i in ${repos[@]}
   do
-    cd $WORKING_DIR/packages/${array[i]}
-    git pull $REPO/packages/${array[i]}.git -t $BRANCH
+    if grep -q "$i" /tmp/rebase.tmp; then # If Google has it and
+      if grep -q "$i" $WORKING_DIR/.repo/manifest.xml; then # If we have it in our manifest and
+        if grep "$i" $WORKING_DIR/.repo/manifest.xml | grep -q "remote="; then # If we track our own copy of it
+          upstream+=("$i") # Then we need to update it
+        fi
+      fi
+    fi
+  done
+  rm /tmp/rebase.tmp
+}
+
+function delete_upstream() {
+  for i in ${upstream[@]}
+  do
+    rm -rf $i
   done
 }
 
-function merge_hardware () {
-  declare -a array=($@)
-  for i in `seq 0 $(( ${#array[@]} - 1 ))`
-  do
-    cd $WORKING_DIR/hardware/${array[i]}
-    git pull $REPO/hardware/${array[i]}.git -t $BRANCH
-  done
+function force_sync() {
+  echo "Repo Syncing........."
+  sleep 10
+  repo sync --force-sync >> /dev/null
+  if [ $? -eq 0 ]; then
+    echo "Repo Sync success"
+  else
+    echo "Repo Sync failure"
+    exit 1
+  fi
 }
 
-function merge_frameworks () {
-  declare -a array=($@)
-  for i in `seq 0 $(( ${#array[@]} - 1 ))`
-  do
-    cd $WORKING_DIR/frameworks/${array[i]}
-    git pull $REPO/frameworks/${array[i]}.git -t $BRANCH
-  done
+function merge() {
+  cd $WORKING_DIR/$1
+  git pull $REPO/$1.git -t $BRANCH
+  if [ $? -ne 0 ]; then # If merge failed
+    failed+=($1) # Add to the list
+  fi
 }
 
-function merge_misc () {
-  declare -a array=($@)
-  for i in `seq 0 $(( ${#array[@]} - 1 ))`
-  do
-    cd $WORKING_DIR/${array[i]}
-    git pull $REPO/${array[i]}.git -t $BRANCH
-  done
+function print_result() {
+  if [ ${#failed[@]} -eq 0 ]; then
+    echo ""
+    echo "========== "$BRANCH" is merged sucessfully =========="
+    echo "===== Compile and test before pushing to github ====="
+    echo ""
+  else
+    echo -e $COLOR_RED
+    echo -e "These repos have merge errors: \n"
+    for i in ${failed[@]}
+    do
+      echo -e "$i"
+    done
+    echo -e $COLOR_BLANK
+  fi
 }
 
-#This is what repos you want to remove prior to repo syncing
-declare -a root=('DU-Scripts' 'abi' 'bionic' 'art' 'bootable' 'build' 'dalvik' 'development' 'device' 'external' 'frameworks' 'hardware' 'kernel' 'libcore' 'libnativehelper' 'manifest' 'ndk' 'out' 'packages' 'pdk' 'prebuilts'
-                 'sdk' 'system' 'tools' 'vendor')
-
-#These are the repos you track that are under SOURCE/packages/
-declare -a packages=('apps/Bluetooth' 'apps/Calculator' 'apps/Calendar' 'apps/Camera2' 'apps/CellBroadcastReceiver' 'apps/Contacts'
-                          'apps/ContactsCommon' 'apps/Dialer' 'apps/Email' 'apps/Gallery2' 'apps/InCallUI' 'apps/Launcher3' 'apps/Messaging'
-                          'apps/PackageInstaller' 'apps/PhoneCommon' 'apps/Settings' 'providers/DownloadProvider' 'providers/MediaProvider'
-                          'providers/TelephonyProvider' 'inputmethods/LatinIME' 'wallpapers/LivePicker' 'wallpapers/PhaseBeam'
-                          'services/Telecomm' 'services/Telephony')
-
-#These are the repos you track that are under SOURCE/hardware/
-declare -a hardware=('broadcom/libbt' 'broadcom/wlan' 'libhardware' 'libhardware_legacy' 'qcom/audio' 'qcom/bt' 'qcom/camera' 'qcom/display'
-                     'qcom/gps' 'qcom/keymaster' 'qcom/media' 'qcom/power' 'qcom/wlan' 'ril' 'ti/omap3' 'ti/omap4xxx')
-
-#These are the repos you track that are under SOURCE/frameworks/
-declare -a frameworks=('av' 'base' 'native' 'opt/datetimepicker' 'opt/telephony' 'opt/timezonepicker' 'opt/net/ims' 'opt/net/wifi' 'webview')
-
-#These are the repos you track that are not covered above
-declare -a misc=('build' 'development' 'external/sepolicy' 'libcore' 'system/bt' 'system/core' 'system/extras' 'system/media'
-                       'system/netd' 'system/vold')
-
+# Start working
 cd $WORKING_DIR
+
+# Warn user that this may destroy unsaved work
+# warn_user
+
+# Get the upstream repos we track
+get_repos
+
 echo "================================================"
-echo "     Removing all the repos except for .repo    "
-echo ""
+echo "          Force Syncing all your repos          "
+echo "         and deleting all upstream repos        "
 echo " This is done so we make sure you're up to date "
 echo "================================================"
-delete_useless ${root[@]}
-cd .repo
-rm -rf local_manifests
-cd ..
-echo "Repo Syncing........."
-sleep 10
-repo sync >> /dev/null
-if [ $? -eq 0 ]; then
-  echo "Repo Sync success"
-else
-  echo "Repo Sync failure"
-  exit 1
-fi
-cd $WORKING_DIR
-echo "Merging packages with AOSP"
-merge_packages ${packages[@]}
-cd $WORKING_DIR
-echo "Merging hardware repos with AOSP"
-merge_hardware ${hardware[@]}
-cd $WORKING_DIR
-echo "Merging framework repos with AOSP"
-merge_frameworks ${frameworks[@]}
-cd $WORKING_DIR
-echo "Merging misc repos with AOSP"
-merge_misc ${misc[@]}
-cd $WORKING_DIR
-echo ""
-echo "============ "$BRANCH" is merged ============"
-echo "===== Compile and test before pushing to github ====="
-echo ""
+
+delete_upstream
+force_sync
+
+# Merge every repo in upstream
+for i in ${upstream[@]}
+do
+  merge $i
+done
+
+# Print any repos that failed, so we can fix merge issues
+print_result
