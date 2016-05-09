@@ -344,3 +344,6 @@ $(file) : $(KERNEL_BIN) | $(ACP)
 
 ALL_PREBUILT += $(INSTALLED_KERNEL_TARGET)
 endif
+
+.PHONY: kernel
+kernel: $(INSTALLED_KERNEL_TARGET)
