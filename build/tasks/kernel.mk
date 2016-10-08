@@ -177,10 +177,26 @@ KERNEL_TOOLCHAIN_PATH := $(KERNEL_TOOLCHAIN)/$(KERNEL_TOOLCHAIN_PREFIX)
 endif
 endif
 
-ifneq ($(USE_CCACHE),)
-    ccache := $(ANDROID_BUILD_TOP)/prebuilts/misc/$(HOST_PREBUILT_TAG)/ccache/ccache
-    # Check that the executable is here.
-    ccache := $(strip $(wildcard $(ccache)))
+# Initialize ccache  as an empty argument.
+ccache :=
+
+# Fill the ccache argument if USE_CCACHE is not set to false.
+ifneq ($(filter-out false,$(USE_CCACHE)),)
+    # Detect if the system already has ccache installed.
+    ccache := $(shell which ccache)
+
+    # Use the prebuilt one if host doesn't have ccache installed.
+    ifeq ($(ccache),)
+        ccache := $(ANDROID_BUILD_TOP)/prebuilts/misc/$(HOST_PREBUILT_TAG)/ccache/ccache
+        # Check that the executable is here.
+        ccache := $(strip $(wildcard $(ccache)))
+    endif
+
+    # Print which ccache is going to be used to build the Kernel.
+    $(info Using '$(ccache)' binary)
+else
+# Warn the developer if ccache is set to false.
+$(info The usage of ccache is set to '$(USE_CCACHE)')
 endif
 
 KERNEL_CROSS_COMPILE := CROSS_COMPILE="$(ccache) $(KERNEL_TOOLCHAIN_PATH)"
