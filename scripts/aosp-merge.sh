@@ -87,7 +87,7 @@ function delete_upstream() {
 function force_sync() {
   echo "Repo Syncing........."
   sleep 10
-  repo sync --force-sync >> /dev/null
+  repo sync -c --force-sync >> /dev/null
   if [ $? -eq 0 ]; then
     echo "Repo Sync success"
   else
