@@ -208,10 +208,11 @@ def add_to_manifest(repositories):
     f.write(raw_xml)
     f.close()
 
-def fetch_dependencies(repo_path):
-    print 'Looking for dependencies'
+def fetch_dependencies(repo_path, fallback_branch = None):
+    print('Looking for dependencies in %s' % repo_path)
     dependencies_path = repo_path + '/statix.dependencies'
     syncable_repos = []
+    verify_repos = []
 
     if os.path.exists(dependencies_path):
         dependencies_file = open(dependencies_path, 'r')
@@ -222,6 +223,9 @@ def fetch_dependencies(repo_path):
             if not is_in_manifest("%s" % dependency['repository'], "%s" % dependency['branch']):
                 fetch_list.append(dependency)
                 syncable_repos.append(dependency['target_path'])
+                verify_repos.append(dependency['target_path'])
+            elif re.search("android_device_.*_.*$", dependency['repository']):
+                verify_repos.append(dependency['target_path'])
 
         dependencies_file.close()
 
@@ -234,6 +238,9 @@ def fetch_dependencies(repo_path):
     if len(syncable_repos) > 0:
         print 'Syncing dependencies'
         os.system('repo sync --force-sync %s' % ' '.join(syncable_repos))
+
+    for deprepo in verify_repos:
+        fetch_dependencies(deprepo)
 
 if depsonly:
     repo_path = get_from_manifest(device)
