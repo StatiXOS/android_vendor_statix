@@ -15,10 +15,10 @@
 # limitations under the License.
 
 # Your source directory goes here
-WORKING_DIR=/home/mazda/du-mm
+WORKING_DIR=/home/mazda/du711
 
 # The tag you want to merge in goes here
-BRANCH=android-6.0.1_r22
+BRANCH=android-7.1.1_r12
 
 # Google source url
 REPO=https://android.googlesource.com/platform/
@@ -30,7 +30,7 @@ upstream=()
 failed=()
 
 # This is the array of repos to blacklist and not merge
-blacklist=('manifest' 'prebuilt' 'packages/apps/DeskClock')
+blacklist=('manifest' 'prebuilt' 'packages/apps/DeskClock' 'prebuilts/build-tools')
 
 # Colors
 COLOR_RED='\033[0;31m'
@@ -63,8 +63,8 @@ function get_repos() {
   for i in ${repos[@]}
   do
     if grep -q "$i" /tmp/rebase.tmp; then # If Google has it and
-      if grep -q "$i" $WORKING_DIR/.repo/manifest.xml; then # If we have it in our manifest and
-        if grep "$i" $WORKING_DIR/.repo/manifest.xml | grep -q "remote="; then # If we track our own copy of it
+      if grep -q "$i" $WORKING_DIR/manifest/n7x_default.xml; then # If we have it in our manifest and
+        if grep "$i" $WORKING_DIR/manifest/n7x_default.xml | grep -q "remote="; then # If we track our own copy of it
           if ! is_in_blacklist $i; then # If it's not in our blacklist
             upstream+=("$i") # Then we need to update it
           else
