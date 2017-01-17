@@ -32,6 +32,13 @@ PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/common/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
 endif
 
+ifeq ($(AB_OTA_UPDATER),true)
+PRODUCT_COPY_FILES += \
+    vendor/statix/build/tools/backuptool_ab.sh:system/bin/backuptool_ab.sh \
+    vendor/statix/build/tools/backuptool_ab.functions:system/bin/backuptool_ab.functions \
+    vendor/statix/build/tools/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
+endif
+
 # Fix Google dialer
 PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/common/etc/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
