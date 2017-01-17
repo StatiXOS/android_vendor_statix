@@ -21,6 +21,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.disable_rescue=true \
     ro.build.selinux=1
 
+ifeq ($(AB_OTA_UPDATER),true)
+PRODUCT_COPY_FILES += \
+    vendor/statix/build/tools/backuptool_ab.sh:system/bin/backuptool_ab.sh \
+    vendor/statix/build/tools/backuptool_ab.functions:system/bin/backuptool_ab.functions \
+    vendor/statix/build/tools/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
+endif
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/statix/build/tools/backuptool.sh:install/bin/backuptool.sh \
