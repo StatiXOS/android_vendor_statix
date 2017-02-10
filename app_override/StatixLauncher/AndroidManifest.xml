@@ -26,6 +26,8 @@
     Refer comments around specific entries on how to extend individual components.
     -->
 
+    <uses-permission android:name="android.permission.DEVICE_POWER" />
+
     <application
         android:backupAgent="com.android.launcher3.LauncherBackupAgent"
         android:fullBackupOnly="true"
