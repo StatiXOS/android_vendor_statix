@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Copyright (C) 2016 DirtyUnicorns
 # Copyright (C) 2016 Jacob McSwain
 #
@@ -14,8 +14,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Your source directory goes here
-WORKING_DIR=/home/mazda/du711
+# The source directory; this is automatically two folder up because the script
+# is located in vendor/scripts. Other ROMs will need to change this. The logic is
+# as follows:
+# 1. Get the absolute path of the script with readlink in case there is a symlink
+#    This script may be symlinked by a manifest so we need to account for that
+# 2. Get the folder containing the script with dirname
+# 3. Move into the folder that is two folder above that one and print it
+WORKING_DIR=$( cd $( dirname $( readlink -f "${BASH_SOURCE[0]}" ) )/../.. && pwd )
 
 # The tag you want to merge in goes here
 BRANCH=android-7.1.1_r12
