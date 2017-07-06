@@ -24,7 +24,7 @@
 WORKING_DIR=$( cd $( dirname $( readlink -f "${BASH_SOURCE[0]}" ) )/../.. && pwd )
 
 # The tag you want to merge in goes here
-BRANCH=android-7.1.2_r11
+BRANCH=android-${1}
 
 # Google source url
 REPO=https://android.googlesource.com/platform/
