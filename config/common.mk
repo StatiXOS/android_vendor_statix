@@ -31,6 +31,11 @@ include vendor/statix/config/packages.mk
 # Branding
 include vendor/statix/config/branding.mk
 
+# Volume steps
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.media_vol_steps=24 \
+    ro.config.vc_call_vol_steps=8
+
 # Inherit from 64-bit config
 ifeq ($(filter arm64 ,$(TARGET_ARCH)),)
     $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
