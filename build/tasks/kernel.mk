@@ -21,7 +21,27 @@ else
 	TARGET_PREBUILT_INT_KERNEL_TYPE := zImage
 endif
 
+# by default dont build even if source is present
+ifeq (,$(filter true 1,$(BUILD_KERNEL)))
+    KERNEL_SRC:=
+endif
+# if there is no prebuilt kernel we must build from source
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+    KERNEL_SRC := $(TARGET_KERNEL_SOURCE)
+endif
+
 ifeq "$(wildcard $(KERNEL_SRC) )" ""
+    ifneq (,$(filter true 1,$(BUILD_KERNEL)))
+        $(warning ************************************************)
+        $(warning *        ERROR: Can't find kernel source       *)
+        $(warning *                                              *)
+        $(warning * You asked me to build the kernel but did not *)
+        $(warning *              provide the source!             *)
+        $(warning *                                              *)
+        $(warning * Please run find_deps to sync the kernel repo *)
+        $(warning ************************************************)
+        $(error "NO SOURCE")
+    endif
     ifneq ($(TARGET_PREBUILT_KERNEL),)
         $(warning ************************************************)
         $(warning *         Using prebuilt kernel binary         *)
