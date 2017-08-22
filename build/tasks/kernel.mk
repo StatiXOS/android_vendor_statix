@@ -6,12 +6,20 @@ TARGET_AUTO_KDIR := $(shell echo $(TARGET_DEVICE_DIR) | sed -e 's/^device/kernel
 # kernel location - optional, defaults to kernel/<vendor>/<device>
 TARGET_KERNEL_SOURCE ?= $(TARGET_AUTO_KDIR)
 KERNEL_SRC := $(TARGET_KERNEL_SOURCE)
-# kernel configuration - mandatory
+# kernel configuration
+TARGET_KERNEL_CONFIG ?= $(TARGET_DEVICE)_defconfig
 KERNEL_DEFCONFIG := $(TARGET_KERNEL_CONFIG)
 
 ## Internal variables
 KERNEL_OUT := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ
 KERNEL_CONFIG := $(KERNEL_OUT)/.config
+
+# Allow building kernel with different -mtune/cpu options
+ifneq "" "$(strip $(TARGET_EXTRA_CFLAGS))"
+  ifeq "" "$(strip $(KERNEL_CFLAGS))"
+    KERNEL_CFLAGS := $(TARGET_EXTRA_CFLAGS)
+  endif
+endif
 
 ifeq ($(BOARD_USES_UBOOT),true)
 	TARGET_PREBUILT_INT_KERNEL := $(KERNEL_OUT)/arch/$(TARGET_ARCH)/boot/uImage
@@ -21,30 +29,17 @@ else
 	TARGET_PREBUILT_INT_KERNEL_TYPE := zImage
 endif
 
-# by default dont build even if source is present
-ifeq (,$(filter true 1,$(BUILD_KERNEL)))
+# allow forcing prebuilt
+ifneq ($(filter false 0,$(strip $(BUILD_KERNEL))),)
     KERNEL_SRC:=
-endif
-# if there is no prebuilt kernel we must build from source
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-    KERNEL_SRC := $(TARGET_KERNEL_SOURCE)
 endif
 
 ifeq "$(wildcard $(KERNEL_SRC) )" ""
-    ifneq (,$(filter true 1,$(BUILD_KERNEL)))
-        $(warning ************************************************)
-        $(warning *        ERROR: Can't find kernel source       *)
-        $(warning *                                              *)
-        $(warning * You asked me to build the kernel but did not *)
-        $(warning *              provide the source!             *)
-        $(warning *                                              *)
-        $(warning * Please run find_deps to sync the kernel repo *)
-        $(warning ************************************************)
-        $(error "NO SOURCE")
-    endif
     ifneq ($(TARGET_PREBUILT_KERNEL),)
         $(warning ************************************************)
         $(warning *         Using prebuilt kernel binary         *)
+        $(warning *              This is depreciated             *)
+        $(warning *       Your build will most likely fail!      *)
         $(warning ************************************************)
         FULL_KERNEL_BUILD := false
         KERNEL_BIN := $(TARGET_PREBUILT_KERNEL)
@@ -110,10 +105,7 @@ ifeq ($(TARGET_ARCH),arm)
     endif
     ARM_CROSS_COMPILE:=CROSS_COMPILE="$(ccache) $(ARM_EABI_TOOLCHAIN)/arm-eabi-"
     ccache = 
-endif
-
-ifeq ($(TARGET_KERNEL_MODULES),)
-    TARGET_KERNEL_MODULES := no-external-modules
+    ARM_KCFLAGS:=KCFLAGS="$(KERNEL_CFLAGS)"
 endif
 
 $(KERNEL_OUT):
@@ -128,16 +120,28 @@ $(KERNEL_OUT)/piggy : $(TARGET_PREBUILT_INT_KERNEL)
 
 TARGET_KERNEL_BINARIES: $(KERNEL_OUT) $(KERNEL_CONFIG) $(KERNEL_HEADERS_INSTALL)
 	$(MAKE) $(JOBS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(TARGET_ARCH) $(ARM_CROSS_COMPILE) $(TARGET_PREBUILT_INT_KERNEL_TYPE)
-	$(MAKE) $(JOBS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(TARGET_ARCH) $(ARM_CROSS_COMPILE) modules
-	$(MAKE) $(JOBS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) INSTALL_MOD_PATH=../../$(KERNEL_MODULES_INSTALL) ARCH=$(TARGET_ARCH) $(ARM_CROSS_COMPILE) modules_install
+
+ifeq (,$(TARGET_KERNEL_NO_MODULES))
+
+ifeq ($(TARGET_KERNEL_MODULES),)
+    TARGET_KERNEL_MODULES := no-external-modules
+endif
+
+TARGET_KERNEL_INTREE_MODULES: TARGET_KERNEL_BINARIES
+	$(MAKE) $(JOBS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(TARGET_ARCH) $(ARM_CROSS_COMPILE) $(ARM_KCFLAGS) modules
+	$(MAKE) $(JOBS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) INSTALL_MOD_PATH=../../$(KERNEL_MODULES_INSTALL) ARCH=$(TARGET_ARCH) $(ARM_CROSS_COMPILE) $(ARM_KCFLAGS) modules_install
 	$(mv-modules)
 	$(clean-module-folder)
 
-$(TARGET_KERNEL_MODULES): TARGET_KERNEL_BINARIES
+$(TARGET_KERNEL_MODULES): TARGET_KERNEL_INTREE_MODULES
 
 $(TARGET_PREBUILT_INT_KERNEL): $(TARGET_KERNEL_MODULES)
 	$(mv-modules)
 	$(clean-module-folder)
+
+else
+$(TARGET_PREBUILT_INT_KERNEL): TARGET_KERNEL_BINARIES
+endif
 
 $(KERNEL_HEADERS_INSTALL): $(KERNEL_OUT) $(KERNEL_CONFIG)
 	$(MAKE) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(TARGET_ARCH) $(ARM_CROSS_COMPILE) headers_install
