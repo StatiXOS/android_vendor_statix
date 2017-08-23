@@ -1,4 +1,12 @@
 bootstrap_go_package {
+    name: "soong-statix",
+    pkgPath: "statix/soong/android",
+    srcs: [
+        "android/variable.go",
+    ],
+}
+
+bootstrap_go_package {
     name: "soong-statix-generator",
     pkgPath: "statix/soong/generator",
     deps: [
