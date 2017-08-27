@@ -20,3 +20,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Packages
 include vendor/statix/config/packages.mk
+
+# Branding
+include vendor/statix/config/branding.mk
