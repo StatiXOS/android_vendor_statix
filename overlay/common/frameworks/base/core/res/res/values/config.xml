@@ -28,9 +28,6 @@
          ASSIST_DISCLOSURE_ENABLED. -->
     <bool name="config_allowDisablingAssistDisclosure">true</bool>
 
-    <!-- enable doze powersaving mode -->
-    <bool name="config_enableAutoPowerModes">true</bool>
-
     <!-- Disable stock OTA components if installed -->
     <add-resource type="array" name="config_disabledComponents" />
     <string-array name="config_disabledComponents" translatable="false">
@@ -75,4 +72,6 @@
          in hardware. -->
     <bool name="config_setColorTransformAccelerated">true</bool>
 
+    <!-- enable doze powersaving mode -->
+    <bool name="config_enableAutoPowerModes">true</bool>
 </resources>
