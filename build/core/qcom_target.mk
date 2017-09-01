@@ -55,23 +55,21 @@ ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
     # List of targets that use master side content protection
     MASTER_SIDE_CP_TARGET_LIST := msm8996 msm8998 sdm660
 
+    # Every qcom platform is considered a vidc target
+    MSM_VIDC_TARGET_LIST := $(TARGET_BOARD_PLATFORM)
+
     ifeq ($(call is-board-platform-in-list, $(B_FAMILY)),true)
-        MSM_VIDC_TARGET_LIST := $(B_FAMILY)
         QCOM_HARDWARE_VARIANT := msm8974
     else
     ifeq ($(call is-board-platform-in-list, $(B64_FAMILY)),true)
-        MSM_VIDC_TARGET_LIST := $(B64_FAMILY)
         QCOM_HARDWARE_VARIANT := msm8994
     else
     ifeq ($(call is-board-platform-in-list, $(BR_FAMILY)),true)
-        MSM_VIDC_TARGET_LIST := $(BR_FAMILY)
         QCOM_HARDWARE_VARIANT := msm8916
     else
     ifeq ($(call is-board-platform-in-list, $(UM_FAMILY)),true)
-        MSM_VIDC_TARGET_LIST := $(UM_FAMILY)
         QCOM_HARDWARE_VARIANT := msm8996
     else
-        MSM_VIDC_TARGET_LIST := $(TARGET_BOARD_PLATFORM)
         QCOM_HARDWARE_VARIANT := $(TARGET_BOARD_PLATFORM)
     endif
     endif
