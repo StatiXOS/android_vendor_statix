@@ -22,4 +22,7 @@ type ProductVariables struct {
 	Uses_media_extensions   *bool `json:",omitempty"`
 	Needs_text_relocations  *bool `json:",omitempty"`
 	Mtk_hardware            *bool `json:",omitempty"`
+	QTIAudioPath            *string `json:",omitempty"`
+	QTIDisplayPath          *string `json:",omitempty"`
+	QTIMediaPath            *string `json:",omitempty"`
 }
