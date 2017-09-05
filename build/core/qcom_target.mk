@@ -46,7 +46,9 @@ ifeq ($(BOARD_USES_QTI_HARDWARE),true)
     ifneq ($(filter msm7x27a msm7x30 msm8660 msm8960,$(TARGET_BOARD_PLATFORM)),)
         # Enable legacy audio functions
         ifeq ($(BOARD_USES_LEGACY_ALSA_AUDIO),true)
-            USE_CUSTOM_AUDIO_POLICY := 1
+            ifneq ($(filter msm8960,$(TARGET_BOARD_PLATFORM)),)
+                USE_CUSTOM_AUDIO_POLICY := 1
+            endif
         endif
     endif
 
