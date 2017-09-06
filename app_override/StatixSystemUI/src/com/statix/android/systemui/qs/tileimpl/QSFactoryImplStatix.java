@@ -38,6 +38,7 @@ import com.android.systemui.util.leak.GarbageMonitor;
 
 // Custom tiles
 import com.statix.android.systemui.qs.tiles.PowerShareTile;
+import com.statix.android.systemui.qs.tiles.CaffeineTile;
 
 import javax.inject.Inject;
 import javax.inject.Provider;
@@ -47,6 +48,7 @@ import dagger.Lazy;
 public class QSFactoryImplStatix extends QSFactoryImpl {
 
     private final Provider<PowerShareTile> mPowerShareTileProvider;
+    private final Provider<CaffeineTile> mCaffeineTileProvider;
 
     @Inject
     public QSFactoryImplStatix(
@@ -79,19 +81,23 @@ public class QSFactoryImplStatix extends QSFactoryImpl {
             Provider<DeviceControlsTile> deviceControlsTileProvider,
             Provider<AlarmTile> alarmTileProvider,
             Provider<QuickAccessWalletTile> quickAccessWalletTileProvider,
-            Provider<PowerShareTile> powerShareTileProvider) {
+            Provider<PowerShareTile> powerShareTileProvider,
+            Provider<CaffeineTile> caffeineTileProvider) {
         super(qsHostLazy, customTileBuilderProvider, wifiTileProvider, internetTileProvider, bluetoothTileProvider, cellularTileProvider, dndTileProvider, colorInversionTileProvider,
             airplaneModeTileProvider, workModeTileProvider, rotationLockTileProvider, flashlightTileProvider, locationTileProvider, castTileProvider, hotspotTileProvider, userTileProvider,
             batterySaverTileProvider, dataSaverTileProvider, nightDisplayTileProvider, nfcTileProvider, memoryTileProvider, uiModeNightTileProvider, screenRecordTileProvider, reduceBrightColorsTileProvider,
             cameraToggleTileProvider, microphoneToggleTileProvider, deviceControlsTileProvider, alarmTileProvider, quickAccessWalletTileProvider);
         // custom tile
         mPowerShareTileProvider = powerShareTileProvider;
+        mCaffeineTileProvider = caffeineTileProvider;
     }
 
     private QSTileImpl createTileStatix(String tileSpec) {
         switch(tileSpec) {
             case "powershare":
                 return mPowerShareTileProvider.get();
+            case "caffeine":
+                return mCaffeineTileProvider.get();
             default:
                 return null;
         }
