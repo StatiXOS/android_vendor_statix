@@ -36,3 +36,6 @@ include vendor/statix/config/packages.mk
 
 # Branding
 include vendor/statix/config/branding.mk
+
+# Overlays
+PRODUCT_PACKAGE_OVERLAYS += vendor/statix/overlay/common
