@@ -45,9 +45,13 @@ repositories = []
 
 page = 1
 while not depsonly:
-    githubreq = urllib.request.Request("https://api.github.com/users/DirtyUnicorns/repos?per_page=200&page=%d" % page)
-    add_auth(githubreq)
-    result = json.loads(urllib.request.urlopen(githubreq).read().decode())
+    request = Request("https://api.github.com/users/DirtyUnicorns/repos?page=%d" % page)
+    api_file = os.getenv("HOME") + '/api_token'
+    if (os.path.isfile(api_file)):
+        infile = open(api_file, 'r')
+        token = infile.readline()
+        request.add_header('Authorization', 'token %s' % token.strip())
+    result = json.loads(urllib2.urlopen(request).read())
     if len(result) == 0:
         break
     for res in result:
