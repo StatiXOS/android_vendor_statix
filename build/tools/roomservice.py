@@ -38,7 +38,7 @@ except ImportError:
 # set this to the default remote to use in repo
 default_rem = "du"
 # set this to the default revision to use (branch/tag name)
-default_rev = "n"
+default_rev = "o8x"
 # set this to the remote that you use for projects from your team repos
 # example fetch="https://github.com/dirtyunicorns"
 default_team_rem = "du"
@@ -269,7 +269,7 @@ def create_dependency_manifest(dependencies):
 
 
 def create_common_dependencies_manifest(dependencies):
-    dep_file = "omni.dependencies"
+    dep_file = "du.dependencies"
     common_list = []
     if dependencies is not None:
         for dependency in dependencies:
