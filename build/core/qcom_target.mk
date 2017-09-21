@@ -61,6 +61,9 @@ ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
         TARGET_USES_COLOR_METADATA := true
     endif
 
+    # List of targets that use master side content protection
+    MASTER_SIDE_CP_TARGET_LIST := msm8996 msm8998 sdm660
+
     ifeq ($(call is-board-platform-in-list, $(B_FAMILY)),true)
         MSM_VIDC_TARGET_LIST := $(B_FAMILY)
         QCOM_HARDWARE_VARIANT := msm8974
