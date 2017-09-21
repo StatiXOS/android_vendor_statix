@@ -44,6 +44,11 @@ ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
         endif
     endif
 
+    # Enable extra offloading for post-805 targets
+    ifneq ($(filter msm8992 msm8994,$(TARGET_BOARD_PLATFORM)),)
+        qcom_flags += -DHAS_EXTRA_FLAC_METADATA
+    endif
+
     TARGET_GLOBAL_CFLAGS += $(qcom_flags)
     TARGET_GLOBAL_CPPFLAGS += $(qcom_flags)
     CLANG_TARGET_GLOBAL_CFLAGS += $(qcom_flags)
@@ -91,8 +96,14 @@ $(call project-set-path,wlan,hardware/qcom/wlan)
 $(call project-set-path,bt-vendor,hardware/qcom/bt)
 else
 $(call project-set-path,qcom-audio,hardware/qcom/audio-caf/$(QCOM_HARDWARE_VARIANT))
+
+ifeq ($(SONY_BF64_KERNEL_VARIANT),true)
+$(call project-set-path,qcom-display,hardware/qcom/display-caf/sony)
+$(call project-set-path,qcom-media,hardware/qcom/media-caf/sony)
+else
 $(call project-set-path,qcom-display,hardware/qcom/display-caf/$(QCOM_HARDWARE_VARIANT))
 $(call project-set-path,qcom-media,hardware/qcom/media-caf/$(QCOM_HARDWARE_VARIANT))
+endif
 
 $(call set-device-specific-path,CAMERA,camera,hardware/qcom/camera)
 $(call set-device-specific-path,GPS,gps,hardware/qcom/gps)
@@ -109,7 +120,7 @@ else
 
 $(call project-set-path,qcom-audio,hardware/qcom/audio/default)
 $(call project-set-path,qcom-display,hardware/qcom/display/$(TARGET_BOARD_PLATFORM))
-$(call project-set-path,qcom-media,hardware/qcom/media/default)
+$(call project-set-path,qcom-media,hardware/qcom/media/$(TARGET_BOARD_PLATFORM))
 
 $(call project-set-path,qcom-camera,hardware/qcom/camera)
 $(call project-set-path,qcom-gps,hardware/qcom/gps)
