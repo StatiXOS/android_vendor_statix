@@ -1,5 +1,8 @@
 # Target-specific configuration
 
+# Bring in Qualcomm helper macros
+include build/extras/core/qcom_utils.mk
+
 # Populate the qcom hardware variants in the project pathmap.
 define wlan-set-path-variant
 $(call project-set-path-variant,wlan,TARGET_WLAN_VARIANT,hardware/qcom/$(1))
