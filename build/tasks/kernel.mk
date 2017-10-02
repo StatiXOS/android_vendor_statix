@@ -30,16 +30,6 @@ KERNEL_OUT := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ
 KERNEL_CONFIG := $(KERNEL_OUT)/.config
 KERNEL_OUT_STAMP := $(KERNEL_OUT)/.mkdir_stamp
 
-# M uses 4.9 gcc by default, and it's not available in their repos
-# So, use 4.8 gcc for the time being.
-KERNEL_GCC_VERSION := 4.8
-
-# You can set KERNEL_TOOLCHAIN_PREFIX to get gcc from somewhere else
-ifeq ($(strip $(KERNEL_TOOLCHAIN_PREFIX)),)
-KERNEL_TOOLCHAIN_ROOT:=$(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-eabi-$(KERNEL_GCC_VERSION)
-KERNEL_TOOLCHAIN_PREFIX:=$(KERNEL_TOOLCHAIN_ROOT)/bin/arm-eabi-
-endif
-
 TARGET_KERNEL_ARCH := $(strip $(TARGET_KERNEL_ARCH))
 ifeq ($(TARGET_KERNEL_ARCH),)
 KERNEL_ARCH := $(TARGET_ARCH)
