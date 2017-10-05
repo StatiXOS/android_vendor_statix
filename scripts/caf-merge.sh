@@ -36,7 +36,7 @@ upstream=()
 failed=()
 
 # This is the array of repos to blacklist and not merge
-blacklist=('manifest' 'prebuilt' 'packages/apps/DeskClock' 'prebuilts/build-tools' 'hardware/qcom/*' 'packages/apps/MusicFX' 'external/libnetfilter_conntrack' 'external/libnfnetlink')
+blacklist=('manifest' 'prebuilt' 'packages/apps/DeskClock' 'prebuilts/build-tools' 'hardware/qcom/*' 'packages/apps/MusicFX' 'external/libnetfilter_conntrack' 'external/libnfnetlink' 'external/libnfc-nxp' 'external/nano')
 
 # Colors
 COLOR_RED='\033[0;31m'
