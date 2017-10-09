@@ -31,6 +31,10 @@ PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 endif
 
+# Fix Google dialer
+PRODUCT_COPY_FILES += \
+    vendor/statix/prebuilt/common/etc/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
+
 # Packages
 include vendor/statix/config/packages.mk
 
