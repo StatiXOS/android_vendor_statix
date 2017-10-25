@@ -19,6 +19,10 @@ type Product_variables struct {
 	Cant_reallocate_omx_buffers struct {
 		Cflags []string
 	}
+
+	Qcom_bsp_legacy struct {
+		Cflags []string
+	}
 }
 
 type ProductVariables struct {
@@ -30,4 +34,5 @@ type ProductVariables struct {
 	QTIDisplayPath          *string `json:",omitempty"`
 	QTIMediaPath            *string `json:",omitempty"`
 	Cant_reallocate_omx_buffers *bool `json:",omitempty"`
+	Qcom_bsp_legacy         *bool `json:",omitempty"`
 }
