@@ -27,11 +27,16 @@ type Product_variables struct {
 	Qti_flac_decoder struct {
 		Cflags []string
 	}
+	Uses_generic_camera_parameter_library struct {
+		Srcs []string
+	}
 }
 
 type ProductVariables struct {
 	Has_legacy_camera_hal1  *bool `json:",omitempty"`
 	Uses_media_extensions   *bool `json:",omitempty"`
+	Uses_generic_camera_parameter_library  *bool `json:",omitempty"`
+	Specific_camera_parameter_library  *string `json:",omitempty"`
 	Needs_text_relocations  *bool `json:",omitempty"`
 	Mtk_hardware            *bool `json:",omitempty"`
 	QTIAudioPath            *string `json:",omitempty"`
