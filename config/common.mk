@@ -30,6 +30,15 @@ include vendor/statix/config/packages.mk
 # Branding
 include vendor/statix/config/branding.mk
 
+# Fonts
+PRODUCT_COPY_FILES += \
+    vendor/statix/fonts/GoogleSans-Regular.ttf:system/fonts/GoogleSans-Regular.ttf \
+    vendor/statix/fonts/GoogleSans-Medium.ttf:system/fonts/GoogleSans-Medium.ttf \
+    vendor/statix/fonts/GoogleSans-MediumItalic.ttf:system/fonts/GoogleSans-MediumItalic.ttf \
+    vendor/statix/fonts/GoogleSans-Italic.ttf:system/fonts/GoogleSans-Italic.ttf \
+    vendor/statix/fonts/GoogleSans-Bold.ttf:system/fonts/GoogleSans-Bold.ttf \
+    vendor/statix/fonts/GoogleSans-BoldItalic.ttf:system/fonts/GoogleSans-BoldItalic.ttf
+
 # Volume steps
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.media_vol_steps=24 \
