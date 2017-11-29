@@ -17,5 +17,7 @@ statix_soong:
 	echo '    "Cant_reallocate_omx_buffers":  $(if $(filter omap4,$(TARGET_BOARD_PLATFORM)),true,false),';  \
 	echo '    "Qcom_bsp_legacy":  $(if $(filter msm7x27a msm7x30 msm8660 msm8960,$(TARGET_BOARD_PLATFORM)),true,false),';  \
 	echo '    "Qti_flac_decoder":  $(if $(strip $(AUDIO_FEATURE_ENABLED_EXTN_FLAC_DECODER)),true,false)';  \
+	echo '    "Target_uses_qsml":  $(if $(strip $(TARGET_USES_QSML)),true,false),';  \
+	echo '    "Target_uses_eigen":  $(if $(strip $(TARGET_USES_QSML)),false,true)';  \
 	echo '},'; \
 	echo '') > $(SOONG_VARIABLES_TMP)
