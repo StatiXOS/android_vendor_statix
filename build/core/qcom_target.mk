@@ -27,7 +27,6 @@ ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
 endif
 
 ifeq ($(BOARD_USES_QTI_HARDWARE),true)
-
 $(call set-device-specific-path,AUDIO,audio,hardware/qcom/audio-caf/$(QCOM_HARDWARE_VARIANT))
 $(call set-device-specific-path,DISPLAY,display,hardware/qcom/display-caf/$(QCOM_HARDWARE_VARIANT))
 $(call set-device-specific-path,MEDIA,media,hardware/qcom/media-caf/$(QCOM_HARDWARE_VARIANT))
