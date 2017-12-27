@@ -8,7 +8,7 @@ $(call add_json_bool,	Needs_text_relocations,						$(filter true,$(if $(filter t
 $(call add_json_bool,	Mtk_hardware,								$(filter true,$(if $(filter true,$(BOARD_USES_MTK_HARDWARE)),true,false)))
 $(call add_json_bool,	BoardUsesQTIHardware,						$(filter true,$(if $(BOARD_USES_QTI_HARDWARE),true,false)))
 $(call add_json_bool,	Cant_reallocate_omx_buffers,				$(filter true,$(if $(filter omap4,$(TARGET_BOARD_PLATFORM)),true,false)))
-$(call add_json_bool,	Qcom_bsp_legacy,							$(filter true,$(if $(filter msm7x27a msm7x30 msm8660 msm8960,$(TARGET_BOARD_PLATFORM)),true,false)))
+$(call add_json_bool,	Qcom_bsp_legacy,							$(filter true,$(if $(TARGET_USES_QCOM_BSP_LEGACY),true,false)))
 $(call add_json_bool,	Qti_flac_decoder,							$(filter true,$(if $(strip $(AUDIO_FEATURE_ENABLED_EXTN_FLAC_DECODER)),true,false)))
 $(call add_json_bool,	Target_uses_qsml,							$(filter true,$(if $(strip $(TARGET_USES_QSML)),true,false)))
 $(call add_json_bool,	Target_uses_eigen,							$(filter true,$(if $(strip $(TARGET_USES_QSML)),false,true)))
