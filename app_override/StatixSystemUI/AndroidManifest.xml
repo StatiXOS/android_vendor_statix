@@ -56,6 +56,15 @@
             android:exported="true"
             android:authorities="com.android.systemui.keyguard"/>
 
+        <!-- Smart Pixels -->
+        <service android:name=".smartpixels.SmartPixelsService"
+            android:enabled="true" />
+        <receiver android:name=".smartpixels.SmartPixelsReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
         <!-- Columbus -->
         <service
             android:name="com.google.android.systemui.columbus.ColumbusServiceProxy"
