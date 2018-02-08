@@ -2,8 +2,8 @@
 PRODUCT_PACKAGES += \
     librsjni
 
-#general packages
-PRODUCT_PACKAGES += \ 
+# general packages
+PRODUCT_PACKAGES += \
     Phonograph \
     Turbo
 

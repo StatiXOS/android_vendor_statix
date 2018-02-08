@@ -13,21 +13,22 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Fix Google dialer
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/etc/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
+    vendor/static/prebuilt/etc/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/aosp/tools/backuptool.sh:install/bin/backuptool.sh \
-    vendor/aosp/tools/backuptool.functions:install/bin/backuptool.functions \
-    vendor/aosp/tools/50-aosp.sh:system/addon.d/50-aosp.sh
+    vendor/static/tools/backuptool.sh:install/bin/backuptool.sh \
+    vendor/static/tools/backuptool.functions:install/bin/backuptool.functions \
+    vendor/static/tools/50-static.sh:system/addon.d/50-static.sh
 
 # Packages
-include vendor/aosp/config/packages.mk
+include vendor/static/config/packages.mk
 
 # Branding
-include vendor/aosp/config/branding.mk
+include vendor/static/config/branding.mk
 
 #Inherit from 64-bit config
 ifeq ($(filter angler marlin taimen sailfish walleye ,$(TARGET_PRODUCT)),)
     $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
     $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+endif
