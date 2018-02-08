@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Copyright (C) 2016 DirtyUnicorns
+# Copyright (C) 2016-2018 The Dirty Unicorns project
 # Copyright (C) 2016 Jacob McSwain
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,19 +36,29 @@ upstream=()
 failed=()
 
 # This is the array of repos to blacklist and not merge
-blacklist=('manifest' 'prebuilt' 'packages/apps/DeskClock' 'prebuilts/build-tools' 'hardware/qcom/*' 'packages/apps/MusicFX' 'external/libnetfilter_conntrack' 'external/libnfnetlink' 'external/libnfc-nxp' 'external/nano')
+aosp_blacklist=('prebuilt' 'packages/apps/DeskClock' 'prebuilts/build-tools')
+caf_blacklist=('prebuilt' 'packages/apps/DeskClock' 'prebuilts/build-tools' 'hardware/qcom/*' 'external/libnfc-nxp' 'external/nano' 'external/tinycompress')
 
 # Colors
 COLOR_RED='\033[0;31m'
 COLOR_BLANK='\033[0m'
 
 function is_in_blacklist() {
-  for j in ${blacklist[@]}
-  do
-    if [ "$j" == "$1" ]; then
-      return 0;
-    fi
-  done
+  if [[ $( grep -i "caf" $WORKING_DIR/manifest/README.md) ]]; then
+      for caf in ${caf_blacklist[@]}
+      do
+        if [ "$caf" == "$1" ]; then
+          return 0;
+        fi
+      done
+  else
+      for aosp in ${aosp_blacklist[@]}
+      do
+        if [ "$aosp" == "$1" ]; then
+          return 0;
+        fi
+      done
+  fi
   return 1;
 }
 
@@ -150,6 +160,9 @@ for i in ${upstream[@]}
 do
   merge $i
 done
+
+# Go back home
+cd $WORKING_DIR
 
 # Print any repos that failed, so we can fix merge issues
 print_result
