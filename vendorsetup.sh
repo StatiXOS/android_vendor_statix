@@ -1,2 +1,2 @@
-add_lunch_combo static_angler-userdebug
-add_lunch_combo static_angler-user
+add_lunch_combo statix_angler-userdebug
+add_lunch_combo statix_angler-user
