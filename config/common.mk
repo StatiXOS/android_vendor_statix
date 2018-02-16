@@ -13,19 +13,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Fix Google dialer
 PRODUCT_COPY_FILES += \
-    vendor/static/prebuilt/etc/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
+    vendor/statix/prebuilt/etc/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/static/tools/backuptool.sh:install/bin/backuptool.sh \
-    vendor/static/tools/backuptool.functions:install/bin/backuptool.functions \
-    vendor/static/tools/50-static.sh:system/addon.d/50-static.sh
+    vendor/statix/tools/backuptool.sh:install/bin/backuptool.sh \
+    vendor/statix/tools/backuptool.functions:install/bin/backuptool.functions \
+    vendor/statix/tools/50-statix.sh:system/addon.d/50-statix.sh
 
 # Packages
-include vendor/static/config/packages.mk
+include vendor/statix/config/packages.mk
 
 # Branding
-include vendor/static/config/branding.mk
+include vendor/statix/config/branding.mk
 
 #Inherit from 64-bit config
 ifeq ($(filter angler marlin taimen sailfish walleye ,$(TARGET_PRODUCT)),)

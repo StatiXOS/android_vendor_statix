@@ -13,13 +13,23 @@
 # limitations under the License.
 
 # -----------------------------------------------------------------
-# AOSP OTA update package
+# STATIX OTA update package
 
-AOSP_TARGET_PACKAGE := $(PRODUCT_OUT)/$(AOSP_VERSION).zip
+STATIX_TARGET_PACKAGE := $(PRODUCT_OUT)/$(STATIX_VERSION).zip
 
 .PHONY: bacon
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(AOSP_TARGET_PACKAGE)
-	$(hide) $(MD5SUM) $(AOSP_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(AOSP_TARGET_PACKAGE).md5sum
-	@echo "Package Complete: $(AOSP_TARGET_PACKAGE)" >&2
+	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(STATIX_TARGET_PACKAGE)
+	$(hide) $(MD5SUM) $(STATIX_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(STATIX_TARGET_PACKAGE).md5sum
+	@echo " "
+	@echo " ________  _________  ________  _________  ___     ___    ___ "
+	@echo "|\   ____\|\___   ___\\   __  \|\___   ___\\  \   |\  \  /  /| "
+	@echo "\ \  \___|\|___ \  \_\ \  \|\  \|___ \  \_\ \  \  \ \  \/  / / "
+	@echo " \ \_____  \   \ \  \ \ \   __  \   \ \  \ \ \  \  \ \    / / "
+	@echo "  \|____|\  \   \ \  \ \ \  \ \  \   \ \  \ \ \  \  /     \/  "
+	@echo "    ____\_\  \   \ \__\ \ \__\ \__\   \ \__\ \ \__\/  /\   \  "
+	@echo "   |\_________\   \|__|  \|__|\|__|    \|__|  \|__/__/ /\ __\ "
+	@echo "   \|_________|                                   |__|/ \|__|  "                                            
+	@echo " "                                                      
+	@echo "Package Complete: $(STATIX_TARGET_PACKAGE)" >&2
 
