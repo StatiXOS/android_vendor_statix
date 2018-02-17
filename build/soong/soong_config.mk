@@ -19,6 +19,6 @@ statix_soong:
 	echo '    "Qti_flac_decoder":  $(if $(strip $(AUDIO_FEATURE_ENABLED_EXTN_FLAC_DECODER)),true,false)';  \
 	echo '    "Target_uses_qsml":  $(if $(strip $(TARGET_USES_QSML)),true,false),';  \
 	echo '    "Target_uses_eigen":  $(if $(strip $(TARGET_USES_QSML)),false,true)';  \
-	echo '    "Target_shim_libs": "$(TARGET_LD_SHIM_LIBS)"'; \
+	echo '    "Target_shim_libs": "$(subst $(space),:,$(TARGET_LD_SHIM_LIBS))"'; \
 	echo '},'; \
 	echo '') > $(SOONG_VARIABLES_TMP)
