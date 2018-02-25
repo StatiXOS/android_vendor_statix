@@ -23,3 +23,4 @@ bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(STATIX_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(STATIX_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(STATIX_TARGET_PACKAGE).md5sum
 	@echo "Package Complete: $(STATIX_TARGET_PACKAGE)" >&2
+	@echo "Package size: `du -h $(STATIX_TARGET_PACKAGE) | cut -f 1`"
