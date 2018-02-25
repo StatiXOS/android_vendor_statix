@@ -32,4 +32,5 @@ bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	@echo "   \|_________|                                   |__|/ \|__|  "                                            
 	@echo " "                                                      
 	@echo "Package Complete: $(STATIX_TARGET_PACKAGE)" >&2
+	@echo "Package size: `du -h $(STATIX_TARGET_PACKAGE) | cut -f 1`"
 

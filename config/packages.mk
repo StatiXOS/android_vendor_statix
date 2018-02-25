@@ -9,8 +9,8 @@ PRODUCT_PACKAGES += \
 
 # DU Utils Library
 PRODUCT_PACKAGES += \
-#    org.dirtyunicorns.utils
+    org.dirtyunicorns.utils
 
 PRODUCT_BOOT_JARS += \
-#    org.dirtyunicorns.utils
+    org.dirtyunicorns.utils
 
