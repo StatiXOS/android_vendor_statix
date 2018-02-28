@@ -27,8 +27,8 @@ include vendor/statix/config/packages.mk
 # Branding
 include vendor/statix/config/branding.mk
 
-#Inherit from 64-bit config
-ifeq ($(filter angler marlin taimen sailfish walleye ,$(TARGET_PRODUCT)),)
+# Inherit from 64-bit config
+ifeq ($(filter arm64 ,$(TARGET_ARCH)),)
     $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
     $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 endif
