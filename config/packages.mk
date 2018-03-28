@@ -4,7 +4,6 @@ PRODUCT_PACKAGES += \
 
 # general packages
 PRODUCT_PACKAGES += \
-    Phonograph \
     Turbo
 
 # DU Utils Library
