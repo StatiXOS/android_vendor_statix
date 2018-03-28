@@ -1,7 +1,8 @@
 # This is entirely Carbon's code, from here: https://github.com/CarbonROM/android_build_make/blob/cr-6.1/core/Makefile
+CL_CYN="\033[36m"
 
 .PHONY: asandwich 
-sandwich:
+asandwich:
 	@echo ""
 	@echo -e ${CL_CYN}"                  Make me a sandwich.                              "${CL_RST}
 	@echo -e ${CL_CYN}"                          |                                        "${CL_RST}
@@ -32,4 +33,3 @@ sandwich:
 	@echo -e ${CL_CYN}"                     @@#;,...,:@@,  \`                   ,   ,\`     "${CL_RST}
 	@echo -e ${CL_CYN}"                      #,       #'                                  "${CL_RST}
 	@echo -e ${CL_CYN}"                      \`        \`                                   "${CL_RST}
-measandwich: sandwich
