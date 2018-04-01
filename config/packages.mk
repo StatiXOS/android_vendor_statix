@@ -60,3 +60,6 @@ PRODUCT_PACKAGES += \
     privapp-permissions-turbo.xml
 
 
+# Fonts packages
+PRODUCT_PACKAGES += \
+    statix-fonts
