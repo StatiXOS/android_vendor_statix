@@ -13,3 +13,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     org.dirtyunicorns.utils
 
+# Fonts packages
+PRODUCT_PACKAGES += \
+    statix-fonts
