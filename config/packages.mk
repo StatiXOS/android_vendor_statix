@@ -63,6 +63,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     WeatherProvider
 
+# Fonts packages
+PRODUCT_PACKAGES += \
+    statix-fonts
+
 # WeatherProvider
 PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/common/etc/permissions/com.android.providers.weather.xml:system/etc/permissions/com.android.providers.weather.xml \
