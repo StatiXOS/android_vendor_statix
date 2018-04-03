@@ -1,3 +1,2 @@
-.PHONY meme
-
-meme: $(/bin/bash -c "timeout 5s curl parrot.live"
+.PHONY: meme
+meme: $(shell timeout 5s curl parrot.live)
