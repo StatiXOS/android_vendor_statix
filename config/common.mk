@@ -21,6 +21,9 @@ PRODUCT_COPY_FILES += \
     vendor/statix/tools/backuptool.sh:install/bin/backuptool.sh \
     vendor/statix/tools/backuptool.functions:install/bin/backuptool.functions \
     vendor/statix/tools/50-statix.sh:system/addon.d/50-statix.sh
+    
+# Overlays
+PRODUCT_PACKAGE_OVERLAYS += vendor/statix/overlay/common
 
 # Packages
 include vendor/statix/config/packages.mk
