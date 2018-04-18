@@ -35,6 +35,8 @@ import com.google.android.systemui.elmyra.ElmyraContext;
 import com.google.android.systemui.elmyra.ElmyraService;
 import com.google.android.systemui.elmyra.ServiceConfigurationGoogle;
 
+import com.statix.android.systemui.smartpixels.SmartPixelsReceiver;
+
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -74,6 +76,7 @@ public class StatixServices extends VendorServices {
         if (new ColumbusContext(mContext).isAvailable()) {
             addService(mColumbusServiceLazy.get());
         }
+        addService(new SmartPixelsReceiver(mContext));
     }
 
     @Override
