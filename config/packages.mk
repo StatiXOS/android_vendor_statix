@@ -7,3 +7,8 @@ PRODUCT_PACKAGES += \
     Turbo \
 #    MaterialFX
 
+PRODUCT_PACKAGES += \
+    PixelTheme \
+    StockTheme \
+    PixelBaseTheme \
+    StockBaseTheme
