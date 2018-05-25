@@ -15,7 +15,8 @@ PRODUCT_PACKAGES += \
     PixelTheme \
     StockTheme \
     PixelBaseTheme \
-    StockBaseTheme
+    StockBaseTheme \
+    StockBaseFixedTheme
 
 # DarkUI Packages
 PRODUCT_PACKAGES += \
