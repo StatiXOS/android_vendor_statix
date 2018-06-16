@@ -31,10 +31,10 @@ PRODUCT_PACKAGES += \
 
 # Dark/BlackUI Packages
 PRODUCT_PACKAGES += \
-    SettingsDarkThemeOverlay \
-    SystemDarkThemeOverlay \
-    SystemSettingsIconTintOverlay \
-    SysuiQsDarkThemeOverlay \
     GBoardDarkTheme \
-    SettingsBlackThemeOverlay \
-    SystemBlackThemeOverlay
+    SettingsBlackTheme \
+    SettingsDarkTheme \
+    SystemBlackTheme \
+    SystemDarkTheme \
+    SystemSettingsIconTint \
+    SysuiQsDarkTheme
