@@ -4,6 +4,8 @@ $(eval _contents := $$(_contents)"Statix": {$$(newline))
 
 $(call add_json_bool,	Needs_text_relocations,						$(filter true,$(TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS)))
 $(call add_json_bool,	Qcom_bsp_legacy,							$(filter true,$(TARGET_USES_QCOM_BSP_LEGACY)))
+$(call add_json_bool,	Supports_hw_fde,							$(filter true,$(TARGET_HW_DISK_ENCRYPTION)))
+$(call add_json_bool,	Supports_hw_fde_perf,						$(filter true,$(TARGET_HW_DISK_ENCRYPTION_PERF)))
 $(call add_json_bool,	Target_uses_eigen,							$(filter true,$(if $(strip $(TARGET_USES_QSML)),false,true)))
 $(call add_json_bool,	Target_uses_qsml,							$(filter true,$(TARGET_USES_QSML)))
 $(call add_json_bool,	Uses_generic_camera_parameter_library,		$(if $(TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY),,true))
