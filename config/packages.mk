@@ -41,4 +41,5 @@ PRODUCT_PACKAGES += \
     SystemBlackTheme \
     SystemDarkTheme \
     SystemSettingsIconTint \
+	SysuiQsBlackTheme \
     SysuiQsDarkTheme
