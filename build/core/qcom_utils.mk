@@ -19,6 +19,10 @@ QCOM_BOARD_PLATFORMS += msm8998
 QCOM_BOARD_PLATFORMS += msm_bronze
 QCOM_BOARD_PLATFORMS += apq8084
 
+QCOM_BOARD_PLATFORMS += sdm660
+QCOM_BOARD_PLATFORMS += sdm845
+
+# MSM7000 Family
 MSM7K_BOARD_PLATFORMS := msm7x30
 MSM7K_BOARD_PLATFORMS += msm7x27
 MSM7K_BOARD_PLATFORMS += msm7x27a
@@ -128,6 +132,7 @@ define is-board-platform-in-list
 $(call match-word-in-list,$(TARGET_BOARD_PLATFORM),$(1))
 endef
 
+ifndef get-vendor-board-platforms
 # $(call is-vendor-board-platform,vendor)
 # returns true or empty
 define is-vendor-board-platform
@@ -137,6 +142,7 @@ $(strip \
   ) \
 )
 endef
+endif # get-vendor-board-platforms
 
 # $(call is-chipset-in-board-platform,chipset)
 # does a prefix match of chipset in TARGET_BOARD_PLATFORM
