@@ -4,7 +4,8 @@ PRODUCT_PACKAGES += \
 
 # general packages
 PRODUCT_PACKAGES += \
-    Turbo
+    Turbo \
+    MaterialFX
 
 # DU Utils Library
 PRODUCT_PACKAGES += \
