@@ -62,16 +62,6 @@ function is_in_blacklist() {
   return 1;
 }
 
-function warn_user() {
-  echo "Using this script may cause you to lose unsaved work"
-  read -r -p "Do you want to continue? [y/N] " response
-  if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
-    echo "You've been warned"
-  else
-    exit 1
-  fi
-}
-
 function get_repos() {
   declare -a repos=( $(repo list | cut -d: -f1) )
   curl --output /tmp/rebase.tmp $REPO --silent # Download the html source of the Android source page
@@ -120,6 +110,14 @@ function merge() {
   fi
 }
 
+function build_repo() {
+  cd $WORKING_DIR/build/make
+  git pull $REPO/build.git -t $BRANCH
+  if [ $? -ne 0 ]; then # If merge failed
+    failed+=('build/make') # Add to the list
+  fi
+}
+
 function print_result() {
   if [ ${#failed[@]} -eq 0 ]; then
     echo ""
@@ -140,9 +138,6 @@ function print_result() {
 # Start working
 cd $WORKING_DIR
 
-# Warn user that this may destroy unsaved work
-# warn_user
-
 # Get the upstream repos we track
 get_repos
 
@@ -160,6 +155,10 @@ for i in ${upstream[@]}
 do
   merge $i
 done
+
+# Merge in the build repo last since is got a different
+# manifest path than what's in Google's source
+build_repo
 
 # Go back home
 cd $WORKING_DIR
