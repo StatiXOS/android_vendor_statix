@@ -14,6 +14,7 @@
 
 LOCAL_PATH:=$(call my-dir)
 
+ifneq $(WITH_GAPPS, true)
 include $(CLEAR_VARS)
 LOCAL_MODULE := Turbo
 LOCAL_SRC_FILES := apk/$(LOCAL_MODULE).apk
@@ -23,3 +24,4 @@ LOCAL_CERTIFICATE := platform
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
 include $(BUILD_PREBUILT)
+endif
