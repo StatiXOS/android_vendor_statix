@@ -361,9 +361,9 @@ if __name__ == '__main__':
                 print('Trying to fetch the change from GitHub')
 
             if args.pull:
-                cmd = ['git pull --no-edit github', item['fetch'][method]['ref']]
+                cmd = ['git pull --no-edit statix', item['fetch'][method]['ref']]
             else:
-                cmd = ['git fetch github', item['fetch'][method]['ref']]
+                cmd = ['git fetch statix', item['fetch'][method]['ref']]
             if args.quiet:
                 cmd.append('--quiet')
             else:
@@ -375,7 +375,7 @@ if __name__ == '__main__':
                 sys.exit(result)
         # Check if it worked
         if args.gerrit != default_gerrit or os.stat(FETCH_HEAD).st_size == 0:
-            # If not using the default gerrit or github failed, fetch from gerrit.
+            # If not using the default gerrit or statix failed, fetch from gerrit.
             if args.verbose:
                 if args.gerrit == default_gerrit:
                     print('Fetching from GitHub didn\'t work, trying to fetch the change from Gerrit')
