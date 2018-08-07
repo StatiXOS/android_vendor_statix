@@ -5,15 +5,5 @@ PRODUCT_PACKAGES += \
 # general packages
 PRODUCT_PACKAGES += \
     Turbo \
-    MaterialFX
+#    MaterialFX
 
-# DU Utils Library
-PRODUCT_PACKAGES += \
-    org.dirtyunicorns.utils
-
-PRODUCT_BOOT_JARS += \
-    org.dirtyunicorns.utils
-
-# Fonts packages
-PRODUCT_PACKAGES += \
-    statix-fonts

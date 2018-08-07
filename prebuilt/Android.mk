@@ -14,7 +14,7 @@
 
 LOCAL_PATH:=$(call my-dir)
 
-ifneq $(WITH_GAPPS, true)
+ifneq ($(WITH_GAPPS), true)
 include $(CLEAR_VARS)
 LOCAL_MODULE := Turbo
 LOCAL_SRC_FILES := apk/$(LOCAL_MODULE).apk
