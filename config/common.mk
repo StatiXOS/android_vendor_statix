@@ -8,7 +8,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.dataroaming=false \
     ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent \
     ro.com.android.dateformat=MM-dd-yyyy \
-    persist.sys.disable_rescue=true \
     ro.boot.vendor.overlay.theme=com.google.android.theme.pixel \
     ro.build.selinux=1
 
@@ -17,11 +16,11 @@ PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/etc/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
 
 # Backup Tool
-PRODUCT_COPY_FILES += \
-    vendor/statix/tools/backuptool.sh:install/bin/backuptool.sh \
-    vendor/statix/tools/backuptool.functions:install/bin/backuptool.functions \
-    vendor/statix/tools/50-statix.sh:system/addon.d/50-statix.sh
-    
+#PRODUCT_COPY_FILES += \
+#    vendor/statix/tools/backuptool.sh:install/bin/backuptool.sh \
+#    vendor/statix/tools/backuptool.functions:install/bin/backuptool.functions \
+#    vendor/statix/tools/50-statix.sh:system/addon.d/50-statix.sh
+
 # Overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/statix/overlay/common
 

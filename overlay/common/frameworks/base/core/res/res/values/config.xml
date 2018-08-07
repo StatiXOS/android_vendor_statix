@@ -71,19 +71,8 @@
         <item>com.google.android.gms</item>
     </string-array>
 
-    <!-- Controls the WiFi wakeup feature.
-          0 = Not available.
-          1 = Available.
-     -->
-    <integer translatable="false" name="config_wifi_wakeup_available">1</integer>
-
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
          in hardware. -->
     <bool name="config_setColorTransformAccelerated">true</bool>
-
-    <!-- System font packages (overlay in vendor) -->
-    <string-array name="config_fontPackages" translatable="false">
-        <item>com.statix.fonts</item>
-    </string-array>
 
 </resources>
