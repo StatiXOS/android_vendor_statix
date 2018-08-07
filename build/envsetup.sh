@@ -65,5 +65,5 @@ function brunch()
 function repopick() {
     set_stuff_for_environment
     T=$(gettop)
-    $T/build/extras/tools/repopick.py $@
+    $T/vendor/statix/build/tools/repopick.py $@
 }
