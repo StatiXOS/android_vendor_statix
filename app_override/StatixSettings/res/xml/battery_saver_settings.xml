@@ -26,6 +26,12 @@
         settings:controller="com.android.settings.fuelgauge.batterysaver.BatterySaverButtonPreferenceController"/>
 
     <Preference
+        android:key="smart_pixels"
+        android:title="@string/smart_pixels_title"
+        android:summary="@string/smart_pixels_summary"
+        android:fragment="com.statix.android.settings.fuelgauge.batterysaver.SmartPixels" />
+
+    <Preference
         android:order="50"
         android:key="battery_saver_schedule"
         android:fragment="com.android.settings.fuelgauge.batterysaver.BatterySaverScheduleSettings"
