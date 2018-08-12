@@ -38,6 +38,18 @@
 
         <uses-library android:name="org.apache.http.legacy" />
 
+        <!-- Smart Pixels -->
+        <activity android:name="com.statix.android.settings.StatixSettings$SmartPixelsActivity"
+                android:exported="true"
+                android:label="@string/smart_pixels_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.statix.android.settings.fuelgauge.batterysaver.SmartPixels" />
+        </activity>
+
         <activity android:theme="@style/SudThemeGlif.Light" android:label="@string/columbus_gesture_training_intro_title" android:icon="@drawable/ic_assist_gesture_suggestion" android:name="com.google.android.settings.gestures.columbus.ColumbusGestureTrainingIntroActivity" android:enabled="true" android:exported="true" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="com.google.android.settings.COLUMBUS_GESTURE_TRAINING"/>
