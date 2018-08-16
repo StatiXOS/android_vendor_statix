@@ -43,6 +43,13 @@ if not depsonly:
 
 repositories = []
 
+# repo check
+branch_check = r'external/bson'
+if os.path.exists(branch_check):
+    statix_branch = "9-caf";
+else:
+    statix_branch = "9";
+
 page = 1
 while not depsonly:
     request = Request("https://api.github.com/users/StatiXOS/repos?page=%d" % page)
@@ -150,7 +157,7 @@ def add_to_manifest_dependencies(repositories):
 
         print 'Adding dependency: %s -> %s' % (repo_name, repo_target)
         project = ElementTree.Element("project", attrib = { "path": repo_target,
-            "remote": "github", "name": repo_name, "revision": "9" })
+            "remote": "github", "name": repo_name, "revision": statix_branch })
 
         if 'branch' in repository:
             project.set('revision',repository['branch'])
@@ -186,7 +193,7 @@ def add_to_manifest(repositories):
 
         print 'Adding dependency: StatiXOS/%s -> %s' % (repo_name, repo_target)
         project = ElementTree.Element("project", attrib = { "path": repo_target,
-            "remote": "github", "name": "StatiXOS/%s" % repo_name, "revision": "9" })
+            "remote": "github", "name": "StatiXOS/%s" % repo_name, "revision": statix_branch })
 
         if 'branch' in repository:
             project.set('revision', repository['branch'])
@@ -246,7 +253,7 @@ else:
 
             repo_path = "device/%s/%s" % (manufacturer, device)
 
-            add_to_manifest([{'repository':repo_name,'target_path':repo_path,'branch':'9'}])
+            add_to_manifest([{'repository':repo_name,'target_path':repo_path,'branch':statix_branch}])
 
             print "Syncing repository to retrieve project."
             os.system('repo sync --force-sync %s' % repo_path)
