@@ -59,6 +59,7 @@ type Product_variables struct {
 type ProductVariables struct {
 	Additional_gralloc_10_usage_bits  			*string `json:",omitempty"`
 	Has_legacy_camera_hal1						*bool `json:",omitempty"`
+	Java_Source_Overlays						*string `json:",omitempty"`
 	Needs_legacy_camera_hal1_dyn_native_handle	*bool `json:",omitempty"`
 	Uses_media_extensions						*bool `json:",omitempty"`
 	Uses_generic_camera_parameter_library		*bool `json:",omitempty"`
