@@ -41,6 +41,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/bin/clean_cache.sh:system/bin/clean_cache.sh
 
+# Backup Tool
+PRODUCT_COPY_FILES += \
+    vendor/statix/build/tools/backuptool.sh:install/bin/backuptool.sh \
+    vendor/statix/build/tools/backuptool.functions:install/bin/backuptool.functions \
+    vendor/statix/build/tools/50-statix.sh:system/addon.d/50-statix.sh
+
 # Packages
 include vendor/statix/config/packages.mk
 
