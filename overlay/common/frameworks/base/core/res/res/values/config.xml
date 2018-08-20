@@ -31,6 +31,9 @@
     <!-- enable doze powersaving mode -->
     <bool name="config_enableAutoPowerModes">true</bool>
 
+    <!-- Flag indicating whether we should enable smart battery. -->
+    <bool name="config_smart_battery_available">true</bool>
+
     <!-- Disable stock OTA components if installed -->
     <string-array name="config_disabledComponents" translatable="false">
         <item>com.google.android.gsf/com.google.android.gsf.update.SystemUpdateActivity</item>
