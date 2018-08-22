@@ -37,6 +37,9 @@ PRODUCT_PACKAGES += \
     librsjni
 
 # Packages
+# Turbo
 PRODUCT_PACKAGES += \
-    Turbo
+    Turbo \
+    turbo.xml
+
 
