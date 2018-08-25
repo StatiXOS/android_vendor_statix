@@ -14,5 +14,5 @@ endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
-    ro.statix.version=v2.0-$(BUILD_ID) \
+    ro.statix.version=v2.0-$(BUILD_ID)-$(STATIX_BUILD_TYPE) \
     ro.mod.version=$(BUILD_ID)-$(DATE)-$(STATIX_BASE_VERSION)
