@@ -30,12 +30,12 @@ PRODUCT_PACKAGES += \
     YellowTheme
 
 # Dark/BlackUI Packages
-PRODUCT_PACKAGES += \
-    GBoardDarkTheme \
-    SettingsBlackTheme \
-    SettingsDarkTheme \
-    SystemBlackTheme \
-    SystemDarkTheme \
-    SystemSettingsIconTint \
-	SysuiQsBlackTheme \
-    SysuiQsDarkTheme
+#PRODUCT_PACKAGES += \
+#    GBoardDarkTheme \
+#    SettingsBlackTheme \
+#    SettingsDarkTheme \
+#    SystemBlackTheme \
+#    SystemDarkTheme \
+#    SystemSettingsIconTint \
+#	SysuiQsBlackTheme \
+#    SysuiQsDarkTheme
