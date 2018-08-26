@@ -1,2 +1,4 @@
+add_lunch_combo statix_arm64-userdebug
+add_lunch_combo statix_arm64-user
 add_lunch_combo statix_angler-userdebug
 add_lunch_combo statix_angler-user
