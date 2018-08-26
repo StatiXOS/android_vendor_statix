@@ -1,4 +1,4 @@
-aosp_devices=('angler' 'shamu')
+aosp_devices=('angler' 'shamu' 'arm64')
 caf_devices=('mata')
 
 function lunch_devices() {
