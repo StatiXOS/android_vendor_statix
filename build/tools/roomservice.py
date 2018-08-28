@@ -226,7 +226,7 @@ def fetch_dependencies(repo_path):
 
     if len(syncable_repos) > 0:
         print 'Syncing dependencies'
-        os.system('repo sync %s' % ' '.join(syncable_repos))
+        os.system('repo sync --force-sync %s' % ' '.join(syncable_repos))
 
 if depsonly:
     repo_path = get_from_manifest(device)
@@ -249,7 +249,7 @@ else:
             add_to_manifest([{'repository':repo_name,'target_path':repo_path,'branch':'9'}])
 
             print "Syncing repository to retrieve project."
-            os.system('repo sync %s' % repo_path)
+            os.system('repo sync --force-sync %s' % repo_path)
             print "Repository synced!"
 
             fetch_dependencies(repo_path)
