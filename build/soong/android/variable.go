@@ -3,11 +3,9 @@ type Product_variables struct {
 	Needs_text_relocations struct {
 		Cppflags []string
 	}
-
 	Uses_qcom_bsp_legacy struct {
 		Cppflags []string
 	}
-
 	Should_wait_for_qsee struct {
 		Cflags []string
 	}
@@ -19,44 +17,38 @@ type Product_variables struct {
 		Header_libs []string
 		Shared_libs []string
 	}
-
 	Supports_hw_fde_perf struct {
 		Cflags []string
 	}
-
 	Target_uses_eigen struct {
 		Shared_libs []string
 		Required []string
 	}
-
 	Target_init_vendor_lib struct {
 		Whole_static_libs []string
 	}
-
 	Target_uses_qml struct {
 		Cflags []string
 		Shared_libs []string
 		Header_libs []string
 		Required []string
 	}
-
 	Uses_generic_camera_parameter_library struct {
 		Srcs []string
 	}
-
 	Uses_qti_camera_device struct {
 		Cppflags []string
 		Shared_libs []string
 	}
-
 	Additional_gralloc_10_usage_bits struct {
 		Cppflags []string
 	}
-
 	Bootloader_message_offset struct {
 		Cflags []string
 	}
-
+	Target_process_sdk_version_override struct {
+		Cppflags []string
+	}
 	Target_shim_libs struct {
 		Cppflags []string
 	}
@@ -110,6 +102,7 @@ type ProductVariables struct {
 	QTIDisplayPath							*string `json:",omitempty"`
 	QTIMediaPath							*string `json:",omitempty"`
 	Specific_camera_parameter_library		*string `json:",omitempty"`
+	Target_process_sdk_version_override		*string `json:",omitempty"`
 	Target_shim_libs						*string `json:",omitempty"`
 	Uses_qcom_um_family						*bool `json:",omitempty"`
 	Uses_qcom_um_3_18_family				*bool `json:",omitempty"`
@@ -117,5 +110,5 @@ type ProductVariables struct {
 	Uses_qcom_um_4_9_family					*bool `json:",omitempty"`
 	Uses_qcom_um_4_14_family				*bool `json:",omitempty"`
 	Has_legacy_camera_hal1					*bool `json:",omitempty"`
-	Supports_extended_compress_format  *bool `json:",omitempty"`
+	Supports_extended_compress_format		*bool `json:",omitempty"`
 }
