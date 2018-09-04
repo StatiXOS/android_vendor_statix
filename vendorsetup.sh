@@ -1,12 +1,12 @@
-aosp_devices=('dragon' 'marlin' 'shamu' 'taimen')
-caf_devices=('cheeseburger' 'dumpling' 'nash' 'oneplus3' 'potter' 'tenderloin')
+aosp_devices=('angler' 'shamu')
+caf_devices=('mata')
 
 function lunch_devices() {
-    add_lunch_combo du_${device}-user
-    add_lunch_combo du_${device}-userdebug
+    add_lunch_combo statix_${device}-user
+    add_lunch_combo statix_${device}-userdebug
 }
 
-if [[ $( grep -i "caf" manifest/README.md) ]]; then
+if [[ $( grep -i "caf" .repo/manifests/include.xml) ]]; then
     for device in ${caf_devices[@]}; do
         lunch_devices
     done
