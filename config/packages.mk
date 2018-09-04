@@ -22,15 +22,15 @@ PRODUCT_PACKAGES += \
     YellowTheme
 
 # Dark/BlackUI Packages
-#PRODUCT_PACKAGES += \
-#    GBoardDarkTheme \
+PRODUCT_PACKAGES += \
+    GBoardDarkTheme \
+    SettingsDarkTheme \
+    SystemDarkTheme \
+    SysuiQsDarkTheme
 #    SettingsBlackTheme \
-#   SettingsDarkTheme \
 #    SystemBlackTheme \
-#    SystemDarkTheme \
 #    SystemSettingsIconTint \
-#	SysuiQsBlackTheme \
-#    SysuiQsDarkTheme
+#    SysuiQsBlackTheme \
 
 # Include librsjni explicitly to workaround GMS issue
 PRODUCT_PACKAGES += \
