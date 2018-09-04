@@ -40,12 +40,7 @@ if depsonly is not None:
 
 repositories = []
 
-# repo check
-branch_check = r'external/json-c'
-if os.path.exists(branch_check):
-    statix_branch = "10-caf";
-else:
-    statix_branch = "10";
+statix_branch = "10"
 
 page = 1
 while not depsonly:
