@@ -26,6 +26,9 @@ WORKING_DIR=$( cd $( dirname $( readlink -f "${BASH_SOURCE[0]}" ) )/../../.. && 
 # The tag you want to merge in goes here
 BRANCH=android-${1}
 
+# Manifest branch
+DU_MANIFEST=p9x_default.xml
+
 # Google source url
 REPO=https://android.googlesource.com/platform/
 
@@ -36,8 +39,8 @@ upstream=()
 failed=()
 
 # This is the array of repos to blacklist and not merge
-aosp_blacklist=('prebuilt' 'packages/apps/DeskClock' 'prebuilts/build-tools')
-caf_blacklist=('prebuilt' 'packages/apps/DeskClock' 'prebuilts/build-tools' 'hardware/qcom/*' 'external/libnfc-nxp' 'external/nano' 'external/tinycompress')
+aosp_blacklist=()
+caf_blacklist=('hardware/qcom/*')
 
 # Colors
 COLOR_RED='\033[0;31m'
@@ -69,8 +72,8 @@ function get_repos() {
   for i in ${repos[@]}
   do
     if grep -q "$i" /tmp/rebase.tmp; then # If Google has it and
-      if grep -q "$i" $WORKING_DIR/manifest/o8x_default.xml; then # If we have it in our manifest and
-        if grep "$i" $WORKING_DIR/manifest/o8x_default.xml | grep -q "remote="; then # If we track our own copy of it
+      if grep -q "$i" $WORKING_DIR/manifest/$DU_MANIFEST; then # If we have it in our manifest and
+        if grep "$i" $WORKING_DIR/manifest/$DU_MANIFEST | grep -q "remote="; then # If we track our own copy of it
           if ! is_in_blacklist $i; then # If it's not in our blacklist
             upstream+=("$i") # Then we need to update it
           else
