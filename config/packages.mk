@@ -33,11 +33,11 @@ PRODUCT_PACKAGES += \
     GBoardDarkTheme \
     SettingsDarkTheme \
     SystemDarkTheme \
-    SysuiQsDarkTheme
-#    SettingsBlackTheme \
-#    SystemBlackTheme \
-#    SystemSettingsIconTint \
-#    SysuiQsBlackTheme \
+    SysuiQsDarkTheme \
+    SettingsBlackTheme \
+    SystemBlackTheme \
+    SystemSettingsIconTint \
+    SysuiQsBlackTheme \
 
 # Include librsjni explicitly to workaround GMS issue
 PRODUCT_PACKAGES += \
