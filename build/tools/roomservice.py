@@ -23,6 +23,7 @@ import sys
 import urllib2
 import json
 import re
+import subprocess
 from xml.etree import ElementTree
 from urllib2 import urlopen, Request
 
@@ -49,6 +50,12 @@ if os.path.exists(branch_check):
     statix_branch = "9-caf";
 else:
     statix_branch = "9";
+
+# gapps
+repo_check = r'vendor/pixelgapps'
+gapps_location = 'vendor/pixelgapps'
+gapps_git = 'https://gitlab.com/StatiXOS/android_vendor_pixelgapps'
+gapps_branch = '9'
 
 page = 1
 while not depsonly:
@@ -208,6 +215,52 @@ def add_to_manifest(repositories):
     f.write(raw_xml)
     f.close()
 
+def git(*args):
+    return subprocess.check_call(['git'] + list(args))
+
+def add_gitlab_to_manifest(repositories):
+    try:
+        lm = ElementTree.parse(".repo/local_manifests/include.xml")
+        lm = lm.getroot()
+    except:
+        lm = ElementTree.Element("manifest")
+
+    for repository in repositories:
+        repo_name = repository['repository']
+        repo_target = repository['target_path']
+        existing_project = exists_in_tree_device(lm, repo_name)
+        if existing_project != None:
+            if existing_project.attrib['revision'] == repository['branch']:
+                print 'Nothing to see here'
+            else:
+                existing_project.set('revision', repository['branch'])
+            continue
+
+        project = ElementTree.Element("project", attrib = { "path": repo_target,
+            "remote": "gitlab", "name": repo_name, "revision": statix_branch })
+
+        if 'branch' in repository:
+            project.set('revision', repository['branch'])
+
+        lm.append(project)
+
+    indent(lm, 0)
+    raw_xml = ElementTree.tostring(lm)
+    raw_xml = '<?xml version="1.0" encoding="UTF-8"?>\n' + raw_xml
+
+    f = open('.repo/local_manifests/include.xml', 'w')
+    f.write(raw_xml)
+    f.close()
+
+def fetch_pixel_gapps(repo_path):
+    gapps_path = repo_path + '/statix_' + device + '.mk'
+    with open(gapps_path, 'r') as f:
+        for line in f.readlines():
+            if 'pixelgapps' in line:
+                print 'Fetching project ' + gapps_git.replace("https://gitlab.com/", "")
+                git("clone", gapps_git, "-b", gapps_branch, gapps_location)
+                add_gitlab_to_manifest([{'repository':gapps_git.replace("https://gitlab.com/", ""),'target_path':gapps_location,'branch':gapps_branch}])
+
 def fetch_dependencies(repo_path, fallback_branch = None):
     print('Looking for dependencies in %s' % repo_path)
     dependencies_path = repo_path + '/statix.dependencies'
@@ -237,6 +290,8 @@ def fetch_dependencies(repo_path, fallback_branch = None):
 
     if len(syncable_repos) > 0:
         print 'Syncing dependencies'
+        if not os.path.exists(repo_check):
+            fetch_pixel_gapps(repo_path)
         os.system('repo sync --force-sync %s' % ' '.join(syncable_repos))
 
     for deprepo in verify_repos:
