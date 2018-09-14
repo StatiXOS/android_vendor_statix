@@ -122,7 +122,7 @@ def fetch_query(remote_url, query):
 
 if __name__ == '__main__':
     # Default to Gerrit
-    default_gerrit = 'http://gerrit.dirtyunicorns.com'
+    default_gerrit = 'http://review.statixos.com'
 
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter, description=textwrap.dedent('''\
         repopick.py is a utility to simplify the process of cherry picking
@@ -216,7 +216,7 @@ if __name__ == '__main__':
     #{project: {path, revision}}
 
     for project in projects:
-        name = project.get('name').replace("DirtyUnicorns/", "")
+        name = project.get('name').replace("StatiXOS/", "")
         path = project.get('path')
         revision = project.get('revision')
         if revision is None:
