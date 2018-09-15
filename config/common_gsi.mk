@@ -13,7 +13,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Fix Google dialer
 PRODUCT_COPY_FILES += \
-    vendor/statix/prebuilt/etc/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
+    vendor/statix/prebuilt/common/etc/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
 
 # Overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/statix/overlay/common
