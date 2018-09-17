@@ -14,6 +14,7 @@
 
 LOCAL_PATH:=$(call my-dir)
 
+ifneq ($(AB_OTA_UPDATER),true)
 include $(CLEAR_VARS)
 LOCAL_MODULE := Turbo
 LOCAL_SRC_FILES := $(LOCAL_MODULE).apk
@@ -30,3 +31,5 @@ LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/permissions
 LOCAL_SRC_FILES := $(LOCAL_MODULE)
 include $(BUILD_PREBUILT)
+
+endif
