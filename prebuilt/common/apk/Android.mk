@@ -14,6 +14,7 @@
 
 LOCAL_PATH:=$(call my-dir)
 
+ifneq ($(AB_OTA_UPDATER),true)
 include $(CLEAR_VARS)
 LOCAL_MODULE := Turbo
 LOCAL_SRC_FILES := $(LOCAL_MODULE).apk
@@ -23,6 +24,7 @@ LOCAL_CERTIFICATE := platform
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
 include $(BUILD_PREBUILT)
+endif
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := privapp-permissions-turbo.xml
