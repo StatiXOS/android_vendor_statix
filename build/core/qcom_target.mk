@@ -41,7 +41,7 @@ $(call set-device-specific-path,POWER,power,hardware/qcom/power)
 
 $(call ril-set-path-variant,ril)
 $(call wlan-set-path-variant,wlan)
-$(call bt-vendor-set-path-variant,bt)
+$(call bt-vendor-set-path-variant,bt-caf)
 
 else
 
