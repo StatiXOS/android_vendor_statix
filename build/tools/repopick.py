@@ -256,7 +256,7 @@ if __name__ == '__main__':
     reviews = []
     change_numbers = []
     if args.topic:
-        reviews = fetch_query(args.gerrit, 'topic:{0}'.format(args.topic))
+        reviews = fetch_query(args.gerrit, 'status:open+topic:{0}'.format(args.topic))
         change_numbers = sorted([str(r['number']) for r in reviews], key=int)
     if args.query:
         reviews = fetch_query(args.gerrit, args.query)
