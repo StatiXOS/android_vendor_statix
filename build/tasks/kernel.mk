@@ -80,12 +80,6 @@ ifneq ($(TARGET_PREBUILT_KERNEL),)
     $(error BOARD_KERNEL_IMAGE_NAME not defined.)
     endif
 endif
-ifneq ($(TARGET_USES_UNCOMPRESSED_KERNEL),)
-$(error TARGET_USES_UNCOMPRESSED_KERNEL is deprecated.)
-endif
-ifneq ($(TARGET_KERNEL_APPEND_DTB),)
-$(error TARGET_KERNEL_APPEND_DTB is deprecated.)
-endif
 TARGET_PREBUILT_INT_KERNEL := $(KERNEL_OUT)/arch/$(KERNEL_ARCH)/boot/$(BOARD_KERNEL_IMAGE_NAME)
 
 ifneq ($(TARGET_KERNEL_ADDITIONAL_CONFIG),)
