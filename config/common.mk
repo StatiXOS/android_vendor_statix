@@ -60,3 +60,9 @@ include vendor/statix/config/statix-bootanimation.mk
 
 # Overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/statix/overlay/common
+
+# Few Packages from Pixel
+PRODUCT_PACKAGES += \
+    SoundPickerPrebuilt \
+    SettingsIntelligenceGooglePrebuilt \
+    MarkupGoogle
