@@ -19,7 +19,14 @@ PRODUCT_PACKAGES += \
     StockBaseTheme \
     StockFixedBaseTheme \
     StockTheme \
-    YellowTheme
+    YellowTheme \
+    UserOne \
+    UserTwo \
+    UserThree \
+    UserFour \
+    UserFive \
+    UserSix \
+    UserSeven
 
 # Dark/BlackUI Packages
 PRODUCT_PACKAGES += \
