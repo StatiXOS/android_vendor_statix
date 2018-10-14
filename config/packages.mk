@@ -1,25 +1,21 @@
 # Accent packages
 PRODUCT_PACKAGES += \
-    AmberTheme \
-    BlueTheme \
-    CyanTheme \
-    DeepOrangeTheme \
-    DeepPurpleTheme \
-    GreenTheme \
-    IndigoTheme \
-    LightBlueTheme \
-    LightGreenTheme \
-    LimeTheme \
-    OrangeTheme \
-    PinkTheme \
-    PixelBaseTheme \
-    PixelTheme \
-    PurpleTheme \
-    RedTheme \
-    StockBaseTheme \
-    StockFixedBaseTheme \
-    StockTheme \
-    YellowTheme \
+    Amber \
+    Blue \
+    Cyan \
+    DeepOrange \
+    DeepPurple \
+    Green \
+    Indigo \
+    LightBlue \
+    LightGreen \
+    Lime \
+    Orange \
+    Pink \
+    Purple \
+    Red \
+    Teal \
+    Yellow \
     UserOne \
     UserTwo \
     UserThree \
