@@ -18,7 +18,7 @@ PRODUCT_PACKAGES += \
     RedTheme \
     StockBaseTheme \
     StockFixedBaseTheme \
-    StockTheme \
+    TealTheme \
     YellowTheme \
     UserOne \
     UserTwo \
