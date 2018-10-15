@@ -19,7 +19,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent \
     ro.com.android.dateformat=MM-dd-yyyy \
     persist.sys.disable_rescue=true \
-    ro.boot.vendor.overlay.theme=com.potato.overlay.accent.amber \
+    ro.boot.vendor.overlay.theme=com.accents.red;com.potato.overlay.base.stockfixed \
     ro.build.selinux=1
 
 # LatinIME gesture typing
