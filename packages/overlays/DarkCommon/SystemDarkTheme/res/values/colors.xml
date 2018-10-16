@@ -37,4 +37,8 @@
     <!-- Toast text and bg colors -->
     <color name="toast_bg_color">@*android:color/background_material_dark</color>
     <color name="toast_text_color">@android:color/white</color>
+
+    <!-- App permission tint -->
+    <color name="app_permission_icon_tint">@*android:color/accent_device_default_dark</color>
+    
 </resources>
