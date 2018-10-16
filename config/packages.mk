@@ -39,6 +39,14 @@ PRODUCT_PACKAGES += \
     SystemSettingsIconTint \
     SysuiQsBlackTheme \
 
+# QS Theme Packages
+PRODUCT_PACKAGES += \
+    FramedQS \
+    SplitQS \
+    SuperBubbleQS \
+    TeardropQS \
+    DefaultQS \
+
 # Include librsjni explicitly to workaround GMS issue
 PRODUCT_PACKAGES += \
     librsjni
