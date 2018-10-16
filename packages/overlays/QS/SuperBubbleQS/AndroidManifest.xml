@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.statix.overlay.qs.superbubble"
+        android:versionCode="1"
+        android:versionName="1.0">
+        <overlay android:targetPackage="com.android.systemui"
+		android:priority="96"
+		android:isStatic="false" />
+</manifest>
