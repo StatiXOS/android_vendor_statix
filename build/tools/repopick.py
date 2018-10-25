@@ -31,16 +31,19 @@ import textwrap
 from xml.etree import ElementTree
 
 try:
-    # For python3
-    import urllib.error
-    import urllib.request
+    import requests
 except ImportError:
-    # For python2
-    import imp
-    import urllib2
-    urllib = imp.new_module('urllib')
-    urllib.error = urllib2
-    urllib.request = urllib2
+    try:
+        # For python3
+        import urllib.error
+        import urllib.request
+    except ImportError:
+        # For python2
+        import imp
+        import urllib2
+        urllib = imp.new_module('urllib')
+        urllib.error = urllib2
+        urllib.request = urllib2
 
 
 # Verifies whether pathA is a subdirectory (or the same) as pathB
@@ -99,11 +102,29 @@ def fetch_query_via_ssh(remote_url, query):
 
 
 def fetch_query_via_http(remote_url, query):
-
-    """Given a query, fetch the change numbers via http"""
-    url = '{0}/changes/?q={1}&o=CURRENT_REVISION&o=ALL_REVISIONS'.format(remote_url, query)
-    data = urllib.request.urlopen(url).read().decode('utf-8')
-    reviews = json.loads(data[5:])
+    if "requests" in sys.modules:
+        auth = None
+        if os.path.isfile(os.getenv("HOME") + "/.gerritrc"):
+            f = open(os.getenv("HOME") + "/.gerritrc", "r")
+            for line in f:
+                parts = line.rstrip().split("|")
+                if parts[0] in remote_url:
+                    auth = requests.auth.HTTPBasicAuth(username=parts[1], password=parts[2])
+        statusCode = '-1'
+        if auth:
+            url = '{0}/a/changes/?q={1}&o=CURRENT_REVISION&o=ALL_REVISIONS'.format(remote_url, query)
+            data = requests.get(url, auth=auth)
+            statusCode = str(data.status_code)
+        if statusCode != '200':
+            #They didn't get good authorization or data, Let's try the old way
+            url = '{0}/changes/?q={1}&o=CURRENT_REVISION&o=ALL_REVISIONS'.format(remote_url, query)
+            data = requests.get(url)
+        reviews = json.loads(data.text[5:])
+    else:
+        """Given a query, fetch the change numbers via http"""
+        url = '{0}/changes/?q={1}&o=CURRENT_REVISION&o=ALL_REVISIONS'.format(remote_url, query)
+        data = urllib.request.urlopen(url).read().decode('utf-8')
+        reviews = json.loads(data[5:])
 
     for review in reviews:
         review['number'] = review.pop('_number')
@@ -122,7 +143,7 @@ def fetch_query(remote_url, query):
 
 if __name__ == '__main__':
     # Default to Gerrit
-    default_gerrit = 'http://review.statixos.me'
+    default_gerrit = 'https://review.statixos.me'
 
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter, description=textwrap.dedent('''\
         repopick.py is a utility to simplify the process of cherry picking
@@ -235,11 +256,11 @@ if __name__ == '__main__':
     reviews = []
     change_numbers = []
     if args.topic:
-        reviews = fetch_query(args.gerrit, 'topic:{0}'.format(args.topic))
-        change_numbers = sorted([str(r['number']) for r in reviews])
+        reviews = fetch_query(args.gerrit, 'status:open+topic:{0}'.format(args.topic))
+        change_numbers = sorted([str(r['number']) for r in reviews], key=int)
     if args.query:
         reviews = fetch_query(args.gerrit, args.query)
-        change_numbers = sorted([str(r['number']) for r in reviews])
+        change_numbers = sorted([str(r['number']) for r in reviews], key=int)
     if args.change_number:
         for c in args.change_number:
             if '-' in c:
@@ -293,7 +314,7 @@ if __name__ == '__main__':
     for item in mergables:
         args.quiet or print('Applying change number {0}...'.format(item['id']))
         # Check if change is open and exit if it's not, unless -f is specified
-        if (item['status'] != 'OPEN' and item['status'] != 'NEW') and not args.query:
+        if (item['status'] != 'OPEN' and item['status'] != 'NEW' and item['status'] != 'DRAFT') and not args.query:
             if args.force:
                 print('!! Force-picking a closed change !!\n')
             else:
@@ -346,7 +367,7 @@ if __name__ == '__main__':
 
         # Print out some useful info
         if not args.quiet:
-            print('--> Subject:       "{0}"'.format(item['subject']))
+            print('--> Subject:       "{0}"'.format(item['subject'].encode('utf-8')))
             print('--> Project path:  {0}'.format(project_path))
             print('--> Change number: {0} (Patch Set {0})'.format(item['id']))
 
