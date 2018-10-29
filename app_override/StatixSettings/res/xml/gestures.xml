@@ -46,6 +46,12 @@
         settings:controller="com.statix.android.settings.gestures.SwipeToScreenshotPreferenceController" />
 
     <Preference
+        android:key="power_button_torch_summary"
+        android:title="@string/power_button_torch_title"
+        android:fragment="com.statix.android.settings.gestures.PowerButtonTorchSettings"
+        settings:controller="com.statix.android.settings.gestures.PowerButtonTorchGesturePreferenceController" />
+
+    <Preference
         android:key="gesture_double_tap_power_input_summary"
         android:title="@string/double_tap_power_for_camera_title"
         android:fragment="com.android.settings.gestures.DoubleTapPowerSettings"
@@ -104,4 +110,5 @@
         android:title="@string/gesture_prevent_ringing_screen_title"
         android:fragment="com.android.settings.gestures.PreventRingingGestureSettings"
         settings:controller="com.android.settings.gestures.PreventRingingParentPreferenceController" />
+
 </PreferenceScreen>
