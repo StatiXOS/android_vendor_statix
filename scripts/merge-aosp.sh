@@ -27,7 +27,7 @@ WORKING_DIR=$( cd $( dirname $( readlink -f "${BASH_SOURCE[0]}" ) )/../../.. && 
 BRANCH=android-${1}
 
 # Manifest branch
-DU_MANIFEST=p9x_default.xml
+STX_MANIFEST=default.xml
 
 # Google source url
 REPO=https://android.googlesource.com/platform/
@@ -72,8 +72,8 @@ function get_repos() {
   for i in ${repos[@]}
   do
     if grep -q "$i" /tmp/rebase.tmp; then # If Google has it and
-      if grep -q "$i" $WORKING_DIR/manifest/$DU_MANIFEST; then # If we have it in our manifest and
-        if grep "$i" $WORKING_DIR/manifest/$DU_MANIFEST | grep -q "remote="; then # If we track our own copy of it
+      if grep -q "$i" $WORKING_DIR/manifest/$STX_MANIFEST; then # If we have it in our manifest and
+        if grep "$i" $WORKING_DIR/manifest/$STX_MANIFEST | grep -q "remote="; then # If we track our own copy of it
           if ! is_in_blacklist $i; then # If it's not in our blacklist
             upstream+=("$i") # Then we need to update it
           else
