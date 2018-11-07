@@ -45,7 +45,8 @@ PRODUCT_PACKAGES += \
     SplitQS \
     SuperBubbleQS \
     TeardropQS \
-    DefaultQS \
+    HexagonQS \
+
 
 # Include librsjni explicitly to workaround GMS issue
 PRODUCT_PACKAGES += \
