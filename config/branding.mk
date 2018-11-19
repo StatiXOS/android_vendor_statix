@@ -20,5 +20,5 @@ STATIX_BUILD := true
 
 PRODUCT_PROPERTY_OVERRIDES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
-    ro.statix.version=v2.0-$(BUILD_ID)-$(STATIX_BUILD_TYPE)-$(DATE)-$(TIME) \
+    ro.statix.version=v2.0-$(STATIX_BUILD_TYPE)-$(DATE)-$(TIME) \
     ro.mod.version=$(BUILD_ID)-$(DATE)-$(STATIX_BASE_VERSION)
