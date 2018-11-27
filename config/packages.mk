@@ -59,7 +59,15 @@ PRODUCT_PACKAGES += \
     turbo.xml \
     privapp-permissions-turbo.xml
 
+# StatiX Packages
+PRODUCT_PACKAGES += \
+    WeatherProvider
 
 # Fonts packages
 PRODUCT_PACKAGES += \
     statix-fonts
+
+# WeatherProvider
+PRODUCT_COPY_FILES += \
+    vendor/statix/prebuilt/common/etc/permissions/com.android.providers.weather.xml:system/etc/permissions/com.android.providers.weather.xml \
+    vendor/statix/prebuilt/common/etc/default-permissions/com.android.providers.weather.xml:system/etc/default-permissions/com.android.providers.weather.xml
