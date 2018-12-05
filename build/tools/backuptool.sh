@@ -4,7 +4,7 @@
 #
 
 export C=/tmp/backupdir
-export S=/system
+export S=$2
 
 # Scripts in /system/addon.d expect to find backuptool.functions in /tmp
 cp -f /tmp/install/bin/backuptool.functions /tmp
@@ -12,13 +12,13 @@ cp -f /tmp/install/bin/backuptool.functions /tmp
 # Preserve /system/addon.d in /tmp/addon.d
 preserve_addon_d() {
   mkdir -p /tmp/addon.d/
-  cp -a /system/addon.d/* /tmp/addon.d/
+  cp -a $S/addon.d/* /tmp/addon.d/
   chmod 755 /tmp/addon.d/*.sh
 }
 
 # Restore /system/addon.d in /tmp/addon.d
 restore_addon_d() {
-  cp -a /tmp/addon.d/* /system/addon.d/
+  cp -a /tmp/addon.d/* $S/addon.d/
   rm -rf /tmp/addon.d/
 }
 
