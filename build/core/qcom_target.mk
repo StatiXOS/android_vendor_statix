@@ -19,6 +19,7 @@ $(call set-device-specific-path,AUDIO,audio,hardware/qcom/audio-caf/$(QCOM_HARDW
 $(call set-device-specific-path,DISPLAY,display,hardware/qcom/display-caf/$(QCOM_HARDWARE_VARIANT))
 $(call set-device-specific-path,MEDIA,media,hardware/qcom/media-caf/$(QCOM_HARDWARE_VARIANT))
 
+$(call set-device-specific-path,DATA_IPA_CFG_MGR,data-ipa-cfg-mgr,hardware/qcom/data/ipacfg-mgr)
 $(call set-device-specific-path,DATASERVICES,dataservices,vendor/qcom/opensource/dataservices)
 
 $(call set-device-specific-path,WLAN,wlan,hardware/qcom/wlan)
