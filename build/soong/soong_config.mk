@@ -8,7 +8,6 @@ $(call add_json_bool,	Uses_media_extensions,						$(filter true,$(TARGET_USES_ME
 $(call add_json_bool,	Uses_generic_camera_parameter_library,		$(if $(TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY),,true))
 $(call add_json_bool,	Needs_text_relocations,						$(filter true,$(TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS)))
 $(call add_json_bool,	Mtk_hardware,								$(filter true,$(BOARD_USES_MTK_HARDWARE)))
-$(call add_json_bool,	BoardUsesQTIHardware,						$(filter true,$(BOARD_USES_QTI_HARDWARE)))
 $(call add_json_bool,	Cant_reallocate_omx_buffers,				$(filter true,$(if $(filter omap4,$(TARGET_BOARD_PLATFORM)),true,false)))
 $(call add_json_bool,	Qcom_bsp_legacy,							$(filter true,$(TARGET_USES_QCOM_BSP_LEGACY)))
 $(call add_json_bool,	Qti_flac_decoder,							$(filter true,$(AUDIO_FEATURE_ENABLED_EXTN_FLAC_DECODER)))
