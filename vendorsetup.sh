@@ -1,5 +1,5 @@
-aosp_devices=('angler' 'shamu' 'arm64')
-caf_devices=('mata' 'beryllium')
+aosp_devices=('angler' 'arm64' 'shamu')
+caf_devices=('beryllium' 'mata')
 
 function lunch_devices() {
     add_lunch_combo statix_${device}-user
