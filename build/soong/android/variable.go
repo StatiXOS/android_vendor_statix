@@ -27,7 +27,7 @@ type Product_variables struct {
 		Required []string
 	}
 
-	Target_uses_qsml struct {
+	Target_uses_qml struct {
 		Cflags []string
 		Shared_libs []string
 		Header_libs []string
@@ -54,7 +54,7 @@ type ProductVariables struct {
 	Supports_hw_fde								*bool `json:",omitempty"`
 	Supports_hw_fde_perf						*bool `json:",omitempty"`
 	Target_uses_eigen							*bool `json:",omitempty"`
-	Target_uses_qsml							*bool `json:",omitempty"`
+	Target_uses_qml							*bool `json:",omitempty"`
 	Uses_generic_camera_parameter_library		*bool `json:",omitempty"`
 
 	Additional_gralloc_10_usage_bits			*string `json:",omitempty"`
