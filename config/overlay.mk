@@ -46,3 +46,4 @@ PRODUCT_PACKAGES += \
     SuperBubbleQS \
     TeardropQS \
     HexagonQS \
+    CookieQS \
