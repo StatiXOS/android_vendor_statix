@@ -46,7 +46,7 @@ PRODUCT_PACKAGES += \
     SuperBubbleQS \
     TeardropQS \
     HexagonQS \
-
+    CookieQS \
 
 # Include librsjni explicitly to workaround GMS issue
 PRODUCT_PACKAGES += \
