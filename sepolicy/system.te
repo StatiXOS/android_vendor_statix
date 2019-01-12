@@ -1,2 +1,0 @@
-# allow adb related properties to be set
-allow system_server adbtcp_prop:property_service set;
