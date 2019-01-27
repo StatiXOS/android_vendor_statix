@@ -11,7 +11,8 @@ PRODUCT_PACKAGES += \
 
 # StatiX Packages
 PRODUCT_PACKAGES += \
-    WeatherProvider
+    WeatherProvider \
+    CustomDoze
 
 # Fonts packages
 PRODUCT_PACKAGES += \
