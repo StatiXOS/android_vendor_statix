@@ -4,7 +4,8 @@ PRODUCT_PACKAGES += \
 
 # StatiX Packages
 PRODUCT_PACKAGES += \
-    WeatherProvider
+    WeatherProvider \
+    CustomDoze
 
 # WeatherProvider
 PRODUCT_COPY_FILES += \
