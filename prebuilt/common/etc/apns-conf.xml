@@ -8562,6 +8562,20 @@
       max_conns_time="300"
   />
 
+  <apn carrier="Straight Talk Verizon"
+      mcc="311"
+      mnc="480"
+      apn="TRACFONE.VZWENTP"
+      user=""
+      password=""
+      proxy=""
+      port=""
+      mmsc="http://mms.vtext.com/servlets/mms"
+      type="default,mms,supl"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6"
+  />
+
   <apn carrier=" ALU Test-SIM Internet"
       mcc="310"
       mnc="028"
