@@ -36,7 +36,7 @@ PRODUCT_COPY_FILES += \
 
 # Statix-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/statix/prebuilt/etc/init.statix.rc:system/etc/init/init.statix.rc
+    vendor/statix/prebuilt/common/etc/init.statix.rc:system/etc/init/init.statix.rc
 
 # Build ID
 PRODUCT_BUILD_PROP_OVERRIDES += \
