@@ -34,12 +34,8 @@ PRODUCT_PACKAGES += \
     SettingsDarkTheme \
     SystemDarkTheme \
     SysuiQsDarkTheme \
-    SettingsBlackTheme \
-    SystemBlackTheme \
     SystemSettingsIconTint \
-    SysuiQsBlackTheme \
     WellbeingDarkTheme \
-    WellbeingBlackTheme
 
 # QS Theme Packages
 PRODUCT_PACKAGES += \
