@@ -111,7 +111,6 @@ type ProductVariables struct {
 	Uses_qti_camera_device					*bool `json:",omitempty"`
 	Additional_gralloc_10_usage_bits		*string `json:",omitempty"`
 	Bootloader_message_offset				*int `json:",omitempty"`
-	Java_Source_Overlays					*string `json:",omitempty"`
 	QTIAudioPath							*string `json:",omitempty"`
 	QTIDisplayPath							*string `json:",omitempty"`
 	QTIMediaPath							*string `json:",omitempty"`
