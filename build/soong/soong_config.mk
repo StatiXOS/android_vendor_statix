@@ -27,7 +27,6 @@ $(call add_json_str_omitempty,	Target_process_sdk_version_override,$(TARGET_PROC
 
 $(call add_json_val_default,	Bootloader_message_offset,			$(BOOTLOADER_MESSAGE_OFFSET), 0)
 
-$(call add_json_str,	Java_Source_Overlays,						$(JAVA_SOURCE_OVERLAYS))
 $(call add_json_str,	QTIAudioPath,								$(call project-path-for,qcom-audio))
 $(call add_json_str,	QTIDisplayPath,								$(call project-path-for,qcom-display))
 $(call add_json_str,	QTIMediaPath,								$(call project-path-for,qcom-media))
