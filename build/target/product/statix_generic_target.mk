@@ -19,6 +19,9 @@ $(call inherit-product, vendor/statix/config/gsm.mk)
 PRODUCT_COPY_FILES += \
     device/generic/goldfish/data/etc/permissions/privapp-permissions-goldfish.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-goldfish.xml \
 
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.product.property_source_order=odm,vendor,product,system_ext,system
+
 # Allow building otatools
 TARGET_FORCE_OTA_PACKAGE := true
 
