@@ -26,7 +26,8 @@ PRODUCT_PACKAGES += \
     UserFour \
     UserFive \
     UserSix \
-    UserSeven
+    UserSeven \
+    UserEight
 
 # Dark/BlackUI Packages
 PRODUCT_PACKAGES += \
