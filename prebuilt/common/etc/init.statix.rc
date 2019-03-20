@@ -1,5 +1,8 @@
 # StatiXOS Extras
 
+on boot
+    setprop persist.sys.sr_google_avc_enc 1
+
 # adb over network
 on property:adb.network.port=*
     setprop service.adb.tcp.port ${adb.network.port}
