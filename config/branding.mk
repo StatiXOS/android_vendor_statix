@@ -1,6 +1,3 @@
-DATE := $(shell date +%Y%m%d)
-TIME := $(shell date +%H%M)
-
 # Versioning System
 # Use signing keys for only official
 ifeq ($(STATIX_BUILD_TYPE),OFFICIAL)
