@@ -1,6 +1,5 @@
-DATE := $(shell date +%Y%m%d)
-TIME := $(shell date +%H%M)
-
+BUILD_DATE := $(shell date +%Y%m%d)
+BUILD_TIME := $(shell date +%H%M)
 # Versioning System
 # Use signing keys for only official
 ifeq ($(STATIX_BUILD_TYPE),OFFICIAL)
@@ -13,15 +12,15 @@ endif
 
 # Set all versions
 STATIX_BASE_VERSION := v3.0
-STATIX_VERSION := $(TARGET_PRODUCT)-$(DATE)-$(TIME)-10-$(STATIX_BASE_VERSION)-$(STATIX_BUILD_TYPE)
-ROM_FINGERPRINT := StatiXOS/$(PLATFORM_VERSION)/$(STATIX_BUILD_TYPE)/$(DATE)$(TIME)
+STATIX_VERSION := $(TARGET_PRODUCT)-$(BUILD_DATE)-$(BUILD_TIME)-10-$(STATIX_BASE_VERSION)-$(STATIX_BUILD_TYPE)
+ROM_FINGERPRINT := StatiXOS/$(PLATFORM_VERSION)/$(STATIX_BUILD_TYPE)/$(BUILD_DATE)$(BUILD_TIME)
 
 # Declare it's a StatiX build
 STATIX_BUILD := true
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.statix.version=$(STATIX_BASE_VERSION)-$(STATIX_BUILD_TYPE)-$(DATE)-$(TIME) \
-    ro.mod.version=$(BUILD_ID)-$(DATE)-$(STATIX_BASE_VERSION) \
+    ro.statix.version=$(STATIX_BASE_VERSION)-$(STATIX_BUILD_TYPE)-$(BUILD_DATE)-$(BUILD_TIME) \
+    ro.mod.version=$(BUILD_ID)-$(BUILD_DATE)-$(STATIX_BASE_VERSION) \
     ro.statix.fingerprint=$(ROM_FINGERPRINT)
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
