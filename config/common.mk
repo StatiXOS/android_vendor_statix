@@ -28,6 +28,10 @@ PRODUCT_COPY_FILES += \
     vendor/statix/build/tools/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
 endif
 
+# copy privapp permissions
+PRODUCT_COPY_FILES += \
+    vendor/statix/prebuilt/common/etc/permissions/privapp-permissions-statix.xml:system/etc/permissions/privapp-permissions-statix.xml
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/statix/build/tools/backuptool.sh:install/bin/backuptool.sh \
