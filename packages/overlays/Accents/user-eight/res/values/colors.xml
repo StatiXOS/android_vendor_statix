@@ -17,8 +17,8 @@
 
     <!-- Accent -->
     <color name="accent_device_default_700">#FFB39DDB</color>
-    <color name="accent_device_default_light">#FFB39DDB</color>
-    <color name="accent_device_default_dark">#FFB39DDB</color>
+    <color name="accent_device_default_dark">#ffb5a9fc</color>
+    <color name="accent_device_default_light">#ff725aff</color>
 
     <!-- Fastscroller -->
     <color name="fastscroller_text_color">#FF000000</color>
