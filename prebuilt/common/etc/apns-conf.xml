@@ -8501,7 +8501,31 @@
       profile_id="1"
   />
 
-  <!-- bearer 13, 14 -->
+  <!-- bearer 4, 5, 6, 7, 8, 12 -->
+  <apn carrier="Verizon"
+      mcc="310"
+      mnc="004"
+      apn="internet"
+      authtype="3"
+      type="default,mms,supl,fota,cbs"
+      mmsc="http://mms.vtext.com/servlets/mms"
+      protocol="IPV4V6"
+      bearer_bitmask="4|5|6|7|8|12"
+  />
+  <!-- bearer 4, 5, 6, 7, 8, 12 -->
+  <apn carrier="Verizon"
+      mcc="310"
+      mnc="004"
+      apn="internet"
+      authtype="3"
+      type="default,mms,supl,fota,cbs,dun"
+      mmsc="http://mms.vtext.com/servlets/mms"
+      protocol="IPV4V6"
+      bearer_bitmask="4|5|6|7|8|12"
+      profile_id="1"
+  />
+
+  <!-- bearer 13, 14, 18 -->
   <apn carrier="Verizon Internet"
       mcc="310"
       mnc="004"
@@ -8509,14 +8533,14 @@
       type="default,dun"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
-      bearer_bitmask="13|14"
+      bearer_bitmask="13|14|18"
       profile_id="0"
       modem_cognitive="true"
       max_conns="1023"
       max_conns_time="300"
   />
 
-  <!-- bearer 13, 14 -->
+  <!-- bearer 13, 14, 18 -->
   <apn carrier="Verizon FOTA"
       mcc="310"
       mnc="004"
@@ -8524,14 +8548,14 @@
       type="fota"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
-      bearer_bitmask="13|14"
+      bearer_bitmask="13|14|18"
       profile_id="3"
       modem_cognitive="true"
       max_conns="1023"
       max_conns_time="300"
   />
 
-  <!-- bearer 13, 14 -->
+  <!-- bearer 13, 14, 18 -->
   <apn carrier="Verizon IMS"
       mcc="310"
       mnc="004"
@@ -8539,14 +8563,14 @@
       type="ims"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
-      bearer_bitmask="13|14"
+      bearer_bitmask="13|14|18"
       profile_id="2"
       modem_cognitive="true"
       max_conns="1023"
       max_conns_time="300"
   />
 
-  <!-- bearer 13, 14 -->
+  <!-- bearer 13, 14, 18 -->
   <apn carrier="Verizon CBS"
       mcc="310"
       mnc="004"
@@ -8555,7 +8579,7 @@
       mmsc="http://mms.vtext.com/servlets/mms"
       protocol="IPV4V6"
       roaming_protocol="IPV4V6"
-      bearer_bitmask="13|14"
+      bearer_bitmask="13|14|18"
       profile_id="4"
       modem_cognitive="true"
       max_conns="1023"
