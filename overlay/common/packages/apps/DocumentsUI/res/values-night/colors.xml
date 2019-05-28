@@ -16,7 +16,7 @@
 
 <resources>
 
-    <color name="accent">@*android:color/accent_device_default_light</color>
+    <color name="accent">?android:attr/colorAccent</color>
     <color name="primary_dark">#ff1e1f22</color>
     <color name="tool_bar_color">#ff1e1f22</color>
     <color name="window_background">#ff1e1f22</color>

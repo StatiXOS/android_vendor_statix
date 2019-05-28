@@ -16,5 +16,5 @@
 -->
 
 <resources>
-    <color name="iconColor">@*android:color/accent_device_default_light</color>
+    <color name="iconColor">?android:attr/colorAccent</color>
 </resources>
