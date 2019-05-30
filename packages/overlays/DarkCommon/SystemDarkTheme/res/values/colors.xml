@@ -63,7 +63,7 @@
     <color name="power_menu_screenshot">@*android:color/accent_device_default_dark</color>
     <color name="power_menu_airplane_mode">@*android:color/accent_device_default_dark</color>
     <color name="power_menu_airplane_mode_off">@*android:color/accent_device_default_dark</color>
-    <color name="power_menu_flashdark">@*android:color/accent_device_default_dark</color>
+    <color name="power_menu_flashlight">@*android:color/accent_device_default_dark</color>
     <color name="power_menu_settings">@*android:color/accent_device_default_dark</color>
     <color name="power_menu_screenrecord">@*android:color/accent_device_default_dark</color>
     <color name="power_menu_user">@*android:color/accent_device_default_dark</color>
