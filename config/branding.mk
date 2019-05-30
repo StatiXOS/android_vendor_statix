@@ -21,6 +21,6 @@ STATIX_BUILD := true
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
-    ro.statix.version=v3.0-$(STATIX_BUILD_TYPE)-$(DATE)-$(TIME) \
+    ro.statix.version=$(STATIX_BASE_VERSION)-$(STATIX_BUILD_TYPE)-$(DATE)-$(TIME) \
     ro.mod.version=$(BUILD_ID)-$(DATE)-$(STATIX_BASE_VERSION) \
     ro.statix.fingerprint=$(ROM_FINGERPRINT)
