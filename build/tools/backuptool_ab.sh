@@ -5,7 +5,7 @@
 
 export S=/system
 export C=/postinstall/tmp/backupdir
-export V=8.1
+export V=v2.1
 
 export ADDOND_VERSION=2
 
@@ -50,7 +50,7 @@ if [ ! -r /system/build.prop ]; then
     return 0
 fi
 
-if ( ! grep -q "^ro.build.version.release=$V.*" /system/build.prop ); then
+if ( ! grep -q "^ro.statix.version=$V.*" /system/build.prop ); then
   echo "Not backing up files from incompatible version: $V"
   return 0
 fi
