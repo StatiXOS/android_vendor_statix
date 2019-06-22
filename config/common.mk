@@ -1,3 +1,5 @@
+include vendor/statix/build/core/vendor/*.mk
+
 ifeq ($(PRODUCT_USES_QCOM_HARDWARE), true)
 include vendor/statix/build/core/ProductConfigQcom.mk
 
