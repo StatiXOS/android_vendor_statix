@@ -1,5 +1,5 @@
 # Bring in Qualcomm helper macros
-include vendor/statix/build/core/qcom_utils.mk
+include vendor/statix/build/core/utils.mk
 
 A_FAMILY := msm7x27a msm7x30 msm8660 msm8960
 B_FAMILY := msm8226 msm8610 msm8974
