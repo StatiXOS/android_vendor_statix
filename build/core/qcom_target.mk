@@ -1,5 +1,5 @@
 # Bring in Qualcomm helper macros
-include vendor/statix/build/core/qcom_utils.mk
+include vendor/statix/build/core/utils.mk
 
 # Populate the qcom hardware variants in the project pathmap.
 define wlan-set-path-variant
