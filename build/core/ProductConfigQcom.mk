@@ -52,36 +52,22 @@ MSM_VIDC_TARGET_LIST := $(PRODUCT_BOARD_PLATFORM)
 
 ifeq ($(call is-board-platform-in-list, $(A_FAMILY)),true)
     QCOM_HARDWARE_VARIANT := msm8960
-else
-ifeq ($(call is-board-platform-in-list, $(B_FAMILY)),true)
+else ifeq ($(call is-board-platform-in-list, $(B_FAMILY)),true)
     QCOM_HARDWARE_VARIANT := msm8974
-else
-ifeq ($(call is-board-platform-in-list, $(B64_FAMILY)),true)
+else ifeq ($(call is-board-platform-in-list, $(B64_FAMILY)),true)
     QCOM_HARDWARE_VARIANT := msm8994
-else
-ifeq ($(call is-board-platform-in-list, $(BR_FAMILY)),true)
+else ifeq ($(call is-board-platform-in-list, $(BR_FAMILY)),true)
     QCOM_HARDWARE_VARIANT := msm8916
-else
-ifeq ($(call is-board-platform-in-list, $(UM_3_18_FAMILY)),true)
+else ifeq ($(call is-board-platform-in-list, $(UM_3_18_FAMILY)),true)
     QCOM_HARDWARE_VARIANT := msm8996
-else
-ifeq ($(call is-board-platform-in-list, $(UM_4_4_FAMILY)),true)
+else ifeq ($(call is-board-platform-in-list, $(UM_4_4_FAMILY)),true)
     QCOM_HARDWARE_VARIANT := msm8998
-else
-ifeq ($(call is-board-platform-in-list, $(UM_4_9_FAMILY)),true)
+else ifeq ($(call is-board-platform-in-list, $(UM_4_9_FAMILY)),true)
     QCOM_HARDWARE_VARIANT := sdm845
-else
-ifeq ($(call is-board-platform-in-list, $(UM_4_14_FAMILY)),true)
+else ifeq ($(call is-board-platform-in-list, $(UM_4_14_FAMILY)),true)
     QCOM_HARDWARE_VARIANT := sm8150
 else
     QCOM_HARDWARE_VARIANT := $(PRODUCT_BOARD_PLATFORM)
-endif
-endif
-endif
-endif
-endif
-endif
-endif
 endif
 
 # Allow a device to manually override which HALs it wants to use
