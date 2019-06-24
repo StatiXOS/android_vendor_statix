@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # Copyright (C) 2013 Cybojenix <anthonydking@gmail.com>
 # Copyright (C) 2013 The OmniROM Project
@@ -20,11 +20,11 @@
 import os
 import os.path
 import sys
-import urllib2
 import json
 import re
 from xml.etree import ElementTree
-from urllib2 import urlopen, Request
+import urllib.parse
+import urllib.request
 
 product = sys.argv[1];
 
@@ -33,13 +33,10 @@ if len(sys.argv) > 2:
 else:
     depsonly = None
 
-try:
-    device = product[product.index("_") + 1:]
-except:
-    device = product
+device = product[product.index("_") + 1:] or product
 
-if not depsonly:
-    print "Device %s not found. Attempting to retrieve device repository from StatiXOS Github (http://github.com/StatiXOS)." % device
+if depsonly is not None:
+    print("Device %s not found. Attempting to retrieve device repository from StatiXOS Github (http://github.com/StatiXOS)." % device)
 
 repositories = []
 
@@ -52,13 +49,13 @@ else:
 
 page = 1
 while not depsonly:
-    request = Request("https://api.github.com/users/StatiXOS/repos?page=%d" % page)
+    request = urllib.request.Request("https://api.github.com/users/StatiXOS/repos?page=%d" % page)
     api_file = os.getenv("HOME") + '/api_token'
     if (os.path.isfile(api_file)):
         infile = open(api_file, 'r')
         token = infile.readline()
         request.add_header('Authorization', 'token %s' % token.strip())
-    result = json.loads(urllib2.urlopen(request).read())
+    result = json.loads(urllib.request.urlopen(request).read().decode())
     if len(result) == 0:
         break
     for res in result:
@@ -69,13 +66,13 @@ local_manifests = r'.repo/local_manifests'
 if not os.path.exists(local_manifests): os.makedirs(local_manifests)
 
 def exists_in_tree(lm, repository):
-    for child in lm.getchildren():
+    for child in lm.iter("project"):
         if child.attrib['path'].endswith(repository):
             return child
     return None
 
 def exists_in_tree_device(lm, repository):
-    for child in lm.getchildren():
+    for child in lm.iter("project"):
         if child.attrib['name'].endswith(repository):
             return child
     return None
@@ -146,18 +143,22 @@ def add_to_manifest_dependencies(repositories):
         existing_project = exists_in_tree(lm, repo_target)
         if existing_project != None:
             if existing_project.attrib['name'] != repository['repository']:
-                print 'Updating dependency %s' % (repo_name)
+                print('Updating dependency %s' % (repo_name))
                 existing_project.set('name', repository['repository'])
             if existing_project.attrib['revision'] == repository['branch']:
-                print 'StatiXOS/%s already exists' % (repo_name)
+                print('StatiXOS/%s already exists' % (repo_name))
             else:
-                print 'updating branch for %s to %s' % (repo_name, repository['branch'])
+                print('updating branch for %s to %s' % (repo_name, repository['branch']))
                 existing_project.set('revision', repository['branch'])
             continue
 
-        print 'Adding dependency: %s -> %s' % (repo_name, repo_target)
-        project = ElementTree.Element("project", attrib = { "path": repo_target,
-            "remote": "github", "name": repo_name, "revision": statix_branch })
+        print('Adding dependency: %s -> %s' % (repo_name, repo_target))
+        project = ElementTree.Element(
+            "project", 
+             attrib = { "path": repo_target,
+                        "remote": "github",
+                        "name": repo_name,
+                        "revision": statix_branch })
 
         if 'branch' in repository:
             project.set('revision',repository['branch'])
@@ -165,8 +166,8 @@ def add_to_manifest_dependencies(repositories):
         lm.append(project)
 
     indent(lm, 0)
-    raw_xml = ElementTree.tostring(lm)
-    raw_xml = '<?xml version="1.0" encoding="UTF-8"?>\n' + raw_xml
+    raw_xml = "\n".join(('<?xml version="1.0" encoding="UTF-8"?>',
+                         ElementTree.tostring(lm).decode()))
 
     f = open('.repo/local_manifests/electric_manifest.xml', 'w')
     f.write(raw_xml)
@@ -185,13 +186,13 @@ def add_to_manifest(repositories):
         existing_project = exists_in_tree_device(lm, repo_name)
         if existing_project != None:
             if existing_project.attrib['revision'] == repository['branch']:
-                print 'StatiXOS/%s already exists' % (repo_name)
+                print('StatiXOS/%s already exists' % (repo_name))
             else:
-                print 'updating branch for StatiXOS/%s to %s' % (repo_name, repository['branch'])
+                print('updating branch for StatiXOS/%s to %s' % (repo_name, repository['branch']))
                 existing_project.set('revision', repository['branch'])
             continue
 
-        print 'Adding dependency: StatiXOS/%s -> %s' % (repo_name, repo_target)
+        print('Adding dependency: StatiXOS/%s -> %s' % (repo_name, repo_target))
         project = ElementTree.Element("project", attrib = { "path": repo_target,
             "remote": "github", "name": "StatiXOS/%s" % repo_name, "revision": statix_branch })
 
@@ -201,8 +202,8 @@ def add_to_manifest(repositories):
         lm.append(project)
 
     indent(lm, 0)
-    raw_xml = ElementTree.tostring(lm)
-    raw_xml = '<?xml version="1.0" encoding="UTF-8"?>\n' + raw_xml
+    raw_xml = "\n".join(('<?xml version="1.0" encoding="UTF-8"?>',
+                         ElementTree.tostring(lm).decode()))
 
     f = open('.repo/local_manifests/electric_manifest.xml', 'w')
     f.write(raw_xml)
@@ -230,13 +231,13 @@ def fetch_dependencies(repo_path, fallback_branch = None):
         dependencies_file.close()
 
         if len(fetch_list) > 0:
-            print 'Adding dependencies to manifest'
+            print('Adding dependencies to manifest')
             add_to_manifest_dependencies(fetch_list)
     else:
-        print 'Dependencies file not found, bailing out.'
+        print('Dependencies file not found, bailing out.')
 
     if len(syncable_repos) > 0:
-        print 'Syncing dependencies'
+        print('Syncing dependencies')
         os.system('repo sync --force-sync %s' % ' '.join(syncable_repos))
 
     for deprepo in verify_repos:
@@ -247,7 +248,7 @@ if depsonly:
     if repo_path:
         fetch_dependencies(repo_path)
     else:
-        print "Trying dependencies-only mode on a non-existing device tree?"
+        print("Trying dependencies-only mode on a non-existing device tree?")
 
     sys.exit()
 
@@ -255,19 +256,19 @@ else:
     for repository in repositories:
         repo_name = repository['name']
         if repo_name.startswith("android_device_") and repo_name.endswith("_" + device):
-            print "Found repository: %s" % repository['name']
+            print("Found repository: %s" % repository['name'])
             manufacturer = repo_name.replace("android_device_", "").replace("_" + device, "")
 
             repo_path = "device/%s/%s" % (manufacturer, device)
 
             add_to_manifest([{'repository':repo_name,'target_path':repo_path,'branch':statix_branch}])
 
-            print "Syncing repository to retrieve project."
+            print("Syncing repository to retrieve project.")
             os.system('repo sync --force-sync %s' % repo_path)
-            print "Repository synced!"
+            print("Repository synced!")
 
             fetch_dependencies(repo_path)
-            print "Done"
+            print("Done")
             sys.exit()
 
-print "Repository for %s not found in the StatiXOS Github repository list. If this is in error, you may need to manually add it to .repo/local_manifests/electric_manifest.xml" % device
+print("Repository for %s not found in the StatiXOS Github repository list. If this is in error, you may need to manually add it to .repo/local_manifests/electric_manifest.xml") % device
