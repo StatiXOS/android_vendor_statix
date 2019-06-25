@@ -255,12 +255,17 @@ def add_gitlab_to_manifest(repositories):
 
 def fetch_pixel_gapps(repo_path):
     gapps_path = repo_path + '/statix_' + device + '.mk'
-    with open(gapps_path, 'r') as f:
-        for line in f.readlines():
-            if 'pixelgapps' in line:
-                print('Fetching project ' + gapps_git.replace("https://gitlab.com/", ""))
-                git("clone", gapps_git, "-b", gapps_branch, gapps_location)
-                add_gitlab_to_manifest([{'repository':gapps_git.replace("https://gitlab.com/", ""),'target_path':gapps_location,'branch':gapps_branch}])
+
+    try:
+        with open(gapps_path, 'r') as f:
+            for line in f.readlines():
+                if 'pixelgapps' in line:
+                    print('Fetching project ' + gapps_git.replace("https://gitlab.com/", ""))
+                    git("clone", gapps_git, "-b", gapps_branch, gapps_location)
+                    add_gitlab_to_manifest([{'repository':gapps_git.replace("https://gitlab.com/", ""),'target_path':gapps_location,'branch':gapps_branch}])
+
+    except:
+        print("Not fetching PixelGapps!")
 
 def fetch_dependencies(repo_path, fallback_branch = None):
     print('Looking for dependencies in %s' % repo_path)
