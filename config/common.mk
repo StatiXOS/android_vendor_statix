@@ -21,12 +21,12 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.sys.disable_rescue=true \
     ro.build.selinux=1
 
-ifeq ($(AB_OTA_UPDATER),true)
-PRODUCT_COPY_FILES += \
-    vendor/statix/build/tools/backuptool_ab.sh:system/bin/backuptool_ab.sh \
-    vendor/statix/build/tools/backuptool_ab.functions:system/bin/backuptool_ab.functions \
-    vendor/statix/build/tools/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
-endif
+#ifeq ($(AB_OTA_UPDATER),true)
+#PRODUCT_COPY_FILES += \
+#    vendor/statix/build/tools/backuptool_ab.sh:system/bin/backuptool_ab.sh \
+#    vendor/statix/build/tools/backuptool_ab.functions:system/bin/backuptool_ab.functions \
+#    vendor/statix/build/tools/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
+#endif
 
 # Fix Google dialer
 PRODUCT_COPY_FILES += \
@@ -37,10 +37,10 @@ PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/common/etc/permissions/privapp-permissions-statix.xml:system/etc/permissions/privapp-permissions-statix.xml
 
 # Backup Tool
-PRODUCT_COPY_FILES += \
-    vendor/statix/build/tools/backuptool.sh:install/bin/backuptool.sh \
-    vendor/statix/build/tools/backuptool.functions:install/bin/backuptool.functions \
-    vendor/statix/build/tools/50-statix.sh:system/addon.d/50-statix.sh
+#PRODUCT_COPY_FILES += \
+#    vendor/statix/build/tools/backuptool.sh:install/bin/backuptool.sh \
+#    vendor/statix/build/tools/backuptool.functions:install/bin/backuptool.functions \
+#    vendor/statix/build/tools/50-statix.sh:system/addon.d/50-statix.sh
 
 # Statix-specific init file
 PRODUCT_COPY_FILES += \
