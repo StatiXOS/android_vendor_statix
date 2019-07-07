@@ -21,17 +21,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.sys.disable_rescue=true \
     ro.build.selinux=1
 
-# LatinIME gesture typing
-ifneq ($(filter shamu,$(TARGET_PRODUCT)),)
-PRODUCT_COPY_FILES += \
-    vendor/statix/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so \
-    vendor/statix/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
-else
-PRODUCT_COPY_FILES += \
-    vendor/statix/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so \
-    vendor/statix/prebuilt/common/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
-endif
-
 ifeq ($(AB_OTA_UPDATER),true)
 PRODUCT_COPY_FILES += \
     vendor/statix/build/tools/backuptool_ab.sh:system/bin/backuptool_ab.sh \
