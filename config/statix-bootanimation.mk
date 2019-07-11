@@ -1,5 +1,6 @@
 #
-# Copyright (C) 2018 The StatixOS Project
+# Copyright (C) 2019 The StatixOS Project
+# Copyright (C) 2018 The Dirty Unicorns Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,6 +15,23 @@
 # limitations under the License.
 #
 
-# Get Pixel 2 boot animation
+# Boot Animation
+scr_resolution := 1080x1920
+statix_device := $(patsubst %f,%,$(subst statix_,,$(TARGET_PRODUCT)))
+
+ifneq ($(filter taimen,$(statix_device)),)
+scr_resolution := 1440x2880
+endif
+
+ifneq ($(filter angler mata,$(statix_device)),)
+scr_resolution := 1440x2560
+endif
+
+ifneq ($(filter beryllium bonito  sargo,$(statix_device)),)
+scr_resolution := 1080x2220
+endif
+
+ifneq ($(wildcard vendor/statix/bootanimation/$(scr_resolution).zip),)
 PRODUCT_COPY_FILES += \
-	vendor/statix/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip
+    vendor/statix/bootanimation/$(scr_resolution).zip:system/media/bootanimation.zip
+endif
