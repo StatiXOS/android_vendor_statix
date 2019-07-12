@@ -20,17 +20,10 @@
 #
 # These config vars are usually set in BoardConfig.mk:
 #
-#   TARGET_KERNEL_SOURCE               = Kernel source dir, optional, defaults
-#                                        to kernel/$(TARGET_DEVICE_DIR)
 #   TARGET_KERNEL_CONFIG               = Kernel defconfig
 #   TARGET_KERNEL_VARIANT_CONFIG       = Variant defconfig, optional
 #   TARGET_KERNEL_SELINUX_CONFIG       = SELinux defconfig, optional
 #   TARGET_KERNEL_ADDITIONAL_CONFIG    = Additional defconfig, optional
-#   TARGET_KERNEL_ARCH                 = Kernel Arch
-#   TARGET_KERNEL_CROSS_COMPILE_PREFIX = Compiler prefix (e.g. arm-eabi-)
-#                                          defaults to arm-linux-androidkernel- for arm
-#                                                      aarch64-linux-androidkernel- for arm64
-#                                                      x86_64-linux-androidkernel- for x86
 #
 #   TARGET_KERNEL_CLANG_COMPILE        = Compile kernel with clang, defaults to false
 #
@@ -47,13 +40,6 @@
 #                                          For example, for ARM devices,
 #                                          use zImage-dtb instead of zImage.
 #
-#   KERNEL_TOOLCHAIN_PREFIX            = Overrides TARGET_KERNEL_CROSS_COMPILE_PREFIX,
-#                                          Set this var in shell to override
-#                                          toolchain specified in BoardConfig.mk
-#   KERNEL_TOOLCHAIN                   = Path to toolchain, if unset, assumes
-#                                          TARGET_KERNEL_CROSS_COMPILE_PREFIX
-#                                          is in PATH
-#
 #   KERNEL_CC                          = The C Compiler used. This is automatically set based
 #                                          on whether the clang version is set, optional.
 #
@@ -62,19 +48,13 @@
 #                                                      aarch64-linux-gnu- for arm64
 #                                                      x86_64-linux-gnu- for x86
 #
-#   USE_CCACHE                         = Enable ccache (global Android flag)
-#
 #   NEED_KERNEL_MODULE_ROOT            = Optional, if true, install kernel
 #                                          modules in root instead of system
 
 
 ifneq ($(TARGET_NO_KERNEL),true)
 
-TARGET_AUTO_KDIR := $(shell echo $(TARGET_DEVICE_DIR) | sed -e 's/^device/kernel/g')
-
 ## Externally influenced variables
-# kernel location - optional, defaults to kernel/<vendor>/<device>
-TARGET_KERNEL_SOURCE ?= $(TARGET_AUTO_KDIR)
 KERNEL_SRC := $(TARGET_KERNEL_SOURCE)
 # kernel configuration - mandatory
 KERNEL_DEFCONFIG := $(TARGET_KERNEL_CONFIG)
@@ -85,12 +65,6 @@ SELINUX_DEFCONFIG := $(TARGET_KERNEL_SELINUX_CONFIG)
 KERNEL_OUT := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ
 KERNEL_CONFIG := $(KERNEL_OUT)/.config
 
-TARGET_KERNEL_ARCH := $(strip $(TARGET_KERNEL_ARCH))
-ifeq ($(TARGET_KERNEL_ARCH),)
-KERNEL_ARCH := $(TARGET_ARCH)
-else
-KERNEL_ARCH := $(TARGET_KERNEL_ARCH)
-endif
 KERNEL_DEFCONFIG_SRC := $(KERNEL_SRC)/arch/$(KERNEL_ARCH)/configs/$(KERNEL_DEFCONFIG)
 
 ifeq ($(KERNEL_ARCH),x86_64)
@@ -112,19 +86,6 @@ ifneq ($(TARGET_KERNEL_APPEND_DTB),)
 $(error TARGET_KERNEL_APPEND_DTB is deprecated.)
 endif
 TARGET_PREBUILT_INT_KERNEL := $(KERNEL_OUT)/arch/$(KERNEL_ARCH)/boot/$(BOARD_KERNEL_IMAGE_NAME)
-
-# Clear this first to prevent accidental poisoning from env
-MAKE_FLAGS :=
-
-ifeq ($(KERNEL_ARCH),arm)
-  # Avoid "Unknown symbol _GLOBAL_OFFSET_TABLE_" errors
-  MAKE_FLAGS += CFLAGS_MODULE="-fno-pic"
-endif
-
-ifeq ($(KERNEL_ARCH),arm64)
-  # Avoid "unsupported RELA relocation: 311" errors (R_AARCH64_ADR_GOT_PAGE)
-  MAKE_FLAGS += CFLAGS_MODULE="-fno-pic"
-endif
 
 ifneq ($(TARGET_KERNEL_ADDITIONAL_CONFIG),)
 KERNEL_ADDITIONAL_CONFIG := $(TARGET_KERNEL_ADDITIONAL_CONFIG)
@@ -211,27 +172,6 @@ KERNEL_DEPMOD_STAGING_DIR := $(call intermediates-dir-for,PACKAGING,depmod_vendo
 KERNEL_MODULE_MOUNTPOINT := vendor
 endif
 
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(strip $(TARGET_KERNEL_CROSS_COMPILE_PREFIX))
-ifneq ($(TARGET_KERNEL_CROSS_COMPILE_PREFIX),)
-KERNEL_TOOLCHAIN_PREFIX ?= $(TARGET_KERNEL_CROSS_COMPILE_PREFIX)
-else ifeq ($(KERNEL_ARCH),arm64)
-KERNEL_TOOLCHAIN_PREFIX ?= aarch64-linux-androidkernel-
-else ifeq ($(KERNEL_ARCH),arm)
-KERNEL_TOOLCHAIN_PREFIX ?= arm-linux-androidkernel-
-else ifeq ($(KERNEL_ARCH),x86)
-KERNEL_TOOLCHAIN_PREFIX ?= x86_64-linux-androidkernel-
-endif
-
-ifeq ($(KERNEL_TOOLCHAIN),)
-KERNEL_TOOLCHAIN_PATH := $(KERNEL_TOOLCHAIN_PREFIX)
-else
-ifneq ($(KERNEL_TOOLCHAIN_PREFIX),)
-KERNEL_TOOLCHAIN_PATH := $(KERNEL_TOOLCHAIN)/$(KERNEL_TOOLCHAIN_PREFIX)
-endif
-endif
-
-BUILD_TOP := $(shell pwd)
-
 ifeq ($(TARGET_KERNEL_CLANG_COMPILE),true)
     ifneq ($(TARGET_KERNEL_CLANG_VERSION),)
         # Find the clang-* directory containing the specified version
@@ -250,49 +190,11 @@ ifeq ($(TARGET_KERNEL_CLANG_COMPILE),true)
     else ifeq ($(KERNEL_ARCH),x86)
         KERNEL_CLANG_TRIPLE ?= CLANG_TRIPLE=x86_64-linux-gnu-
     endif
-endif
-
-# Initialize ccache  as an empty argument.
-ccache :=
-
-# Fill the ccache argument if USE_CCACHE is not set to false.
-ifneq ($(filter-out false,$(USE_CCACHE)),)
-    # Detect if the system already has ccache installed.
-    ccache := $(shell which ccache)
-
-    # Use the prebuilt one if host doesn't have ccache installed.
-    ifeq ($(ccache),)
-        ccache := $(BUILD_TOP)/prebuilts/misc/$(HOST_PREBUILT_TAG)/ccache/ccache
-        # Check that the executable is here.
-        ccache := $(strip $(wildcard $(ccache)))
-    endif
-
-    # Print which ccache is going to be used to build the Kernel.
-    $(info Using '$(ccache)' binary)
-else
-# Warn the developer if ccache is set to false.
-$(info The usage of ccache is set to '$(USE_CCACHE)')
-endif
-
-ifeq ($(TARGET_KERNEL_CLANG_COMPILE),true)
     KERNEL_CROSS_COMPILE := CROSS_COMPILE="$(KERNEL_TOOLCHAIN_PATH)"
     PATH_OVERRIDE := PATH=$(TARGET_KERNEL_CLANG_PATH):$$PATH LD_LIBRARY_PATH=$(BUILD_TOP)/prebuilts/clang/host/$(HOST_OS)-x86/$(KERNEL_CLANG_VERSION)/lib64:$$LD_LIBRARY_PATH
     ifeq ($(KERNEL_CC),)
-        KERNEL_CC := CC="$(ccache) clang"
+        KERNEL_CC := CC="$(CCACHE_BIN) clang"
     endif
-else
-    KERNEL_CROSS_COMPILE := CROSS_COMPILE="$(ccache) $(KERNEL_TOOLCHAIN_PATH)"
-endif
-
-# Needed for CONFIG_COMPAT_VDSO, safe to set for all arm64 builds
-ifeq ($(KERNEL_ARCH),arm64)
-   KERNEL_CROSS_COMPILE += CROSS_COMPILE_ARM32="arm-linux-androideabi-"
-endif
-
-ccache =
-
-ifeq ($(HOST_OS),darwin)
-  MAKE_FLAGS += C_INCLUDE_PATH=$(BUILD_TOP)/external/elfutils/0.153/libelf/
 endif
 
 ifeq ($(TARGET_KERNEL_MODULES),)
@@ -308,7 +210,7 @@ $(KERNEL_ADDITIONAL_CONFIG_OUT): force_additional_config
 $(KERNEL_CONFIG): $(KERNEL_DEFCONFIG_SRC) $(KERNEL_ADDITIONAL_CONFIG_OUT)
 	@echo "Building Kernel Config"
 	$(hide) mkdir -p $(KERNEL_OUT)
-	$(PATH_OVERRIDE) $(MAKE) $(MAKE_FLAGS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) VARIANT_DEFCONFIG=$(VARIANT_DEFCONFIG) SELINUX_DEFCONFIG=$(SELINUX_DEFCONFIG) $(KERNEL_DEFCONFIG)
+	$(PATH_OVERRIDE) $(MAKE) $(KERNEL_MAKE_FLAGS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) VARIANT_DEFCONFIG=$(VARIANT_DEFCONFIG) SELINUX_DEFCONFIG=$(SELINUX_DEFCONFIG) $(KERNEL_DEFCONFIG)
 	$(hide) if [ ! -z "$(KERNEL_CONFIG_OVERRIDE)" ]; then \
 			echo "Overriding kernel config with '$(KERNEL_CONFIG_OVERRIDE)'"; \
 			echo $(KERNEL_CONFIG_OVERRIDE) >> $(KERNEL_OUT)/.config; \
@@ -326,21 +228,21 @@ TARGET_KERNEL_BINARIES: $(KERNEL_CONFIG)
 	$(hide) rm -rf $(KERNEL_MODULES_OUT)
 	$(hide) mkdir -p $(KERNEL_MODULES_OUT)
 	$(hide) rm -rf $(KERNEL_DEPMOD_STAGING_DIR)
-	$(PATH_OVERRIDE) $(MAKE) $(MAKE_FLAGS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) $(BOARD_KERNEL_IMAGE_NAME)
+	$(PATH_OVERRIDE) $(MAKE) $(KERNEL_MAKE_FLAGS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) $(BOARD_KERNEL_IMAGE_NAME)
 	$(hide) if grep -q '^CONFIG_OF=y' $(KERNEL_CONFIG); then \
 			echo "Building DTBs"; \
-			$(PATH_OVERRIDE) $(MAKE) $(MAKE_FLAGS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) dtbs; \
+			$(PATH_OVERRIDE) $(MAKE) $(KERNEL_MAKE_FLAGS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) dtbs; \
 		fi
 	$(hide) if grep -q '^CONFIG_MODULES=y' $(KERNEL_CONFIG); then \
 			echo "Building Kernel Modules"; \
-			$(PATH_OVERRIDE) $(MAKE) $(MAKE_FLAGS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) modules; \
+			$(PATH_OVERRIDE) $(MAKE) $(KERNEL_MAKE_FLAGS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) modules; \
 		fi
 
 .PHONY: INSTALLED_KERNEL_MODULES
 INSTALLED_KERNEL_MODULES: depmod-host
 	$(hide) if grep -q '^CONFIG_MODULES=y' $(KERNEL_CONFIG); then \
 			echo "Installing Kernel Modules"; \
-			$(PATH_OVERRIDE) $(MAKE) $(MAKE_FLAGS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) INSTALL_MOD_PATH=../../$(KERNEL_MODULES_INSTALL) modules_install && \
+			$(PATH_OVERRIDE) $(MAKE) $(KERNEL_MAKE_FLAGS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) INSTALL_MOD_PATH=../../$(KERNEL_MODULES_INSTALL) modules_install && \
 			mofile=$$(find $(KERNEL_MODULES_OUT) -type f -name modules.order) && \
 			mpath=$$(dirname $$mofile) && \
 			for f in $$(find $$mpath/kernel -type f -name '*.ko'); do \
@@ -369,7 +271,7 @@ kernelconfig:  KERNELCONFIG_MODE := menuconfig
 kernelxconfig: KERNELCONFIG_MODE := xconfig
 kernelxconfig kernelconfig:
 	$(hide) mkdir -p $(KERNEL_OUT)
-	$(PATH_OVERRIDE) $(MAKE) $(MAKE_FLAGS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) $(KERNEL_DEFCONFIG)
+	$(PATH_OVERRIDE) $(MAKE) $(KERNEL_MAKE_FLAGS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) $(KERNEL_DEFCONFIG)
 	env KCONFIG_NOTIMESTAMP=true \
 		 $(PATH_OVERRIDE) $(MAKE) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) $(KERNELCONFIG_MODE)
 	env KCONFIG_NOTIMESTAMP=true \
@@ -378,7 +280,7 @@ kernelxconfig kernelconfig:
 
 kernelsavedefconfig:
 	$(hide) mkdir -p $(KERNEL_OUT)
-	$(PATH_OVERRIDE) $(MAKE) $(MAKE_FLAGS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) $(KERNEL_DEFCONFIG)
+	$(PATH_OVERRIDE) $(MAKE) $(KERNEL_MAKE_FLAGS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) $(KERNEL_DEFCONFIG)
 	env KCONFIG_NOTIMESTAMP=true \
 		 $(PATH_OVERRIDE) $(MAKE) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) savedefconfig
 	cp $(KERNEL_OUT)/defconfig $(KERNEL_DEFCONFIG_SRC)
@@ -392,8 +294,8 @@ TARGET_PREBUILT_DTBO = $(PRODUCT_OUT)/dtbo/arch/$(KERNEL_ARCH)/boot/dtbo.img
 ifeq ($(BOARD_AVB_ENABLE),true)
 $(TARGET_PREBUILT_DTBO): $(AVBTOOL)
 	echo -e ${CL_GRN}"Building DTBO.img"${CL_RST}
-	$(PATH_OVERRIDE) $(MAKE) $(MAKE_FLAGS) -C $(KERNEL_SRC) O=$(PRODUCT_OUT)/dtbo ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) $(KERNEL_DEFCONFIG)
-	$(PATH_OVERRIDE) $(MAKE) $(MAKE_FLAGS) -C $(KERNEL_SRC) O=$(PRODUCT_OUT)/dtbo ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) dtbo.img
+	$(PATH_OVERRIDE) $(MAKE) $(KERNEL_MAKE_FLAGS) -C $(KERNEL_SRC) O=$(PRODUCT_OUT)/dtbo ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) $(KERNEL_DEFCONFIG)
+	$(PATH_OVERRIDE) $(MAKE) $(KERNEL_MAKE_FLAGS) -C $(KERNEL_SRC) O=$(PRODUCT_OUT)/dtbo ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) dtbo.img
 	$(AVBTOOL) add_hash_footer \
 		--image $@ \
 		--partition_size $(BOARD_DTBOIMG_PARTITION_SIZE) \
@@ -402,8 +304,8 @@ $(TARGET_PREBUILT_DTBO): $(AVBTOOL)
 else
 $(TARGET_PREBUILT_DTBO):
 	echo -e ${CL_GRN}"Building DTBO.img"${CL_RST}
-	$(PATH_OVERRIDE) $(MAKE) $(MAKE_FLAGS) -C $(KERNEL_SRC) O=$(PRODUCT_OUT)/dtbo ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) $(KERNEL_DEFCONFIG)
-	$(PATH_OVERRIDE) $(MAKE) $(MAKE_FLAGS) -C $(KERNEL_SRC) O=$(PRODUCT_OUT)/dtbo ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) dtbo.img
+	$(PATH_OVERRIDE) $(MAKE) $(KERNEL_MAKE_FLAGS) -C $(KERNEL_SRC) O=$(PRODUCT_OUT)/dtbo ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) $(KERNEL_DEFCONFIG)
+	$(PATH_OVERRIDE) $(MAKE) $(KERNEL_MAKE_FLAGS) -C $(KERNEL_SRC) O=$(PRODUCT_OUT)/dtbo ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) dtbo.img
 endif #BOARD_AVB_ENABLE
 endif # FULL_KERNEL_BUILD
 
