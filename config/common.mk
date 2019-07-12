@@ -60,9 +60,3 @@ include vendor/statix/config/statix-bootanimation.mk
 
 # Overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/statix/overlay/common
-
-# Kernel
-include vendor/statix/config/BoardConfigKernel.mk
-
-# Soong
-include vendor/statix/config/BoardConfigSoong.mk
