@@ -50,25 +50,52 @@ type Product_variables struct {
 	Target_shim_libs struct {
 		Cppflags []string
 	}
+	Uses_qcom_um_family struct {
+		Cflags []string
+		Srcs []string
+	}
+	Uses_qcom_um_3_18_family struct {
+		Include_dirs []string
+		Header_libs []string
+		Shared_libs []string
+	}
+	Uses_qcom_um_4_4_family struct {
+		Include_dirs []string
+		Header_libs []string
+		Shared_libs []string
+	}
+	Uses_qcom_um_4_9_family struct {
+		Include_dirs []string
+		Header_libs []string
+		Shared_libs []string
+	}
+	Uses_qcom_um_4_14_family struct {
+		Include_dirs []string
+		Header_libs []string
+		Shared_libs []string
+	}
 }
 
 type ProductVariables struct {
-	Needs_text_relocations						*bool `json:",omitempty"`
-	Qcom_bsp_legacy								*bool `json:",omitempty"`
+	Needs_text_relocations					*bool `json:",omitempty"`
+	Qcom_bsp_legacy						*bool `json:",omitempty"`
 	Should_skip_waiting_for_qsee				*bool `json:",omitempty"`
-	Supports_hw_fde								*bool `json:",omitempty"`
-	Supports_hw_fde_perf						*bool `json:",omitempty"`
-	Target_uses_eigen							*bool `json:",omitempty"`
-	Target_uses_qml								*bool `json:",omitempty"`
-	Uses_generic_camera_parameter_library		*bool `json:",omitempty"`
-	Uses_qti_camera_device						*bool `json:",omitempty"`
-
-	Additional_gralloc_10_usage_bits  			*string `json:",omitempty"`
-
-	Java_Source_Overlays						*string `json:",omitempty"`
-	QTIAudioPath								*string `json:",omitempty"`
-	QTIDisplayPath								*string `json:",omitempty"`
-	QTIMediaPath								*string `json:",omitempty"`
+	Supports_hw_fde						*bool `json:",omitempty"`
+	Supports_hw_fde_perf					*bool `json:",omitempty"`
+	Target_uses_eigen					*bool `json:",omitempty"`
+	Target_uses_qml						*bool `json:",omitempty"`
+	Uses_generic_camera_parameter_library			*bool `json:",omitempty"`
+	Uses_qti_camera_device					*bool `json:",omitempty"`
+	Additional_gralloc_10_usage_bits			*string `json:",omitempty"`
+	Java_Source_Overlays					*string `json:",omitempty"`
+	QTIAudioPath						*string `json:",omitempty"`
+	QTIDisplayPath						*string `json:",omitempty"`
+	QTIMediaPath						*string `json:",omitempty"`
 	Specific_camera_parameter_library			*string `json:",omitempty"`
-	Target_shim_libs							*string `json:",omitempty"`
+	Target_shim_libs					*string `json:",omitempty"`
+	Uses_qcom_um_family					*bool `json:",omitempty"`
+	Uses_qcom_um_3_18_family				*bool `json:",omitempty"`
+	Uses_qcom_um_4_4_family					*bool `json:",omitempty"`
+	Uses_qcom_um_4_9_family					*bool `json:",omitempty"`
+	Uses_qcom_um_4_14_family				*bool `json:",omitempty"`
 }
