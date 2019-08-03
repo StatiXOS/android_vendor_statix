@@ -60,3 +60,7 @@ include vendor/statix/config/statix-bootanimation.mk
 
 # Overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/statix/overlay/common
+
+# SEPolicy
+include device/statix/sepolicy/common/sepolicy.mk
+
