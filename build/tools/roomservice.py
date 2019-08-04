@@ -42,7 +42,7 @@ if depsonly is not None:
 repositories = []
 
 # repo check
-branch_check = r'external/bson'
+branch_check = r'external/json-c'
 if os.path.exists(branch_check):
     statix_branch = "9-caf";
 else:
