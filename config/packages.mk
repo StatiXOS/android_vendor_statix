@@ -12,6 +12,7 @@ PRODUCT_PACKAGES += \
 # StatiX Packages
 PRODUCT_PACKAGES += \
      ThemePicker \
+     Longshot \
      WeatherProvider \
 #    CustomDoze
 
