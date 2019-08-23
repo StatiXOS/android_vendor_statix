@@ -5,11 +5,12 @@ PRODUCT_PACKAGES += \
 # StatiX Packages
 PRODUCT_PACKAGES += \
     CustomDoze \
+    Longshot \
     ThemePicker \
     WeatherProvider
 
 PRODUCT_PACKAGES += \
-     StatixOverlayStub
+    StatixOverlayStub
 
 # Charger images
 PRODUCT_PACKAGES += \
