@@ -1,4 +1,4 @@
-aosp_devices=('angler' 'arm64' 'bonito' 'taimen' 'sargo')
+aosp_devices=('angler' 'angler_4core' 'bonito' 'taimen' 'sargo')
 caf_devices=('beryllium' 'oneplus3' 'mata')
 
 function lunch_devices() {
