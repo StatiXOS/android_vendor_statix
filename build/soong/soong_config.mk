@@ -1,6 +1,6 @@
 add_json_str_omitempty = $(if $(strip $(2)),$(call add_json_str, $(1), $(2)))
 
-$(eval _contents := $$(_contents)"Statix": {$$(newline))
+_json_contents := $(_json_contents)    "Statix":{$(newline)
 
 $(call add_json_bool,	Needs_text_relocations,						$(filter true,$(TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS)))
 $(call add_json_bool,	Qcom_bsp_legacy,							$(filter true,$(TARGET_USES_QCOM_BSP_LEGACY)))
@@ -21,4 +21,7 @@ $(call add_json_str,	QTIMediaPath,								$(call project-path-for,qcom-media))
 $(call add_json_str,	Specific_camera_parameter_library,			$(TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY))
 $(call add_json_str,	Target_shim_libs,							$(subst $(space),:,$(TARGET_LD_SHIM_LIBS)))
 
-$(eval _contents := $(subst $$(comma)$$(newline)__SV_END,$(newline),$$(_contents)__SV_END},$$(newline)))
+# This causes the build system to strip out the last comma in our nested struct, to keep the JSON valid.
+_json_contents := $(_json_contents)__SV_END
+
+_json_contents := $(_json_contents)    },$(newline)
