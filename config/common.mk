@@ -2,8 +2,6 @@ include vendor/statix/build/core/vendor/*.mk
 
 ifeq ($(PRODUCT_USES_QCOM_HARDWARE), true)
 include vendor/statix/build/core/ProductConfigQcom.mk
-
-PRODUCT_SOONG_NAMESPACES += $(PATHMAP_SOONG_NAMESPACES)
 endif
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
