@@ -1,3 +1,5 @@
+include vendor/statix/build/core/ProductConfigQcom.mk
+
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)

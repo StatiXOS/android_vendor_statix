@@ -20,10 +20,10 @@ endif
 # Tell HALs that we're compiling an AOSP build with an in-line kernel
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 
-ifneq ($(filter msm7x27a msm7x30 msm8660 msm8960,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter msm7x27a msm7x30 msm8660 msm8960,$(PRODUCT_BOARD_PLATFORM)),)
     # Enable legacy audio functions
     ifeq ($(BOARD_USES_LEGACY_ALSA_AUDIO),true)
-        ifneq ($(filter msm8960,$(TARGET_BOARD_PLATFORM)),)
+        ifneq ($(filter msm8960,$(PRODUCT_BOARD_PLATFORM)),)
             USE_CUSTOM_AUDIO_POLICY := 1
         endif
     endif
@@ -46,7 +46,7 @@ endif
 MASTER_SIDE_CP_TARGET_LIST := msm8996 msm8998 sdm660 sdm845
 
 # Every qcom platform is considered a vidc target
-MSM_VIDC_TARGET_LIST := $(TARGET_BOARD_PLATFORM)
+MSM_VIDC_TARGET_LIST := $(PRODUCT_BOARD_PLATFORM)
 
 ifeq ($(call is-board-platform-in-list, $(A_FAMILY)),true)
     QCOM_HARDWARE_VARIANT := msm8960
@@ -69,7 +69,7 @@ else
 ifeq ($(call is-board-platform-in-list, $(UM_4_9_FAMILY)),true)
     QCOM_HARDWARE_VARIANT := sdm845
 else
-    QCOM_HARDWARE_VARIANT := $(TARGET_BOARD_PLATFORM)
+    QCOM_HARDWARE_VARIANT := $(PRODUCT_BOARD_PLATFORM)
 endif
 endif
 endif
