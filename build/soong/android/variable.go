@@ -27,6 +27,10 @@ type Product_variables struct {
 		Required []string
 	}
 
+	Target_init_vendor_lib struct {
+		Whole_static_libs []string
+	}
+
 	Target_uses_qml struct {
 		Cflags []string
 		Shared_libs []string
@@ -86,6 +90,7 @@ type ProductVariables struct {
 	Should_wait_for_qsee					*bool `json:",omitempty"`
 	Supports_hw_fde							*bool `json:",omitempty"`
 	Supports_hw_fde_perf					*bool `json:",omitempty"`
+	Target_init_vendor_lib					*string `json:",omitempty"`
 	Target_uses_eigen						*bool `json:",omitempty"`
 	Target_uses_qml							*bool `json:",omitempty"`
 	Uses_generic_camera_parameter_library	*bool `json:",omitempty"`
