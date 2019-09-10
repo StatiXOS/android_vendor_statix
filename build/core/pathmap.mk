@@ -1,3 +1,4 @@
+
 #
 # Returns the path to the requested module's include directory,
 # relative to the root of the source tree.  Does not handle external
@@ -15,7 +16,8 @@ endef
 # $(2): path
 #
 define project-set-path
-$(eval pathmap_PROJ += $(1):$(2))
+$(eval pathmap_PROJ += $(1):$(2)) \
+$(eval PATHMAP_SOONG_NAMESPACES += $(2))
 endef
 
 # Enter variant project path into pathmap
