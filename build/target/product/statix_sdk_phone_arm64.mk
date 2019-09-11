@@ -14,6 +14,10 @@ TARGET_FORCE_OTA_PACKAGE := true
 # Don't include GApps
 TARGET_DOES_NOT_USE_GAPPS := true
 
+# SDK addon
+PRODUCT_SDK_ADDON_NAME := statix
+PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := $(LOCAL_PATH)/source.properties
+
 # Overrides
 PRODUCT_NAME := statix_sdk_phone_arm64
 PRODUCT_MODEL := StatiXOS Android SDK built for aarch64
