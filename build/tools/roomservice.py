@@ -44,9 +44,9 @@ repositories = []
 # repo check
 branch_check = r'external/json-c'
 if os.path.exists(branch_check):
-    statix_branch = "9-caf";
+    statix_branch = "10-caf";
 else:
-    statix_branch = "9";
+    statix_branch = "10";
 
 # gapps
 repo_check = r'vendor/pixelgapps'
