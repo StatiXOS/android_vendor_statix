@@ -7,10 +7,11 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PACKAGES += \
 #    Turbo \
 #    turbo.xml \
-#    privapp-permissions-turbo.xml
+#    privapp-permissions-turbo.xml \
 
 # StatiX Packages
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
+     ThemePicker \
 #    WeatherProvider \
 #    CustomDoze
 
