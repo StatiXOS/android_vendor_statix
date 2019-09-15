@@ -7,7 +7,8 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PACKAGES += \
 #    Turbo \
 #    turbo.xml \
-#    privapp-permissions-turbo.xml
+#    privapp-permissions-turbo.xml \
+     ThemePicker
 
 # StatiX Packages
 #PRODUCT_PACKAGES += \
