@@ -74,17 +74,6 @@ KERNEL_TOOLCHAIN_PATH := $(KERNEL_TOOLCHAIN)/$(KERNEL_TOOLCHAIN_PREFIX)
 endif
 endif
 
-ifneq ($(USE_CCACHE),)
-    # Detect if the system already has ccache installed to use instead of the prebuilt
-    CCACHE_BIN := $(shell PATH=$(shell cat $(OUT_DIR)/.path_interposer_origpath):$$PATH which ccache)
-
-    ifeq ($(CCACHE_BIN),)
-        CCACHE_BIN := $(BUILD_TOP)/prebuilts/misc/$(HOST_PREBUILT_TAG)/ccache/ccache
-        # Check that the executable is here.
-        CCACHE_BIN := $(strip $(wildcard $(CCACHE_BIN)))
-    endif
-endif
-
 ifeq ($(TARGET_KERNEL_CLANG_COMPILE),true)
     KERNEL_CROSS_COMPILE := CROSS_COMPILE="$(KERNEL_TOOLCHAIN_PATH)"
 else
