@@ -192,7 +192,11 @@ ifeq ($(TARGET_KERNEL_CLANG_COMPILE),true)
     endif
     PATH_OVERRIDE := $(PATH_OVERRIDE):$(TARGET_KERNEL_CLANG_PATH) LD_LIBRARY_PATH=$(BUILD_TOP)/prebuilts/clang/host/$(HOST_OS)-x86/$(KERNEL_CLANG_VERSION)/lib64:$$LD_LIBRARY_PATH
     ifeq ($(KERNEL_CC),)
-        KERNEL_CC := CC="$(CCACHE_BIN) clang"
+        ifneq ($(USE_CCACHE),)
+            KERNEL_CC := CC="$(CCACHE_EXEC) clang"
+        else
+            KERNEL_CC := CC="clang"
+        endif
     endif
 endif
 
