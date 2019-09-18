@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2009 The Android Open Source Project
+<!-- Copyright (C) 2015 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -13,6 +13,12 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+
 <resources>
-    <color name="primary">#ff1a73e8</color>
+    <bool name="show_documents_root">true</bool>
+    <bool name="config_default_show_device_root">true</bool>
+    <string name="config_fontFamily">google-sans</string>
+    <string name="config_fontFamilyMedium">google-sans-medium</string>
+    <string name="preferred_root_package">com.google.android</string>
+    <string name="trusted_quick_viewer_package">com.google.android.apps.docs</string>
 </resources>

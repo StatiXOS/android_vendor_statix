@@ -15,7 +15,6 @@
 -->
 
 <resources>
-
-    <bool name="windowLightNavigationBar">true</bool>
-
+    <bool name="is_launcher_enabled">true</bool>
+    <bool name="show_search_bar">true</bool>
 </resources>
