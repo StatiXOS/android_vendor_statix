@@ -30,6 +30,7 @@ $(call add_json_str,	QTIDisplayPath,								$(call project-path-for,qcom-display
 $(call add_json_str,	QTIMediaPath,								$(call project-path-for,qcom-media))
 $(call add_json_str,	Specific_camera_parameter_library,			$(TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY))
 $(call add_json_str,	Target_shim_libs,							$(subst $(space),:,$(TARGET_LD_SHIM_LIBS)))
+$(call add_json_bool, Supports_extended_compress_format, $(filter true,$(AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT)))
 
 # This causes the build system to strip out the last comma in our nested struct, to keep the JSON valid.
 _json_contents := $(_json_contents)__SV_END
