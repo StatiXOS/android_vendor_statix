@@ -42,7 +42,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/common/etc/permissions/privapp-permissions-statix.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-statix.xml
 
-# Backup Tool
+# system mount
+PRODUCT_COPY_FILES += \
+    vendor/statix/prebuilt/common/bin/system-mount.sh:install/bin/system-mount.sh
+
+# Hidden API whitelist
 PRODUCT_COPY_FILES += \
     vendor/statix/build/tools/backuptool.sh:install/bin/backuptool.sh \
     vendor/statix/build/tools/backuptool.functions:install/bin/backuptool.functions \
