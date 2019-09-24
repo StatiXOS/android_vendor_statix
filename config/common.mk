@@ -42,7 +42,50 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/common/etc/permissions/privapp-permissions-statix.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-statix.xml
 
-# Backup Tool
+# system mount
+PRODUCT_COPY_FILES += \
+    vendor/lineage/prebuilt/common/bin/system-mount.sh:install/bin/system-mount.sh
+
+# Backup Services whitelist
+PRODUCT_COPY_FILES += \
+    vendor/lineage/config/permissions/backup.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/backup.xml
+
+# Lineage-specific broadcast actions whitelist
+PRODUCT_COPY_FILES += \
+    vendor/lineage/config/permissions/lineage-sysconfig.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/lineage-sysconfig.xml
+
+# Copy all Lineage-specific init rc files
+$(foreach f,$(wildcard vendor/lineage/prebuilt/common/etc/init/*.rc),\
+	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
+
+# Copy over added mimetype supported in libcore.net.MimeUtils
+PRODUCT_COPY_FILES += \
+    vendor/lineage/prebuilt/common/lib/content-types.properties:$(TARGET_COPY_OUT_SYSTEM)/lib/content-types.properties
+
+# Enable Android Beam on all targets
+PRODUCT_COPY_FILES += \
+    vendor/lineage/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
+
+# Enable SIP+VoIP on all targets
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.sip.voip.xml
+
+# Enable wireless Xbox 360 controller support
+PRODUCT_COPY_FILES += \
+    frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/Vendor_045e_Product_0719.kl
+
+# This is Lineage!
+PRODUCT_COPY_FILES += \
+    vendor/lineage/config/permissions/org.lineageos.android.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.lineageos.android.xml \
+    vendor/lineage/config/permissions/privapp-permissions-lineage-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-lineage.xml \
+    vendor/lineage/config/permissions/privapp-permissions-lineage-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-lineage.xml \
+    vendor/lineage/config/permissions/privapp-permissions-cm-legacy.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-cm-legacy.xml
+
+# Enforce privapp-permissions whitelist
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.control_privapp_permissions=enforce
+
+# Hidden API whitelist
 PRODUCT_COPY_FILES += \
     vendor/statix/build/tools/backuptool.sh:install/bin/backuptool.sh \
     vendor/statix/build/tools/backuptool.functions:install/bin/backuptool.functions \
