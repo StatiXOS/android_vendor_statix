@@ -65,5 +65,4 @@ include vendor/statix/config/pixel2-audio_prebuilt.mk
 include vendor/statix/config/statix-bootanimation.mk
 
 # Overlays
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/statix/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/statix/overlay/common
