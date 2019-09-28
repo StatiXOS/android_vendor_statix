@@ -227,6 +227,12 @@ define make-dtbo-target
 $(call internal-make-kernel-target,$(PRODUCT_OUT)/dtbo,$(1))
 endef
 
+# Make a DTB target
+# $(1): The DTB target to build (eg. dtbs, defconfig)
+define make-dtb-target
+$(call internal-make-kernel-target,$(PRODUCT_OUT)/dtbs,$(1))
+endef
+
 $(KERNEL_ADDITIONAL_CONFIG_OUT): $(KERNEL_OUT)
 	$(hide) cmp -s $(KERNEL_ADDITIONAL_CONFIG_SRC) $@ || cp $(KERNEL_ADDITIONAL_CONFIG_SRC) $@;
 
@@ -331,5 +337,14 @@ kernel: $(INSTALLED_KERNEL_TARGET) $(TARGET_KERNEL_MODULES)
 
 .PHONY: dtboimage
 dtboimage: $(INSTALLED_DTBOIMAGE_TARGET)
+
+ifeq ($(BOARD_INCLUDE_DTB_IN_BOOTIMG),true)
+$(BOARD_PREBUILT_DTBIMAGE_DIR):
+	echo -e ${CL_GRN}"Building DTBs"${CL_RST}
+	$(call make-dtb-target,$(KERNEL_DEFCONFIG))
+	$(call make-dtb-target,dtbs)
+.PHONY: dtbimage
+dtbimage: $(INSTALLED_DTBIMAGE_TARGET)
+endif # BOARD_INCLUDE_DTB_IN_BOOTIMG
 
 endif # TARGET_NO_KERNEL
