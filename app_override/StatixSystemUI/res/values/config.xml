@@ -1,0 +1,19 @@
+<<<<<<< HEAD   (df56db ProductConfigQcom: Add additional display namespaces for QSS)
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- SystemUIFactory component -->
+    <string name="config_systemUIFactoryComponent" translatable="false">com.statix.android.systemui.SystemUIStatixFactory</string>
+
+    <!-- Tiles native to Statix System UI. Order should match "quick_settings_tiles_default" -->
+    <string name="quick_settings_tiles_stock" translatable="false">
+        internet,bt,flashlight,dnd,alarm,airplane,controls,wallet,rotation,battery,cast,screenrecord,mictoggle,cameratoggle,location,hotspot,inversion,saver,dark,work,night,reverse,reduce_brightness,powershare,caffeine
+    </string>
+
+    <!-- The location of the device's alert slider:
+         0: Left side
+         1: Right side -->
+    <integer name="config_alertSliderLocation">0</integer>
+
+</resources>
+>>>>>>> CHANGE (19b389 StatixSystemUI: Introduce user interface for Alert Sliders.)
