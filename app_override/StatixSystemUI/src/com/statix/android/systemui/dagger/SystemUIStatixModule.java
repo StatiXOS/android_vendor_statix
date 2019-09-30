@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 
 import com.statix.android.systemui.qs.tileimpl.QSFactoryImplStatix;
 import com.statix.android.systemui.theme.ThemeOverlayControllerStatix;
+import com.statix.android.systemui.volume.VolumeDialogComponentStatix;
 
 import com.android.keyguard.KeyguardViewController;
 import com.android.systemui.broadcast.BroadcastDispatcher;
@@ -58,6 +59,7 @@ import com.android.systemui.statusbar.policy.IndividualSensorPrivacyControllerIm
 import com.android.systemui.statusbar.policy.SensorPrivacyController;
 import com.android.systemui.statusbar.policy.SensorPrivacyControllerImpl;
 import com.android.systemui.theme.ThemeOverlayController;
+import com.android.systemui.volume.VolumeDialogComponent;
 
 import javax.inject.Named;
 
@@ -192,4 +194,7 @@ public abstract class SystemUIStatixModule {
 
     @Binds
     abstract ThemeOverlayController provideThemeOverlayController(ThemeOverlayControllerStatix themeOverlayController);
+
+    @Binds
+    abstract VolumeDialogComponent bindVolumeDialogComponent(VolumeDialogComponentStatix volumeDialogComponentStatix);
 }
