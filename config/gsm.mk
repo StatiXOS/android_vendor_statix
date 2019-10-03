@@ -1,9 +1,9 @@
 # GSM APN list
 PRODUCT_COPY_FILES += \
-    vendor/statix/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
+    vendor/statix/prebuilt/common/etc/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
 
 PRODUCT_COPY_FILES += \
-    vendor/statix/prebuilt/common/etc/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
+    vendor/statix/prebuilt/common/etc/selective-spn-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/selective-spn-conf.xml
 
 # SIM Toolkit
 PRODUCT_PACKAGES += \
