@@ -5,7 +5,7 @@ PRODUCT_PACKAGES += \
     CyanTheme \
     DeepOrangeTheme \
     DeepPurpleTheme \
-    GreenTheme \
+    ForestTheme \
     IndigoTheme \
     LightBlueTheme \
     LightGreenTheme \
