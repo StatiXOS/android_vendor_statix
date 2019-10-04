@@ -8,46 +8,46 @@ PRODUCT_PACKAGES += \
     GreenTheme \
     IndigoTheme \
     LightBlueTheme \
-    LightGreenTheme \
+#    LightGreenTheme \
     LimeTheme \
     OrangeTheme \
     PinkTheme \
-    PixelBaseTheme \
-    PixelTheme \
+#    PixelBaseTheme \
+#    PixelTheme \
     PurpleTheme \
     RedTheme \
-    StockBaseTheme \
-    StockFixedBaseTheme \
-    TealTheme \
+#    StockBaseTheme \
+#    StockFixedBaseTheme \
+#    TealTheme \
     YellowTheme \
-    UserOne \
-    UserTwo \
-    UserThree \
-    UserFour \
-    UserFive \
-    UserSix \
-    UserSeven \
-    UserEight \
-    UserNine \
-    UserTen \
-    UserEleven \
-    UserTwelve \
-    UserThirteen
+#    UserOne \
+#    UserTwo \
+#    UserThree \
+#    UserFour \
+#    UserFive \
+#    UserSix \
+#    UserSeven \
+#    UserEight \
+#    UserNine \
+#    UserTen \
+#    UserEleven \
+#    UserTwelve \
+#    UserThirteen
 
 # Dark/BlackUI Packages
-PRODUCT_PACKAGES += \
-    GBoardDarkTheme \
-    SettingsDarkTheme \
-    SystemDarkTheme \
-    SysuiQsDarkTheme \
-    SystemSettingsIconTint \
-    WellbeingDarkTheme \
+#PRODUCT_PACKAGES += \
+#    GBoardDarkTheme \
+#    SettingsDarkTheme \
+#    SystemDarkTheme \
+#    SysuiQsDarkTheme \
+#    SystemSettingsIconTint \
+#    WellbeingDarkTheme \
 
 # QS Theme Packages
-PRODUCT_PACKAGES += \
-    FramedQS \
-    SplitQS \
-    SuperBubbleQS \
-    TeardropQS \
-    HexagonQS \
-    CookieQS \
+#PRODUCT_PACKAGES += \
+#    FramedQS \
+#    SplitQS \
+#    SuperBubbleQS \
+#    TeardropQS \
+#    HexagonQS \
+#    CookieQS \
