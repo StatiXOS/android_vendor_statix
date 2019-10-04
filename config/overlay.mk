@@ -2,7 +2,7 @@
 PRODUCT_PACKAGES += \
     AmberTheme \
     CyanTheme \
-    GreenTheme \
+    ForestTheme \
     LimeTheme \
     OrangeTheme \
     PinkTheme \
