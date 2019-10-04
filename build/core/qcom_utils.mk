@@ -44,23 +44,23 @@ QSD8K_BOARD_PLATFORMS := qsd8k
 
 
 # vars for use by utils
-_empty :=
-_space := $(_empty) $(_empty)
-_colon := $(_empty):$(_empty)
-_underscore := $(_empty)_$(_empty)
+empty :=
+space := $(empty) $(empty)
+colon := $(empty):$(empty)
+underscore := $(empty)_$(empty)
 
 # $(call match-word,w1,w2)
 # checks if w1 == w2
 # How it works
-#   if (w1-w2 not _empty or w2-w1 not _empty) then not_match else match
+#   if (w1-w2 not empty or w2-w1 not empty) then not_match else match
 #
-# returns true or _empty
+# returns true or empty
 #$(warning :$(1): :$(2): :$(subst $(1),,$(2)):) \
 #$(warning :$(2): :$(1): :$(subst $(2),,$(1)):) \
 #
 define match-word
 $(strip \
-  $(if $(or $(subst $(1),$(_empty),$(2)),$(subst $(2),$(_empty),$(1))),,true) \
+  $(if $(or $(subst $(1),$(empty),$(2)),$(subst $(2),$(empty),$(1))),,true) \
 )
 endef
 
@@ -68,15 +68,15 @@ endef
 # finds an exact match of word w in word list wlist
 #
 # How it works
-#   fill wlist _spaces with _colon
-#   wrap w with _colon
+#   fill wlist spaces with colon
+#   wrap w with colon
 #   search word w in list wl, if found match m, return stripped word w
 #
-# returns stripped word or _empty
+# returns stripped word or empty
 define find-word-in-list
 $(strip \
-  $(eval wl:= $(_colon)$(subst $(_space),$(_colon),$(strip $(2)))$(_colon)) \
-  $(eval w:= $(_colon)$(strip $(1))$(_colon)) \
+  $(eval wl:= $(colon)$(subst $(space),$(colon),$(strip $(2)))$(colon)) \
+  $(eval w:= $(colon)$(strip $(1))$(colon)) \
   $(eval m:= $(findstring $(w),$(wl))) \
   $(if $(m),$(1),) \
 )
@@ -85,11 +85,11 @@ endef
 # $(call match-word-in-list,w,wlist)
 # does an exact match of word w in word list wlist
 # How it works
-#   if the input word is not _empty
+#   if the input word is not empty
 #     return output of an exact match of word w in wordlist wlist
 #   else
-#     return _empty
-# returns true or _empty
+#     return empty
+# returns true or empty
 define match-word-in-list
 $(strip \
   $(if $(strip $(1)), \
@@ -103,10 +103,10 @@ endef
 #
 # How it works
 #   trim the words in wlist w
-#   if find-word-in-list returns not _empty
+#   if find-word-in-list returns not empty
 #     return true
 #   else
-#     return _empty
+#     return empty
 #
 define match-prefix
 $(strip \
@@ -127,25 +127,25 @@ $(if $(call match-word,$(BOARD_USES_$(1)_HARDWARE),true),$($(1)_BOARD_PLATFORMS)
 endef
 
 # $(call is-board-platform,bp)
-# returns true or _empty
+# returns true or empty
 define is-board-platform
 $(call match-word,$(1),$(PRODUCT_BOARD_PLATFORM))
 endef
 
 # $(call is-not-board-platform,bp)
-# returns true or _empty
+# returns true or empty
 define is-not-board-platform
 $(if $(call match-word,$(1),$(PRODUCT_BOARD_PLATFORM)),,true)
 endef
 
 # $(call is-board-platform-in-list,bpl)
-# returns true or _empty
+# returns true or empty
 define is-board-platform-in-list
 $(call match-word-in-list,$(PRODUCT_BOARD_PLATFORM),$(1))
 endef
 
 # $(call is-vendor-board-platform,vendor)
-# returns true or _empty
+# returns true or empty
 define is-vendor-board-platform
 $(strip \
   $(call match-word-in-list,$(PRODUCT_BOARD_PLATFORM),\
@@ -156,11 +156,11 @@ endef
 
 # $(call is-chipset-in-board-platform,chipset)
 # does a prefix match of chipset in PRODUCT_BOARD_PLATFORM
-# uses _underscore as a delimiter
+# uses underscore as a delimiter
 #
-# returns true or _empty
+# returns true or empty
 define is-chipset-in-board-platform
-$(call match-prefix,$(1),$(_underscore),$(PRODUCT_BOARD_PLATFORM))
+$(call match-prefix,$(1),$(underscore),$(PRODUCT_BOARD_PLATFORM))
 endef
 
 # $(call is-chipset-prefix-in-board-platform,prefix)
@@ -171,15 +171,15 @@ endef
 #   if ($(prefix)_ or $(prefix)a match in board platform)
 #     return true
 #   else
-#     return _empty
+#     return empty
 #
 define is-chipset-prefix-in-board-platform
 $(strip \
-  $(eval delim_a := $(_empty)a$(_empty)) \
+  $(eval delim_a := $(empty)a$(empty)) \
   $(if \
     $(or \
       $(call match-prefix,$(1),$(delim_a),$(PRODUCT_BOARD_PLATFORM)), \
-      $(call match-prefix,$(1),$(_underscore),$(PRODUCT_BOARD_PLATFORM)), \
+      $(call match-prefix,$(1),$(underscore),$(PRODUCT_BOARD_PLATFORM)), \
     ), \
     true, \
   ) \
@@ -227,7 +227,7 @@ endef
 # cnlist is combination/list of android codenames
 define is-android-codename-in-list
 $(strip \
-  $(eval acn := $(_empty)) \
+  $(eval acn := $(empty)) \
     $(foreach \
       i,$(1),\
       $(eval acn += \
