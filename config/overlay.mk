@@ -10,10 +10,10 @@ PRODUCT_PACKAGES += \
     YellowTheme \
 
 # QS Theme Packages
-PRODUCT_PACKAGES += \
-    FramedQS \
-    SplitQS \
-    SuperBubbleQS \
-    TeardropQS \
-    HexagonQS \
-    CookieQS \
+#PRODUCT_PACKAGES += \
+#    FramedQS \
+#    SplitQS \
+#    SuperBubbleQS \
+#    TeardropQS \
+#    HexagonQS \
+#    CookieQS \
