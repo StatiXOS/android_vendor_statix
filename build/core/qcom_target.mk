@@ -31,19 +31,4 @@ $(call set-device-specific-path,POWER,power,hardware/qcom/power)
 $(call wlan-set-path-variant,wlan)
 $(call bt-vendor-set-path-variant,bt)
 
-else
-
-$(call project-set-path,qcom-audio,hardware/qcom/audio)
-$(call project-set-path,qcom-display,hardware/qcom/display/$(PRODUCT_BOARD_PLATFORM))
-$(call project-set-path,qcom-media,hardware/qcom/media/$(PRODUCT_BOARD_PLATFORM))
-
-$(call project-set-path,qcom-camera,hardware/qcom/camera)
-$(call project-set-path,qcom-gps,hardware/qcom/gps)
-$(call project-set-path,qcom-sensors,hardware/qcom/sensors)
-$(call project-set-path,qcom-loc-api,vendor/qcom/opensource/location)
-$(call project-set-path,qcom-dataservices,$(TARGET_DEVICE_DIR)/dataservices)
-
-$(call wlan-set-path-variant,wlan)
-$(call bt-vendor-set-path-variant,bt)
-
 endif
