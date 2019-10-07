@@ -1,14 +1,6 @@
 # Bring in Qualcomm helper macros
 include vendor/statix/build/core/utils.mk
 
-# Populate the qcom hardware variants in the project pathmap.
-define wlan-set-path-variant
-$(call project-set-path-variant,wlan,TARGET_WLAN_VARIANT,hardware/qcom/$(1))
-endef
-define bt-vendor-set-path-variant
-$(call project-set-path-variant,bt-vendor,TARGET_BT_VENDOR_VARIANT,hardware/qcom/$(1))
-endef
-
 # Set device-specific HALs into project pathmap
 define set-device-specific-path
 $(if $(USE_DEVICE_SPECIFIC_$(1)), \
@@ -21,6 +13,8 @@ endef
 
 ifeq ($(PRODUCT_USES_QCOM_HARDWARE),true)
 
+$(call set-device-specific-path,BT_VENDOR,bt-vendor,hardware/qcom/bt-caf)
+
 $(call set-device-specific-path,AUDIO,audio,hardware/qcom/audio-caf/$(QCOM_HARDWARE_VARIANT))
 $(call set-device-specific-path,DISPLAY,display,hardware/qcom/display-caf/$(QCOM_HARDWARE_VARIANT))
 $(call set-device-specific-path,MEDIA,media,hardware/qcom/media-caf/$(QCOM_HARDWARE_VARIANT))
@@ -28,7 +22,6 @@ $(call set-device-specific-path,MEDIA,media,hardware/qcom/media-caf/$(QCOM_HARDW
 $(call set-device-specific-path,DATASERVICES,dataservices,vendor/qcom/opensource/dataservices)
 $(call set-device-specific-path,POWER,power,hardware/qcom/power)
 
-$(call wlan-set-path-variant,wlan)
-$(call bt-vendor-set-path-variant,bt)
+$(call set-device-specific-path,WLAN,wlan,hardware/qcom/wlan)
 
 endif
