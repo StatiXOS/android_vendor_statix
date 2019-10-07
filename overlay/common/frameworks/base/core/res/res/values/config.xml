@@ -115,4 +115,7 @@
      -->
     <string name="config_defaultWellbeingPackage">com.google.android.apps.wellbeing</string>
 
+   <!-- Make the gesture options show up -->
+   <bool name="config_swipe_up_gesture_setting_available">true</bool>
+  
 </resources>
