@@ -20,7 +20,6 @@ $(call set-device-specific-path,DISPLAY,display,hardware/qcom/display-caf/$(QCOM
 $(call set-device-specific-path,MEDIA,media,hardware/qcom/media-caf/$(QCOM_HARDWARE_VARIANT))
 
 $(call set-device-specific-path,DATASERVICES,dataservices,vendor/qcom/opensource/dataservices)
-$(call set-device-specific-path,POWER,power,hardware/qcom/power)
 
 $(call set-device-specific-path,WLAN,wlan,hardware/qcom/wlan)
 
