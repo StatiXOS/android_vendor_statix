@@ -5,7 +5,7 @@ _json_contents := $(_json_contents)    "Statix":{$(newline)
 
 $(call add_json_bool,	Needs_text_relocations,					$(filter true,$(TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS)))
 $(call add_json_bool,	Qcom_bsp_legacy,					$(filter true,$(TARGET_USES_QCOM_BSP_LEGACY)))
-$(call add_json_bool,	Should_skip_waiting_for_qsee,				$(filter true,$(TARGET_KEYMASTER_SKIP_WAITING_FOR_QSEE)))
+$(call add_json_bool,	Should_wait_for_qsee,					$(filter true,$(TARGET_KEYMASTER_WAIT_FOR_QSEE)))
 $(call add_json_bool,	Supports_hw_fde,					$(filter true,$(TARGET_HW_DISK_ENCRYPTION)))
 $(call add_json_bool,	Supports_hw_fde_perf,					$(filter true,$(TARGET_HW_DISK_ENCRYPTION_PERF)))
 $(call add_json_bool,	Target_uses_eigen,					$(filter true,$(if $(strip $(TARGET_USES_QML)),false,true)))
