@@ -1,5 +1,5 @@
 aosp_devices=('angler' 'angler_4core' 'bonito' 'taimen' 'sargo')
-caf_devices=('beryllium' 'oneplus3' 'mata')
+caf_devices=('beryllium' 'fajita' 'oneplus3' 'mata')
 
 function lunch_devices() {
     add_lunch_combo statix_${device}-user
