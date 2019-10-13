@@ -62,6 +62,7 @@ VARIANT_DEFCONFIG := $(TARGET_KERNEL_VARIANT_CONFIG)
 SELINUX_DEFCONFIG := $(TARGET_KERNEL_SELINUX_CONFIG)
 
 ## Internal variables
+DTBS_OUT := $(PRODUCT_OUT)/dtbs
 KERNEL_OUT := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ
 KERNEL_CONFIG := $(KERNEL_OUT)/.config
 
@@ -231,7 +232,7 @@ endef
 # Make a DTB target
 # $(1): The DTB target to build (eg. dtbs, defconfig)
 define make-dtb-target
-$(call internal-make-kernel-target,$(PRODUCT_OUT)/dtbs,$(1))
+$(call internal-make-kernel-target,$(DTBS_OUT),$(1))
 endef
 
 $(KERNEL_ADDITIONAL_CONFIG_OUT):
