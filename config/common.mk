@@ -42,7 +42,7 @@ PRODUCT_COPY_FILES += \
 
 # copy privapp permissions
 PRODUCT_COPY_FILES += \
-    vendor/statix/prebuilt/common/etc/permissions/privapp-permissions-statix.xml:system/etc/permissions/privapp-permissions-statix.xml
+    vendor/statix/prebuilt/common/etc/permissions/privapp-permissions-statix.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-statix.xml
 
 # Backup Tool
 #PRODUCT_COPY_FILES += \
