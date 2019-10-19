@@ -1,7 +1,6 @@
 # Accent packages
 PRODUCT_PACKAGES += \
     AmberTheme \
-    CyanTheme \
     ForestTheme \
     LimeTheme \
     OrangeTheme \
