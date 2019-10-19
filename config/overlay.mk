@@ -7,6 +7,7 @@ PRODUCT_PACKAGES += \
     PinkTheme \
     RedTheme \
     YellowTheme \
+    MintTheme \
 
 # QS Theme Packages
 #PRODUCT_PACKAGES += \
