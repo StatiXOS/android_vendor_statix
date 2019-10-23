@@ -34,7 +34,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.sys.disable_rescue=true \
     ro.build.selinux=1
 
-ifeq ($(AB_OTA_UPDATER),true)
+ifneq ($(AB_OTA_PARTITIONS),)
 PRODUCT_COPY_FILES += \
     vendor/statix/build/tools/backuptool_ab.sh:system/bin/backuptool_ab.sh \
     vendor/statix/build/tools/backuptool_ab.functions:system/bin/backuptool_ab.functions \
