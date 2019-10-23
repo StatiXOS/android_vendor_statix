@@ -10,7 +10,7 @@ PRODUCT_PACKAGES += \
     WeatherProvider
 
 # Local Updater
-ifeq ($(AB_OTA_UPDATER),true)
+ifneq ($(AB_OTA_PARTITIONS),)
 PRODUCT_PACKAGES += \
     LocalUpdater
 endif
