@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="drawable" name="theme_wallpaper_default">@drawable/generic_bg</item>
+    <item type="drawable" name="theme_wallpaper_thumbnail_default">@drawable/generic_bg_prev</item>
+    <item type="drawable" name="theme_wallpaper_throwback">@drawable/throwback_bg</item>
+    <item type="drawable" name="theme_wallpaper_thumbnail_throwback">@drawable/throwback_bg_prev</item>
+    <item type="drawable" name="theme_wallpaper_electrigreen">@drawable/electrigreen_bg</item>
+    <item type="drawable" name="theme_wallpaper_thumbnail_electrigreen">@drawable/electrigreen_bg_prev</item>
+</resources>
+
