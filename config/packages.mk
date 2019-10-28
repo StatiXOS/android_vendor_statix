@@ -19,6 +19,9 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PACKAGES += \
 #    statix-fonts
 
+PRODUCT_PACKAGES += \
+     StatixOverlayStub
+
 # WeatherProvider
 #PRODUCT_COPY_FILES += \
 #    vendor/statix/prebuilt/common/etc/permissions/com.android.providers.weather.xml:system/etc/permissions/com.android.providers.weather.xml \
