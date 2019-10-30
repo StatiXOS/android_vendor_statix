@@ -23,4 +23,10 @@ PRODUCT_PACKAGES += \
 #    vendor/statix/prebuilt/common/etc/permissions/com.android.providers.weather.xml:system/etc/permissions/com.android.providers.weather.xml \
 #    vendor/statix/prebuilt/common/etc/default-permissions/com.android.providers.weather.xml:system/etc/default-permissions/com.android.providers.weather.xml
 
+# Fonts
+PRODUCT_PACKAGES += \
+    FontArbutusSourceOverlay \
+    FontArvoLatoOverlay \
+    FontRubikRubikOverlay \
+
 -include vendor/statix/config/overlay.mk
