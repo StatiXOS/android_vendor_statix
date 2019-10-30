@@ -15,10 +15,6 @@ PRODUCT_PACKAGES += \
 #    WeatherProvider \
 #    CustomDoze
 
-# Fonts packages
-#PRODUCT_PACKAGES += \
-#    statix-fonts
-
 PRODUCT_PACKAGES += \
      StatixOverlayStub
 
