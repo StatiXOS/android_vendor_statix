@@ -1,4 +1,4 @@
-devices=('angler' 'angler_4core' 'beryllium' 'bonito' 'mata' 'oneplus3' 'sargo' 'taimen')
+devices=('angler' 'angler_4core' 'beryllium' 'bonito' 'fajita' 'mata' 'oneplus3' 'sargo' 'taimen')
 
 function lunch_devices() {
     add_lunch_combo statix_${device}-user
