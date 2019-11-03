@@ -43,10 +43,10 @@ PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/common/etc/permissions/privapp-permissions-statix.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-statix.xml
 
 # Backup Tool
-#PRODUCT_COPY_FILES += \
-#    vendor/statix/build/tools/backuptool.sh:install/bin/backuptool.sh \
-#    vendor/statix/build/tools/backuptool.functions:install/bin/backuptool.functions \
-#    vendor/statix/build/tools/50-statix.sh:system/addon.d/50-statix.sh
+PRODUCT_COPY_FILES += \
+    vendor/statix/build/tools/backuptool.sh:install/bin/backuptool.sh \
+    vendor/statix/build/tools/backuptool.functions:install/bin/backuptool.functions \
+    vendor/statix/build/tools/50-statix.sh:system/addon.d/50-statix.sh
 
 # Statix-specific init file
 PRODUCT_COPY_FILES += \
