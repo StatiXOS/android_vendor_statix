@@ -21,5 +21,6 @@ PRODUCT_PACKAGES += \
     FontArbutusSourceOverlay \
     FontArvoLatoOverlay \
     FontRubikRubikOverlay \
+    FontGoogleSansOverlay \
 
 -include vendor/statix/config/overlay.mk
