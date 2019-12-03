@@ -86,6 +86,8 @@ def merge():
         os.chdir("{0}/{1}".format(WORKING_DIR, repo))
         if repo == "build/make":
             repo_str = "build"
+        if repo == "packages/apps/PermissionController"
+            repo_str = "PackageInstaller"
         cmd = 'git pull {0}{1} {2}'.format(BASE_URL, repo_str, BRANCH_STR)
         ret_val = os.system(cmd)
         if ret_val:
@@ -127,4 +129,3 @@ def main():
 if __name__ == "__main__":
     # execute only if run as a script
     main()
-
