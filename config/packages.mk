@@ -12,16 +12,16 @@ PRODUCT_PACKAGES += \
 # StatiX Packages
 PRODUCT_PACKAGES += \
      ThemePicker \
-#    WeatherProvider \
+     WeatherProvider \
 #    CustomDoze
 
 PRODUCT_PACKAGES += \
      StatixOverlayStub
 
 # WeatherProvider
-#PRODUCT_COPY_FILES += \
-#    vendor/statix/prebuilt/common/etc/permissions/com.android.providers.weather.xml:system/etc/permissions/com.android.providers.weather.xml \
-#    vendor/statix/prebuilt/common/etc/default-permissions/com.android.providers.weather.xml:system/etc/default-permissions/com.android.providers.weather.xml
+PRODUCT_COPY_FILES += \
+    vendor/statix/prebuilt/common/etc/permissions/com.android.providers.weather.xml:system/etc/permissions/com.android.providers.weather.xml \
+    vendor/statix/prebuilt/common/etc/default-permissions/com.android.providers.weather.xml:system/etc/default-permissions/com.android.providers.weather.xml
 
 # Fonts
 PRODUCT_PACKAGES += \
