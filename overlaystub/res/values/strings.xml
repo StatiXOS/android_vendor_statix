@@ -27,7 +27,7 @@
     <!-- Values to declare accents, there aren't themes. -->
     <string name="theme_name_electrigreen">ElectriGreen</string>
     <string name="theme_title_electrigreen">@string/theme_name_electrigreen</string>
-    <string name="theme_overlay_color_electrigreen">com.accents.Mint</string>
+    <string name="theme_overlay_color_electrigreen">com.android.theme.color.mint</string>
     <string name="theme_overlay_font_electrigreen">com.android.theme.font.arvolato</string>
     <string name="theme_overlay_icon_android_electrigreen">com.android.theme.icon_pack.filled.android</string>
     <string name="theme_overlay_icon_launcher_electrigreen">com.android.theme.icon_pack.filled.launcher</string>
@@ -39,7 +39,7 @@
 
     <string name="theme_name_throwback">Throwback Orange</string>
     <string name="theme_title_throwback">@string/theme_name_throwback</string>
-    <string name="theme_overlay_color_throwback">com.accents.orange</string>
+    <string name="theme_overlay_color_throwback">com.android.theme.color.orange</string>
     <string name="theme_overlay_font_throwback">com.android.theme.font.rubikrubik</string>
     <string name="theme_overlay_icon_android_throwback">com.android.theme.icon_pack.circular.android</string>
     <string name="theme_overlay_icon_launcher_throwback">com.android.theme.icon_pack.circular.launcher</string>
