@@ -1,5 +1,5 @@
 #
-#  Copyright 2019 The StatiXOS Project
+#  Copyright 2019, The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,22 +14,18 @@
 # limitations under the License.
 #
 
-# Accents
-PRODUCT_PACKAGES += \
-    AccentColorAmberOverlay \
-    AccentColorForestOverlay \
-    AccentColorLimeOverlay \
-    AccentColorMintOverlay \
-    AccentColorOrangeOverlay \
-    AccentColorPinkOverlay \
-    AccentColorRedOverlay \
-    AccentColorYellowOverlay
+LOCAL_PATH:= $(call my-dir)
+include $(CLEAR_VARS)
 
-# QS Theme Packages
-#PRODUCT_PACKAGES += \
-#    FramedQS \
-#    SplitQS \
-#    SuperBubbleQS \
-#    TeardropQS \
-#    HexagonQS \
-#    CookieQS \
+LOCAL_RRO_THEME := AccentColorRed
+
+LOCAL_PRODUCT_MODULE := true
+
+LOCAL_SRC_FILES := $(call all-subdir-java-files)
+
+LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res
+
+LOCAL_PACKAGE_NAME := AccentColorRedOverlay
+LOCAL_SDK_VERSION := current
+
+include $(BUILD_RRO_PACKAGE)
