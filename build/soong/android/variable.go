@@ -4,7 +4,7 @@ type Product_variables struct {
 		Cppflags []string
 	}
 
-	Qcom_bsp_legacy struct {
+	Uses_qcom_bsp_legacy struct {
 		Cppflags []string
 	}
 
@@ -86,7 +86,7 @@ type Product_variables struct {
 
 type ProductVariables struct {
 	Needs_text_relocations					*bool `json:",omitempty"`
-	Qcom_bsp_legacy							*bool `json:",omitempty"`
+	Uses_qcom_bsp_legacy					*bool `json:",omitempty"`
 	Should_wait_for_qsee					*bool `json:",omitempty"`
 	Supports_hw_fde							*bool `json:",omitempty"`
 	Supports_hw_fde_perf					*bool `json:",omitempty"`
