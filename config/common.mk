@@ -56,6 +56,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/common/etc/init.statix.rc:system/etc/init/init.statix.rc
 
+# Build ID
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    BUILD_DISPLAY_ID="$(BUILD_ID)-$(TARGET_BUILD_VARIANT)"
+
 # Packages
 include vendor/statix/config/packages.mk
 
