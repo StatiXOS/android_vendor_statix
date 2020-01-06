@@ -112,3 +112,7 @@ BOARD_PREBUILT_DTBOIMAGE ?= $(PRODUCT_OUT)/dtbo/arch/$(KERNEL_ARCH)/boot/dtbo.im
 else ifeq ($(BOARD_KERNEL_SEPARATED_DTBO),true)
 BOARD_PREBUILT_DTBOIMAGE ?= $(PRODUCT_OUT)/dtbo-pre.img
 endif
+
+# Set use the full path to the dtc command
+KERNEL_DTC_CMD := $(BUILD_TOP)/prebuilts/build-tools/$(HOST_OS)-x86/bin/dtc
+
