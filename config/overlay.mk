@@ -25,6 +25,10 @@ PRODUCT_PACKAGES += \
     AccentColorRedOverlay \
     AccentColorYellowOverlay
 
+# Icon Theme Packages
+PRODUCT_PACKAGES += \
+    IconShapeHexagonOverlay
+
 # Primary color overlay
 PRODUCT_PACKAGES += \
     PrimaryColorStatixBlackOverlay
