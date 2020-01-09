@@ -25,11 +25,6 @@ PRODUCT_PACKAGES += \
     AccentColorRedOverlay \
     AccentColorYellowOverlay
 
-# QS Theme Packages
-#PRODUCT_PACKAGES += \
-#    FramedQS \
-#    SplitQS \
-#    SuperBubbleQS \
-#    TeardropQS \
-#    HexagonQS \
-#    CookieQS \
+# Icon Theme Packages
+PRODUCT_PACKAGES += \
+    IconShapeHexagonOverlay
