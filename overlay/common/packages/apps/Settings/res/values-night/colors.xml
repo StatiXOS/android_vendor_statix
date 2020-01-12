@@ -11,6 +11,10 @@
      limitations under the License.
 -->
 <resources>
-    <color name="homepage_card_dismissal_background">@*android:color/secondary_device_default_settings</color>
-    <color name="contextual_card_background">@*android:color/secondary_device_default_settings</color>
-</resources> 
+
+    <color name="search_bar_background">@*android:color/primary_dark_device_default_settings</color>
+
+    <!-- Dialog background color -->
+    <color name="dialog_background">@*android:color/primary_dark_device_default_settings</color>
+
+</resources>
