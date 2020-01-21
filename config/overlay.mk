@@ -28,3 +28,9 @@ PRODUCT_PACKAGES += \
 # Icon Theme Packages
 PRODUCT_PACKAGES += \
     IconShapeHexagonOverlay
+
+# UI Styles
+PRODUCT_PACKAGES += \
+    PixelThemeAndroidOverlay \
+    PixelThemeSettingsOverlay \
+    PixelThemeSystemUIOverlay
