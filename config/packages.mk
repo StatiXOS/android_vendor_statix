@@ -20,7 +20,8 @@ PRODUCT_PACKAGES += \
 
 # Charger images
 PRODUCT_PACKAGES += \
-    charger_res_images
+    charger_res_images \
+    product_charger_res_images
 
 # WeatherProvider
 PRODUCT_COPY_FILES += \
