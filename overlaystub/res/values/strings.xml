@@ -47,5 +47,19 @@
     <string name="theme_overlay_icon_sysui_throwback">com.android.theme.icon_pack.circular.systemui</string>
     <string name="theme_wallpaper_title_throwback">Original StatiX Wallpaper</string>
     <string name="theme_wallpaper_attribution_throwback">edited by MCIJ7</string>
+    
+    <!-- Pixel Black -->
+    <string name="theme_name_pixel">Pixel Black</string>
+	<string name="theme_title_pixel">@string/theme_name_pixel</string>
+	<string name="theme_overlay_color_pixel">com.android.theme.color.ocean</string>
+	<string name="theme_overlay_font_pixel">com.android.theme.font.googlesans</string>
+	<string name="theme_overlay_style_android_pixel">com.android.theme.style.android.pixel</string>
+	<string name="theme_overlay_style_settings_pixel">com.android.theme.style.settings.pixel</string>
+	<string name="theme_overlay_style_sysui_pixel">com.android.theme.style.systemui.pixel</string>
+	<string name="theme_overlay_icon_android_pixel">com.android.theme.icon_pack.rounded.android</string>
+	<string name="theme_overlay_icon_launcher_pixel">com.android.theme.icon_pack.rounded.launcher</string> 
+	<string name="theme_overlay_icon_settings_pixel">com.android.theme.icon_pack.rounded.settings</string>
+	<string name="theme_overlay_icon_sysui_pixel">com.android.theme.icon_pack.rounded.systemui</string>
+	<string name="theme_overlay_shape_pixel">com.android.theme.icon.circle</string>
 
 </resources>
