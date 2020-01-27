@@ -211,9 +211,15 @@ KERNEL_ADDITIONAL_CONFIG_OUT := $(KERNEL_OUT)/.additional_config
 # Internal implementation of make-kernel-target
 # $(1): output path (The value passed to O=)
 # $(2): target to build (eg. defconfig, modules, dtbo.img)
-define internal-make-kernel-target
+ifeq ($(TARGET_USES_PREBUILT_DTC),true)
+    define internal-make-kernel-target
 $(PATH_OVERRIDE) $(MAKE_PREBUILT) $(KERNEL_MAKE_FLAGS) -C $(KERNEL_SRC) O=$(1) DTC=$(KERNEL_DTC_CMD) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) $(2)
-endef
+    endef
+else
+    define internal-make-kernel-target
+$(PATH_OVERRIDE) $(MAKE_PREBUILT) $(KERNEL_MAKE_FLAGS) -C $(KERNEL_SRC) O=$(1) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) $(2)
+    endef
+endif
 
 # Make a kernel target
 # $(1): The kernel target to build (eg. defconfig, modules, modules_install)
