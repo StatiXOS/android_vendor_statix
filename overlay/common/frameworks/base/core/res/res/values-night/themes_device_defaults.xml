@@ -66,4 +66,19 @@ easier.
         <item name="colorBackgroundFloating">@color/primary_device_default_settings</item>
         <item name="textColorSecondary">@android:color/resolver_text_color_secondary_dark</item>
     </style>
+
+    <style name="Theme.DeviceDefault.Settings" parent="Theme.DeviceDefault">
+        <item name="windowLightStatusBar">false</item>
+        <item name="navigationBarColor">@android:color/black</item>
+        <item name="windowLightNavigationBar">false</item>
+
+        <item name="colorPrimary">@color/primary_device_default_settings</item>
+        <item name="colorPrimaryDark">@color/primary_device_default_settings</item>
+        <item name="colorBackground">@color/primary_device_default_settings</item>
+        <item name="colorEdgeEffect">@color/edge_effect_device_default_dark</item>
+
+        <item name="colorListDivider">@color/list_divider_color_dark</item>
+        <item name="opacityListDivider">@color/list_divider_opacity_device_default_dark</item>
+        <item name="forceDarkAllowed">false</item>
+    </style>
 </resources>
