@@ -67,6 +67,10 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 # Packages
 include vendor/statix/config/packages.mk
 
+# Custom Brightness Slider
+PRODUCT_PACKAGES += \
+    BrightnessSliderOverlay
+
 # Branding
 include vendor/statix/config/branding.mk
 
