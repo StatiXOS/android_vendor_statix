@@ -14,4 +14,7 @@
         <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
     </privapp-permissions>
 
+    <privapp-permissions package="com.android.screenshot">
+        <permission name="android.permission.READ_FRAME_BUFFER"/>
+    </privapp-permissions>
 </permissions>
