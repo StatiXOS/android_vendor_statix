@@ -13,7 +13,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
      ThemePicker \
      WeatherProvider \
-#    CustomDoze
+     CustomDoze
 
 PRODUCT_PACKAGES += \
      StatixOverlayStub
