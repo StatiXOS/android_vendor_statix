@@ -18,10 +18,6 @@
         <permission name="android.permission.SET_WALLPAPER_COMPONENT"/>
     </privapp-permissions>
 
-    <privapp-permissions package="com.custom.ambient.display">
-        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
-    </privapp-permissions>
-
     <!-- Additional permissions on top of privapp-permissions-platform.xml -->
     <privapp-permissions package="com.android.settings">
         <permission name="android.permission.NAVIGATION_EDITOR"/>
