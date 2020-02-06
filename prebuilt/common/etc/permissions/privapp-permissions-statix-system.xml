@@ -3,5 +3,9 @@
     <privapp-permissions package="com.custom.ambient.display">
         <permission name="android.permission.INTERACT_ACROSS_USERS"/>
     </privapp-permissions>
+    
+    <privapp-permissions package="com.android.phone">
+        <permission name="android.permission.OVERRIDE_WIFI_CONFIG"/>
+    </privapp-permissions>
 
 </permissions>
