@@ -16,6 +16,7 @@
         <permission name="android.permission.NAVIGATION_EDITOR"/>
         <permission name="android.permission.LOCATION_HARDWARE"/>
         <permission name="android.permission.SET_WALLPAPER_COMPONENT"/>
+        <permission name="android.permission.WRITE_APN_SETTINGS"/>
     </privapp-permissions>
 
     <!-- Additional permissions on top of privapp-permissions-platform.xml -->
