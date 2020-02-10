@@ -1,21 +1,8 @@
 function __print_extra_functions_help() {
 cat <<EOF
 Additional functions:
-- mka:             Builds using SCHED_BATCH on all processors.
 - repopick:        Utility to fetch changes from Gerrit.
 EOF
-}
-
-# Make using all available CPUs
-function mka() {
-    case `uname -s` in
-        Darwin)
-            make -j `sysctl hw.ncpu|cut -d" " -f2` "$@"
-            ;;
-        *)
-            schedtool -B -n 1 -e ionice -n 1 make -j `cat /proc/cpuinfo | grep "^processor" | wc -l` "$@"
-            ;;
-    esac
 }
 
 function breakfast()
@@ -54,7 +41,7 @@ function brunch()
 {
     breakfast $*
     if [ $? -eq 0 ]; then
-        time mka bacon
+        time m bacon
     else
         echo "No such item in brunch menu. Try 'breakfast'"
         return 1
