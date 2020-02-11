@@ -25,7 +25,7 @@
     <string name="theme_wallpaper_title_default">Default StatiX Wallpaper</string>
     <string name="theme_wallpaper_attribution_default">Made by Sourajit</string>
 
-    <!-- Values to declare accents, there aren't themes. -->
+    <!-- Sweet Lime -->
     <string name="theme_name_sweetlime">SweetLime</string>
     <string name="theme_title_sweetlime">@string/theme_name_sweetlime</string>
     <string name="theme_overlay_color_sweetlime">com.android.theme.color.lime</string>
@@ -38,6 +38,7 @@
     <string name="theme_wallpaper_title_sweetlime">Lime Wallpaper</string>
     <string name="theme_wallpaper_attribution_sweetlime">Made by Sourajit</string>
 
+    <!-- Sunset Orange -->
     <string name="theme_name_sunsetorange">Sunset Orange</string>
     <string name="theme_title_sunsetorange">@string/theme_name_sunsetorange</string>
     <string name="theme_overlay_color_sunsetorange">com.android.theme.color.orange</string>
@@ -49,6 +50,7 @@
     <string name="theme_wallpaper_title_sunsetorange">Orange Wallpaper</string>
     <string name="theme_wallpaper_attribution_sunsetorange">Made by Sourajit</string>
 
+    <!-- Chill Aura -->
     <string name="theme_name_chillaura">Chill Aura</string>
     <string name="theme_title_chillaura">@string/theme_name_chillaura</string>
     <string name="theme_overlay_color_chillaura">com.android.theme.color.red</string>
