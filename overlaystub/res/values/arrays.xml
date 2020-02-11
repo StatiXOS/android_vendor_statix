@@ -2,7 +2,7 @@
 <resources>
     <string-array name="themes">
         <item>default</item>
-        <item>electrigreen</item>
-        <item>throwback</item>
+        <item>sweetlime</item>
+        <item>sunsetorange</item>
     </string-array>
 </resources>
