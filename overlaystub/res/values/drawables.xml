@@ -6,5 +6,8 @@
     <item type="drawable" name="theme_wallpaper_thumbnail_sunsetorange">@drawable/sunsetorange_bg_prev</item>
     <item type="drawable" name="theme_wallpaper_sweetlime">@drawable/sweetlime_bg</item>
     <item type="drawable" name="theme_wallpaper_thumbnail_sweetlime">@drawable/sweetlime_bg_prev</item>
+	<item type="drawable" name="theme_wallpaper_chillaura">@drawable/chillaura_bg</item>
+    <item type="drawable" name="theme_wallpaper_thumbnail_chillaura">@drawable/chillaura_bg_prev</item>
+	
 </resources>
 

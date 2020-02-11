@@ -1,7 +1,6 @@
 <!--
 /**
- * Copyright (c) 2019, The Android Open Source Project
- *                     Bootleggers ROM
+ * Copyright (c) 2020, StatiXOS
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- DEFAULT VALUES HAHA YES, maybe switch to an actual overlay later? -->
+    <!-- Default.exe -->
     <string name="theme_name_default">Default</string>
     <string name="theme_title_default">@string/theme_name_default</string>
     <string name="theme_wallpaper_title_default">Default StatiX Wallpaper</string>
@@ -36,7 +35,7 @@
     <string name="theme_overlay_shape_sweetlime">com.android.theme.icon.roundedrect</string>
     <string name="theme_wallpaper_title_sweetlime">Lime Wallpaper</string>
     <string name="theme_wallpaper_attribution_sweetlime">Made by Sourajit</string>
-
+	
     <string name="theme_name_sunsetorange">Sunset Orange</string>
     <string name="theme_title_sunsetorange">@string/theme_name_sunsetorange</string>
     <string name="theme_overlay_color_sunsetorange">com.android.theme.color.orange</string>
@@ -47,5 +46,18 @@
     <string name="theme_overlay_icon_sysui_sunsetorange">com.android.theme.icon_pack.circular.systemui</string>
     <string name="theme_wallpaper_title_sunsetorange">Orange Wallpaper</string>
     <string name="theme_wallpaper_attribution_sunsetorange">Made by Sourajit</string>
+	
+	<string name="theme_name_chillaura">Chill Aura</string>
+    <string name="theme_title_chillaura">@string/theme_name_chillaura</string>
+    <string name="theme_overlay_color_chillaura">com.android.theme.color.red</string>
+    <string name="theme_overlay_font_chillaura">com.android.theme.font.googlesans</string>
+    <string name="theme_overlay_icon_android_chillaura">com.android.theme.icon_pack.circular.android</string>
+    <string name="theme_overlay_icon_launcher_chillaura">com.android.theme.icon_pack.circular.launcher</string>
+    <string name="theme_overlay_icon_settings_chillaura">com.android.theme.icon_pack.circular.settings</string>
+    <string name="theme_overlay_icon_sysui_chillaura">com.android.theme.icon_pack.circular.systemui</string>
+    <string name="theme_wallpaper_title_chillaura">ChillAura Wallpaper</string>
+    <string name="theme_wallpaper_attribution_chillaura">Made by Sourajit</string>
+	
+	
 
 </resources>
