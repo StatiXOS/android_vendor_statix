@@ -22,30 +22,30 @@
     <string name="theme_name_default">Default</string>
     <string name="theme_title_default">@string/theme_name_default</string>
     <string name="theme_wallpaper_title_default">Default StatiX Wallpaper</string>
-    <string name="theme_wallpaper_attribution_default">edited by MCIJ7</string>
+    <string name="theme_wallpaper_attribution_default">Made by Sourajit</string>
 
     <!-- Values to declare accents, there aren't themes. -->
-    <string name="theme_name_electrigreen">ElectriGreen</string>
-    <string name="theme_title_electrigreen">@string/theme_name_electrigreen</string>
-    <string name="theme_overlay_color_electrigreen">com.android.theme.color.mint</string>
-    <string name="theme_overlay_font_electrigreen">com.android.theme.font.arvolato</string>
-    <string name="theme_overlay_icon_android_electrigreen">com.android.theme.icon_pack.filled.android</string>
-    <string name="theme_overlay_icon_launcher_electrigreen">com.android.theme.icon_pack.filled.launcher</string>
-    <string name="theme_overlay_icon_settings_electrigreen">com.android.theme.icon_pack.filled.settings</string>
-    <string name="theme_overlay_icon_sysui_electrigreen">com.android.theme.icon_pack.filled.systemui</string>
-    <string name="theme_overlay_shape_electrigreen">com.android.theme.icon.roundedrect</string>
-    <string name="theme_wallpaper_title_electrigreen">Neon Green StatiX Wallpaper</string>
-    <string name="theme_wallpaper_attribution_electrigreen">edited by MCIJ7</string>
+    <string name="theme_name_sweetlime">SweetLime</string>
+    <string name="theme_title_sweetlime">@string/theme_name_sweetlime</string>
+    <string name="theme_overlay_color_sweetlime">com.android.theme.color.mint</string>
+    <string name="theme_overlay_font_sweetlime">com.android.theme.font.arvolato</string>
+    <string name="theme_overlay_icon_android_sweetlime">com.android.theme.icon_pack.filled.android</string>
+    <string name="theme_overlay_icon_launcher_sweetlime">com.android.theme.icon_pack.filled.launcher</string>
+    <string name="theme_overlay_icon_settings_sweetlime">com.android.theme.icon_pack.filled.settings</string>
+    <string name="theme_overlay_icon_sysui_sweetlime">com.android.theme.icon_pack.filled.systemui</string>
+    <string name="theme_overlay_shape_sweetlime">com.android.theme.icon.roundedrect</string>
+    <string name="theme_wallpaper_title_sweetlime">Lime Wallpaper</string>
+    <string name="theme_wallpaper_attribution_sweetlime">Made by Sourajit</string>
 
-    <string name="theme_name_throwback">Throwback Orange</string>
-    <string name="theme_title_throwback">@string/theme_name_throwback</string>
-    <string name="theme_overlay_color_throwback">com.android.theme.color.orange</string>
-    <string name="theme_overlay_font_throwback">com.android.theme.font.rubikrubik</string>
-    <string name="theme_overlay_icon_android_throwback">com.android.theme.icon_pack.circular.android</string>
-    <string name="theme_overlay_icon_launcher_throwback">com.android.theme.icon_pack.circular.launcher</string>
-    <string name="theme_overlay_icon_settings_throwback">com.android.theme.icon_pack.circular.settings</string>
-    <string name="theme_overlay_icon_sysui_throwback">com.android.theme.icon_pack.circular.systemui</string>
-    <string name="theme_wallpaper_title_throwback">Original StatiX Wallpaper</string>
-    <string name="theme_wallpaper_attribution_throwback">edited by MCIJ7</string>
+    <string name="theme_name_sunsetorange">Sunset Orange</string>
+    <string name="theme_title_sunsetorange">@string/theme_name_sunsetorange</string>
+    <string name="theme_overlay_color_sunsetorange">com.android.theme.color.orange</string>
+    <string name="theme_overlay_font_sunsetorange">com.android.theme.font.rubikrubik</string>
+    <string name="theme_overlay_icon_android_sunsetorange">com.android.theme.icon_pack.circular.android</string>
+    <string name="theme_overlay_icon_launcher_sunsetorange">com.android.theme.icon_pack.circular.launcher</string>
+    <string name="theme_overlay_icon_settings_sunsetorange">com.android.theme.icon_pack.circular.settings</string>
+    <string name="theme_overlay_icon_sysui_sunsetorange">com.android.theme.icon_pack.circular.systemui</string>
+    <string name="theme_wallpaper_title_sunsetorange">Orange Wallpaper</string>
+    <string name="theme_wallpaper_attribution_sunsetorange">Made by Sourajit</string>
 
 </resources>
