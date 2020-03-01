@@ -31,4 +31,7 @@
     <color name="Teal_700">#ff5a9af8</color>
     <color name="Teal_800">#ff5795f0</color>
 
+    <color name="primary_custom_dark_settings">#ff202124</color>
+    <color name="primary_custom_dark_settings_dark">#ff202124</color>
+
 </resources>

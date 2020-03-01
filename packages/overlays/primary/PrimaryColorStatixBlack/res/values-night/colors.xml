@@ -21,6 +21,8 @@
     <color name="primary_dark_device_default_settings">#000000</color> <!-- colorPrimaryDark-->
     <color name="material_grey_800">#121212</color> <!-- google elgoogleogoelo -->
     <color name="material_grey_900">#101010</color> <!-- google elgoogleogoelo -->
+    <color name="primary_custom_dark_settings">#101010</color> <!-- Settings-->
+    <color name="primary_custom_dark_settings_dark">#000000</color> <!-- Settings Dark-->
     <color name="primary_device_default">@color/primary_dark_device_default_settings</color> <!-- only for ThemePicker! -->
 </resources>
 
