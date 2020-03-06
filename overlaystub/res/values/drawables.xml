@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item type="drawable" name="theme_wallpaper_default">@drawable/generic_bg</item>
-    <item type="drawable" name="theme_wallpaper_thumbnail_default">@drawable/generic_bg_prev</item>
-    <item type="drawable" name="theme_wallpaper_sunsetorange">@drawable/sunsetorange_bg</item>
-    <item type="drawable" name="theme_wallpaper_thumbnail_sunsetorange">@drawable/sunsetorange_bg_prev</item>
-    <item type="drawable" name="theme_wallpaper_sweetlime">@drawable/sweetlime_bg</item>
-    <item type="drawable" name="theme_wallpaper_thumbnail_sweetlime">@drawable/sweetlime_bg_prev</item>
-    <item type="drawable" name="theme_wallpaper_chillaura">@drawable/chillaura_bg</item>
-    <item type="drawable" name="theme_wallpaper_thumbnail_chillaura">@drawable/chillaura_bg_prev</item>
-    <item type="drawable" name="theme_wallpaper_wintersun">@drawable/wintersun_bg</item>
-    <item type="drawable" name="theme_wallpaper_thumbnail_wintersun">@drawable/wintersun_bg_prev</item>
+    <item type="drawable" name="theme_wallpaper_supergradient">@drawable/supergradient_bg</item>
+    <item type="drawable" name="theme_wallpaper_thumbnail_supergradient">@drawable/supergradient_bg_prev</item>
+    <item type="drawable" name="theme_wallpaper_glitteringblue">@drawable/glitteringblue_bg</item>
+    <item type="drawable" name="theme_wallpaper_thumbnail_glitteringblue">@drawable/glitteringblue_bg_prev</item>
+    <item type="drawable" name="theme_wallpaper_purpleparadise">@drawable/purpleparadise_bg</item>
+    <item type="drawable" name="theme_wallpaper_thumbnail_purpleparadise">@drawable/purpleparadise_bg_prev</item>
 </resources>
 
