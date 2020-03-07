@@ -2,9 +2,7 @@
 <resources>
     <string-array name="themes">
         <item>default</item>
-        <item>sweetlime</item>
-        <item>sunsetorange</item>
-        <item>chillaura</item>
-        <item>wintersun</item>
+        <item>sapphireblue</item>
+        <item>purpleparadise</item>
     </string-array>
 </resources>
