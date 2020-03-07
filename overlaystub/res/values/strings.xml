@@ -19,60 +19,36 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Default.exe -->
-    <string name="theme_name_default">Default</string>
+    <!-- Default-->
+    <string name="theme_name_default">Gradient</string>
     <string name="theme_title_default">@string/theme_name_default</string>
-    <string name="theme_wallpaper_title_default">Default StatiX Wallpaper</string>
-    <string name="theme_wallpaper_attribution_default">Made by Sourajit</string>
+    <string name="theme_wallpaper_title_default">Super Gradient</string>
+    <string name="theme_wallpaper_attribution_default">Alycia Rainaud</string>
 
-    <!--Sweet Lime-->
-    <string name="theme_name_sweetlime">Sweet Lime</string>
-    <string name="theme_title_sweetlime">@string/theme_name_sweetlime</string>
-    <string name="theme_overlay_color_sweetlime">com.android.theme.color.lime</string>
-    <string name="theme_overlay_font_sweetlime">com.android.theme.font.arbutussource</string>
-    <string name="theme_overlay_icon_android_sweetlime">com.android.theme.icon_pack.filled.android</string>
-    <string name="theme_overlay_icon_launcher_sweetlime">com.android.theme.icon_pack.filled.launcher</string>
-    <string name="theme_overlay_icon_settings_sweetlime">com.android.theme.icon_pack.filled.settings</string>
-    <string name="theme_overlay_icon_sysui_sweetlime">com.android.theme.icon_pack.filled.systemui</string>
-    <string name="theme_overlay_shape_sweetlime">com.android.theme.icon.roundedrect</string>
-    <string name="theme_wallpaper_title_sweetlime">Lime StatiX Wallpaper</string>
-    <string name="theme_wallpaper_attribution_sweetlime">Sourajit Karmakar</string>
+    <!--Sapphire Blue-->
+    <string name="theme_name_sapphireblue">Sapphire Blue</string>
+    <string name="theme_title_sapphireblue">@string/theme_name_sapphireblue</string>
+    <string name="theme_overlay_color_sapphireblue">com.android.theme.color.neonblue</string>
+    <string name="theme_overlay_font_sapphireblue">com.android.theme.font.arvolato</string>
+    <string name="theme_overlay_icon_android_sapphireblue">com.android.theme.icon_pack.filled.android</string>
+    <string name="theme_overlay_icon_launcher_sapphireblue">com.android.theme.icon_pack.filled.launcher</string>
+    <string name="theme_overlay_icon_settings_sapphireblue">com.android.theme.icon_pack.filled.settings</string>
+    <string name="theme_overlay_icon_sysui_sapphireblue">com.android.theme.icon_pack.filled.systemui</string>
+    <string name="theme_overlay_shape_sapphireblue">com.android.theme.icon.roundedrect</string>
+    <string name="theme_wallpaper_title_sapphireblue">Sapphire Blue</string>
+    <string name="theme_wallpaper_attribution_sapphireblue">Arthur</string>
 
-    <!--Sunset Orange-->
-    <string name="theme_name_sunsetorange">Sunset Orange</string>
-    <string name="theme_title_sunsetorange">@string/theme_name_sunsetorange</string>
-    <string name="theme_overlay_color_sunsetorange">com.android.theme.color.orange</string>
-    <string name="theme_overlay_font_sunsetorange">com.android.theme.font.rubikrubik</string>
-    <string name="theme_overlay_icon_android_sunsetorange">com.android.theme.icon_pack.circular.android</string>
-    <string name="theme_overlay_icon_launcher_sunsetorange">com.android.theme.icon_pack.circular.launcher</string>
-    <string name="theme_overlay_icon_settings_sunsetorange">com.android.theme.icon_pack.circular.settings</string>
-    <string name="theme_overlay_icon_sysui_sunsetorange">com.android.theme.icon_pack.circular.systemui</string>
-    <string name="theme_wallpaper_title_sunsetorange">Orange StatiX Wallpaper</string>
-    <string name="theme_wallpaper_attribution_sunsetorange">Sourajit Karmakar</string>
-
-    <!--Chill Aura-->
-    <string name="theme_name_chillaura">Chill Aura</string>
-    <string name="theme_title_chillaura">@string/theme_name_chillaura</string>
-    <string name="theme_overlay_color_chillaura">com.android.theme.color.red</string>
-    <string name="theme_overlay_font_chillaura">com.android.theme.font.googlesans</string>
-    <string name="theme_overlay_icon_android_chillaura">com.android.theme.icon_pack.circular.android</string>
-    <string name="theme_overlay_icon_launcher_chillaura">com.android.theme.icon_pack.circular.launcher</string>
-    <string name="theme_overlay_icon_settings_chillaura">com.android.theme.icon_pack.circular.settings</string>
-    <string name="theme_overlay_icon_sysui_chillaura">com.android.theme.icon_pack.circular.systemui</string>
-    <string name="theme_wallpaper_title_chillaura">Chill Aura Wallpaper</string>
-    <string name="theme_wallpaper_attribution_chillaura">Sourajit Karmakar</string>
-
-    <!--Winter Sun-->
-    <string name="theme_name_wintersun">Winter Sun</string>
-    <string name="theme_title_wintersun">@string/theme_name_wintersun</string>
-    <string name="theme_overlay_color_wintersun">com.android.theme.color.green</string>
-    <string name="theme_overlay_font_wintersun">com.android.theme.font.arvolato</string>
-    <string name="theme_overlay_icon_android_wintersun">com.android.theme.icon_pack.circular.android</string>
-    <string name="theme_overlay_icon_launcher_wintersun">com.android.theme.icon_pack.circular.launcher</string>
-    <string name="theme_overlay_icon_settings_wintersun">com.android.theme.icon_pack.circular.settings</string>
-    <string name="theme_overlay_icon_sysui_wintersun">com.android.theme.icon_pack.circular.systemui</string>
-    <string name="theme_overlay_shape_wintersun">com.android.theme.icon.hexagon</string>
-    <string name="theme_wallpaper_title_wintersun">Feel the cool and vibrant winter Sun...</string>
-    <string name="theme_wallpaper_attribution_wintersun">Sourajit Karmakar</string>
+    <!--Purple Paradise-->
+    <string name="theme_name_purpleparadise">Purple Paradise</string>
+    <string name="theme_title_purpleparadise">@string/theme_name_purpleparadise</string>
+    <string name="theme_overlay_color_purpleparadise">com.android.theme.color.purple</string>
+    <string name="theme_overlay_font_purpleparadise">com.android.theme.font.googlesans</string>
+    <string name="theme_overlay_icon_android_purpleparadise">com.android.theme.icon_pack.circular.android</string>
+    <string name="theme_overlay_icon_launcher_purpleparadise">com.android.theme.icon_pack.circular.launcher</string>
+    <string name="theme_overlay_icon_settings_purpleparadise">com.android.theme.icon_pack.circular.settings</string>
+    <string name="theme_overlay_icon_sysui_purpleparadise">com.android.theme.icon_pack.circular.systemui</string>
+    <string name="theme_overlay_shape_purpleparadise">com.android.theme.icon.squircle</string>
+    <string name="theme_wallpaper_title_purpleparadise">Purple Paradise</string>
+    <string name="theme_wallpaper_attribution_purpleparadise">Jim Gresham</string>
 
 </resources>
