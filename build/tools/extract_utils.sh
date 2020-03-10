@@ -1197,11 +1197,11 @@ function oat2dex() {
     fi
 
     if [ -z "$VDEXEXTRACTOR" ]; then
-        export VDEXEXTRACTOR="$STATIX_ROOT"/vendor/statix/build/tools/{HOST}-x86/vdexExtractor
+        export VDEXEXTRACTOR="$STATIX_ROOT"/vendor/statix/build/tools/${HOST}-x86/vdexExtractor
     fi
 
     if [ -z "$CDEXCONVERTER" ]; then
-        export CDEXCONVERTER="$STATIX_ROOT"/vendor/statix/build/tools/{HOST}-x86/compact_dex_converter
+        export CDEXCONVERTER="$STATIX_ROOT"/vendor/statix/build/tools/${HOST}-x86/compact_dex_converter
     fi
 
     # Extract existing boot.oats to the temp folder
