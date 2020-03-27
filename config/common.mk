@@ -78,6 +78,18 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 # Packages
 include vendor/statix/config/packages.mk
 
+# Face Unlock
+TARGET_FACE_UNLOCK_SUPPORTED := false
+ifeq (,$(filter $(TARGET_ARCH), arm64))
+ifneq ($(TARGET_DISABLE_ALTERNATIVE_FACE_UNLOCK), true)
+PRODUCT_PACKAGES += \
+    FaceUnlockService
+TARGET_FACE_UNLOCK_SUPPORTED := true
+endif
+endif
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.face.moto_unlock_service=$(TARGET_FACE_UNLOCK_SUPPORTED)
+
 # Branding
 include vendor/statix/config/branding.mk
 
