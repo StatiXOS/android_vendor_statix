@@ -171,8 +171,13 @@ endif
 
 ifeq ($(TARGET_KERNEL_CLANG_COMPILE),true)
     ifneq ($(TARGET_KERNEL_CLANG_VERSION),)
-        # Find the clang-* directory containing the specified version
-        KERNEL_CLANG_VERSION := $(shell find $(BUILD_TOP)/prebuilts/clang/host/$(HOST_OS)-x86/ -name AndroidVersion.txt -exec grep -l $(TARGET_KERNEL_CLANG_VERSION) "{}" \; | sed -e 's|/AndroidVersion.txt$$||g;s|^.*/||g')
+        ifeq ($(TARGET_KERNEL_CLANG_VERSION),latest)
+            # Set the latest version of clang
+            KERNEL_CLANG_VERSION := $(shell ls -d $(BUILD_TOP)/prebuilts/clang/host/$(HOST_OS)-x86/clang-r* | xargs -n 1 basename | tail -1)
+        else
+            # Find the clang-* directory containing the specified version
+            KERNEL_CLANG_VERSION := $(shell find $(BUILD_TOP)/prebuilts/clang/host/$(HOST_OS)-x86/ -name AndroidVersion.txt -exec grep -l $(TARGET_KERNEL_CLANG_VERSION) "{}" \; | sed -e 's|/AndroidVersion.txt$$||g;s|^.*/||g')
+        endif
     else
         # Use the default version of clang if TARGET_KERNEL_CLANG_VERSION hasn't been set by the device config
         KERNEL_CLANG_VERSION := $(LLVM_PREBUILTS_VERSION)
