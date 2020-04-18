@@ -5,6 +5,7 @@ PRODUCT_PACKAGES += \
 # StatiX Packages
 PRODUCT_PACKAGES += \
     CustomDoze \
+    StitchImage \
     ThemePicker \
     WeatherProvider
 
