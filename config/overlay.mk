@@ -23,7 +23,8 @@ PRODUCT_PACKAGES += \
     AccentColorOrangeOverlay \
     AccentColorPinkOverlay \
     AccentColorRedOverlay \
-    AccentColorYellowOverlay
+    AccentColorYellowOverlay \
+    AccentColorCyanOverlay
 
 # Icon Theme Packages
 PRODUCT_PACKAGES += \
