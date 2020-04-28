@@ -1,5 +1,9 @@
 include vendor/statix/build/core/vendor/*.mk
 
+ifneq ($(TARGET_DOES_NOT_USE_GAPPS), true)
+$(call inherit-product-if-exists, vendor/google/gapps/gapps-vendor.mk)
+endif
+
 ifeq ($(PRODUCT_USES_QCOM_HARDWARE), true)
 include vendor/statix/build/core/ProductConfigQcom.mk
 endif
