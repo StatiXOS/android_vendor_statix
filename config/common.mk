@@ -1,5 +1,7 @@
 include vendor/statix/build/core/vendor/*.mk
 
+$(call inherit-product, vendor/google/gapps/gapps-vendor.mk)
+
 ifeq ($(PRODUCT_USES_QCOM_HARDWARE), true)
 include vendor/statix/build/core/ProductConfigQcom.mk
 endif
