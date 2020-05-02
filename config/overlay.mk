@@ -32,6 +32,7 @@ PRODUCT_PACKAGES += \
     FontRubikRubikOverlay \
     FontGoogleSansOverlay \
     FontOnePlusSlateOverlay \
+    FontBarlowOverlay \
 
 # Icon Theme Packages
 PRODUCT_PACKAGES += \
