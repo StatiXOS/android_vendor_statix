@@ -38,4 +38,14 @@
       <font weight="600" style="italic">ZillaSlab-SemiBoldItalic.ttf</font>
     </family>
     <alias name="zilla-slab-semi-bold" to="zilla-slab-medium" weight="600" />
+
+    <family customizationType="new-named-family" name="barlow">
+      <font weight="400" style="normal">Barlow-Regular.ttf</font>
+      <font weight="400" style="italic">Barlow-Italic.ttf</font>
+      <font weight="500" style="normal">Barlow-Medium.ttf</font>
+      <font weight="500" style="italic">Barlow-MediumItalic.ttf</font>
+      <font weight="700" style="normal">Barlow-Bold.ttf</font>
+      <font weight="700" style="italic">Barlow-BoldItalic.ttf</font>
+    </family>
+    <alias name="barlow-medium" to="barlow" weight="500" />
 </fonts-modification>
