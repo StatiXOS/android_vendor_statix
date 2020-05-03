@@ -9,6 +9,12 @@ PRODUCT_PACKAGES += \
     ThemePicker \
     WeatherProvider
 
+# Local Updater
+ifeq ($(AB_OTA_UPDATER),true)
+PRODUCT_PACKAGES += \
+    LocalUpdater
+endif
+
 PRODUCT_PACKAGES += \
      StatixOverlayStub
 
