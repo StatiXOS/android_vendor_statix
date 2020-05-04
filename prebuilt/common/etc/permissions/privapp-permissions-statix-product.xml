@@ -34,4 +34,10 @@
         <permission name="android.permission.CAPTURE_AUDIO_OUTPUT"/>
     </privapp-permissions>
 
+    <privapp-permissions package="com.statix.updater">
+        <permission name="android.permission.ACCESS_CACHE_FILESYSTEM"/>
+        <permission name="android.permission.REBOOT"/>
+        <permission name="android.permission.RECOVERY"/>
+    </privapp-permissions>
+
 </permissions>
