@@ -15,11 +15,6 @@
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-     <!-- Display additional System Update menu if true -->
-    <bool name="config_additional_system_update_setting_enable">false</bool>
-    <!-- Whether system_update_settings should be shown or not. -->
-    <bool name="config_show_system_update_settings">false</bool>
-
     <!-- ThemePicker builds also WallpaperPicker2 source -->
     <string name="config_wallpaper_picker_package">com.android.wallpaper</string>
     <string name="config_wallpaper_picker_class">com.android.wallpaper.picker.CategoryPickerActivity</string>
