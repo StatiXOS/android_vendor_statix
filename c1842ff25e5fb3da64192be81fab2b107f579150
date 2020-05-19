@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "22ca69cb_4bb41204",
+        "filename": "overlay/common/frameworks/base/core/res/res/values/colors_device_defaults.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2020-05-19T19:55:12Z",
+      "side": 1,
+      "message": "Try dropping this",
+      "revId": "c1842ff25e5fb3da64192be81fab2b107f579150",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6",
+      "unresolved": true
+    }
+  ]
+}
