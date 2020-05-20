@@ -16,6 +16,24 @@
       "revId": "c1842ff25e5fb3da64192be81fab2b107f579150",
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b3278f86_50c7cc83",
+        "filename": "overlay/common/frameworks/base/core/res/res/values/colors_device_defaults.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2020-05-20T03:47:58Z",
+      "side": 1,
+      "message": "Dropping this bring back the ugly dual-tone look of AOSP.",
+      "parentUuid": "22ca69cb_4bb41204",
+      "revId": "c1842ff25e5fb3da64192be81fab2b107f579150",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6",
+      "unresolved": false
     }
   ]
 }
