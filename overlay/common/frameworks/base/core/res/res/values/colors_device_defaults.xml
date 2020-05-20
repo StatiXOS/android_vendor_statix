@@ -18,6 +18,7 @@
      overlaying new theme colors. -->
 <resources>
 
+    <color name="background_device_default_light">#ffffffff</color>
     <color name="background_device_default_dark">#ff212121</color>
     <color name="background_floating_device_default_dark">#ff313235</color>
     <color name="primary_device_default_dark">#ff212121</color>
