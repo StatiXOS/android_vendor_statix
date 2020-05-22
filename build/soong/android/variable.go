@@ -85,6 +85,9 @@ type Product_variables struct {
 		Overrides []string
 		Shared_libs []string
 	}
+	Target_uses_fod_hack struct {
+		Cflags []string
+	}
 }
 
 type ProductVariables struct {
@@ -115,4 +118,5 @@ type ProductVariables struct {
 	Has_legacy_camera_hal1					*bool `json:",omitempty"`
 	Supports_extended_compress_format		*bool `json:",omitempty"`
 	Recovery_skip_ev_rel_input  *bool `json:",omitempty"`
+	Target_uses_fod_hack  *bool `json:",omitempty"`
 }
