@@ -18,5 +18,5 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Purple accent color name application label. [CHAR LIMIT=50] -->
-    <string name="primary_color_statix_solarized" translatable="false">Solarized</string>
+    <string name="primary_color_statix_light_solarized" translatable="false">Solarized Light </string>
 </resources>

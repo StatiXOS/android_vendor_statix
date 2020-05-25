@@ -11,23 +11,9 @@
      limitations under the License.
 -->
 
+<!-- Colors specific to DeviceDefault themes. These are mostly pass-throughs to enable
+     overlaying new theme colors. -->
 <resources>
-    <!-- Light values -->
-    <color name="background_material_light">#fdf6e3</color>
-    <color name="background_floating_material_light">@*android:color/primary_dark_material_light</color>
-    <color name="primary_material_light">@*android:color/background_material_light</color>
-    <!-- Workaround for light themed settings background -->
-    <color name="primary_material_settings_light">@*android:color/primary_material_light</color>
-    <color name="primary_dark_material_light">#eee8d5</color>
-    <color name="primary_dark_material_settings_light">@*android:color/primary_dark_material_light</color>
-    <!-- The background color of a notification card. -->
-    <color name="notification_material_background_color">@*android:color/background_material_light</color>
-    <!-- Notification default icon color -->
-    <color name="notification_default_color_light">@*android:color/primary_text_default_material_light</color>
-    <!-- Nuke those dividers -->
-    <color name="list_divider_color_light">#00000000</color>
-    <color name="list_divider_opacity_device_default_light">#00000000</color>
-
     <!-- Dark values -->
     <color name="background_material_dark">#002b36</color>
     <color name="background_floating_material_dark">@*android:color/primary_dark_material_dark</color>
