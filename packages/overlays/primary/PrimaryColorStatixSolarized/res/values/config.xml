@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<resources>
-    <bool name="config_buttonTextAllCaps">true</bool>
-    <dimen name="config_dialogCornerRadius">0dip</dimen>
-    <dimen name="config_buttonCornerRadius">0dip</dimen>
-    <dimen name="config_progressBarCornerRadius">0dip</dimen>
-</resources>

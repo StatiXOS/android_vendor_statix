@@ -42,7 +42,8 @@ PRODUCT_PACKAGES += \
 # Primary color overlay
 PRODUCT_PACKAGES += \
     PrimaryColorStatixBlackOverlay \
-    PrimaryColorStatixSolarizedOverlay
+    PrimaryColorStatixDarkSolarizedOverlay \
+    PrimaryColorStatixLightSolarizedOverlay 
 
 # Cutout Overlays
 ifeq ($(TARGET_HAS_NOTCH),true)
