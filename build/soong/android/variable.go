@@ -6,6 +6,10 @@ type Product_variables struct {
 	Uses_qcom_bsp_legacy struct {
 		Cppflags []string
 	}
+	Qcom_um_soong_namespace struct {
+		Cflags []string
+		Header_libs []string
+	}
 	Recovery_skip_ev_rel_input struct {
 		Cflags []string
 	}
@@ -122,6 +126,7 @@ type ProductVariables struct {
 	Uses_qcom_um_4_14_family				*bool `json:",omitempty"`
 	Has_legacy_camera_hal1					*bool `json:",omitempty"`
 	Supports_extended_compress_format		*bool `json:",omitempty"`
+	Qcom_um_soong_namespace  *string `json:",omitempty"`
 	Recovery_skip_ev_rel_input  *bool `json:",omitempty"`
 	Healthd_use_battery_info  *bool `json:",omitempty"`
 }
