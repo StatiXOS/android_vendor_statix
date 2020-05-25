@@ -55,6 +55,10 @@ type Product_variables struct {
 	Target_shim_libs struct {
 		Cppflags []string
 	}
+	Target_surfaceflinger_fod_lib struct {
+		Cflags []string
+		Whole_static_libs []string
+	}
 	Uses_qcom_um_family struct {
 		Cflags []string
 		Srcs []string
@@ -107,6 +111,7 @@ type ProductVariables struct {
 	Specific_camera_parameter_library		*string `json:",omitempty"`
 	Target_process_sdk_version_override		*string `json:",omitempty"`
 	Target_shim_libs						*string `json:",omitempty"`
+	Target_surfaceflinger_fod_lib	*string `json:",omitempty"`
 	Uses_qcom_um_family						*bool `json:",omitempty"`
 	Uses_qcom_um_3_18_family				*bool `json:",omitempty"`
 	Uses_qcom_um_4_4_family					*bool `json:",omitempty"`
