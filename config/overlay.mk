@@ -49,3 +49,7 @@ PRODUCT_PACKAGES += \
     NotchBarKiller \
     NotchHideOverlay
 endif
+
+# Empty
+PRODUCT_PACKAGES += \
+    EmptyOverlay
