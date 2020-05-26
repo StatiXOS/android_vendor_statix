@@ -6,6 +6,8 @@
         <item>com.google.android.gms</item>
         <!-- The standard AOSP fused location provider -->
         <item>com.android.location.fused</item>
+        <!-- The UnifiedNlp provider by MicroG -->
+        <item>org.microg.nlp</item>
     </string-array>
 
     <!-- Set icon mask to circle -->
