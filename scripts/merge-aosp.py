@@ -35,7 +35,7 @@ import sys
 import xml.etree.ElementTree as Et
 
 BASE_URL = "https://android.googlesource.com/platform/"
-BLACKLIST = glob.glob("hardware/qcom/*")
+BLACKLIST = glob.glob("hardware/qcom/*") + glob.glob("prebuilts/clang/host/linux-x86")
 WORKING_DIR = "{0}/../../..".format(os.path.dirname(os.path.realpath(__file__)))
 MANIFEST_NAME = "include.xml"
 REPOS_TO_MERGE = ["manifest"]
