@@ -96,8 +96,19 @@ def merge():
             successes.append(repo)
     REPOS_RESULTS.update({'Successes': successes, 'Failures': failures})
 
+def get_actual_merged_repos():
+    status_zero_repos = REPOS_RESULTS['Successes']
+    good_repos = []
+    cmd = 'git log --oneline -1'
+    for repo in status_zero_repos:
+        os.chdir("{0}/{1}".format(WORKING_DIR, repo))
+        result = os.system(cmd)
+        if result.contains(BRANCH_STR):
+            good_repos.append(repo)
+    REPOS_RESULTS['Successes'] = good_repos
 
 def print_results():
+    get_actual_merged_repos()
     """ Prints all all repos that will need to be manually fixed """
     if REPOS_RESULTS['Failures']:
         print("\nThese repos failed to merge, fix manually: ")
