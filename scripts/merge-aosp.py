@@ -33,6 +33,7 @@ import glob
 import os
 import sys
 import xml.etree.ElementTree as Et
+import git
 
 BASE_URL = "https://android.googlesource.com/platform/"
 BLACKLIST = glob.glob("hardware/qcom/*") + glob.glob("prebuilts/clang/host/linux-x86")
@@ -96,9 +97,22 @@ def merge():
             successes.append(repo)
     REPOS_RESULTS.update({'Successes': successes, 'Failures': failures})
 
+def get_actual_merged_repos():
+    """ Gets all the repos that were actually merged and
+        not the ones that were just up-to-date """
+    status_zero_repos = REPOS_RESULTS['Successes']
+    good_repos = []
+    for repo in status_zero_repos:
+        git_repo = git.Repo("{0}/{1}".format(WORKING_DIR, repo))
+        commits = list(git_repo.iter_commits("HEAD", max_count=1))
+        result = commits[0].message
+        if BRANCH_STR in result:
+            good_repos.append(repo)
+    REPOS_RESULTS['Successes'] = good_repos
 
 def print_results():
     """ Prints all all repos that will need to be manually fixed """
+    get_actual_merged_repos()
     if REPOS_RESULTS['Failures']:
         print("\nThese repos failed to merge, fix manually: ")
         for failure in REPOS_RESULTS['Failures']:
