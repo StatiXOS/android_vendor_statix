@@ -887,11 +887,11 @@ function write_blueprint_header() {
     fi
 
     if [ $BLUEPRINT_INITIAL_COPYRIGHT_YEAR -eq $YEAR ]; then
-        printf " * Copyright (C) $YEAR The StatiXOS Project\n" >> $1
+        printf " * Copyright (C) $YEAR StatiXOS\n" >> $1
     elif [ $BLUEPRINT_INITIAL_COPYRIGHT_YEAR -le 2019 ]; then
-        printf " * Copyright (C) 2019-$YEAR The StatiXOS Project\n" >> $1
+        printf " * Copyright (C) 2019-$YEAR StatiXOS\n" >> $1
     else
-        printf " * Copyright (C) $BLUEPRINT_INITIAL_COPYRIGHT_YEAR-$YEAR The StatiXOS Project\n" >> $1
+        printf " * Copyright (C) $BLUEPRINT_INITIAL_COPYRIGHT_YEAR-$YEAR StatiXOS\n" >> $1
     fi
 
     cat << EOF >> $1
@@ -940,16 +940,16 @@ function write_makefile_header() {
             printf "# Copyright (C) 2016 The CyanogenMod Project\n" > $1
         fi
         if [ $YEAR -eq 2017 ]; then
-            printf "# Copyright (C) 2017 The StatiXOS Project\n" >> $1
+            printf "# Copyright (C) 2017 StatiXOS\n" >> $1
         elif [ $INITIAL_COPYRIGHT_YEAR -eq $YEAR ]; then
-            printf "# Copyright (C) $YEAR The StatiXOS Project\n" >> $1
+            printf "# Copyright (C) $YEAR StatiXOS\n" >> $1
         elif [ $INITIAL_COPYRIGHT_YEAR -le 2017 ]; then
-            printf "# Copyright (C) 2017-$YEAR The StatiXOS Project\n" >> $1
+            printf "# Copyright (C) 2017-$YEAR StatiXOS\n" >> $1
         else
-            printf "# Copyright (C) $INITIAL_COPYRIGHT_YEAR-$YEAR The StatiXOS Project\n" >> $1
+            printf "# Copyright (C) $INITIAL_COPYRIGHT_YEAR-$YEAR StatiXOS\n" >> $1
         fi
     else
-        printf "# Copyright (C) $YEAR The StatiXOS Project\n" > $1
+        printf "# Copyright (C) $YEAR StatiXOS\n" > $1
     fi
 
     cat << EOF >> $1
