@@ -6,8 +6,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     CustomDoze \
     StitchImage \
-    ThemePicker \
-    WeatherProvider
+    ThemePicker
 
 # Local Updater
 ifneq ($(AB_OTA_PARTITIONS),)
@@ -21,10 +20,5 @@ PRODUCT_PACKAGES += \
 # Charger images
 PRODUCT_PACKAGES += \
     charger_res_images
-
-# WeatherProvider
-PRODUCT_COPY_FILES += \
-    vendor/statix/prebuilt/common/etc/permissions/com.android.providers.weather.xml:system/etc/permissions/com.android.providers.weather.xml \
-    vendor/statix/prebuilt/common/etc/default-permissions/com.android.providers.weather.xml:system/etc/default-permissions/com.android.providers.weather.xml
 
 -include vendor/statix/config/overlay.mk
