@@ -6,8 +6,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     CustomDoze \
     StitchImage \
-    ThemePicker \
-    WeatherProvider
+    ThemePicker
 
 # Local Updater
 ifneq ($(AB_OTA_PARTITIONS),)
