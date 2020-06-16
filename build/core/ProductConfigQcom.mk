@@ -80,18 +80,8 @@ QCOM_HARDWARE_VARIANT := $(OVERRIDE_QCOM_HARDWARE_VARIANT)
 endif
 
 # Required for frameworks/native
-ifneq ($(filter $(UM_3_18_FAMILY),$(QCOM_HARDWARE_VARIANT)),)
+ifeq ($(call is-board-platform-in-list, $(UM_PLATFORMS)),true)
     TARGET_USES_QCOM_UM_FAMILY := true
-    TARGET_USES_QCOM_UM_3_18_FAMILY := true
-else ifneq ($(filter $(UM_4_4_FAMILY),$(QCOM_HARDWARE_VARIANT)),)
-    TARGET_USES_QCOM_UM_FAMILY := true
-    TARGET_USES_QCOM_UM_4_4_FAMILY := true
-else ifneq ($(filter $(UM_4_9_FAMILY),$(QCOM_HARDWARE_VARIANT)),)
-    TARGET_USES_QCOM_UM_FAMILY := true
-    TARGET_USES_QCOM_UM_4_9_FAMILY := true
-else ifneq ($(filter $(UM_4_14_FAMILY),$(QCOM_HARDWARE_VARIANT)),)
-    TARGET_USES_QCOM_UM_FAMILY := true
-    TARGET_USES_QCOM_UM_4_14_FAMILY := true
 endif
 
 PRODUCT_SOONG_NAMESPACES += hardware/qcom-caf/$(QCOM_HARDWARE_VARIANT)
