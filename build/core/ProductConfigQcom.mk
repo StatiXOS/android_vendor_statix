@@ -9,7 +9,8 @@ UM_3_18_FAMILY := msm8937 msm8953 msm8996
 UM_4_4_FAMILY := msm8998 sdm660
 UM_4_9_FAMILY := sdm845
 UM_4_14_FAMILY := $(MSMNILE) $(MSMSTEPPE) $(TRINKET)
-UM_PLATFORMS := $(UM_3_18_FAMILY) $(UM_4_4_FAMILY) $(UM_4_9_FAMILY) $(UM_4_14_FAMILY)
+UM_4_19_FAMILY := $(BENGAL) $(KONA) $(LITO) $(LAGOON)
+UM_PLATFORMS := $(UM_3_18_FAMILY) $(UM_4_4_FAMILY) $(UM_4_9_FAMILY) $(UM_4_14_FAMILY) $(UM_4_19_FAMILY)
 
 BOARD_USES_ADRENO := true
 
@@ -70,6 +71,9 @@ else ifeq ($(call is-board-platform-in-list, $(UM_4_9_FAMILY)),true)
 else ifeq ($(call is-board-platform-in-list, $(UM_4_14_FAMILY)),true)
     QCOM_HARDWARE_VARIANT := sm8150
     TARGET_USES_QCOM_UM_4_14_FAMILY := true
+else ifeq ($(call is-board-platform-in-list, $(UM_4_19_FAMILY)), true)
+    QCOM_HARDWARE_VARIANT := sm8250
+    TARGET_USES_QCOM_UM_4_19_FAMILY := true
 else
     QCOM_HARDWARE_VARIANT := $(PRODUCT_BOARD_PLATFORM)
 endif
