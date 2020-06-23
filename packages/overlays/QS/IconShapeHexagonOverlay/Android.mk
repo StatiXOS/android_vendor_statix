@@ -7,5 +7,5 @@ LOCAL_PACKAGE_NAME := IconShapeHexagonOverlay
 LOCAL_SDK_VERSION := current
 LOCAL_PRODUCT_MODULE := true
 
-include $(BUILD_PACKAGE)
+include $(BUILD_RRO_PACKAGE)
 
