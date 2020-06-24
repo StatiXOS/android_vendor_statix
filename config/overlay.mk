@@ -37,7 +37,10 @@ PRODUCT_PACKAGES += \
 
 # Icon Theme Packages
 PRODUCT_PACKAGES += \
-    IconShapeHexagonOverlay
+    IconShapeHexagonOverlay \
+    IconShapePebbleOverlay \
+    IconShaepeTaperedRectOverlay \
+    IconShapeVesselOverlay
 
 # Primary color overlay
 PRODUCT_PACKAGES += \
