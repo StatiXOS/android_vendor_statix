@@ -23,7 +23,8 @@ PRODUCT_PACKAGES += \
     AccentColorOrangeOverlay \
     AccentColorPinkOverlay \
     AccentColorRedOverlay \
-    AccentColorYellowOverlay
+    AccentColorYellowOverlay \
+    AccentColorCoralOverlay
 
 # Fonts
 PRODUCT_PACKAGES += \
