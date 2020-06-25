@@ -9,7 +9,8 @@ UM_3_18_FAMILY := msm8917 msm8937 msm8953 msm8996
 UM_4_4_FAMILY := msm8998 sdm660
 UM_4_9_FAMILY := sdm845
 UM_4_14_FAMILY := $(MSMNILE) $(MSMSTEPPE) $(TRINKET) $(ATOLL)
-UM_PLATFORMS := $(UM_3_18_FAMILY) $(UM_4_4_FAMILY) $(UM_4_9_FAMILY) $(UM_4_14_FAMILY)
+UM_4_19_FAMILY := $(KONA) $(LITO)
+UM_PLATFORMS := $(UM_3_18_FAMILY) $(UM_4_4_FAMILY) $(UM_4_9_FAMILY) $(UM_4_14_FAMILY) $(UM_4_19_FAMILY)
 QSSI_SUPPORTED_PLATFORMS := $(UM_4_9_FAMILY) $(UM_4_14_FAMILY) $(UM_4_19_FAMILY)
 
 BOARD_USES_ADRENO := true
@@ -41,12 +42,12 @@ ifeq ($(call is-board-platform-in-list, $(UM_PLATFORMS)),true)
 endif
 
 # Enable DRM PP driver on UM platforms that support it
-ifeq ($(call is-board-platform-in-list, $(UM_4_9_FAMILY) $(UM_4_14_FAMILY)),true)
+ifeq ($(call is-board-platform-in-list, $(UM_4_9_FAMILY) $(UM_4_14_FAMILY) $(UM_4_19_FAMILY)),true)
     TARGET_USES_DRM_PP := true
 endif
 
 # List of targets that use master side content protection
-MASTER_SIDE_CP_TARGET_LIST := msm8996 $(UM_4_4_FAMILY) $(UM_4_9_FAMILY) $(UM_4_14_FAMILY)
+MASTER_SIDE_CP_TARGET_LIST := msm8996 $(UM_4_4_FAMILY) $(UM_4_9_FAMILY) $(UM_4_14_FAMILY) $(UM_4_19_FAMILY)
 
 # Every qcom platform is considered a vidc target
 MSM_VIDC_TARGET_LIST := $(PRODUCT_BOARD_PLATFORM)
@@ -71,6 +72,9 @@ else ifeq ($(call is-board-platform-in-list, $(UM_4_9_FAMILY)),true)
 else ifeq ($(call is-board-platform-in-list, $(UM_4_14_FAMILY)),true)
     QCOM_HARDWARE_VARIANT := sm8150
     TARGET_USES_QCOM_UM_4_14_FAMILY := true
+else ifneq ($(filter $(UM_4_19_FAMILY),$(TARGET_BOARD_PLATFORM)),)
+    TARGET_USES_QCOM_UM_4_19_FAMILY := true
+    QCOM_HARDWARE_VARIANT := sm8250
 else
     QCOM_HARDWARE_VARIANT := $(PRODUCT_BOARD_PLATFORM)
 endif
