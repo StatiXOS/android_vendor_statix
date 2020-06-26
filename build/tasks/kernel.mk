@@ -233,12 +233,14 @@ define make-dtb-target
 $(call internal-make-kernel-target,$(DTBS_OUT),$(1))
 endef
 
-$(KERNEL_ADDITIONAL_CONFIG_OUT):
+$(KERNEL_OUT):
+	mkdir -p $(KERNEL_OUT)
+
+$(KERNEL_ADDITIONAL_CONFIG_OUT): $(KERNEL_OUT)
 	$(hide) cmp -s $(KERNEL_ADDITIONAL_CONFIG_SRC) $@ || cp $(KERNEL_ADDITIONAL_CONFIG_SRC) $@;
 
 $(KERNEL_CONFIG): $(KERNEL_DEFCONFIG_SRC) $(KERNEL_ADDITIONAL_CONFIG_OUT)
 	@echo "Building Kernel Config"
-	$(hide) mkdir -p $(KERNEL_OUT)
 	$(call make-kernel-target,VARIANT_DEFCONFIG=$(VARIANT_DEFCONFIG) SELINUX_DEFCONFIG=$(SELINUX_DEFCONFIG) $(KERNEL_DEFCONFIG))
 	$(hide) if [ ! -z "$(KERNEL_CONFIG_OVERRIDE)" ]; then \
 			echo "Overriding kernel config with '$(KERNEL_CONFIG_OVERRIDE)'"; \
@@ -253,7 +255,7 @@ $(KERNEL_CONFIG): $(KERNEL_DEFCONFIG_SRC) $(KERNEL_ADDITIONAL_CONFIG_OUT)
 			$(call make-kernel-target,KCONFIG_ALLCONFIG=$(KERNEL_OUT)/.config alldefconfig); \
 		fi
 
-$(TARGET_PREBUILT_INT_KERNEL): $(KERNEL_CONFIG)
+$(TARGET_PREBUILT_INT_KERNEL): $(KERNEL_CONFIG) $(DEPMOD)
 	@echo "Building Kernel"
 	$(call make-kernel-target,$(BOARD_KERNEL_IMAGE_NAME))
 	$(hide) if grep -q '^CONFIG_OF=y' $(KERNEL_CONFIG); then \
@@ -262,50 +264,27 @@ $(TARGET_PREBUILT_INT_KERNEL): $(KERNEL_CONFIG)
 		fi
 	$(hide) if grep -q '=m' $(KERNEL_CONFIG); then \
 			echo "Building Kernel Modules"; \
-			$(call make-kernel-target,modules); \
-		fi
-
-.PHONY: INSTALLED_KERNEL_MODULES
-INSTALLED_KERNEL_MODULES: depmod-host
-	$(hide) if grep -q '=m' $(KERNEL_CONFIG); then \
+			$(call make-kernel-target,modules) || exit "$$?"; \
 			echo "Installing Kernel Modules"; \
-			$(call make-kernel-target,INSTALL_MOD_PATH=$(MODULES_INTERMEDIATES) modules_install); \
-			modules=$$(find $(MODULES_INTERMEDIATES) -type f -name '*.ko'); \
-			for f in $$modules; do \
-				$(KERNEL_TOOLCHAIN_PATH)strip --strip-unneeded $$f; \
-			done; \
+			$(call make-kernel-target,INSTALL_MOD_PATH=$(MODULES_INTERMEDIATES) INSTALL_MOD_STRIP=1 modules_install); \
+			kernel_release=$$(cat $(KERNEL_RELEASE)) \
+			modules=$$(find $(MODULES_INTERMEDIATES)/lib/modules/$$kernel_release -type f -name '*.ko'); \
 			($(call build-image-kernel-modules,$$modules,$(KERNEL_MODULES_OUT),$(KERNEL_MODULE_MOUNTPOINT)/,$(KERNEL_DEPMOD_STAGING_DIR))); \
 		fi
 
-$(TARGET_KERNEL_MODULES): $(TARGET_PREBUILT_INT_KERNEL)
-
 .PHONY: kerneltags
 kerneltags: $(KERNEL_CONFIG)
-	$(hide) mkdir -p $(KERNEL_OUT)
 	$(call make-kernel-target,tags)
 
-.PHONY: kernelconfig kernelxconfig kernelsavedefconfig alldefconfig
+.PHONY: kernelsavedefconfig alldefconfig
 
-kernelconfig:  KERNELCONFIG_MODE := menuconfig
-kernelxconfig: KERNELCONFIG_MODE := xconfig
-kernelxconfig kernelconfig:
-	$(hide) mkdir -p $(KERNEL_OUT)
-	$(PATH_OVERRIDE) $(MAKE_PREBUILT) $(KERNEL_MAKE_FLAGS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) $(KERNEL_DEFCONFIG)
-	env KCONFIG_NOTIMESTAMP=true \
-		 $(PATH_OVERRIDE) $(MAKE_PREBUILT) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) $(KERNELCONFIG_MODE)
-	env KCONFIG_NOTIMESTAMP=true \
-		 $(PATH_OVERRIDE) $(MAKE_PREBUILT) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_CLANG_TRIPLE) $(KERNEL_CC) savedefconfig
-	cp $(KERNEL_OUT)/defconfig $(KERNEL_DEFCONFIG_SRC)
-
-kernelsavedefconfig:
-	$(hide) mkdir -p $(KERNEL_OUT)
+kernelsavedefconfig: $(KERNEL_OUT)
 	$(call make-kernel-target,$(KERNEL_DEFCONFIG))
 	env KCONFIG_NOTIMESTAMP=true \
 		 $(call make-kernel-target,savedefconfig)
 	cp $(KERNEL_OUT)/defconfig $(KERNEL_DEFCONFIG_SRC)
 
-alldefconfig:
-	$(hide) mkdir -p $(KERNEL_OUT)
+alldefconfig: $(KERNEL_OUT)
 	env KCONFIG_NOTIMESTAMP=true \
 		 $(call make-kernel-target,alldefconfig)
 
@@ -333,7 +312,7 @@ INSTALLED_DTBOIMAGE_TARGET := $(PRODUCT_OUT)/dtbo.img
 ALL_PREBUILT += $(INSTALLED_DTBOIMAGE_TARGET)
 
 .PHONY: kernel
-kernel: $(INSTALLED_KERNEL_TARGET) $(TARGET_KERNEL_MODULES)
+kernel: $(INSTALLED_KERNEL_TARGET)
 
 .PHONY: dtboimage
 dtboimage: $(INSTALLED_DTBOIMAGE_TARGET)
