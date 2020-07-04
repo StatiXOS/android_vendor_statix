@@ -43,11 +43,28 @@ BLACKLIST = glob.glob("hardware/qcom/*") + glob.glob("prebuilts/clang/host/linux
 WORKING_DIR = "{0}/../../..".format(os.path.dirname(os.path.realpath(__file__)))
 MANIFEST_NAME = "include.xml"
 REPOS_TO_MERGE = ["manifest"]
-BRANCH_STR = "android-{}".format(sys.argv[1])
 REPOS_RESULTS = {}
 
 
 # useful helpers
+def print_proper_usage():
+    """ Prints the proper usage of the script. """
+    print("Usage: python3 vendor/statix/scripts/merge-aosp.py <REVISION> [-<PROJECT1> -<PROJECT2>...]")
+    print("Example usage: python3 vendor/statix/scripts/merge-aosp.py 10.0.0_r37")
+    sys.exit()
+
+def get_manual_repos():
+    """ Get all manually (optional) specified repos from arguments """
+    ret_lst = []
+    for arg in sys.argv[2:]:
+        if arg[0] == '-':
+            ret_lst.append(arg[1:])
+        else:
+            print("ERROR: wrong argument format")
+            print_proper_usage()
+    return ret_lst
+
+
 def list_aosp_repos():
     """ Gathers all repos from AOSP """
     aosp_repos = []
@@ -73,24 +90,30 @@ def read_custom_manifest():
                     REPOS_TO_MERGE.append(custom_path)
 
 
-def force_sync():
+def force_sync(repo_lst):
     """ Force syncs all the repos that need to be merged """
     print("Syncing repos")
-    for repo in REPOS_TO_MERGE:
+    for repo in repo_lst:
         if os.path.isdir("{}{}".format(WORKING_DIR, repo)):
             shutil.rmtree("{}{}".format(WORKING_DIR, repo))
 
     cpu_count = str(os.cpu_count())
-    subprocess.run(
-        ['repo', 'sync', '-c', '--force-sync', '-f', '--no-clone-bundle', '--no-tag', '-j', cpu_count, '-q']
-    )
+    if REPOS_TO_MERGE is repo_lst:
+        subprocess.run(
+            ['repo', 'sync', '-c', '--force-sync', '-f', '--no-clone-bundle', '--no-tag', '-j', cpu_count, '-q']
+        )
+    else:
+        for repo in repo_lst:
+            subprocess.run(
+                ['repo', 'sync', '-c', '--force-sync', '-f', '--no-clone-bundle', '--no-tag', '-j', cpu_count, '-q', repo]
+            )
 
 
-def merge():
+def merge(repo_lst, branch):
     """ Merges the necessary repos and lists if a repo succeeds or fails """
     failures = []
     successes = []
-    for repo in REPOS_TO_MERGE:
+    for repo in repo_lst:
         repo_str = repo
         os.chdir("{0}/{1}".format(WORKING_DIR, repo))
         if repo == "build/make":
@@ -98,7 +121,7 @@ def merge():
         if repo == "packages/apps/PermissionController":
             repo_str = "packages/apps/PackageInstaller"
         try:
-            git.cmd.Git().pull('{}{}'.format(BASE_URL, repo_str), BRANCH_STR)
+            git.cmd.Git().pull('{}{}'.format(BASE_URL, repo_str), branch)
             successes.append(repo)
         except git.exc.GitCommandError as e:
             print(e)
@@ -107,7 +130,7 @@ def merge():
     REPOS_RESULTS.update({'Successes': successes, 'Failures': failures})
 
 
-def get_actual_merged_repos():
+def get_actual_merged_repos(branch):
     """ Gets all the repos that were actually merged and
         not the ones that were just up-to-date """
     status_zero_repos = REPOS_RESULTS['Successes']
@@ -116,14 +139,14 @@ def get_actual_merged_repos():
         git_repo = git.Repo("{0}/{1}".format(WORKING_DIR, repo))
         commits = list(git_repo.iter_commits("HEAD", max_count=1))
         result = commits[0].message
-        if BRANCH_STR in result:
+        if branch in result:
             good_repos.append(repo)
     REPOS_RESULTS['Successes'] = good_repos
 
 
-def print_results():
+def print_results(branch):
     """ Prints all all repos that will need to be manually fixed """
-    get_actual_merged_repos()
+    get_actual_merged_repos(branch)
     if REPOS_RESULTS['Failures']:
         print("\nThese repos failed to merge, fix manually: ")
         for failure in REPOS_RESULTS['Failures']:
@@ -133,7 +156,7 @@ def print_results():
         for success in REPOS_RESULTS['Successes']:
             print(success)
     if not REPOS_RESULTS['Failures'] and REPOS_RESULTS['Successes']:
-        print("{0} merged successfully! Compile and test before pushing to GitHub.".format(BRANCH_STR))
+        print("{0} merged successfully! Compile and test before pushing to GitHub.".format(branch))
     elif not REPOS_RESULTS['Failures'] and not REPOS_RESULTS['Successes']:
         print("Unable to retrieve any results")
 
@@ -141,16 +164,27 @@ def print_results():
 def main():
     """ Gathers and merges all repos from AOSP and
     reports all repos that need to be fixed manually"""
+    if len(sys.argv) == 1:
+        print("ERROR: not enough arguments supplied.")
+        print_proper_usage()
 
-    read_custom_manifest()
-    if REPOS_TO_MERGE:
-        force_sync()
-        merge()
-        os.chdir(WORKING_DIR)
-        print_results()
+    branch = "android-{}".format(sys.argv[1])
+
+    repo_lst = get_manual_repos()
+    if len(repo_lst) == 0:
+        read_custom_manifest()
+        if REPOS_TO_MERGE:
+            force_sync(REPOS_TO_MERGE)
+            merge(REPOS_TO_MERGE, branch)
+            os.chdir(WORKING_DIR)
+            print_results(branch)
+        else:
+            print("No repos to sync")
     else:
-        print("No repos to sync")
-
+        force_sync(repo_lst)
+        merge(repo_lst, branch)
+        os.chdir(WORKING_DIR)
+        print_results(branch)
 
 if __name__ == "__main__":
     # execute only if run as a script
