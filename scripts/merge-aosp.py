@@ -38,6 +38,18 @@ import xml.etree.ElementTree as Et
 
 import git
 
+def print_proper_usage():
+    print("Usage: python3 vendor/statix/scripts/merge-aosp.py android-<REVISION>")
+    print("Example usage: python3 vendor/statix/scripts/merge-aosp.py android-10.0.0_r37")
+    sys.exit()
+
+if len(sys.argv) == 1:
+    print("ERROR: not enough arguments supplied.")
+    print_proper_usage()
+elif len(sys.argv) >= 2:
+    print("ERROR: too many arguments supplied.")
+    print_proper_usage()
+
 BASE_URL = "https://android.googlesource.com/platform/"
 BLACKLIST = glob.glob("hardware/qcom/*") + glob.glob("prebuilts/clang/host/linux-x86")
 WORKING_DIR = "{0}/../../..".format(os.path.dirname(os.path.realpath(__file__)))
@@ -152,6 +164,6 @@ def main():
         print("No repos to sync")
 
 
-if __name__ == "__main__":
-    # execute only if run as a script
-    main()
+#if __name__ == "__main__":
+#    # execute only if run as a script
+main()
