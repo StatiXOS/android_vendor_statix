@@ -43,11 +43,29 @@ BLACKLIST = glob.glob("hardware/qcom/*") + glob.glob("prebuilts/clang/host/linux
 WORKING_DIR = "{0}/../../..".format(os.path.dirname(os.path.realpath(__file__)))
 MANIFEST_NAME = "include.xml"
 REPOS_TO_MERGE = ["manifest"]
-BRANCH_STR = "android-{}".format(sys.argv[1])
+BRANCH_STR = ""
 REPOS_RESULTS = {}
 
 
 # useful helpers
+def print_proper_usage():
+    """ Prints the proper usage of the script. """
+    print("Usage: python3 vendor/statix/scripts/merge-aosp.py <REVISION> [-<PROJECT1> -<PROJECT2>...]")
+    print("Example usage: python3 vendor/statix/scripts/merge-aosp.py 10.0.0_r37")
+    sys.exit()
+
+def get_manual_repos():
+    """ Get all manually (optional) specified repos from arguments """
+    ret_lst = []
+    for arg in sys.argv[2:]:
+        if arg[0] == '-':
+            ret_lst.append(arg[1:])
+        else:
+            print("ERROR: wrong argument format")
+            print_proper_usage()
+    return ret_lst
+
+
 def list_aosp_repos():
     """ Gathers all repos from AOSP """
     aosp_repos = []
@@ -73,24 +91,30 @@ def read_custom_manifest():
                     REPOS_TO_MERGE.append(custom_path)
 
 
-def force_sync():
+def force_sync(repo_lst):
     """ Force syncs all the repos that need to be merged """
     print("Syncing repos")
-    for repo in REPOS_TO_MERGE:
+    for repo in repo_lst:
         if os.path.isdir("{}{}".format(WORKING_DIR, repo)):
             shutil.rmtree("{}{}".format(WORKING_DIR, repo))
 
     cpu_count = str(os.cpu_count())
-    subprocess.run(
-        ['repo', 'sync', '-c', '--force-sync', '-f', '--no-clone-bundle', '--no-tag', '-j', cpu_count, '-q']
-    )
+    if REPOS_TO_MERGE is repo_lst:
+        subprocess.run(
+            ['repo', 'sync', '-c', '--force-sync', '-f', '--no-clone-bundle', '--no-tag', '-j', cpu_count, '-q']
+        )
+    else:
+        for repo in repo_lst:
+            subprocess.run(
+                ['repo', 'sync', '-c', '--force-sync', '-f', '--no-clone-bundle', '--no-tag', '-j', cpu_count, '-q', repo]
+            )
 
 
-def merge():
+def merge(repo_lst):
     """ Merges the necessary repos and lists if a repo succeeds or fails """
     failures = []
     successes = []
-    for repo in REPOS_TO_MERGE:
+    for repo in repo_lst:
         repo_str = repo
         os.chdir("{0}/{1}".format(WORKING_DIR, repo))
         if repo == "build/make":
@@ -141,16 +165,28 @@ def print_results():
 def main():
     """ Gathers and merges all repos from AOSP and
     reports all repos that need to be fixed manually"""
+    if len(sys.argv) == 1:
+        print("ERROR: not enough arguments supplied.")
+        print_proper_usage()
 
-    read_custom_manifest()
-    if REPOS_TO_MERGE:
-        force_sync()
-        merge()
+    global BRANCH_STR
+    BRANCH_STR = "android-{}".format(sys.argv[1])
+
+    repo_lst = get_manual_repos()
+    if len(repo_lst) == 0:
+        read_custom_manifest()
+        if REPOS_TO_MERGE:
+            force_sync(REPOS_TO_MERGE)
+            merge(REPOS_TO_MERGE)
+            os.chdir(WORKING_DIR)
+            print_results()
+        else:
+            print("No repos to sync")
+    else:
+        force_sync(repo_lst)
+        merge(repo_lst)
         os.chdir(WORKING_DIR)
         print_results()
-    else:
-        print("No repos to sync")
-
 
 if __name__ == "__main__":
     # execute only if run as a script
