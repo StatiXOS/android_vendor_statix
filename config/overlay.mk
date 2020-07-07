@@ -18,6 +18,7 @@
 PRODUCT_PACKAGES += \
     AccentColorAmberOverlay \
     AccentColorCoralOverlay \
+    AccentColorCyanOverlay \
     AccentColorForestOverlay \
     AccentColorLimeOverlay \
     AccentColorMintOverlay \
