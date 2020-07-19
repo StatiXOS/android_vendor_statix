@@ -14,11 +14,9 @@ PRODUCT_PACKAGES += \
     LocalUpdater
 endif
 
-PRODUCT_PACKAGES += \
-     StatixOverlayStub
-
 # Charger images
 PRODUCT_PACKAGES += \
     charger_res_images
 
--include vendor/statix/config/overlay.mk
+# Overlays
+include vendor/statix/config/overlay.mk

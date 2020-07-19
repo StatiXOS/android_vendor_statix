@@ -1,0 +1,11 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.theme.icon.pebble">
+
+    <overlay
+        android:category="android.theme.customization.adaptive_icon_shape"
+        android:priority="600"
+        android:targetPackage="android"/>
+
+    <application
+        android:label="@string/icon_shape_pebble_overlay"/>
+</manifest>
