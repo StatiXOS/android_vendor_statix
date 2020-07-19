@@ -1,5 +1,4 @@
-#
-#  Copyright 2019 The StatiXOS Project
+#  Copyright 2019 StatiXOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,7 +11,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
 # Accents
 PRODUCT_PACKAGES += \
@@ -27,6 +25,13 @@ PRODUCT_PACKAGES += \
     AccentColorRedOverlay \
     AccentColorYellowOverlay
 
+# Apps
+PRODUCT_PACKAGES += \
+    STXDocumentsUI \
+    STXSettings \
+    STXThemePicker \
+    STXWallpaperPicker
+
 # Fonts
 PRODUCT_PACKAGES += \
     FontArbutusSourceOverlay \
@@ -37,6 +42,11 @@ PRODUCT_PACKAGES += \
     FontBarlowOverlay \
     FontSanFranciscoOverlay \
 
+# Frameworks
+PRODUCT_PACKAGES += \
+    STXFrameworks \
+    STXSystemUI
+
 # Icon Theme Packages
 PRODUCT_PACKAGES += \
     IconShapeHexagonOverlay \
@@ -44,12 +54,12 @@ PRODUCT_PACKAGES += \
     IconShapeTaperedRectOverlay \
     IconShapeVesselOverlay
 
-# Primary color overlay
+# Primary Colors
 PRODUCT_PACKAGES += \
     PrimaryColorStatixBlackOverlay \
     PrimaryColorStatixDarkSolarizedOverlay
 
-# Cutout Overlays
+# Cutout
 ifeq ($(TARGET_HAS_NOTCH),true)
 PRODUCT_PACKAGES += \
     NotchBarKiller \
@@ -59,3 +69,9 @@ endif
 # Empty
 PRODUCT_PACKAGES += \
     EmptyOverlay
+
+# Services
+PRODUCT_PACKAGES += \
+    STXBuiltInPrintService \
+    STXTelecomm \
+    STXTelephony
