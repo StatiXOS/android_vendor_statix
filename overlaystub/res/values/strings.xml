@@ -1,6 +1,6 @@
 <!--
 /**
- * Copyright (c) 2020, StatiXOS
+ * Copyright (c) 2020 StatiXOS
  *
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,8 +20,14 @@
 
     <!--Blurple-->
     <string name="theme_name_blurple">Blurple Gradient</string>
-    <string name="theme_overlay_color_blurple">com.android.theme.color.purple</string>
     <string name="theme_title_blurple">@string/theme_name_blurple</string>
+    <string name="theme_overlay_font_blurple">com.android.theme.font.roboto</string>
+    <string name="theme_overlay_icon_android_bulrple">com.android.theme.icon_pack.rounded.android</string>
+    <string name="theme_overlay_icon_sysui_blurple">com.android.theme.icon_pack.rounded.systemui</string>
+    <string name="theme_overlay_icon_settings_blurple">com.android.theme.icon_pack.rounded.settings</string>
+    <string name="theme_overlay_icon_themepicker_blurple">com.android.theme.icon_pack.rounded.themepicker</string>
+    <string name="theme_overlay_icon_launcher_blurple">com.android.theme.icon_pack.rounded.launcher</string>
+    <string name="theme_overlay_shape_blurple">com.android.theme.icon.circle</string>
     <string name="theme_wallpaper_attribution_blurple">AR72014</string>
 
     <!--Sunset City-->
@@ -30,9 +36,10 @@
     <string name="theme_overlay_color_sunsetcity">com.android.theme.color.cinnamon</string>
     <string name="theme_overlay_font_sunsetcity">com.android.theme.font.arvolato</string>
     <string name="theme_overlay_icon_android_sunsetcity">com.android.theme.icon_pack.filled.android</string>
-    <string name="theme_overlay_icon_launcher_sunsetcity">com.android.theme.icon_pack.filled.launcher</string>
-    <string name="theme_overlay_icon_settings_sunsetcity">com.android.theme.icon_pack.filled.settings</string>
     <string name="theme_overlay_icon_sysui_sunsetcity">com.android.theme.icon_pack.filled.systemui</string>
+    <string name="theme_overlay_icon_settings_sunsetcity">com.android.theme.icon_pack.filled.settings</string>
+    <string name="theme_overlay_icon_themepicker_sunsetcity">com.android.theme.icon_pack.filled.themepicker</string>
+    <string name="theme_overlay_icon_launcher_sunsetcity">com.android.theme.icon_pack.filled.launcher</string>
     <string name="theme_overlay_shape_sunsetcity">com.android.theme.icon.pebble</string>
     <string name="theme_wallpaper_title_sunsetcity">Taipei, Taiwan</string>
     <string name="theme_wallpaper_attribution_sunsetcity">Relojero</string>
@@ -40,12 +47,13 @@
     <!--Rainbow Orb-->
     <string name="theme_name_rainboworb">Rainbow Orb</string>
     <string name="theme_title_rainboworb">@string/theme_name_rainboworb</string>
-    <string name="theme_overlay_font_rainboworb">com.android.theme.font.googlesans</string>
     <string name="theme_overlay_color_rainboworb">com.android.theme.color.orchid</string>
+    <string name="theme_overlay_font_rainboworb">com.android.theme.font.googlesans</string>
     <string name="theme_overlay_icon_android_rainboworb">com.android.theme.icon_pack.circular.android</string>
-    <string name="theme_overlay_icon_launcher_rainboworb">com.android.theme.icon_pack.circular.launcher</string>
-    <string name="theme_overlay_icon_settings_rainboworb">com.android.theme.icon_pack.circular.settings</string>
     <string name="theme_overlay_icon_sysui_rainboworb">com.android.theme.icon_pack.circular.systemui</string>
+    <string name="theme_overlay_icon_settings_rainboworb">com.android.theme.icon_pack.circular.settings</string>
+    <string name="theme_overlay_icon_themepicker_rainboworb">com.android.theme.icon_pack.circular.themepicker</string>
+    <string name="theme_overlay_icon_launcher_rainboworb">com.android.theme.icon_pack.circular.launcher</string>
     <string name="theme_overlay_shape_rainboworb">com.android.theme.icon.vessel</string>
     <string name="theme_wallpaper_title_rainboworb">OLED-friendly gradient</string>
     <string name="theme_wallpaper_attribution_rainboworb">biggary1972</string>
