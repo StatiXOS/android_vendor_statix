@@ -44,11 +44,6 @@ PRODUCT_PACKAGES += \
     IconShapeTaperedRectOverlay \
     IconShapeVesselOverlay
 
-# Primary color overlay
-PRODUCT_PACKAGES += \
-    PrimaryColorStatixBlackOverlay \
-    PrimaryColorStatixDarkSolarizedOverlay
-
 # Cutout Overlays
 ifeq ($(TARGET_HAS_NOTCH),true)
 PRODUCT_PACKAGES += \
