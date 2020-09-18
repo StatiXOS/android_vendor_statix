@@ -40,9 +40,6 @@ PRODUCT_PACKAGES += \
 # Icon Theme Packages
 PRODUCT_PACKAGES += \
     IconShapeHexagonOverlay \
-    IconShapePebbleOverlay \
-    IconShapeTaperedRectOverlay \
-    IconShapeVesselOverlay
 
 # Theme
 PRODUCT_PACKAGES += \
