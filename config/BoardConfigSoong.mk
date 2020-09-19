@@ -70,3 +70,7 @@ SOONG_CONFIG_statixGlobalVars_target_surfaceflinger_fod_lib := $(TARGET_SURFACEF
 ifneq ($(filter $(UM_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
 SOONG_CONFIG_statixQcomVars_qcom_soong_namespace := $(QCOM_SOONG_NAMESPACE)
 endif
+
+ifneq ($(TARGET_USE_QTI_BT_STACK),true)
+PRODUCT_SOONG_NAMESPACES += packages/apps/Bluetooth
+endif #TARGET_USE_QTI_BT_STACK
