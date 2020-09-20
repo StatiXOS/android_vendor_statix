@@ -29,7 +29,7 @@ from xml.etree import ElementTree
 
 
 PRODUCT = sys.argv[1]
-BRANCH = "10"
+BRANCH = "11"
 ORGANIZATION_NAME = "StatiXOS"
 DEPENDENCIES_FILE_NAME = "statix.dependencies"
 LOCAL_MANIFESTS_PATH = ".repo/local_manifests/"
