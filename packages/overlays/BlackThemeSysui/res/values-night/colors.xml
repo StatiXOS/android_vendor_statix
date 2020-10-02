@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License
+  NOTE: You might also want to edit: core/res/res/values-night/*.xml
+  -->
+<resources>
+    <!-- Notifications -->
+
+    <!-- The color of the material notification background -->
+    <color name="notification_material_background_color">#000000</color>
+    <!-- The color of the legacy notifications with customs backgrounds (gingerbread and lollipop.)
+    It's fine to override this color since at that point the shade was dark. -->
+    <color name="notification_legacy_background_color">#000000</color>
+    <!-- The background color of the notification shade -->
+    <color name="notification_shade_background_color">@*android:color/background_floating_material_dark</color>
+    <!-- The color of the material notification background when dimmed -->
+    <color name="notification_material_background_dimmed_color">#000000</color>
+    <!-- The color of the gear shown behind a notification -->
+    <color name="notification_gear_color">#6ff9f9f9</color>
+    <!-- The "inside" of a notification, reached via longpress -->
+    <color name="notification_guts_bg_color">#000000</color>
+    <color name="notification_guts_priority_button_bg_fill_color_selected">@*android:color/background_floating_material_dark</color>
+
+    <color name="notification_divider_color">#00ffffff</color>
+
+    <!-- Qs customizer -->
+
+    <!-- The color of the background in the top part of QSCustomizer -->
+    <color name="qs_customize_background">#000000</color>
+    <!-- The color of the background in the bottom part of QSCustomizer -->
+    <color name="qs_customize_decoration">@*android:color/background_floating_material_dark</color>
+
+    <!-- Global Actions (Power Menu) -->
+
+    <!-- The color of the background in the separated list of the Global Actions menu -->
+    <color name="global_actions_separated_background">#000000</color>
+    <!-- The color of the background in the grid of the Global Actions menu -->
+    <color name="global_actions_grid_background">#000000</color>
+</resources>
