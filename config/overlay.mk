@@ -43,7 +43,8 @@ PRODUCT_PACKAGES += \
 
 # Theme
 PRODUCT_PACKAGES += \
-    StatixBlackTheme
+    StatixBlackTheme \
+    StatixBlackThemeSysui
 
 # Cutout Overlays
 ifeq ($(TARGET_HAS_NOTCH),true)
