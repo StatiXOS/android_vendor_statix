@@ -21,13 +21,15 @@
     <!--Blurple-->
     <string name="theme_name_blurple">Blurple Gradient</string>
     <string name="theme_title_blurple">@string/theme_name_blurple</string>
-    <string name="theme_overlay_font_blurple">com.android.theme.font.roboto</string>
+    <string name="theme_overlay_color_blurple">com.android.theme.color.purple</string>
+    <string name="theme_overlay_font_blurple">com.android.theme.font.sanfrancisco</string>
     <string name="theme_overlay_icon_android_blurple">com.android.theme.icon_pack.rounded.android</string>
     <string name="theme_overlay_icon_sysui_blurple">com.android.theme.icon_pack.rounded.systemui</string>
     <string name="theme_overlay_icon_settings_blurple">com.android.theme.icon_pack.rounded.settings</string>
     <string name="theme_overlay_icon_themepicker_blurple">com.android.theme.icon_pack.rounded.themepicker</string>
     <string name="theme_overlay_icon_launcher_blurple">com.android.theme.icon_pack.rounded.launcher</string>
-    <string name="theme_overlay_shape_blurple">com.android.theme.icon.circle</string>
+    <string name="theme_overlay_shape_blurple">com.android.theme.icon.pebble</string>
+    <string name="theme_wallpaper_title_blurple">Blurple Gradient</string>
     <string name="theme_wallpaper_attribution_blurple">AR72014</string>
 
     <!--Sunset City-->
