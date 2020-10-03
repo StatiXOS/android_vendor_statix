@@ -22,7 +22,7 @@
     <string name="theme_name_blurple">Blurple Gradient</string>
     <string name="theme_title_blurple">@string/theme_name_blurple</string>
     <string name="theme_overlay_font_blurple">com.android.theme.font.roboto</string>
-    <string name="theme_overlay_icon_android_bulrple">com.android.theme.icon_pack.rounded.android</string>
+    <string name="theme_overlay_icon_android_blurple">com.android.theme.icon_pack.rounded.android</string>
     <string name="theme_overlay_icon_sysui_blurple">com.android.theme.icon_pack.rounded.systemui</string>
     <string name="theme_overlay_icon_settings_blurple">com.android.theme.icon_pack.rounded.settings</string>
     <string name="theme_overlay_icon_themepicker_blurple">com.android.theme.icon_pack.rounded.themepicker</string>
