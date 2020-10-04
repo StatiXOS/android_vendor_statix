@@ -9,5 +9,5 @@
     <color name="primary_device_default_settings">#101010</color> <!-- colorPrimary -->
     <color name="primary_dark_device_default_settings">#000000</color> <!-- colorPrimaryDark-->
     <color name="material_grey_800">#121212</color> <!-- google elgoogleogoelo -->
-    <color name="material_grey_900">#101010</color> <!-- google elgoogleogoelo -->
+    <color name="material_grey_900">#000000</color> <!-- google elgoogleogoelo -->
 </resources>
