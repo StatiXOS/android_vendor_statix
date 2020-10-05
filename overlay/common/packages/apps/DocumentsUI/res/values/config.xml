@@ -20,4 +20,7 @@
     <bool name="config_default_show_device_root">true</bool>
 
     <string name="default_root_uri" translatable="false">content://com.android.externalstorage.documents/root/primary</string>
+    <!-- If this value is true, the default root on action browse will be the root from
+    "default_root_uri". Otherwise, the default root will be the recent root.-->
+    <bool name="feature_default_root_in_browse">true</bool>
 </resources>
