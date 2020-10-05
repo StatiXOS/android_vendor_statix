@@ -44,4 +44,7 @@
         <item>com.google.android.setupwizard/com.google.android.setupwizard.time.DateTimeCheck</item>
     </string-array>
 
+    <!-- Whether or not to add a "people" notifications section -->
+    <bool name="config_usePeopleFiltering">true</bool>
+
 </resources>
