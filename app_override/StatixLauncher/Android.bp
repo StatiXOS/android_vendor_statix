@@ -1,3 +1,8 @@
+java_import {
+    name: "libGoogleFeed",
+    jars: ["libs/libGoogleFeed.jar"],
+}
+
 android_app {
     name: "StatixLauncher",
 
@@ -10,6 +15,7 @@ android_app {
         "themelib",
         "Launcher3CommonDepsLib",
         "QuickstepResLib",
+        "libGoogleFeed",
     ],
     srcs: [
         ":launcher-src-no-build-config",
