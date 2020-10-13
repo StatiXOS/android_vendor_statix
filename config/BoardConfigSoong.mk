@@ -40,6 +40,7 @@ SOONG_CONFIG_NAMESPACES += statixQcomVars
 SOONG_CONFIG_statixQcomVars += \
     should_wait_for_qsee \
     supports_extended_compress_format \
+    uses_pre_uplink_features_netmgrd \
     uses_qti_camera_device
 
 # Only create soong_namespace var if dealing with UM platforms to avoid breaking build for all other platforms
@@ -51,6 +52,7 @@ endif
 # Soong bool variables
 SOONG_CONFIG_statixQcomVars_should_wait_for_qsee := $(TARGET_KEYMASTER_WAIT_FOR_QSEE)
 SOONG_CONFIG_statixQcomVars_supports_extended_compress_format := $(AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT)
+SOONG_CONFIG_statixQcomVars_uses_pre_uplink_features_netmgrd := $(TARGET_USES_PRE_UPLINK_FEATURES_NETMGRD)
 SOONG_CONFIG_statixQcomVars_uses_qti_camera_device := $(TARGET_USES_QTI_CAMERA_DEVICE)
 
 # Set default values
