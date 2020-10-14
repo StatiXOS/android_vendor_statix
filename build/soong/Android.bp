@@ -41,3 +41,203 @@ cc_library_headers {
     vendor_available: true,
     recovery_available: true,
 }
+
+// module types
+soong_config_module_type {
+    name: "qti_camera_device_defaults",
+    module_type: "cc_defaults",
+    config_namespace: "STATIX",
+    bool_variables: ["USES_QTI_CAMERA_DEVICE"],
+    properties: [
+        "cppflags",
+        "shared_libs",
+    ],
+}
+
+qti_camera_device_defaults {
+    name: "qti_camera_device",
+    soong_config_variables: {
+        USES_QTI_CAMERA_DEVICE: {
+            cppflags: ["-DQTI_CAMERA_DEVICE"],
+            shared_libs: ["vendor.qti.hardware.camera.device@1.0"],
+        },
+    },
+}
+
+soong_config_module_type {
+    name: "extended_compress_format_defaults",
+    module_type: "cc_defaults",
+    config_namespace: "STATIX",
+    bool_variables: ["SUPPORTS_EXTENDED_COMPRESS_FORMAT"],
+    properties: ["cflags"],
+}
+
+extended_compress_format_defaults {
+    name: "extended_compress_format",
+    soong_config_variables: {
+        SUPPORTS_EXTENDED_COMPRESS_FORMAT: {
+            cflags: ["-DENABLE_EXTENDED_COMPRESS_FORMAT"],
+        },
+    },
+}
+
+soong_config_module_type {
+    name: "target_shim_libs_defaults",
+    module_type: "cc_defaults",
+    config_namespace: "STATIX",
+    value_variables: ["TARGET_LD_SHIM_LIBS"],
+    properties: ["cppflags"],
+}
+
+target_shim_libs_defaults {
+    name: "target_shim_libs",
+    soong_config_variables: {
+        TARGET_LD_SHIM_LIBS: {
+            cppflags: ["-DLD_SHIM_LIBS=\"%s\""],
+        },
+    },
+}
+
+soong_config_module_type {
+    name: "qti_cryptfs_qsee_defaults",
+    module_type: "cc_defaults",
+    config_namespace: "STATIX",
+    bool_variables: ["SHOULD_WAIT_FOR_QSEE"],
+    properties: ["cflags"],
+}
+
+qti_cryptfs_qsee_defaults {
+    name: "qti_cryptfs_qsee",
+    soong_config_variables: {
+        SHOULD_WAIT_FOR_QSEE: {
+            cflags: ["-DWAIT_FOR_QSEE"],
+        },
+    },
+}
+
+soong_config_module_type {
+    name: "vendor_init",
+    module_type: "cc_defaults",
+    config_namespace: "STATIX",
+    value_variables: ["target_init_vendor_lib"],
+    properties: ["whole_static_libs"],
+}
+
+vendor_init {
+    name: "vendor_init_defaults",
+    soong_config_variables: {
+        target_init_vendor_lib: {
+            whole_static_libs: ["%s"],
+        },
+    },
+}
+
+soong_config_module_type {
+    name: "gralloc_10_usage_defaults",
+    module_type: "cc_defaults",
+    config_namespace: "STATIX",
+    value_variables: ["ADDITIONAL_GRALLOC_10_USAGE_BITS"],
+    properties: ["cflags"],
+}
+
+gralloc_10_usage_defaults {
+    name: "gralloc_10_usage",
+    soong_config_variables: {
+        ADDITIONAL_GRALLOC_10_USAGE_BITS: {
+            cflags: ["-DADDNL_GRALLOC_10_USAGE_BITS=%s"],
+        },
+    },
+}
+
+soong_config_module_type {
+    name: "surfaceflinger_fod_lib_defaults",
+    module_type: "cc_defaults",
+    config_namespace: "STATIX",
+    value_variables: ["TARGET_SURFACEFLINGER_FOD_LIB"],
+    properties: [
+        "cflags",
+        "whole_static_libs",
+    ],
+}
+
+surfaceflinger_fod_lib_defaults {
+    name: "surfaceflinger_fod_lib",
+    soong_config_variables: {
+        TARGET_SURFACEFLINGER_FOD_LIB: {
+            cflags: ["-DTARGET_PROVIDES_FOD_LIB"],
+            whole_static_libs: ["%s"],
+        },
+    },
+}
+
+soong_config_module_type {
+    name: "qcom_um_defaults",
+    module_type: "cc_defaults",
+    config_namespace: "STATIX",
+    value_variables: ["QCOM_SOONG_NAMESPACE"],
+    properties: [
+        "cflags",
+        "header_libs",
+    ],
+}
+
+qcom_um_defaults {
+    name: "qcom_um",
+    soong_config_variables: {
+        QCOM_SOONG_NAMESPACE: {
+            cflags: ["-DQCOM_UM_FAMILY"],
+            header_libs: ["//%s:display_intf_headers"],
+        },
+    },
+}
+
+soong_config_module_type {
+    name: "recovery_skip_ev_rel_input_defaults",
+    module_type: "cc_defaults",
+    config_namespace: "STATIX",
+    bool_variables: ["RECOVERY_SKIP_EV_REL_INPUT"],
+    properties: ["cflags"],
+}
+
+recovery_skip_ev_rel_input_defaults {
+    name: "recovery_skip_ev_rel_input",
+    soong_config_variables: {
+        RECOVERY_SKIP_EV_REL_INPUT: {
+            cflags: ["-DSKIP_EV_REL"],
+        },
+    },
+}
+
+soong_config_module_type {
+    name: "bootloader_message_offset_defaults",
+    module_type: "cc_defaults",
+    config_namespace: "STATIX",
+    value_variables: ["BOOTLOADER_MESSAGE_OFFSET"],
+    properties: ["cflags"],
+}
+
+bootloader_message_offset_defaults {
+    name: "bootloader_message_offset",
+    soong_config_variables: {
+        BOOTLOADER_MESSAGE_OFFSET: {
+            cflags: ["-DBOARD_RECOVERY_BLDRMSG_OFFSET=%s"],
+        },
+    },
+}
+
+soong_config_module_type {
+    name: "uses_qcom_bsp_legacy_defaults",
+    module_type: "cc_defaults",
+    config_namespace: "STATIX",
+    bool_variables: ["USES_QCOM_BSP_LEGACY"],
+    properties: ["cppflags"],
+}
+
+uses_qcom_bsp_legacy_defaults {
+    name: "uses_qcom_bsp_legacy",
+    soong_config_variables: {
+        USES_QCOM_BSP_LEGACY: {
+            cppflags: ["-DQCOM_BSP_LEGACY"],
+        },
+    },
+}
