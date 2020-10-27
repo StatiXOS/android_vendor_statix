@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item type="drawable" name="theme_wallpaper_blurple">@drawable/blurple</item>
-    <item type="drawable" name="theme_wallpaper_thumbnail_blurple">@drawable/blurple_prev</item>
-    <item type="drawable" name="theme_wallpaper_sunsetcity">@drawable/sunsetcity</item>
-    <item type="drawable" name="theme_wallpaper_thumbnail_sunsetcity">@drawable/sunsetcity_prev</item>
-    <item type="drawable" name="theme_wallpaper_rainboworb">@drawable/rainboworb</item>
-    <item type="drawable" name="theme_wallpaper_thumbnail_rainboworb">@drawable/rainboworb_prev</item>
-</resources>
