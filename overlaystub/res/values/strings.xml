@@ -29,8 +29,6 @@
     <string name="theme_overlay_icon_themepicker_blurple">com.android.theme.icon_pack.rounded.themepicker</string>
     <string name="theme_overlay_icon_launcher_blurple">com.android.theme.icon_pack.rounded.launcher</string>
     <string name="theme_overlay_shape_blurple">com.android.theme.icon.pebble</string>
-    <string name="theme_wallpaper_title_blurple">Blurple Gradient</string>
-    <string name="theme_wallpaper_attribution_blurple">AR72014</string>
 
     <!--Sunset City-->
     <string name="theme_name_sunsetcity">Sunset City</string>
@@ -43,8 +41,6 @@
     <string name="theme_overlay_icon_themepicker_sunsetcity">com.android.theme.icon_pack.filled.themepicker</string>
     <string name="theme_overlay_icon_launcher_sunsetcity">com.android.theme.icon_pack.filled.launcher</string>
     <string name="theme_overlay_shape_sunsetcity">com.android.theme.icon.pebble</string>
-    <string name="theme_wallpaper_title_sunsetcity">Taipei, Taiwan</string>
-    <string name="theme_wallpaper_attribution_sunsetcity">Relojero</string>
 
     <!--Rainbow Orb-->
     <string name="theme_name_rainboworb">Rainbow Orb</string>
@@ -57,7 +53,5 @@
     <string name="theme_overlay_icon_themepicker_rainboworb">com.android.theme.icon_pack.circular.themepicker</string>
     <string name="theme_overlay_icon_launcher_rainboworb">com.android.theme.icon_pack.circular.launcher</string>
     <string name="theme_overlay_shape_rainboworb">com.android.theme.icon.vessel</string>
-    <string name="theme_wallpaper_title_rainboworb">OLED-friendly gradient</string>
-    <string name="theme_wallpaper_attribution_rainboworb">biggary1972</string>
 
 </resources>
