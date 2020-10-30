@@ -14,3 +14,8 @@ on property:service.adb.tcp.port=5555
 on property:service.adb.tcp.port=-1
     stop adbd
     start adbd
+
+# AOSP recovery install script
+service vendor_flash_recovery /vendor/bin/install-recovery.sh
+    class main
+    disabled
