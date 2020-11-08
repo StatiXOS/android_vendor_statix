@@ -2,7 +2,5 @@
 <resources>
     <string-array name="themes">
         <item>blurple</item>
-        <item>sunsetcity</item>
-        <item>rainboworb</item>
     </string-array>
 </resources>
