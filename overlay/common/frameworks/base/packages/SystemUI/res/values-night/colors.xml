@@ -34,4 +34,6 @@
     <!-- The color of the background in the bottom part of QSCustomizer -->
     <color name="qs_customize_decoration">@*android:color/background_floating_material_dark</color>
 
+    <!-- Biometric dialog colors -->
+    <color name="biometric_dialog_accent">@*android:color/accent_device_default_dark</color>
 </resources> 
