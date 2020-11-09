@@ -13,7 +13,7 @@
 // limitations under the License.
 
 runtime_resource_overlay {
-    name: "GesturalNavigationOverlayLong",
+    name: "AccentColorMintOverlay",
     sdk_version: "current",
     product_specific: true,
 }
