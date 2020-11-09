@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "357f9749_278ff7a8",
+        "filename": "packages/overlays/accent/AccentColorAmberOverlay/Android.bp",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2020-11-09T02:35:21Z",
+      "side": 1,
+      "message": "Delet",
+      "revId": "032208fcd5e4f04231e80aaab7aa6382192ad2b0",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "468b41c7_d3787514",
+        "filename": "packages/overlays/accent/AccentColorAmberOverlay/Android.bp",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2020-11-09T02:35:21Z",
+      "side": 1,
+      "message": "Updoot to Statix \u0026 2020 cuz yes",
+      "revId": "032208fcd5e4f04231e80aaab7aa6382192ad2b0",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "031d22d0_e722544e",
+        "filename": "packages/overlays/accent/AccentColorAmberOverlay/Android.bp",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2020-11-09T02:35:21Z",
+      "side": 1,
+      "message": "Delet",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 2
+      },
+      "revId": "032208fcd5e4f04231e80aaab7aa6382192ad2b0",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2fd25325_5a0e1faf",
+        "filename": "packages/overlays/accent/AccentColorAmberOverlay/Android.bp",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2020-11-09T02:35:21Z",
+      "side": 1,
+      "message": "Delet, res is the default resource directory, implied",
+      "revId": "032208fcd5e4f04231e80aaab7aa6382192ad2b0",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6",
+      "unresolved": true
+    }
+  ]
+}
