@@ -7,7 +7,8 @@ PRODUCT_PACKAGES += \
     CustomDoze \
     StitchImage \
     ThemePicker \
-    StatiXOSWalls
+    StatiXOSWalls \
+    QuickAccessWallet
 
 # Local Updater
 ifneq ($(AB_OTA_PARTITIONS),)
