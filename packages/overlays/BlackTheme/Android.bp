@@ -13,7 +13,8 @@
 // limitations under the License.
 
 runtime_resource_overlay {
-    name: "GesturalNavigationOverlayLong",
+    name: "StatixBlackTheme",
     sdk_version: "current",
+    resource_dirs: ["res"],
     product_specific: true,
 }
