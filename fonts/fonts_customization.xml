@@ -70,4 +70,13 @@
       <font weight="700" style="italic">SanFrancisco-BoldItalic.ttf</font>
     </family>
     <alias name="sanfrancisco-medium" to="sanfrancisco" weight="500" />
+
+    <family customizationType="new-named-family" name="inter">
+      <font weight="400" style="normal">Inter-Regular.ttf</font>
+      <font weight="400" style="italic">Inter-Italic.ttf</font>
+      <font weight="500" style="normal">Inter-Medium.ttf</font>
+      <font weight="700" style="normal">Inter-Bold.ttf</font>
+      <font weight="700" style="italic">Inter-BoldItalic.ttf</font>
+    </family>
+    <alias name="inter-medium" to="inter" weight="500" />
 </fonts-modification>
