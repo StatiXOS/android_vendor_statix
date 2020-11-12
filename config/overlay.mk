@@ -21,7 +21,6 @@ PRODUCT_PACKAGES += \
     AccentColorCyanOverlay \
     AccentColorForestOverlay \
     AccentColorLimeOverlay \
-    AccentColorMintOverlay \
     AccentColorOrangeOverlay \
     AccentColorPinkOverlay \
     AccentColorRedOverlay \
