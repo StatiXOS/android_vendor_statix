@@ -34,7 +34,6 @@ PRODUCT_PACKAGES += \
     FontGoogleSansOverlay \
     FontOnePlusSlateOverlay \
     FontBarlowOverlay \
-    FontSanFranciscoOverlay \
     FontInterOverlay
 
 # Icon Theme Packages
