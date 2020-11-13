@@ -2,6 +2,7 @@ include vendor/statix/build/core/vendor/*.mk
 
 ifneq ($(TARGET_DOES_NOT_USE_GAPPS), true)
 $(call inherit-product-if-exists, vendor/google/gms/config.mk)
+$(call inherit-product-if-exists, vendor/google/pixel/config.mk)
 endif
 
 ifeq ($(PRODUCT_USES_QCOM_HARDWARE), true)
