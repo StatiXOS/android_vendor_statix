@@ -61,16 +61,6 @@
     </family>
     <alias name="barlow-medium" to="barlow" weight="500" />
 
-    <family customizationType="new-named-family" name="sanfrancisco">
-      <font weight="400" style="normal">SanFrancisco-Regular.ttf</font>
-      <font weight="400" style="italic">SanFrancisco-Italic.ttf</font>
-      <font weight="500" style="normal">SanFrancisco-Medium.ttf</font>
-      <font weight="500" style="italic">SanFrancisco-MediumItalic.ttf</font>
-      <font weight="700" style="normal">SanFrancisco-Bold.ttf</font>
-      <font weight="700" style="italic">SanFrancisco-BoldItalic.ttf</font>
-    </family>
-    <alias name="sanfrancisco-medium" to="sanfrancisco" weight="500" />
-
     <family customizationType="new-named-family" name="inter">
       <font weight="400" style="normal">Inter-Regular.ttf</font>
       <font weight="400" style="italic">Inter-Italic.ttf</font>
