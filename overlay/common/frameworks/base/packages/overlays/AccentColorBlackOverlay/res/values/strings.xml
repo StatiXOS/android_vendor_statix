@@ -1,7 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
 /**
- * Copyright (c) 2019, The Android Open Source Project
+ * Copyright (c) 2018, The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +15,6 @@
  */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Coral accent color name application label. [CHAR LIMIT=50] -->
-    <string name="accent_color_coral_overlay" translatable="false">Coral</string>
+    <!-- Black accent color name application label. [CHAR LIMIT=50] -->
+    <string name="accent_color_black_overlay" translatable="false">Black / White</string>
 </resources>
