@@ -7,6 +7,7 @@ endif
 
 ifeq ($(PRODUCT_USES_QCOM_HARDWARE), true)
 include vendor/statix/build/core/ProductConfigQcom.mk
+$(call inherit-product-if-exists, device/qcom/common/common.mk)
 endif
 
 $(call inherit-product, vendor/qcom/opensource/power/power-vendor-board.mk)
