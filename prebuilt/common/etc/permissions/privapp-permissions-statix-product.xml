@@ -1,31 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <permissions>
-    <!-- Additional permissions on top of privapp-permissions-platform.xml -->
-    <privapp-permissions package="com.android.launcher3">
-        <permission name="android.permission.FORCE_STOP_PACKAGES"/>
-        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
-        <permission name="android.permission.MANAGE_USERS"/>
-    </privapp-permissions>
-
-    <!-- Additional permissions on top of privapp-permissions-platform.xml -->
-    <privapp-permissions package="com.android.systemui">
-        <permission name="android.permission.FORCE_STOP_PACKAGES"/>
-        <permission name="android.permission.MODIFY_DAY_NIGHT_MODE"/>
+    <privapp-permissions package="com.google.android.apps.nexuslauncher">
+        <permission name="android.permission.BIND_APPWIDGET"/>
+        <permission name="android.permission.CONTROL_REMOTE_APP_TRANSITION_ANIMATIONS"/>
         <permission name="android.permission.PACKAGE_USAGE_STATS"/>
-        <permission name="android.permission.SHUTDOWN"/>
-        <permission name="android.permission.NAVIGATION_EDITOR"/>
-        <permission name="android.permission.LOCATION_HARDWARE"/>
-        <permission name="android.permission.SET_WALLPAPER_COMPONENT"/>
-        <permission name="android.permission.WRITE_APN_SETTINGS"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
     </privapp-permissions>
-
-    <!-- Additional permissions on top of privapp-permissions-platform.xml -->
-    <privapp-permissions package="com.android.settings">
-        <permission name="android.permission.NAVIGATION_EDITOR"/>
-    </privapp-permissions>
-
-    <privapp-permissions package="com.android.dialer">
-        <permission name="android.permission.CAPTURE_AUDIO_OUTPUT"/>
-    </privapp-permissions>
-
 </permissions>
