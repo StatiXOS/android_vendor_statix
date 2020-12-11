@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3255b2c7_3444c3ac",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000013
+      },
+      "writtenOn": "2020-12-11T16:00:47Z",
+      "side": 1,
+      "message": "telephony component works properly on ginkgo.",
+      "revId": "55791424ddcc4ff724d06b019b24633c3d7c00aa",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
