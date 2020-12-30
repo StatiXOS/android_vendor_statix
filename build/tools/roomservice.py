@@ -107,8 +107,7 @@ def is_in_manifest(repo_name, branch):
         if local_path.get("name") == repo_name and local_path.get("revision") == branch:
             return True
 
-
-def add_to_manifest_dependencies(repos):
+def add_dependencies(repos, is_initial_fetch):
     """ Adds repositories to local manifest. """
     try:
         lm = ElementTree.parse(f"{LOCAL_MANIFESTS_PATH}{LOCAL_MANIFESTS_FILE_NAME}")
@@ -119,8 +118,8 @@ def add_to_manifest_dependencies(repos):
         repo_name = repo["repository"]
         repo_target = repo["target_path"]
         existing_project = exists_in_tree(lm, repo_target)
-        if existing_project is not None:
-            if existing_project.attrib["name"] != repo["repository"]:
+        if existing_project:
+            if existing_project.attrib["name"] != repo["repository"] and not is_initial_fetch:
                 print(f"Updating dependency {repo_name}")
                 existing_project.set("name", repo["repository"])
             if existing_project.attrib["revision"] == repo["branch"]:
@@ -128,7 +127,13 @@ def add_to_manifest_dependencies(repos):
             else:
                 print(f"Updating branch for {repo_name} to {repo['branch']}")
                 existing_project.set("revision", repo["branch"])
+                if is_initial_fetch:
+                    continue
         else:
+            if is_initial_fetch:
+                repo["remote"] = "statix"
+            if "remote" not in repo:
+                repo["remote"] = "github"
             print(f"Adding dependency: {repo_name} -> {repo_target}")
             project = ElementTree.Element(
                 "project",
@@ -152,50 +157,6 @@ def add_to_manifest_dependencies(repos):
         f.write(raw_xml)
 
 
-def add_to_manifest(repos):
-    """ Adds repositories to the manifest. """
-    try:
-        lm = ElementTree.parse(f"{LOCAL_MANIFESTS_PATH}{LOCAL_MANIFESTS_FILE_NAME}")
-        lm = lm.getroot()
-    except ElementTree.ParseError:
-        lm = ElementTree.Element("manifest")
-
-    for repo in repos:
-        repo_name = repo["repository"]
-        repo_target = repo["target_path"]
-        existing_project = exists_in_tree_device(lm, repo_name)
-        if existing_project is not None:
-            if existing_project.attrib["revision"] == repo["branch"]:
-                print(f"{ORGANIZATION_NAME}/{repo_name} already exists")
-            else:
-                print(f"Updating branch for {ORGANIZATION_NAME}/{repo_name} to {repo['branch']}")
-                existing_project.set("revision", repo["branch"])
-            continue
-
-        print(f"Adding dependency: {ORGANIZATION_NAME}/{repo_name} -> {repo_target}")
-        project = ElementTree.Element(
-            "project",
-            attrib={
-                "path": repo_target,
-                "remote": "github",
-                "name": f"{ORGANIZATION_NAME}/{repo_name}",
-                "revision": BRANCH,
-            },
-        )
-
-        if "branch" in repo:
-            project.set("revision", repo["branch"])
-
-        lm.append(project)
-
-    indent(lm, 0)
-    raw_xml = "\n".join(
-        ('<?xml version="1.0" encoding="UTF-8"?>', ElementTree.tostring(lm).decode(),)
-    )
-    with open(f"{LOCAL_MANIFESTS_PATH}{LOCAL_MANIFESTS_FILE_NAME}", "w") as manifest:
-        manifest.write(raw_xml)
-
-
 def fetch_dependencies(repo_path):
     """ Adds repos that are in the dependency file to the manifest, and syncs them. """
     syncable_repos = []
@@ -217,7 +178,7 @@ def fetch_dependencies(repo_path):
                     verify_repos.append(dependency["target_path"])
             if fetch_list:
                 print("Adding dependencies to manifest")
-                add_to_manifest_dependencies(fetch_list)
+                add_dependencies(fetch_list, False)
     else:
         print("Dependencies file not found, bailing out.")
 
@@ -286,14 +247,15 @@ def main():
                 "_{0}".format(DEVICE), ""
             )
             repository_path = f"device/{manufacturer}/{DEVICE}"
-            add_to_manifest(
+            add_dependencies(
                 [
                     {
                         "repository": repository_name,
                         "target_path": repository_path,
                         "branch": BRANCH,
                     }
-                ]
+                ],
+                True
             )
             print("Syncing repository to retrieve project.")
             subprocess.run(
