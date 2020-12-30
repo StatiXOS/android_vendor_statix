@@ -134,7 +134,7 @@ def add_to_manifest_dependencies(repos):
                 "project",
                 attrib={
                     "path": repo_target,
-                    "remote": "github",
+                    "remote": repo["remote"],
                     "name": repo_name,
                     "revision": BRANCH,
                 },
