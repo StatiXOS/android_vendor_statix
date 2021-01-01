@@ -1,5 +1,5 @@
-BUILD_DATE := $(shell date +%Y%m%d)
-BUILD_TIME := $(shell date +%H%M)
+BUILD_DATE := 20210101
+BUILD_TIME := 0000
 # Versioning System
 # Use signing keys for only official
 ifeq ($(STATIX_BUILD_TYPE),OFFICIAL)
