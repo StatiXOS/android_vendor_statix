@@ -182,6 +182,9 @@ ifneq (,$(wildcard $(OUT_DIR)/.path_interposer_origpath))
 PATH_OVERRIDE := PATH=$(shell cat $(OUT_DIR)/.path_interposer_origpath):$$PATH
 endif
 
+KERNEL_VENDOR_RAMDISK_DEPMOD_STAGING_DIR := $(KERNEL_BUILD_OUT_PREFIX)$(call intermediates-dir-for,PACKAGING,depmod_vendor_ramdisk)
+$(INTERNAL_VENDOR_RAMDISK_TARGET): $(TARGET_PREBUILT_INT_KERNEL)
+
 ifeq ($(TARGET_KERNEL_CLANG_COMPILE),true)
     ifneq ($(TARGET_KERNEL_CLANG_VERSION),)
         # Find the clang-* directory containing the specified version
@@ -249,9 +252,9 @@ endef
 # $(2): output dir
 # $(3): mount point
 # $(4): staging dir
+# $(5): module load list
 # Depmod requires a well-formed kernel version so 0.0 is used as a placeholder.
 define build-image-kernel-modules-statix
-    rm -rf $(2)/lib/modules
     mkdir -p $(2)/lib/modules
     cp $(1) $(2)/lib/modules/
     rm -rf $(4)
@@ -259,7 +262,12 @@ define build-image-kernel-modules-statix
     cp $(1) $(4)/lib/modules/0.0/$(3)lib/modules
     $(DEPMOD) -b $(4) 0.0
     sed -e 's/\(.*modules.*\):/\/\1:/g' -e 's/ \([^ ]*modules[^ ]*\)/ \/\1/g' $(4)/lib/modules/0.0/modules.dep > $(2)/lib/modules/modules.dep
+    cp $(4)/lib/modules/0.0/modules.softdep $(2)/lib/modules
     cp $(4)/lib/modules/0.0/modules.alias $(2)/lib/modules
+    rm -f $(2)/lib/modules/modules.load
+    for MODULE in $(5); do \
+        basename $$MODULE >> $(2)/lib/modules/modules.load; \
+    done
 endef
 
 $(KERNEL_OUT):
@@ -302,7 +310,15 @@ $(TARGET_PREBUILT_INT_KERNEL): $(KERNEL_CONFIG) $(DEPMOD) $(HOST_OUT_EXECUTABLES
 				$(eval p := $(subst :,$(space),$(s))) \
 				; mv $$(find $$kernel_modules_dir -name $(word 1,$(p))) $$kernel_modules_dir/$(word 2,$(p))); \
 			modules=$$(find $$kernel_modules_dir -type f -name '*.ko'); \
-			($(call build-image-kernel-modules-statix,$$modules,$(KERNEL_MODULES_OUT),$(KERNEL_MODULE_MOUNTPOINT)/,$(KERNEL_DEPMOD_STAGING_DIR))); \
+			($(call build-image-kernel-modules-statix,$$modules,$(KERNEL_MODULES_OUT),$(KERNEL_MODULE_MOUNTPOINT)/,$(KERNEL_DEPMOD_STAGING_DIR),$(BOARD_VENDOR_KERNEL_MODULES_LOAD))); \
+			$(if $(BOOT_KERNEL_MODULES),\
+				vendor_boot_modules=$$(for m in $(BOOT_KERNEL_MODULES); do \
+					p=$$(find $$kernel_modules_dir -type f -name $$m); \
+					if [ -n "$$p" ]; then echo $$p; else echo "ERROR: $$m from BOOT_KERNEL_MODULES was not found" 1>&2 && exit 1; fi; \
+				done); \
+				[ $$? -ne 0 ] && exit 1; \
+				($(call build-image-kernel-modules-statix,$$vendor_boot_modules,$(TARGET_VENDOR_RAMDISK_OUT),/,$(KERNEL_VENDOR_RAMDISK_DEPMOD_STAGING_DIR),$(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD))); \
+			) \
 		fi
 
 .PHONY: kerneltags
