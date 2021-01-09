@@ -29,7 +29,6 @@ Merge script for StatiXOS
 
 """
 
-import glob
 import os
 import shutil
 import subprocess
@@ -40,7 +39,6 @@ import git
 from git.exc import GitCommandError
 
 BASE_URL = "https://android.googlesource.com/platform/"
-BLACKLIST = glob.glob("hardware/qcom/*") + glob.glob("prebuilts/clang/host/linux-x86")
 WORKING_DIR = "{0}/../../..".format(os.path.dirname(os.path.realpath(__file__)))
 MANIFEST_NAME = "include.xml"
 REPOS_TO_MERGE = ["manifest"]
@@ -90,8 +88,7 @@ def read_custom_manifest():
         for custom in root:
             custom_path = custom.get("path")
             if custom_path and custom_path in aosp_repos:
-                if custom_path not in BLACKLIST:
-                    REPOS_TO_MERGE.append(custom_path)
+                REPOS_TO_MERGE.append(custom_path)
 
 
 def force_sync(repo_lst):
