@@ -138,6 +138,8 @@ def add_dependencies(repos, is_initial_fetch):
                 if is_initial_fetch:
                     continue
         else:
+            if "branch" not in repo and "remote" not in repo:
+                repo["remote"] = "statix"
             if is_initial_fetch:
                 repo["remote"] = get_primary_remote()
             if "remote" not in repo:
