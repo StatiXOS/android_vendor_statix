@@ -138,6 +138,8 @@ def add_dependencies(repos, is_initial_fetch):
                 if is_initial_fetch:
                     continue
         else:
+            if repo["branch"] == BRANCH and "remote" not in repo:
+                repo["remote"] = "statix"
             if is_initial_fetch:
                 repo["remote"] = get_primary_remote()
             if "remote" not in repo:
@@ -178,6 +180,8 @@ def fetch_dependencies(repo_path):
             dependencies = json.loads(dependencies_file.read())
             fetch_list = []
             for dependency in dependencies:
+                if "branch" not in dependency:
+                    dependency["branch"] = BRANCH
                 if not is_in_manifest(dependency["repository"], dependency["branch"]):
                     fetch_list.append(dependency)
                     syncable_repos.append(dependency["target_path"])
