@@ -192,7 +192,7 @@ def fetch_dependencies(repo_path):
 
     if syncable_repos:
         print("Syncing dependencies")
-        sync_command = f"repo sync --force-sync {' '.join(syncable_repos)}".split()
+        sync_command = f"repo sync --force-sync --no-clone-bundle --current-branch --no-tags -j$(nproc --all) {' '.join(syncable_repos)}".split()
         subprocess.run(sync_command, check=False)
 
     for device_dependencies in verify_repos:
