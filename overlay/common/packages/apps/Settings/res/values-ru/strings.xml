@@ -14,5 +14,5 @@
      limitations under the License.
 -->
 <resources>
-    <string name="dark_ui_text">Darker themes help keep your battery alive longer. Theme schedules wait to turn on until your screen is off.</string>
+    <string name="dark_ui_text">Более темные темы продлевают срок службы батареи. Расписания активации тем ждет, пока не выключится экран.</string>
 </resources>
