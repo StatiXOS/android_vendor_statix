@@ -18,5 +18,5 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Label on button to delete wallpaper(s) -->
-    <string name="wallpaper_delete">Delete</string>
+    <string name="wallpaper_delete">Удалить</string>
 </resources>

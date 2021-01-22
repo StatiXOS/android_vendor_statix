@@ -16,5 +16,5 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Explanation for closing controls associated with a specific media session [CHAR_LIMIT=NONE] -->
-    <string name="controls_media_close_session">Dismiss the current session.</string>
+    <string name="controls_media_close_session">Закрыть текущий сеанс.</string>
 </resources>
