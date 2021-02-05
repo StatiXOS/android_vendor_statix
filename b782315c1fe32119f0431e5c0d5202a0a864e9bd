@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4531e466_1341a606",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000007
+      },
+      "writtenOn": "2021-02-05T22:36:22Z",
+      "side": 1,
+      "message": "Dunno, it\u0027s an useful information for debugging sessions, when you need to compile multiple builds a day.",
+      "revId": "b782315c1fe32119f0431e5c0d5202a0a864e9bd",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
