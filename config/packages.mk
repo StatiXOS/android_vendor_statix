@@ -13,7 +13,7 @@ PRODUCT_PACKAGES += \
 # Local Updater
 ifneq ($(AB_OTA_PARTITIONS),)
 PRODUCT_PACKAGES += \
-    LocalUpdater
+    Updater
 endif
 
 PRODUCT_PACKAGES += \
