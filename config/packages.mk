@@ -10,10 +10,10 @@ PRODUCT_PACKAGES += \
     StatiXOSWalls \
     QuickAccessWallet
 
-# Local Updater
-ifneq ($(AB_OTA_PARTITIONS),)
+# OTA Updater
+ifeq ($(STATIX_BUILD_TYPE),OFFICIAL)
 PRODUCT_PACKAGES += \
-    LocalUpdater
+    Updater
 endif
 
 PRODUCT_PACKAGES += \
