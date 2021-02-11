@@ -23,6 +23,7 @@ PRODUCT_PACKAGES += \
     AccentColorLimeOverlay \
     AccentColorOrangeOverlay \
     AccentColorPinkOverlay \
+    AccentColorPastelPurpleOverlay \
     AccentColorRedOverlay \
     AccentColorYellowOverlay
 
