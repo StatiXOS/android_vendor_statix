@@ -57,6 +57,7 @@ def list_aosp_repos():
                 aosp_repos.append(path)
     return aosp_repos
 
+
 def get_manual_repos(args):
     """ Get all manually (optional) specified repos from arguments """
     ret_lst = []
@@ -88,8 +89,17 @@ def force_sync(repo_lst):
 
     cpu_count = str(os.cpu_count())
     args = [
-            "repo", "sync", "-c", "--force-sync", "-f",
-            "--no-clone-bundle", "--no-tag", "-j", cpu_count, "-q"] + repo_lst
+        "repo",
+        "sync",
+        "-c",
+        "--force-sync",
+        "-f",
+        "--no-clone-bundle",
+        "--no-tag",
+        "-j",
+        cpu_count,
+        "-q",
+    ] + repo_lst
     subprocess.run(args, check=False)
 
 
@@ -116,8 +126,8 @@ def merge(repo_lst, branch):
 
 
 def get_actual_merged_repos(branch):
-    """ Gets all the repos that were actually merged and
-        not the ones that were just up-to-date """
+    """Gets all the repos that were actually merged and
+    not the ones that were just up-to-date"""
     status_zero_repos = REPOS_RESULTS["Successes"]
     good_repos = []
     for repo in status_zero_repos:
@@ -151,11 +161,22 @@ def print_results(branch):
 
 
 def main():
-    """ Gathers and merges all repos from AOSP and
+    """Gathers and merges all repos from AOSP and
     reports all repos that need to be fixed manually"""
-    parser = argparse.ArgumentParser(description='Merge an AOSP revision.')
-    parser.add_argument('branch_to_merge', metavar='branch', type=str, help='a tag to merge from android.googlesource.com')
-    parser.add_argument('--repos', dest='repos_to_merge', nargs='*', type=str, help='path of repos to merge')
+    parser = argparse.ArgumentParser(description="Merge an AOSP revision.")
+    parser.add_argument(
+        "branch_to_merge",
+        metavar="branch",
+        type=str,
+        help="a tag to merge from android.googlesource.com",
+    )
+    parser.add_argument(
+        "--repos",
+        dest="repos_to_merge",
+        nargs="*",
+        type=str,
+        help="path of repos to merge",
+    )
     args = parser.parse_args()
     branch = "android-{}".format(args.branch_to_merge)
 
