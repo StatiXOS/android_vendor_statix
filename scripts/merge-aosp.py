@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #
 #
-# Copyright (C) 2019 The StatiXOS Project
+# Copyright (C) 2019-2021 The StatiXOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ Merge script for StatiXOS
 
 """
 
+import argparse
 import os
 import shutil
 import subprocess
@@ -46,27 +47,6 @@ REPOS_RESULTS = {}
 
 
 # useful helpers
-def print_proper_usage():
-    """ Prints the proper usage of the script. """
-    print(
-        "Usage: python3 vendor/statix/scripts/merge-aosp.py <REVISION> [-<PROJECT1> -<PROJECT2>...]"
-    )
-    print("Example usage: python3 vendor/statix/scripts/merge-aosp.py 10.0.0_r37")
-    sys.exit()
-
-
-def get_manual_repos():
-    """ Get all manually (optional) specified repos from arguments """
-    ret_lst = []
-    for arg in sys.argv[2:]:
-        if arg[0] == "-":
-            ret_lst.append(arg[1:])
-        else:
-            print("ERROR: wrong argument format")
-            print_proper_usage()
-    return ret_lst
-
-
 def list_aosp_repos():
     """ Gathers all repos from AOSP """
     aosp_repos = []
@@ -78,13 +58,22 @@ def list_aosp_repos():
                 aosp_repos.append(path)
     return aosp_repos
 
+def get_manual_repos(args):
+    """ Get all manually (optional) specified repos from arguments """
+    ret_lst = []
+    aosp_repos = list_aosp_repos()
+    if args.repos_to_merge:
+        for repo in args.repos_to_merge:
+            if repo in aosp_repos:
+                ret_lst.append(repo)
+    return ret_lst, aosp_repos
 
-def read_custom_manifest():
+
+def read_custom_manifest(aosp_repos):
     """ Finds all repos that need to be merged """
     print("Finding repos to merge...")
     with open("{0}/.repo/manifests/{1}".format(WORKING_DIR, MANIFEST_NAME)) as manifest:
         root = Et.parse(manifest).getroot()
-        aosp_repos = list_aosp_repos()
         for custom in root:
             custom_path = custom.get("path")
             if custom_path and custom_path in aosp_repos:
@@ -99,23 +88,10 @@ def force_sync(repo_lst):
             shutil.rmtree("{}{}".format(WORKING_DIR, repo))
 
     cpu_count = str(os.cpu_count())
-    if REPOS_TO_MERGE is repo_lst:
-        subprocess.run(
-            [
-                "repo", "sync", "-c", "--force-sync", "-f",
-                "--no-clone-bundle", "--no-tag", "-j", cpu_count, "-q",
-            ],
-            check=False,
-        )
-    else:
-        for repo in repo_lst:
-            subprocess.run(
-                [
-                    "repo", "sync", "-c", "--force-sync", "-f",
-                    "--no-clone-bundle", "--no-tag", "-j", cpu_count, "-q", repo,
-                ],
-                check=False,
-            )
+    args = [
+            "repo", "sync", "-c", "--force-sync", "-f",
+            "--no-clone-bundle", "--no-tag", "-j", cpu_count, "-q"] + repo_lst
+    subprocess.run(args, check=False)
 
 
 def merge(repo_lst, branch):
@@ -178,15 +154,15 @@ def print_results(branch):
 def main():
     """ Gathers and merges all repos from AOSP and
     reports all repos that need to be fixed manually"""
-    if len(sys.argv) == 1:
-        print("ERROR: not enough arguments supplied.")
-        print_proper_usage()
+    parser = argparse.ArgumentParser(description='Merge an AOSP revision.')
+    parser.add_argument('branch_to_merge', metavar='branch', type=str, help='a tag to merge from android.googlesource.com')
+    parser.add_argument('--repos', dest='repos_to_merge', nargs='*', type=str, help='path of repos to merge')
+    args = parser.parse_args()
+    branch = "android-{}".format(args.branch_to_merge)
 
-    branch = "android-{}".format(sys.argv[1])
-
-    repo_lst = get_manual_repos()
-    if len(repo_lst) == 0:
-        read_custom_manifest()
+    repo_lst, aosp_repos = get_manual_repos(args)
+    if not repo_lst:
+        read_custom_manifest(aosp_repos)
         if REPOS_TO_MERGE:
             force_sync(REPOS_TO_MERGE)
             merge(REPOS_TO_MERGE, branch)
