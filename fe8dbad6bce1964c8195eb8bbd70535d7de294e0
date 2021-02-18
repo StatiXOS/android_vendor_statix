@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a4e857c_71b27cb9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2021-02-18T02:13:47Z",
+      "side": 1,
+      "message": "Weren\u0027t we planning on shipping LocalUpdater w/ non-official builds? ",
+      "revId": "fe8dbad6bce1964c8195eb8bbd70535d7de294e0",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
