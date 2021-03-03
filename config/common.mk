@@ -63,6 +63,10 @@ PRODUCT_COPY_FILES += \
     vendor/statix/build/tools/backuptool.functions:install/bin/backuptool.functions \
     vendor/statix/build/tools/50-statix.sh:system/addon.d/50-statix.sh
 
+# IORap app launch prefetching using Perfetto traces and madvise
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.iorapd.enable=true
+
 # Statix-specific init file
 PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/common/etc/init.statix.rc:system/etc/init/init.statix.rc
