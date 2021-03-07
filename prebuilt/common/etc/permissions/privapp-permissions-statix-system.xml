@@ -8,4 +8,10 @@
         <permission name="android.permission.OVERRIDE_WIFI_CONFIG"/>
     </privapp-permissions>
 
+    <privapp-permissions package="com.android.wallpaper">
+        <permission name="android.permission.SET_WALLPAPER_COMPONENT"/>
+        <permission name="android.permission.READ_WALLPAPER_INTERNAL"/>
+        <permission name="android.permission.BIND_WALLPAPER"/>
+    </privapp-permissions>
+
 </permissions>
