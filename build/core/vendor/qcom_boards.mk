@@ -5,6 +5,7 @@ LITO := lito #SM7250
 MSMNILE := msmnile #SM8150
 MSMSTEPPE := sm6150
 TRINKET := trinket #SM6125
+LAHAINA := lahaina #SM8350
 
 # Board platforms lists to be used for
 # PRODUCT_BOARD_PLATFORM specific featurization
@@ -39,7 +40,7 @@ QCOM_BOARD_PLATFORMS += $(LITO)
 QCOM_BOARD_PLATFORMS += $(TRINKET)
 QCOM_BOARD_PLATFORMS += $(MSMSTEPPE)
 QCOM_BOARD_PLATFORMS += $(MSMNILE)
-
+QCOM_BOARD_PLATFORMS += $(LAHAINA)
 
 # MSM7000 Family
 
