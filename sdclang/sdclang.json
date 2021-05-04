@@ -1,0 +1,7 @@
+{
+    "default": {
+        "SDCLANG": true,
+        "SDCLANG_FLAGS": "-fcommon -Wno-alloca -Wno-bool-operation -Wno-c++17-extensions -Wno-c99-designator -Wno-dangling-gsl -Wno-deprecated-anon-enum-enum-conversion -Wno-deprecated-copy -Wno-deprecated-enum-enum-conversion -Wno-final-dtor-non-final-class -Wno-format -Wno-implicit-fallthrough -Wno-implicit-int-float-conversion -Wno-incomplete-setjmp-declaration -Wno-int-in-bool-context -Wno-invalid-partial-specialization -Wno-misleading-indentation -Wno-non-c-typedef-for-linkage -Wno-pointer-compare -Wno-pointer-to-int-cast -Wno-range-loop-analysis -Wno-reorder-init-list -Wno-sizeof-array-div-Wno-xor-used-as-pow -Wno-string-compare -Wno-tautological-overlap-compare -Wno-thread-safety-analysis -Wno-unknown-warning-option -Wno-unsequenced -Wno-unused-comparison -Wno-void-pointer-to-int-cast -Wno-wrong-info -Wno-zero-as-null-pointer-constant -flax-vector-conversions=all",
+        "SDCLANG_PATH": "vendor/qcom/sdclang/bin"
+    }
+}
