@@ -1,5 +1,4 @@
-#
-# Copyright (C) 2018-2019 The LineageOS Project
+# Copyright (C) 2021 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,20 +11,11 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/statix_arm.mk \
-    $(LOCAL_DIR)/statix_arm64.mk \
-    $(LOCAL_DIR)/statix_x86.mk \
-    $(LOCAL_DIR)/statix_x86_64.mk \
-    $(LOCAL_DIR)/statix_sdk_phone_x86.mk \
-    $(LOCAL_DIR)/statix_sdk_phone_x86_64.mk
+$(call inherit-product, build/target/product/sdk_phone_x86_64.mk)
 
-COMMON_LUNCH_CHOICES := \
-    statix_arm-userdebug \
-    statix_arm64-userdebug \
-    statix_x86-userdebug \
-    statix_x86_64-userdebug \
-    statix_sdk_phone_x86-userdebug \
-    statix_sdk_phone_x86_64-userdebug
+include vendor/statix/build/target/product/statix_generic_target.mk
+
+# Overrides
+PRODUCT_NAME := statix_sdk_phone_x86_64
+PRODUCT_MODEL := StatiXOS Android SDK built for x86_64
