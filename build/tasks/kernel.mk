@@ -223,6 +223,12 @@ KERNEL_ADDITIONAL_CONFIG_OUT := $(KERNEL_OUT)/.additional_config
 
 KERNEL_MAKE_FLAGS += DTC=$(HOST_OUT_EXECUTABLES)/dtc
 
+ifneq (,$(findstring gki,$(KERNEL_DEFCONFIG)))
+ifneq ("gki_defconfig",$(KERNEL_DEFCONFIG))
+_x := $(shell $(PATH_OVERRIDE) ARCH=$(KERNEL_ARCH) $(TARGET_KERNEL_SOURCE)/scripts/gki/generate_defconfig.sh $(KERNEL_DEFCONFIG))
+endif
+endif
+
 # Internal implementation of make-kernel-target
 # $(1): output path (The value passed to O=)
 # $(2): target to build (eg. defconfig, modules, dtbo.img)
@@ -269,6 +275,7 @@ define build-image-kernel-modules-statix
         basename $$MODULE >> $(2)/lib/modules/modules.load; \
     done
 endef
+
 
 $(KERNEL_OUT):
 	mkdir -p $(KERNEL_OUT)
