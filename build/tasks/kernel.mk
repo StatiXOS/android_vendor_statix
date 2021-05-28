@@ -185,6 +185,12 @@ endif
 KERNEL_VENDOR_RAMDISK_DEPMOD_STAGING_DIR := $(KERNEL_BUILD_OUT_PREFIX)$(call intermediates-dir-for,PACKAGING,depmod_vendor_ramdisk)
 $(INTERNAL_VENDOR_RAMDISK_TARGET): $(TARGET_PREBUILT_INT_KERNEL)
 
+ifneq (,$(findstring gki,$(KERNEL_DEFCONFIG)))
+ifneq ("gki_defconfig",$(KERNEL_DEFCONFIG))
+GKI_KERNEL := true
+endif
+endif
+
 ifeq ($(TARGET_KERNEL_CLANG_COMPILE),true)
     ifneq ($(TARGET_KERNEL_CLANG_VERSION),)
         # Find the clang-* directory containing the specified version
@@ -278,6 +284,9 @@ $(KERNEL_ADDITIONAL_CONFIG_OUT): $(KERNEL_OUT)
 
 $(KERNEL_CONFIG): $(KERNEL_DEFCONFIG_SRC) $(KERNEL_ADDITIONAL_CONFIG_OUT)
 	@echo "Building Kernel Config"
+	$(hide)	if [ ! -z "$(GKI_KERNEL)" ]; then \
+			$(PATH_OVERRIDE) ARCH=$(KERNEL_ARCH) $(TARGET_KERNEL_SOURCE)/scripts/gki/generate_defconfig.sh $(KERNEL_DEFCONFIG); \
+		fi
 	$(call make-kernel-target,VARIANT_DEFCONFIG=$(VARIANT_DEFCONFIG) SELINUX_DEFCONFIG=$(SELINUX_DEFCONFIG) $(KERNEL_DEFCONFIG))
 	$(hide) if [ ! -z "$(KERNEL_CONFIG_OVERRIDE)" ]; then \
 			echo "Overriding kernel config with '$(KERNEL_CONFIG_OVERRIDE)'"; \
