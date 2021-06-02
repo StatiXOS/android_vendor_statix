@@ -8,7 +8,8 @@ PRODUCT_PACKAGES += \
     ThemePicker \
     SimpleDeviceConfig \
     StatiXOSWalls \
-    QuickAccessWallet
+    QuickAccessWallet \
+    StitchImage
 
 # Updaters
 ifeq ($(STATIX_BUILD_TYPE),OFFICIAL)
