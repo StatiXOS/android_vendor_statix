@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca2f0f23_0ba4bfa4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-06-08T16:18:27Z",
+      "side": 1,
+      "message": "change to USE_NQ_NFC since it has to be in device.mk",
+      "revId": "5bf1b2a0f4b6cbcc2a99dd773c9f7c3c991afc2d",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
