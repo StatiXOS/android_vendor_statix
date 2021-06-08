@@ -96,7 +96,6 @@ def force_sync(repo_lst):
         "sync",
         "-c",
         "--force-sync",
-        "-f",
         "--no-clone-bundle",
         "--no-tag",
         "-j",
