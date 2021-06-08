@@ -97,7 +97,6 @@ def force_sync(repo_lst):
         "--no-tag",
         "-j",
         cpu_count,
-        "-q",
     ] + repo_lst
     subprocess.run(args, check=False)
 
