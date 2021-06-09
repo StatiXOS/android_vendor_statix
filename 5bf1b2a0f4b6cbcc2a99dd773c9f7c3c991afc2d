@@ -16,6 +16,24 @@
       "message": "change to USE_NQ_NFC since it has to be in device.mk",
       "revId": "5bf1b2a0f4b6cbcc2a99dd773c9f7c3c991afc2d",
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "12df5643_eaf8c27c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2021-06-09T01:54:31Z",
+      "side": 1,
+      "message": "I was using TARGET_USES_NQ_NFC, because that\u0027s a default CAF flag https://source.codeaurora.org/quic/la/platform/vendor/nxp/opensource/halimpl/tree/nfc_vendor_product.mk?h\u003dLA.UM.9.15.r1-02800-KAMORTA.0#n3",
+      "parentUuid": "ca2f0f23_0ba4bfa4",
+      "revId": "5bf1b2a0f4b6cbcc2a99dd773c9f7c3c991afc2d",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     }
   ]
 }
