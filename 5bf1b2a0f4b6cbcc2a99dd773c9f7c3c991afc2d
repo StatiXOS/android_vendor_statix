@@ -69,6 +69,42 @@
       "message": "or we could move this boardconfigstatix",
       "revId": "5bf1b2a0f4b6cbcc2a99dd773c9f7c3c991afc2d",
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36c6c2c6_4a313760",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2021-06-12T04:00:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "933245bb_77aec39c",
+      "revId": "5bf1b2a0f4b6cbcc2a99dd773c9f7c3c991afc2d",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d99116f_4fbe6aaa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2021-06-12T04:00:27Z",
+      "side": 1,
+      "message": "That would not be a good idea, since many devices still don\u0027t ship with NFC",
+      "parentUuid": "9a444f07_b44a7cb8",
+      "revId": "5bf1b2a0f4b6cbcc2a99dd773c9f7c3c991afc2d",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     }
   ]
 }
