@@ -44,7 +44,8 @@ PRODUCT_PACKAGES += \
 # Navbar
 PRODUCT_PACKAGES += \
     GesturalNavigationOverlayLong \
-    GesturalNavigationOverlayMedium
+    GesturalNavigationOverlayMedium \
+    NavigationBarNoHintOverlay
 
 # Theme
 PRODUCT_PACKAGES += \
