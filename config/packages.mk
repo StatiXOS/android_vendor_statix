@@ -28,6 +28,12 @@ PRODUCT_PACKAGES += \
     nano \
     vim
 
+# Powertop
+ifneq ($(TARGET_BUILD_VARIANT),user)
+PRODUCT_PACKAGES += \
+    powertop
+endif
+
 # Charger images
 PRODUCT_PACKAGES += \
     charger_res_images
