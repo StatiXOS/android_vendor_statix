@@ -22,6 +22,12 @@ endif
 PRODUCT_PACKAGES += \
      StatixOverlayStub
 
+# Some useful shell based utilities for Android
+PRODUCT_PACKAGES += \
+    htop \
+    nano \
+    vim
+
 # Charger images
 PRODUCT_PACKAGES += \
     charger_res_images
