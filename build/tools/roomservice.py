@@ -102,7 +102,7 @@ def get_from_manifest():
             return local_path.get("path")
 
 
-def is_in_manifest(repo_name, branch):
+def is_in_manifest(repo_name, branch, path):
     """ Checks if a repository is in the manifest. """
     try:
         lm = ElementTree.parse(f"{LOCAL_MANIFESTS_PATH}{LOCAL_MANIFESTS_FILE_NAME}")
@@ -111,7 +111,7 @@ def is_in_manifest(repo_name, branch):
         lm = ElementTree.Element("manifest")
 
     for local_path in lm.findall("project"):
-        if local_path.get("name") == repo_name and local_path.get("revision") == branch:
+        if (local_path.get("name") == repo_name and local_path.get("revision") == branch) or local_path.get("path") == path:
             return True
 
 
@@ -182,7 +182,7 @@ def fetch_dependencies(repo_path):
             for dependency in dependencies:
                 if "branch" not in dependency:
                     dependency["branch"] = BRANCH
-                if not is_in_manifest(dependency["repository"], dependency["branch"]):
+                if not is_in_manifest(dependency["repository"], dependency["branch"], dependency["target_path"]):
                     fetch_list.append(dependency)
                     syncable_repos.append(dependency["target_path"])
                     verify_repos.append(dependency["target_path"])
