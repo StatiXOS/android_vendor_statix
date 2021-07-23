@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b73ee53_1975a61a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2021-07-23T03:25:42Z",
+      "side": 1,
+      "message": "works well on OnePlus 7 (guacamoleb)",
+      "revId": "a04746dd5f18e04ce68402b56e578b683a9a8aa7",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
