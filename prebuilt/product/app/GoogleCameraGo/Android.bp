@@ -1,0 +1,6 @@
+android_app_import {
+    name: "GoogleCameraGo",
+    product_specific: true,
+    apk: "GoogleCameraGo.apk",
+    presigned: true,
+}
