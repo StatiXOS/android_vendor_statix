@@ -27,16 +27,6 @@ PRODUCT_PACKAGES += \
     AccentColorRedOverlay \
     AccentColorYellowOverlay
 
-# Fonts
-PRODUCT_PACKAGES += \
-    FontArbutusSourceOverlay \
-    FontArvoLatoOverlay \
-    FontRubikRubikOverlay \
-    FontGoogleSansOverlay \
-    FontOnePlusSlateOverlay \
-    FontBarlowOverlay \
-    FontInterOverlay
-
 # Icon Theme Packages
 PRODUCT_PACKAGES += \
     IconShapeHexagonOverlay \
