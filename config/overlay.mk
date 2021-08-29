@@ -14,20 +14,11 @@
 # limitations under the License.
 #
 
-# Icon Theme Packages
-PRODUCT_PACKAGES += \
-    IconShapeHexagonOverlay \
-
 # Navbar
 PRODUCT_PACKAGES += \
     GesturalNavigationOverlayLong \
     GesturalNavigationOverlayMedium \
     NavigationBarNoHintOverlay
-
-# Theme
-PRODUCT_PACKAGES += \
-    StatixBlackTheme \
-    StatixBlackThemeSysui
 
 # Cutout Overlays
 ifeq ($(TARGET_HAS_NOTCH),true)
