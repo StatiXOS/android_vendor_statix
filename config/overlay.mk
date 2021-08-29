@@ -14,10 +14,6 @@
 # limitations under the License.
 #
 
-# Icon Theme Packages
-PRODUCT_PACKAGES += \
-    IconShapeHexagonOverlay \
-
 # Navbar
 PRODUCT_PACKAGES += \
     GesturalNavigationOverlayLong \
