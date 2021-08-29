@@ -14,19 +14,6 @@
 # limitations under the License.
 #
 
-# Accents
-PRODUCT_PACKAGES += \
-    AccentColorAmberOverlay \
-    AccentColorCoralOverlay \
-    AccentColorCyanOverlay \
-    AccentColorForestOverlay \
-    AccentColorLimeOverlay \
-    AccentColorOrangeOverlay \
-    AccentColorPinkOverlay \
-    AccentColorPastelPurpleOverlay \
-    AccentColorRedOverlay \
-    AccentColorYellowOverlay
-
 # Icon Theme Packages
 PRODUCT_PACKAGES += \
     IconShapeHexagonOverlay \
@@ -36,11 +23,6 @@ PRODUCT_PACKAGES += \
     GesturalNavigationOverlayLong \
     GesturalNavigationOverlayMedium \
     NavigationBarNoHintOverlay
-
-# Theme
-PRODUCT_PACKAGES += \
-    StatixBlackTheme \
-    StatixBlackThemeSysui
 
 # Cutout Overlays
 ifeq ($(TARGET_HAS_NOTCH),true)
