@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dbd14894_c7dc8c42",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-10-03T01:50:49Z",
+      "side": 1,
+      "message": "we still need boardconfigsoong, just not all the export to soong stuff (keep the namespaces)",
+      "revId": "34379ce6e44b79e27aa3c733ff641783cdfaeb73",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
