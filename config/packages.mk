@@ -23,9 +23,6 @@ PRODUCT_PACKAGES += \
     LocalUpdater
 endif
 
-PRODUCT_PACKAGES += \
-     StatixOverlayStub
-
 # Some useful shell based utilities for Android
 PRODUCT_PACKAGES += \
     htop \
