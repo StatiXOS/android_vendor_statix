@@ -1,14 +1,3 @@
-SOONG_CONFIG_NAMESPACES += statixVarsPlugin
-
-SOONG_CONFIG_statixVarsPlugin :=
-
-define addVar
-  SOONG_CONFIG_statixVarsPlugin += $(1)
-  SOONG_CONFIG_statixVarsPlugin_$(1) := $$(subst ",\",$$($1))
-endef
-
-$(foreach v,$(EXPORT_TO_SOONG),$(eval $(call addVar,$(v))))
-
 SOONG_CONFIG_NAMESPACES += statixGlobalVars
 SOONG_CONFIG_statixGlobalVars += \
     additional_gralloc_10_usage_bits \
