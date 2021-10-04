@@ -80,38 +80,24 @@ MSM_VIDC_TARGET_LIST := $(PRODUCT_BOARD_PLATFORM)
 
 ifeq ($(call is-board-platform-in-list, $(A_FAMILY)),true)
     QCOM_HARDWARE_VARIANT := msm8960
-    TARGET_KERNEL_VERSION := 3.4
 else ifeq ($(call is-board-platform-in-list, $(B_FAMILY)),true)
     QCOM_HARDWARE_VARIANT := msm8974
-    TARGET_KERNEL_VERSION := 3.4
 else ifeq ($(call is-board-platform-in-list, $(B64_FAMILY)),true)
     QCOM_HARDWARE_VARIANT := msm8994
-    TARGET_KERNEL_VERSION := 3.10
 else ifeq ($(call is-board-platform-in-list, $(BR_FAMILY)),true)
     QCOM_HARDWARE_VARIANT := msm8916
 else ifeq ($(call is-board-platform-in-list, $(UM_3_18_FAMILY)),true)
     QCOM_HARDWARE_VARIANT := msm8996
-    TARGET_USES_QCOM_UM_3_18_FAMILY := true
-    TARGET_KERNEL_VERSION := 3.18
 else ifeq ($(call is-board-platform-in-list, $(UM_4_4_FAMILY)),true)
     QCOM_HARDWARE_VARIANT := msm8998
-    TARGET_USES_QCOM_UM_4_4_FAMILY := true
-    TARGET_KERNEL_VERSION := 4.4
 else ifeq ($(call is-board-platform-in-list, $(UM_4_9_FAMILY)),true)
     QCOM_HARDWARE_VARIANT := sdm845
-    TARGET_USES_QCOM_UM_4_9_FAMILY := true
-    TARGET_KERNEL_VERSION := 4.9
 else ifeq ($(call is-board-platform-in-list, $(UM_4_14_FAMILY)),true)
     QCOM_HARDWARE_VARIANT := sm8150
-    TARGET_USES_QCOM_UM_4_14_FAMILY := true
-    TARGET_KERNEL_VERSION := 4.14
 else ifeq ($(call is-board-platform-in-list, $(UM_4_19_FAMILY)),true)
     QCOM_HARDWARE_VARIANT := sm8250
-    TARGET_USES_QCOM_UM_4_19_FAMILY := true
-    TARGET_KERNEL_VERSION := 4.19
 else ifeq ($(call is-board-platform-in-list, $(UM_5_4_FAMILY)),true)
     QCOM_HARDWARE_VARIANT := sm8350
-    TARGET_KERNEL_VERSION := 5.4
 else
     QCOM_HARDWARE_VARIANT := $(PRODUCT_BOARD_PLATFORM)
 endif
@@ -119,6 +105,28 @@ endif
 # Allow a device to manually override which HALs it wants to use
 ifneq ($(OVERRIDE_QCOM_HARDWARE_VARIANT),)
 QCOM_HARDWARE_VARIANT := $(OVERRIDE_QCOM_HARDWARE_VARIANT)
+endif
+
+ifeq ($(call is-board-platform-in-list, $(A_FAMILY)),true)
+    TARGET_KERNEL_VERSION := 3.4
+else ifeq ($(call is-board-platform-in-list, $(B_FAMILY)),true)
+    TARGET_KERNEL_VERSION := 3.4
+else ifeq ($(call is-board-platform-in-list, $(B64_FAMILY)),true)
+    TARGET_KERNEL_VERSION := 3.10
+else ifeq ($(call is-board-platform-in-list, $(BR_FAMILY)),true)
+    TARGET_KERNEL_VERSION := 3.10
+else ifeq ($(call is-board-platform-in-list, $(UM_3_18_FAMILY)),true)
+    TARGET_KERNEL_VERSION := 3.18
+else ifeq ($(call is-board-platform-in-list, $(UM_4_4_FAMILY)),true)
+    TARGET_KERNEL_VERSION := 4.4
+else ifeq ($(call is-board-platform-in-list, $(UM_4_9_FAMILY)),true)
+    TARGET_KERNEL_VERSION := 4.9
+else ifeq ($(call is-board-platform-in-list, $(UM_4_14_FAMILY)),true)
+    TARGET_KERNEL_VERSION := 4.14
+else ifeq ($(call is-board-platform-in-list, $(UM_4_19_FAMILY)),true)
+    TARGET_KERNEL_VERSION := 4.19
+else ifeq ($(call is-board-platform-in-list, $(UM_5_4_FAMILY)),true)
+    TARGET_KERNEL_VERSION := 5.4
 endif
 
 # Required for frameworks/native
@@ -129,6 +137,9 @@ endif
 # Allow a device to opt-out hardset of PRODUCT_SOONG_NAMESPACES
 QCOM_SOONG_NAMESPACE ?= hardware/qcom-caf/$(QCOM_HARDWARE_VARIANT)
 PRODUCT_SOONG_NAMESPACES += $(QCOM_SOONG_NAMESPACE)
+
+# Define kernel headers location
+PRODUCT_VENDOR_KERNEL_HEADERS += $(QCOM_SOONG_NAMESPACE)/kernel-headers
 
 # Add display-commonsys-intf to PRODUCT_SOONG_NAMESPACES for QSSI supported platforms
 ifneq ($(filter $(QSSI_SUPPORTED_PLATFORMS),$(PRODUCT_BOARD_PLATFORM)),)
