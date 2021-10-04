@@ -41,27 +41,10 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.sys.disable_rescue=true \
     ro.build.selinux=1
 
-ifneq ($(AB_OTA_PARTITIONS),)
-PRODUCT_COPY_FILES += \
-    vendor/statix/build/tools/backuptool_ab.sh:system/bin/backuptool_ab.sh \
-    vendor/statix/build/tools/backuptool_ab.functions:system/bin/backuptool_ab.functions \
-    vendor/statix/build/tools/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
-endif
-
 # copy privapp permissions
 PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/common/etc/permissions/privapp-permissions-statix-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-statix-product.xml \
     vendor/statix/prebuilt/common/etc/permissions/privapp-permissions-statix-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-statix-system.xml
-
-# system mount
-PRODUCT_COPY_FILES += \
-    vendor/statix/build/tools/system-mount.sh:install/bin/system-mount.sh
-
-# backuptool
-PRODUCT_COPY_FILES += \
-    vendor/statix/build/tools/backuptool.sh:install/bin/backuptool.sh \
-    vendor/statix/build/tools/backuptool.functions:install/bin/backuptool.functions \
-    vendor/statix/build/tools/50-statix.sh:system/addon.d/50-statix.sh
 
 # IORap app launch prefetching using Perfetto traces and madvise
 PRODUCT_PRODUCT_PROPERTIES += \
