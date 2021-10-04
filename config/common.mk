@@ -1,13 +1,12 @@
 include vendor/statix/build/core/vendor/*.mk
 
-ifneq ($(TARGET_DOES_NOT_USE_GAPPS), true)
-$(call inherit-product-if-exists, vendor/google/gms/config.mk)
-$(call inherit-product-if-exists, vendor/google/pixel/config.mk)
-endif
+#ifneq ($(TARGET_DOES_NOT_USE_GAPPS), true)
+#$(call inherit-product-if-exists, vendor/google/gms/config.mk)
+#$(call inherit-product-if-exists, vendor/google/pixel/config.mk)
+#endif
 
 ifeq ($(PRODUCT_USES_QCOM_HARDWARE), true)
 include vendor/statix/build/core/ProductConfigQcom.mk
-$(call inherit-product-if-exists, device/qcom/common/common.mk)
 endif
 
 $(call inherit-product, vendor/qcom/opensource/power/power-vendor-board.mk)
