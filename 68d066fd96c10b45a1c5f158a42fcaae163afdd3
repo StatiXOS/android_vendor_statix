@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc5c4f67_61e4a9c1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2021-10-05T22:39:19Z",
+      "side": 1,
+      "message": "font shenanigans can be merged on their own time",
+      "revId": "68d066fd96c10b45a1c5f158a42fcaae163afdd3",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
