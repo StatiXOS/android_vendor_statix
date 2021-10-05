@@ -20,11 +20,6 @@ PRODUCT_PACKAGES += \
     GesturalNavigationOverlayMedium \
     NavigationBarNoHintOverlay
 
-# Theme
-PRODUCT_PACKAGES += \
-    StatixBlackTheme \
-    StatixBlackThemeSysui
-
 # Cutout Overlays
 ifeq ($(TARGET_HAS_NOTCH),true)
 PRODUCT_PACKAGES += \
