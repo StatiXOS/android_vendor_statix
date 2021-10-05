@@ -62,5 +62,3 @@ function aospmerge()
     T=$(gettop)
     python3 $T/vendor/statix/scripts/merge-aosp.py target_branch
 }
-
-export GLOBAL_THINLTO=true
