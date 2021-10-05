@@ -1,0 +1,7 @@
+-include ../../../../frameworks/base/packages/SystemUI/proguard.flags
+
+# Custom rules
+-keep class com.statix.** { *; }
+
+# Keep google class TODO: remove when no longer needed
+-keep class com.google.** { *; }

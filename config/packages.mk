@@ -8,7 +8,8 @@ PRODUCT_PACKAGES += \
     ThemePicker \
     SimpleDeviceConfig \
     StatiXOSWalls \
-    QuickAccessWallet
+    QuickAccessWallet \
+    StatixSystemUI
 
 # Google Camera GO
 PRODUCT_PACKAGES += \

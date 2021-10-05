@@ -1,0 +1,48 @@
+android_library {
+    name: "StatixSystemUI-core",
+    srcs: [
+        "src/**/*.kt",
+        "src/**/*.java",
+        "src/**/I*.aidl",
+    ],
+    resource_dirs: [
+        "res",
+    ],
+    static_libs: [
+        "dev.kdrag0n.monet",
+        "SystemUI-core",
+    ],
+    manifest: "AndroidManifest.xml",
+
+    kotlincflags: ["-Xjvm-default=enable"],
+
+    plugins: ["dagger2-compiler"],
+}
+
+android_app {
+    name: "StatixSystemUI",
+    defaults: ["platform_app_defaults"],
+    static_libs: [
+        "StatixSystemUI-core",
+    ],
+    resource_dirs: [],
+
+    platform_apis: true,
+    system_ext_specific: true,
+    certificate: "platform",
+    privileged: true,
+
+    optimize: {
+        proguard_flags_files: ["proguard.flags"],
+    },
+
+    kotlincflags: ["-Xjvm-default=enable"],
+
+    dxflags: ["--multi-dex"],
+    required: [
+        "privapp_whitelist_com.android.systemui",
+    ],
+    overrides: [
+        "SystemUI",
+    ],
+}
