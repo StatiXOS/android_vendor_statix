@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59c8cc5c_f9f6795e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2021-10-05T20:17:04Z",
+      "side": 1,
+      "message": "nuking the topic from this, if it\u0027s not meant to be merged it\u0027s going to screw every other commit in the topic up.",
+      "revId": "1b6b8f7a1e9f9e45d20dad37e9b159c160c86eed",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
