@@ -1,0 +1,4 @@
+-include ../../../../frameworks/base/packages/SystemUI/proguard.flags
+
+# Custom rules
+-keep class com.statix.** { *; }

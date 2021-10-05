@@ -8,7 +8,8 @@ PRODUCT_PACKAGES += \
     ThemePicker \
     SimpleDeviceConfig \
     StatiXOSWalls \
-    QuickAccessWallet
+    QuickAccessWallet \
+    StatixSystemUI
 
 # App overrides
 PRODUCT_PACKAGES += \
