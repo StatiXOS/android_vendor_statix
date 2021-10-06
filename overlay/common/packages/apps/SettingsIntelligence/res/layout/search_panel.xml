@@ -25,20 +25,19 @@
         android:id="@+id/search_bar_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?android:attr/colorPrimary"
-        android:elevation="4dp">
+        android:background="?android:attr/colorPrimary">
         <androidx.cardview.widget.CardView
             android:id="@+id/search_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/search_bar_margin"
-            app:cardCornerRadius="@*android:dimen/config_dialogCornerRadius"
-            app:cardElevation="3dp">
+            app:cardCornerRadius="@dimen/search_bar_corner_radius"
+            app:cardElevation="0dp">
             <Toolbar
                 android:id="@+id/search_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/search_bar_height"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="@color/search_panel_background"
                 android:contentInsetStart="0dp"
                 android:contentInsetStartWithNavigation="0dp"
                 android:theme="?android:attr/actionBarTheme">
