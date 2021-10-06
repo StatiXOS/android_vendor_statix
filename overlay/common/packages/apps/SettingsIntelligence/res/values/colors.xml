@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="search_panel_background">@android:color/white</color>
+    <color name="search_panel_background">@*android:color/surface_highlight_light</color>
 </resources>

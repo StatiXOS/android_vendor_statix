@@ -5,4 +5,8 @@
      align despite the additional padding caused by the search bar's card background. -->
     <dimen name="search_bar_margin">16dp</dimen>
     <dimen name="search_bar_negative_margin">-16dp</dimen>
+
+    <dimen name="search_bar_height">52dp</dimen>
+    <dimen name="search_bar_text_size">20sp</dimen>
+    <dimen name="search_bar_corner_radius">28dp</dimen>
 </resources>
