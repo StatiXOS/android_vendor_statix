@@ -10,6 +10,8 @@ import android.os.PowerManager;
 
 import androidx.annotation.Nullable;
 
+import com.statix.android.systemui.theme.ThemeOverlayControllerStatix;
+
 import com.android.keyguard.KeyguardViewController;
 import com.android.systemui.broadcast.BroadcastDispatcher;
 import com.android.systemui.dagger.qualifiers.Background;
@@ -54,6 +56,7 @@ import com.android.systemui.statusbar.policy.IndividualSensorPrivacyController;
 import com.android.systemui.statusbar.policy.IndividualSensorPrivacyControllerImpl;
 import com.android.systemui.statusbar.policy.SensorPrivacyController;
 import com.android.systemui.statusbar.policy.SensorPrivacyControllerImpl;
+import com.android.systemui.theme.ThemeOverlayController;
 
 import javax.inject.Named;
 
@@ -186,4 +189,6 @@ public abstract class SystemUIStatixModule {
     @Binds
     abstract DozeHost provideDozeHost(DozeServiceHost dozeServiceHost);
 
+    @Binds
+    abstract ThemeOverlayController provideThemeOverlayController(ThemeOverlayControllerStatix themeOverlayController);
 }
