@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "177427e8_4e42b3a9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000076
+      },
+      "writtenOn": "2021-10-06T16:22:59Z",
+      "side": 1,
+      "message": "and about 8953 devices with 4.9 kernel?",
+      "revId": "51a19df485a4e9337625e4fe38bd233b64336889",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
