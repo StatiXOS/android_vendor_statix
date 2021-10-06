@@ -9,6 +9,8 @@ android_library {
         "res",
     ],
     static_libs: [
+        "colorkt",
+        "themelib",
         "SystemUI-core",
     ],
     manifest: "AndroidManifest.xml",
