@@ -16,6 +16,24 @@
       "message": "and about 8953 devices with 4.9 kernel?",
       "revId": "51a19df485a4e9337625e4fe38bd233b64336889",
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8293c0ba_8c2c5556",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-10-06T16:27:45Z",
+      "side": 1,
+      "message": "you can override hardware variant to 845",
+      "parentUuid": "177427e8_4e42b3a9",
+      "revId": "51a19df485a4e9337625e4fe38bd233b64336889",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     }
   ]
 }
