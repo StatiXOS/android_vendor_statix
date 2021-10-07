@@ -1,11 +1,143 @@
 <fonts-modification version="1">
-    <family customizationType="new-named-family" name="google-sans">
-        <font weight="400" style="normal">GoogleSans-Regular.ttf</font>
-        <font weight="400" style="italic">GoogleSans-Italic.ttf</font>
-        <font weight="500" style="normal">GoogleSans-Medium.ttf</font>
-        <font weight="500" style="italic">GoogleSans-MediumItalic.ttf</font>
-        <font weight="700" style="normal">GoogleSans-Bold.ttf</font>
-        <font weight="700" style="italic">GoogleSans-BoldItalic.ttf</font>
-    </family>
-    <alias name="google-sans-medium" to="google-sans" weight="500" />
+  <family customizationType="new-named-family" name="google-sans">
+    <font weight="400" style="normal">GoogleSans-Regular.ttf
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="18.0"/>
+      <axis tag="wght" stylevalue="400"/>
+    </font>
+    <font weight="500" style="normal">GoogleSans-Regular.ttf
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="18.0"/>
+      <axis tag="wght" stylevalue="500"/>
+    </font>
+    <font weight="600" style="normal">GoogleSans-Regular.ttf
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="18.0"/>
+      <axis tag="wght" stylevalue="600"/>
+    </font>
+    <font weight="700" style="normal">GoogleSans-Regular.ttf
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="18.0"/>
+      <axis tag="wght" stylevalue="700"/>
+    </font>
+    <font weight="400" style="italic">GoogleSans-Italic.ttf
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="18.0"/>
+      <axis tag="wght" stylevalue="400"/>
+    </font>
+    <font weight="500" style="italic">GoogleSans-Italic.ttf
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="18.0"/>
+      <axis tag="wght" stylevalue="500"/>
+    </font>
+    <font weight="600" style="italic">GoogleSans-Italic.ttf
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="18.0"/>
+      <axis tag="wght" stylevalue="600"/>
+    </font>
+    <font weight="700" style="italic">GoogleSans-Italic.ttf
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="18.0"/>
+      <axis tag="wght" stylevalue="700"/>
+    </font>
+  </family>
+
+  <family customizationType="new-named-family" name="google-sans-medium">
+    <font weight="500" style="normal">GoogleSans-Regular.ttf
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="18.0"/>
+      <axis tag="wght" stylevalue="500"/>
+    </font>
+  </family>
+
+  <family customizationType="new-named-family" name="google-sans-bold">
+    <font weight="700" style="normal">GoogleSans-Regular.ttf
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="18.0"/>
+      <axis tag="wght" stylevalue="700"/>
+    </font>
+  </family>
+
+  <family customizationType="new-named-family" name="google-sans-text">
+    <font weight="400" style="normal">GoogleSans-Regular.ttf
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="17.0"/>
+      <axis tag="wght" stylevalue="400"/>
+    </font>
+    <font weight="500" style="normal">GoogleSans-Regular.ttf
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="17.0"/>
+      <axis tag="wght" stylevalue="500"/>
+    </font>
+    <font weight="600" style="normal">GoogleSans-Regular.ttf
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="17.0"/>
+      <axis tag="wght" stylevalue="600"/>
+    </font>
+    <font weight="700" style="normal">GoogleSans-Regular.ttf
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="17.0"/>
+      <axis tag="wght" stylevalue="700"/>
+    </font>
+    <font weight="400" style="italic">GoogleSans-Italic.ttf
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="17.0"/>
+      <axis tag="wght" stylevalue="400"/>
+    </font>
+    <font weight="500" style="italic">GoogleSans-Italic.ttf
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="17.0"/>
+      <axis tag="wght" stylevalue="500"/>
+    </font>
+    <font weight="600" style="italic">GoogleSans-Italic.ttf
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="17.0"/>
+      <axis tag="wght" stylevalue="600"/>
+    </font>
+    <font weight="700" style="italic">GoogleSans-Italic.ttf
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="17.0"/>
+      <axis tag="wght" stylevalue="700"/>
+    </font>
+  </family>
+
+  <family customizationType="new-named-family" name="google-sans-text-medium">
+    <font weight="500" style="normal">GoogleSans-Regular.ttf
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="17.0"/>
+      <axis tag="wght" stylevalue="500"/>
+    </font>
+  </family>
+
+  <family customizationType="new-named-family" name="google-sans-text-bold">
+    <font weight="700" style="normal">GoogleSans-Regular.ttf
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="17.0"/>
+      <axis tag="wght" stylevalue="700"/>
+    </font>
+  </family>
+
+  <family customizationType="new-named-family" name="google-sans-text-italic">
+    <font weight="400" style="italic">GoogleSans-Italic.ttf
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="17.0"/>
+      <axis tag="wght" stylevalue="400"/>
+    </font>
+  </family>
+
+  <family customizationType="new-named-family" name="google-sans-text-medium-italic">
+    <font weight="500" style="italic">GoogleSans-Italic.ttf
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="17.0"/>
+      <axis tag="wght" stylevalue="500"/>
+    </font>
+  </family>
+
+  <family customizationType="new-named-family" name="google-sans-text-bold-italic">
+    <font weight="700" style="italic">GoogleSans-Italic.ttf
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="17.0"/>
+      <axis tag="wght" stylevalue="700"/>
+    </font>
+  </family>
 </fonts-modification>
