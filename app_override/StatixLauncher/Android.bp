@@ -6,6 +6,8 @@ android_app {
     ],
 
     static_libs: [
+        "colorkt",
+        "themelib",
         "Launcher3CommonDepsLib",
         "QuickstepResLib",
     ],
