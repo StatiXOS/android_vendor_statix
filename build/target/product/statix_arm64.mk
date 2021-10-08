@@ -16,6 +16,4 @@ $(call inherit-product, build/target/product/aosp_arm64.mk)
 
 include vendor/statix/build/target/product/statix_generic_target.mk
 
-TARGET_NO_KERNEL_OVERRIDE := true
-
 PRODUCT_NAME := statix_arm64
