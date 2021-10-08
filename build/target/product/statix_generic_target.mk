@@ -21,3 +21,6 @@ PRODUCT_COPY_FILES += \
 
 # Allow building otatools
 TARGET_FORCE_OTA_PACKAGE := true
+
+# No kernel
+TARGET_NO_KERNEL_OVERRIDE := true
