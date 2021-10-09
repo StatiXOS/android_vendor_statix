@@ -91,4 +91,7 @@
 
     <!-- Whether safe headphone volume is enabled or not. -->
     <bool name="config_safe_media_volume_enabled">false</bool>
+
+    <!-- the number of the max cached processes in the system. -->
+    <integer name="config_customizedMaxCachedProcesses">64</integer>
 </resources>
