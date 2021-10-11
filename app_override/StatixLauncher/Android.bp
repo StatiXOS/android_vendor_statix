@@ -1,0 +1,33 @@
+android_app {
+    name: "StatixLauncher",
+
+    static_libs: [
+        "Launcher3CommonDepsLib",
+        "QuickstepResLib",
+    ],
+    srcs: [
+        ":launcher-src-no-build-config",
+        "src/**/*.java",
+    ],
+    optimize: {
+        proguard_flags_files: ["proguard.flags"],
+        enabled: false,
+    },
+
+    min_sdk_version: "30",
+    target_sdk_version: "31",
+    privileged: true,
+    system_ext_specific: true,
+    platform_apis: true,
+
+    overrides: [
+        "Home",
+        "Launcher2",
+        "Launcher3",
+        "Launcher3QuickStep",
+    ],
+
+    jacoco: {
+        include_filter: ["com.android.launcher3.**", "com.statix.launcher.**"],
+    },
+}
