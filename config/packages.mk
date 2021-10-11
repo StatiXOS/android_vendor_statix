@@ -11,6 +11,10 @@ PRODUCT_PACKAGES += \
     QuickAccessWallet \
     StatixSystemUI
 
+# App overrides
+PRODUCT_PACKAGES += \
+    StatixLauncher
+
 # Google Camera GO
 PRODUCT_PACKAGES += \
     GoogleCameraGo
