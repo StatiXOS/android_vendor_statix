@@ -10,9 +10,11 @@ import android.os.PowerManager;
 
 import androidx.annotation.Nullable;
 
+import com.statix.android.systemui.biometrics.StatixUdfpsHbmProvider;
 import com.statix.android.systemui.theme.ThemeOverlayControllerStatix;
 
 import com.android.keyguard.KeyguardViewController;
+import com.android.systemui.biometrics.UdfpsHbmProvider;
 import com.android.systemui.broadcast.BroadcastDispatcher;
 import com.android.systemui.dagger.qualifiers.Background;
 import com.android.systemui.dagger.qualifiers.Main;
@@ -57,6 +59,8 @@ import com.android.systemui.statusbar.policy.IndividualSensorPrivacyControllerIm
 import com.android.systemui.statusbar.policy.SensorPrivacyController;
 import com.android.systemui.statusbar.policy.SensorPrivacyControllerImpl;
 import com.android.systemui.theme.ThemeOverlayController;
+
+import java.util.Optional;
 
 import javax.inject.Named;
 
@@ -191,4 +195,9 @@ public abstract class SystemUIStatixModule {
 
     @Binds
     abstract ThemeOverlayController provideThemeOverlayController(ThemeOverlayControllerStatix themeOverlayController);
+
+    @Provides
+    static UdfpsHbmProvider provideUdfpsHbmProvider() {
+        return new StatixUdfpsHbmProvider();
+    }
 }
