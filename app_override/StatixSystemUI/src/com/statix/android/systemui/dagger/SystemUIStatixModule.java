@@ -10,10 +10,12 @@ import android.os.PowerManager;
 
 import androidx.annotation.Nullable;
 
+import com.statix.android.systemui.biometrics.StatixUdfpsHbmProvider;
 import com.statix.android.systemui.qs.tileimpl.QSFactoryImplStatix;
 import com.statix.android.systemui.theme.ThemeOverlayControllerStatix;
 
 import com.android.keyguard.KeyguardViewController;
+import com.android.systemui.biometrics.UdfpsHbmProvider;
 import com.android.systemui.broadcast.BroadcastDispatcher;
 import com.android.systemui.dagger.qualifiers.Background;
 import com.android.systemui.dagger.qualifiers.Main;
@@ -192,4 +194,9 @@ public abstract class SystemUIStatixModule {
 
     @Binds
     abstract ThemeOverlayController provideThemeOverlayController(ThemeOverlayControllerStatix themeOverlayController);
+
+    @Provides
+    static UdfpsHbmProvider provideUdfpsHbmProvider() {
+        return new StatixUdfpsHbmProvider();
+    }
 }
