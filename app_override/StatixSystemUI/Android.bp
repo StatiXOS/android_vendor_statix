@@ -13,6 +13,7 @@ android_library {
         "colorkt",
         "themelib",
         "SystemUI-core",
+        "com.google.hardware.pixel.display-V3-java",
         "vendor.lineage.powershare-V1.0-java",
     ],
     manifest: "AndroidManifest.xml",
