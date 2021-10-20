@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d91d88a_09c9ea2a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-10-20T06:02:45Z",
+      "side": 1,
+      "message": "shows vendor device now, still needs GMS verification.",
+      "revId": "c3f8554c80c078f66b913236a61b23f8ee8a2896",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
