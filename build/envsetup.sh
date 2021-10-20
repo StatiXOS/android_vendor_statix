@@ -50,7 +50,6 @@ function brunch()
 }
 
 function repopick() {
-    set_stuff_for_environment
     T=$(gettop)
     $T/vendor/statix/build/tools/repopick.py $@
 }
@@ -58,7 +57,6 @@ function repopick() {
 function aospmerge()
 {
     target_branch=$1
-    set_stuff_for_environment
     T=$(gettop)
     python3 $T/vendor/statix/scripts/merge-aosp.py target_branch
 }
