@@ -36,4 +36,6 @@ android_app {
     jacoco: {
         include_filter: ["com.android.launcher3.**", "com.statix.launcher.**"],
     },
+
+    required: ["privapp_whitelist_com.android.launcher3"],
 }
