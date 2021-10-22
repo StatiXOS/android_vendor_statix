@@ -7,6 +7,10 @@ soong_config_module_type {
     properties: ["cppflags"],
 }
 
+kernel_headers {
+    name: "device_kernel_headers_system",
+}
+
 gralloc_10_usage_bits {
     name: "gralloc_10_usage_bits_defaults",
     soong_config_variables: {
