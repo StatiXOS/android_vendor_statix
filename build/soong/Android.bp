@@ -1,3 +1,7 @@
+kernel_headers {
+    name: "device_kernel_headers_system",
+}
+
 // Target platform agnostic config modules
 soong_config_module_type {
     name: "gralloc_10_usage_bits",
