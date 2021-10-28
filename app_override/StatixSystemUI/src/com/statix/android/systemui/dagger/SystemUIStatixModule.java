@@ -10,6 +10,7 @@ import android.os.PowerManager;
 
 import androidx.annotation.Nullable;
 
+import com.statix.android.systemui.qs.tileimpl.QSFactoryImplStatix;
 import com.statix.android.systemui.theme.ThemeOverlayControllerStatix;
 
 import com.android.keyguard.KeyguardViewController;
@@ -127,7 +128,7 @@ public abstract class SystemUIStatixModule {
 
     @Binds
     @SysUISingleton
-    public abstract QSFactory bindQSFactory(QSFactoryImpl qsFactoryImpl);
+    public abstract QSFactory bindQSFactory(QSFactoryImplStatix qsFactoryImpl);
 
     @Binds
     abstract DockManager bindDockManager(DockManagerImpl dockManager);
