@@ -12,6 +12,7 @@ android_library {
         "colorkt",
         "themelib",
         "SystemUI-core",
+        "vendor.lineage.powershare-V1.0-java",
     ],
     manifest: "AndroidManifest.xml",
 
