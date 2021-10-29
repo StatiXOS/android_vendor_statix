@@ -7,6 +7,7 @@ android_library {
     ],
     resource_dirs: [
         "res",
+        "res-keyguard",
     ],
     static_libs: [
         "colorkt",
