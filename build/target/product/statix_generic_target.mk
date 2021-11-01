@@ -27,3 +27,6 @@ TARGET_FORCE_OTA_PACKAGE := true
 
 # No kernel
 TARGET_NO_KERNEL_OVERRIDE := true
+
+# Flatten apexes
+OVERRIDE_TARGET_FLATTEN_APEXES := true
