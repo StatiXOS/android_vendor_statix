@@ -27,3 +27,6 @@ ifneq ($(wildcard vendor/statix/bootanimation/$(scr_resolution).zip),)
 PRODUCT_COPY_FILES += \
     vendor/statix/bootanimation/$(scr_resolution).zip:$(TARGET_COPY_OUT_SYSTEM)/media/bootanimation.zip
 endif
+
+PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
+    system/media/bootanimation.zip
