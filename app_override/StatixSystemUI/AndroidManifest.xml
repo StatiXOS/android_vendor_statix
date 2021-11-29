@@ -23,6 +23,23 @@
         xmlns:tools="http://schemas.android.com/tools"
         coreApp="true">
 
-    <!-- Nothing. This space might be used in the future -->
+    <original-package android:name="com.android.systemui"/>
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
+    <permission android:name="com.android.systemui.permission.SEND_ALERT_BROADCASTS" android:protectionLevel="preinstalled|signature"/>
+    <uses-permission android:name="com.google.android.deskclock.permission.RECEIVE_ALERT_BROADCASTS"/>
+    <protected-broadcast android:name="com.google.android.systemui.smartspace.CLICK_EVENT"/>
+    <protected-broadcast android:name="com.google.android.systemui.smartspace.ENABLE_UPDATE"/>
+    <protected-broadcast android:name="com.google.android.systemui.smartspace.EXPIRE_EVENT"/>
+
+    <application>
+        <provider android:name=".keyguard.KeyguardSliceProvider"
+            tools:node="remove" />
+
+        <provider android:name="com.statix.android.systemui.keyguard.KeyguardSliceProviderStatix"
+            android:enabled="true"
+            android:exported="true"
+            android:authorities="com.android.systemui.keyguard"/>
+
+    </application>
 
 </manifest>
