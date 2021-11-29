@@ -1,0 +1,29 @@
+package com.statix.android.systemui.smartspace
+
+import android.content.ComponentName
+import android.content.Context
+
+import com.android.systemui.dagger.SysUISingleton
+import com.android.systemui.statusbar.FeatureFlags
+
+import com.google.android.systemui.smartspace.KeyguardMediaViewController
+import com.google.android.systemui.smartspace.KeyguardZenAlarmViewController
+
+import javax.inject.Inject
+
+@SysUISingleton
+class KeyguardSmartspaceController @Inject constructor(
+    private val context: Context,
+    private val featureFlags: FeatureFlags,
+    private val mediaController: KeyguardMediaViewController,
+    private val zenController: KeyguardZenAlarmViewController,
+) { 
+    init {
+        if (!(featureFlags!!).isSmartspaceEnabled()) {
+            context!!.packageManager.setComponentEnabledSetting(ComponentName("com.android.systemui", "com.statix.android.systemui.keyguard.KeyguardSliceProviderStatix"), 1, 1)
+            return
+        }
+        mediaController!!.init()
+        zenController!!.init()
+    }  
+}
