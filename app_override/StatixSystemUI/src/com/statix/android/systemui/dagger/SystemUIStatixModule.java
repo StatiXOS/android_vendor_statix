@@ -10,6 +10,8 @@ import android.os.PowerManager;
 
 import androidx.annotation.Nullable;
 
+import com.google.android.systemui.power.EnhancedEstimatesGoogleImpl;
+
 import com.statix.android.systemui.qs.tileimpl.QSFactoryImplStatix;
 import com.statix.android.systemui.theme.ThemeOverlayControllerStatix;
 

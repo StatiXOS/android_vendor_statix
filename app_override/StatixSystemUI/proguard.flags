@@ -2,3 +2,7 @@
 
 # Custom rules
 -keep class com.statix.** { *; }
+
+# Google rules
+-keep class com.google.** { *; }
+-keep class vendor.** { *; }

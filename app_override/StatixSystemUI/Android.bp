@@ -1,5 +1,10 @@
 android_library {
     name: "StatixSystemUI-core",
+    aaptflags: [
+        "-0 .tflite",
+        "-0 .vocab",
+    ],
+    asset_dirs: ["assets"],
     srcs: [
         "src/**/*.kt",
         "src/**/*.java",
@@ -11,8 +16,10 @@ android_library {
     ],
     static_libs: [
         "colorkt",
+        "libsysuig",
         "themelib",
         "SystemUI-core",
+        "tensorflowlite_java",
         "vendor.lineage.powershare-V1.0-java",
     ],
     manifest: "AndroidManifest.xml",
@@ -27,6 +34,9 @@ android_app {
     defaults: ["platform_app_defaults"],
     static_libs: [
         "StatixSystemUI-core",
+    ],
+    jni_libs: [
+        "libtensorflowlite_jni",
     ],
     resource_dirs: [],
 
