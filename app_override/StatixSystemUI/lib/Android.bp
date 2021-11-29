@@ -1,0 +1,23 @@
+java_import {
+    name: "backgesture-google",
+    jars: ["backgesture.jar"],
+    sdk_version: "current",
+}
+
+java_import {
+    name: "columbus-google",
+    jars: ["columbus.jar"],
+    sdk_version: "current",
+}
+
+java_import {
+    name: "gamedashboard-google",
+    jars: ["gamedashboard.jar"],
+    sdk_version: "current",
+}
+
+java_import {
+    name: "smartspace-google",
+    jars: ["smartspace.jar"],
+    sdk_version: "current",
+}
