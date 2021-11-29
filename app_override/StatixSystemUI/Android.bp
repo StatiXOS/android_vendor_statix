@@ -1,5 +1,10 @@
 android_library {
     name: "StatixSystemUI-core",
+    aaptflags: [
+        "-0 .tflite",
+        "-0 .vocab",
+    ],
+    asset_dirs: ["assets"],
     srcs: [
         "src/**/*.kt",
         "src/**/*.java",
@@ -8,11 +13,15 @@ android_library {
     resource_dirs: [
         "res",
         "res-keyguard",
+        "res-smartspace",
     ],
     static_libs: [
+        "backgesture-google",
         "colorkt",
+        "smartspace-google",
         "themelib",
         "SystemUI-core",
+        "tensorflowlite_java",
         "vendor.lineage.powershare-V1.0-java",
     ],
     manifest: "AndroidManifest.xml",
@@ -28,6 +37,10 @@ android_app {
     static_libs: [
         "StatixSystemUI-core",
     ],
+    jni_libs: [
+        "libtensorflowlite_jni",
+    ],
+    use_embedded_native_libs: true,
     resource_dirs: [],
 
     platform_apis: true,
