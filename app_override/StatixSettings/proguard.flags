@@ -1,0 +1,5 @@
+# Copyright (C) 2021 StatiXOS
+# SPDX-License-Identifier: Apache-2.0
+
+-include ../../../../packages/apps/Settings/proguard.flags
+-keep class com.google.android.settings.** { *; }
