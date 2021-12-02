@@ -8,12 +8,13 @@ PRODUCT_PACKAGES += \
     ThemePicker \
     SimpleDeviceConfig \
     StatiXOSWalls \
-    QuickAccessWallet \
-    StatixSystemUI
+    QuickAccessWallet
 
 # App overrides
 PRODUCT_PACKAGES += \
-    StatixLauncher
+    StatixLauncher \
+    StatixSystemUI \
+    StatixSettings
 
 # Google Camera GO
 PRODUCT_PACKAGES += \
