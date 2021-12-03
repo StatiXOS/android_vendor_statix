@@ -3,10 +3,19 @@
  Copyright (C) 2021 StatiXOS
  SPDX-License-Identifier: Apache-2.0
 -->
-
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Fully-qualified class name for the implementation of the FeatureFactory to be instantiated. -->
     <string name="config_featureFactory" translatable="false">com.statix.android.settings.overlay.FeatureFactoryImpl</string>
+
+    <!-- Settings intelligence package name -->
+    <string name="config_settingsintelligence_package_name" translatable="false">
+        com.google.android.settings.intelligence
+    </string>
+
+    <!-- Settings intelligence interaction log intent action -->
+    <string name="config_settingsintelligence_log_action" translatable="false">
+        com.google.android.settings.intelligence.LOG_BRIDGE
+    </string>
 
 </resources>
