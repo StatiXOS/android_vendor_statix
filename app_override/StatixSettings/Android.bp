@@ -7,9 +7,8 @@ android_library {
 
     srcs: ["src/**/*.java"],
     static_libs: [
-        "SettingsGoogle-lib",
+        "powerusagefeaturegoogle",
         "Settings-core",
-        "WifiTrackerLib",
     ],
     resource_dirs: [
         "res",
@@ -19,7 +18,7 @@ android_library {
 }
 
 android_app {
-    name: "StatixSettings-core",
+    name: "StatixSettings",
     defaults: ["platform_app_defaults"],
     platform_apis: true,
     certificate: "platform",
@@ -42,4 +41,10 @@ android_app {
     ],
     manifest: ":Settings_manifest",
     additional_manifests: ["AndroidManifest.xml"],
+}
+
+java_import {
+    name: "powerusagefeaturegoogle",
+    jars: ["libs/powerusagefeaturegoogle.jar"],
+    sdk_version: "current",
 }
