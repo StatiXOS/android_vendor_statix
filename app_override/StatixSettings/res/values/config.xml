@@ -18,4 +18,10 @@
         com.google.android.settings.intelligence.LOG_BRIDGE
     </string>
 
+    <!-- Whether or not homepage should display user's account avatar -->
+    <bool name="config_show_avatar_in_homepage">true</bool>
+
+    <!-- App intent -->
+    <string name="config_account_intent_uri" translatable="false">intent:#Intent;action=com.android.settings.action.VIEW_ACCOUNT;category=android.intent.category.DEFAULT;launchFlags=0x8000;S.extra.callingPackageName=com.android.settings;end</string>
+
 </resources>
