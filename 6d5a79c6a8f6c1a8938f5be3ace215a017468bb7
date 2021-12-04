@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "21de32a2_99b72d8e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-04T19:58:41Z",
+      "side": 1,
+      "message": "rename featurefactoryimpl class",
+      "revId": "6d5a79c6a8f6c1a8938f5be3ace215a017468bb7",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
