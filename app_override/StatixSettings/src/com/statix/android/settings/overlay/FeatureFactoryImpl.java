@@ -1,6 +1,7 @@
 package com.statix.android.settings.overlay;
 
 import com.android.settings.overlay.FeatureFactoryImpl;
+import com.google.android.settings.accounts.AccountFeatureProviderGoogleImpl;
 import com.google.android.settings.fuelgauge.PowerUsageFeatureProviderGoogleImpl;
 
 public final class FeatureFactoryImplStatix extends FeatureFactoryImpl {
@@ -11,5 +12,13 @@ public final class FeatureFactoryImplStatix extends FeatureFactoryImpl {
                     context.getApplicationContext());
         }
         return mPowerUsageFeatureProvider;
+    }
+
+    @Override
+    public AccountFeatureProvider getAccountFeatureProvider() {
+        if (mAccountFeatureProvider == null) {
+            mAccountFeatureProvider = new AccountFeatureProviderGoogleImpl();
+        }
+        return mAccountFeatureProvider;
     }
 }
