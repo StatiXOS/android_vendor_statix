@@ -1,6 +1,9 @@
 // Copyright (C) 2021 StatiXOS
 // SPDX-License-Identifier: Apache-2.0
 
+soong_namespace{
+}
+
 android_library {
     name: "StatixSettings-core",
     platform_apis: true,
