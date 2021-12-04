@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aba1f2d3_71851b36",
+        "filename": "app_override/StatixSettings/Android.bp",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-04T19:46:27Z",
+      "side": 1,
+      "message": "not a resource dir",
+      "revId": "3f34b88f01f10b57bf44995ec11f23a2e5ce89c8",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
