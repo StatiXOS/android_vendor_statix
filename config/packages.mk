@@ -11,7 +11,8 @@ PRODUCT_PACKAGES += \
     QuickAccessWallet
 
 PRODUCT_SOONG_NAMESPACES += \
-    vendor/statix/app_override/StatixSystemUI
+    vendor/statix/app_override/StatixSystemUI \
+    vendor/statix/app_override/StatixSettings
 
 # App overrides
 PRODUCT_PACKAGES += \
