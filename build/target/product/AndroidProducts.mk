@@ -19,6 +19,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/statix_arm64.mk \
     $(LOCAL_DIR)/statix_x86.mk \
     $(LOCAL_DIR)/statix_x86_64.mk \
+    $(LOCAL_DIR)/statix_sdk_phone_arm64.mk \
     $(LOCAL_DIR)/statix_sdk_phone_x86.mk \
     $(LOCAL_DIR)/statix_sdk_phone_x86_64.mk
 
@@ -27,5 +28,6 @@ COMMON_LUNCH_CHOICES := \
     statix_arm64-userdebug \
     statix_x86-userdebug \
     statix_x86_64-userdebug \
+    statix_sdk_phone_arm64-userdebug \
     statix_sdk_phone_x86-userdebug \
     statix_sdk_phone_x86_64-userdebug
