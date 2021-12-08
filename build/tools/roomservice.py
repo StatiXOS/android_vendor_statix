@@ -18,20 +18,20 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-import json
 import os
 import os.path
 import re
 import subprocess
 import sys
 import urllib.request
+import yaml
 from xml.etree import ElementTree
 
 
 PRODUCT = sys.argv[1]
 BRANCH = "sc"
 ORGANIZATION_NAME = "StatiXOS"
-DEPENDENCIES_FILE_NAME = "statix.dependencies"
+DEPENDENCIES_FILE_NAME = "dependencies.yml"
 LOCAL_MANIFESTS_PATH = ".repo/local_manifests/"
 LOCAL_MANIFESTS_FILE_NAME = "electric_manifest.xml"
 CUSTOM_MANIFEST_NAME = "include.xml"
@@ -46,6 +46,13 @@ def exists_in_tree(lm, repo):
     """ Checks if the repository exists in the tree. """
     for child in lm.iter("project"):
         if child.attrib["path"].endswith(repo):
+            return child
+
+
+def remote_exists_in_tree(lm, remote):
+    """ Checks if the repository exists in the tree. """
+    for child in lm.iter("remote"):
+        if child.attrib["fetch"].endswith(remote):
             return child
 
 
@@ -167,6 +174,49 @@ def add_dependencies(repos, is_initial_fetch):
         f.write(raw_xml)
 
 
+def add_remotes(remotes):
+    """ Adds rmotes to local manifest. """
+    try:
+        lm = ElementTree.parse(f"{LOCAL_MANIFESTS_PATH}{LOCAL_MANIFESTS_FILE_NAME}")
+        lm = lm.getroot()
+    except ElementTree.ParseError:
+        lm = ElementTree.Element("manifest")
+    for remote in remotes:
+        remote_name = remote["name"]
+        remote_fetch = remote["fetch"]
+        remote_revision = BRANCH
+        if "revision" in remote:
+            remote_revision = remote["revision"]
+        existing_remote = remote_exists_in_tree(lm, remote_fetch)
+        if existing_remote:
+            if existing_remote.attrib["name"] != remote_name:
+                print(f"Updating dependency {remote_name}")
+                existing_remote.set("name", remote_name)
+            if existing_remote.attrib["revision"] == remote_revision:
+                print(f"{remote_name} already exists")
+            else:
+                print(f"Updating branch for {remote_name} to {remote_revision}")
+                existing_remote.set("revision", remote_revision)
+        else:
+            print(f"Adding remote: {remote_name}")
+            remote = ElementTree.Element(
+                "remote",
+                attrib={
+                    "name": remote_name,
+                    "fetch": remote_fetch,
+                    "revision": remote_revision,
+                },
+            )
+            lm.append(remote)
+
+    indent(lm, 0)
+    raw_xml = "\n".join(
+        ('<?xml version="1.0" encoding="UTF-8"?>', ElementTree.tostring(lm).decode(),)
+    )
+    with open(f"{LOCAL_MANIFESTS_PATH}{LOCAL_MANIFESTS_FILE_NAME}", "w") as f:
+        f.write(raw_xml)
+
+
 def fetch_dependencies(repo_path):
     """ Adds repos that are in the dependency file to the manifest, and syncs them. """
     syncable_repos = []
@@ -177,7 +227,7 @@ def fetch_dependencies(repo_path):
     print(f"Looking for dependencies in {repo_path}")
     if os.path.exists(dependencies_path):
         with open(dependencies_path, "r") as dependencies_file:
-            dependencies = json.loads(dependencies_file.read())
+            dependencies = yaml.safe_load(dependencies_file)["projects"]
             fetch_list = []
             for dependency in dependencies:
                 if "branch" not in dependency:
