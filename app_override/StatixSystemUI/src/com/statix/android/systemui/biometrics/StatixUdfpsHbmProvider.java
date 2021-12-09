@@ -39,15 +39,15 @@ public class StatixUdfpsHbmProvider implements IBinder.DeathRecipient,UdfpsHbmPr
             return iDisplay;
         }
         if (!halFindFailed) {
-            IBinder waitForDeclaredService = ServiceManager.waitForDeclaredService("com.google.hardware.pixel.display.IDisplay/default");
-            if (waitForDeclaredService == null) {
+            IBinder displayService = ServiceManager.getService("com.google.hardware.pixel.display.IDisplay/default");
+            if (displayService == null) {
                 Log.e("StatixUdfpsHbmProvider", "getPixelDisplayHal | Failed to find the Display HAL");
                 halFindFailed = true;
                 return null;
             }
             try {
-                waitForDeclaredService.linkToDeath(this, 0);
-                mDisplayHal = IDisplay.Stub.asInterface(waitForDeclaredService);
+                displayService.linkToDeath(this, 0);
+                mDisplayHal = IDisplay.Stub.asInterface(displayService);
                 return mDisplayHal;
             } catch (RemoteException e) {
                 Log.e("StatixUdfpsHbmProvider", "getPixelDisplayHal | Failed to link to death", e);
