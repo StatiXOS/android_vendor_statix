@@ -210,10 +210,9 @@ public abstract class SystemUIStatixModule {
     @Binds
     abstract ThemeOverlayController provideThemeOverlayController(ThemeOverlayControllerStatix themeOverlayController);
 
-    @Provides
-    static UdfpsHbmProvider provideUdfpsHbmProvider() {
-        return new StatixUdfpsHbmProvider();
-    }
+    @Binds
+    @SysUISingleton
+    abstract UdfpsHbmProvider bindUdfpsHbmProvider(StatixUdfpsHbmProvider udfpsHbmProvider);
 
     // Google
     @Provides
