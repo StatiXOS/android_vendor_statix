@@ -16,12 +16,14 @@ android_library {
     ],
     resource_dirs: [
         "res",
+        "res-columbus",
         "res-keyguard",
         "res-smartspace",
     ],
     static_libs: [
         "backgesture-google",
         "colorkt",
+        "columbus-sysui-google",
         "smartspace-google",
         "themelib",
         "SystemUI-core",
