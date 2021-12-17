@@ -46,8 +46,10 @@ import com.android.systemui.volume.VolumeUI;
 import com.android.systemui.wmshell.WMShell;
 import com.android.systemui.dagger.SysUISingleton;
 
+import com.google.android.systemui.columbus.ColumbusTargetRequestService;
 import com.google.android.systemui.gamedashboard.GameMenuActivity;
 
+import com.statix.android.systemui.StatixServices;
 import com.statix.android.systemui.theme.ThemeOverlayControllerStatix;
 
 import dagger.Binds;
@@ -234,10 +236,26 @@ public abstract class SystemUIStatixBinder {
     public abstract SystemUI bindHomeSoundEffectController(HomeSoundEffectController sysui);
 
     /**
+     * Inject into StatixServices.
+     */
+    @Binds
+    @IntoMap
+    @ClassKey(StatixServices.class)
+    public abstract SystemUI bindStatixServices(StatixServices sysui);
+
+    /**
      * Inject into GameMenuActivity.
      */
     @Binds
     @IntoMap
     @ClassKey(GameMenuActivity.class)
     public abstract Activity bindGameMenuActivity(GameMenuActivity activity);
+
+    /**
+     * Inject into ColumbusTargetRequestService.
+     */
+    @Binds
+    @IntoMap
+    @ClassKey(ColumbusTargetRequestService.class)
+    public abstract Service bindColumbusTargetRequestService(ColumbusTargetRequestService activity);
 }
