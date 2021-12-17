@@ -4,11 +4,6 @@ soong_namespace {
 
 android_library {
     name: "StatixSystemUI-core",
-    aaptflags: [
-        "-0 .tflite",
-        "-0 .vocab",
-    ],
-    asset_dirs: ["assets"],
     srcs: [
         "src/**/*.kt",
         "src/**/*.java",
@@ -16,13 +11,18 @@ android_library {
     ],
     resource_dirs: [
         "res",
+        "res-assist",
+        "res-columbus",
         "res-gamedashboard",
         "res-keyguard",
         "res-smartspace",
     ],
     static_libs: [
+        "assistmanager-google",
         "backgesture-google",
         "colorkt",
+        "columbus-sysui-google",
+        "elmyra-sysui-google",
         "gamedashboard-sysui-google",
         "smartspace-google",
         "themelib",
@@ -30,6 +30,7 @@ android_library {
         "tensorflowlite_java",
         "com.google.hardware.pixel.display-V3-java",
         "vendor.lineage.powershare-V1.0-java",
+        "vendor-pixelatoms-java",
     ],
     manifest: "AndroidManifest.xml",
 
@@ -47,9 +48,12 @@ android_app {
     jni_libs: [
         "libtensorflowlite_jni",
     ],
+    aaptflags: [
+        "-0 .tflite",
+        "-0 .vocab",
+    ],
+    asset_dirs: ["assets"],
     use_embedded_native_libs: true,
-    resource_dirs: [],
-
     platform_apis: true,
     system_ext_specific: true,
     certificate: "platform",

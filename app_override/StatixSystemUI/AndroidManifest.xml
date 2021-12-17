@@ -24,12 +24,16 @@
         coreApp="true">
 
     <original-package android:name="com.android.systemui"/>
+    <uses-permission android:name="android.permission.ACCESS_CONTEXT_HUB"/>
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
     <permission android:name="com.android.systemui.permission.SEND_ALERT_BROADCASTS" android:protectionLevel="preinstalled|signature"/>
     <uses-permission android:name="com.google.android.deskclock.permission.RECEIVE_ALERT_BROADCASTS"/>
     <protected-broadcast android:name="com.google.android.systemui.smartspace.CLICK_EVENT"/>
     <protected-broadcast android:name="com.google.android.systemui.smartspace.ENABLE_UPDATE"/>
     <protected-broadcast android:name="com.google.android.systemui.smartspace.EXPIRE_EVENT"/>
+
+    <permission android:name="com.google.android.columbus.permission.CONFIGURE_COLUMBUS_GESTURE" android:protectionLevel="signature|preinstalled"/>
+    <uses-permission android:name="com.google.android.columbus.permission.CONFIGURE_COLUMBUS_GESTURE"/>
 
     <uses-permission android:name="android.permission.MANAGE_GAME_MODE" android:protectionLevel="signature"/>
 
@@ -41,6 +45,20 @@
             android:enabled="true"
             android:exported="true"
             android:authorities="com.android.systemui.keyguard"/>
+
+        <!-- Columbus -->
+        <service
+            android:name="com.google.android.systemui.columbus.ColumbusServiceProxy"
+            android:permission="com.google.android.columbus.permission.CONFIGURE_COLUMBUS_GESTURE"
+            android:exported="true"/>
+
+        <service
+            android:name="com.google.android.systemui.columbus.ColumbusTargetRequestService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.systemui.QUICK_TAP_TARGET_REQUEST"/>
+            </intent-filter>
+        </service>
 
         <!-- Game Dashboard -->
         <activity
