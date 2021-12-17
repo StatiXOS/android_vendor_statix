@@ -16,18 +16,23 @@ android_library {
     ],
     resource_dirs: [
         "res",
+        "res-columbus",
         "res-keyguard",
         "res-smartspace",
     ],
     static_libs: [
+        "assistmanager-google",
         "backgesture-google",
         "colorkt",
+        "columbus-sysui-google",
+        "elmyra-sysui-google",
         "smartspace-google",
         "themelib",
         "SystemUI-core",
         "tensorflowlite_java",
         "com.google.hardware.pixel.display-V3-java",
         "vendor.lineage.powershare-V1.0-java",
+        "vendor-pixelatoms-java",
     ],
     manifest: "AndroidManifest.xml",
 
