@@ -1,7 +1,7 @@
 include vendor/statix/build/core/vendor/*.mk
 
 ifneq ($(TARGET_DOES_NOT_USE_GAPPS), true)
-$(call inherit-product-if-exists, vendor/google/gms/products/gms.mk)
+$(call inherit-product-if-exists, vendor/gms/products/gms.mk)
 $(call inherit-product-if-exists, vendor/google/pixel/config.mk)
 endif
 
@@ -45,6 +45,10 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/common/etc/permissions/privapp-permissions-statix-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-statix-product.xml \
     vendor/statix/prebuilt/common/etc/permissions/privapp-permissions-statix-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-statix-system.xml
+
+# Copy quick tap enable sysconfig
+PRODUCT_COPY_FILES += \
+    vendor/statix/prebuilt/common/etc/sysconfig/quick_tap.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/quick_tap.xml
 
 # Enable support of one-handed mode
 PRODUCT_PRODUCT_PROPERTIES += \

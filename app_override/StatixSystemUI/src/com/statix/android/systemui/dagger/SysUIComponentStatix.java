@@ -16,8 +16,8 @@ import dagger.Subcomponent;
 @Subcomponent(modules = {
         DefaultComponentBinder.class,
         DependencyProvider.class,
-        SystemUIBinder.class,
         SystemUIModule.class,
+        SystemUIStatixBinder.class,
         SystemUIStatixModule.class})
 public interface SysUIComponentStatix extends SysUIComponent {
     @SysUISingleton
