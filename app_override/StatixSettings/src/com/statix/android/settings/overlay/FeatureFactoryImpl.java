@@ -1,6 +1,7 @@
 package com.statix.android.settings.overlay;
 
 import com.android.settings.overlay.FeatureFactoryImpl;
+import com.android.settings.applications.GameSettingsFeatureProviderImpl;
 import com.google.android.settings.accounts.AccountFeatureProviderGoogleImpl;
 import com.google.android.settings.fuelgauge.PowerUsageFeatureProviderGoogleImpl;
 
@@ -20,5 +21,13 @@ public final class FeatureFactoryImplStatix extends FeatureFactoryImpl {
             mAccountFeatureProvider = new AccountFeatureProviderGoogleImpl();
         }
         return mAccountFeatureProvider;
+    }
+
+    @Override
+    public GameSettingsFeatureProvider getGameSettingsFeatureProvider() {
+        if (mGameSettingsFeatureProvider == null) {
+            mGameSettingsFeatureProvider = new GameSettingsFeatureProviderImpl();
+        }
+        return mGameSettingsFeatureProvider;
     }
 }
