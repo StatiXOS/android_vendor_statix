@@ -16,12 +16,14 @@ android_library {
     ],
     resource_dirs: [
         "res",
+        "res-gamedashboard",
         "res-keyguard",
         "res-smartspace",
     ],
     static_libs: [
         "backgesture-google",
         "colorkt",
+        "gamedashboard-sysui-google",
         "smartspace-google",
         "themelib",
         "SystemUI-core",
