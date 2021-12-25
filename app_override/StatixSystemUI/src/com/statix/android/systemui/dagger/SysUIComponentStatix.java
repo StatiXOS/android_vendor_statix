@@ -8,6 +8,7 @@ import com.android.systemui.dagger.SysUIComponent;
 import com.android.systemui.dagger.SystemUIModule;
 
 import com.statix.android.systemui.columbus.ColumbusModule;
+import com.statix.android.systemui.gamedashboard.GameDashboardModule;
 import com.statix.android.systemui.keyguard.KeyguardSliceProviderStatix;
 import com.statix.android.systemui.smartspace.KeyguardSmartspaceController;
 
@@ -18,6 +19,7 @@ import dagger.Subcomponent;
         ColumbusModule.class,
         DefaultComponentBinder.class,
         DependencyProvider.class,
+        GameDashboardModule.class,
         SystemUIModule.class,
         SystemUIStatixBinder.class,
         SystemUIStatixModule.class})
