@@ -7,6 +7,7 @@ import com.android.systemui.dagger.SystemUIBinder;
 import com.android.systemui.dagger.SysUIComponent;
 import com.android.systemui.dagger.SystemUIModule;
 
+import com.statix.android.systemui.gamedashboard.GameDashboardModule;
 import com.statix.android.systemui.keyguard.KeyguardSliceProviderStatix;
 import com.statix.android.systemui.smartspace.KeyguardSmartspaceController;
 
@@ -16,8 +17,9 @@ import dagger.Subcomponent;
 @Subcomponent(modules = {
         DefaultComponentBinder.class,
         DependencyProvider.class,
-        SystemUIBinder.class,
+        GameDashboardModule.class,
         SystemUIModule.class,
+        SystemUIStatixBinder.class,
         SystemUIStatixModule.class})
 public interface SysUIComponentStatix extends SysUIComponent {
     @SysUISingleton
