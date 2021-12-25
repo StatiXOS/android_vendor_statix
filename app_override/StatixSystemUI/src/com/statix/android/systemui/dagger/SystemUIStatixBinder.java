@@ -46,6 +46,8 @@ import com.android.systemui.volume.VolumeUI;
 import com.android.systemui.wmshell.WMShell;
 import com.android.systemui.dagger.SysUISingleton;
 
+import com.google.android.systemui.gamedashboard.GameMenuActivity;
+
 import com.statix.android.systemui.StatixServices;
 import com.statix.android.systemui.columbus.ColumbusTargetRequestServiceWrapper;
 import com.statix.android.systemui.theme.ThemeOverlayControllerStatix;
@@ -248,4 +250,12 @@ public abstract class SystemUIStatixBinder {
     @IntoMap
     @ClassKey(ColumbusTargetRequestServiceWrapper.class)
     public abstract Service bindColumbusTargetRequestService(ColumbusTargetRequestServiceWrapper activity);
+
+    /**
+     * Inject into GameMenuActivity.
+     */
+    @Binds
+    @IntoMap
+    @ClassKey(GameMenuActivity.class)
+    public abstract Activity bindGameMenuActivity(GameMenuActivity activity);
 }

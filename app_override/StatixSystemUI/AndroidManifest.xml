@@ -35,6 +35,8 @@
     <permission android:name="com.google.android.columbus.permission.CONFIGURE_COLUMBUS_GESTURE" android:protectionLevel="signature|preinstalled"/>
     <uses-permission android:name="com.google.android.columbus.permission.CONFIGURE_COLUMBUS_GESTURE"/>
 
+    <uses-permission android:name="android.permission.MANAGE_GAME_MODE" android:protectionLevel="signature"/>
+
     <application>
         <provider android:name=".keyguard.KeyguardSliceProvider"
             tools:node="remove" />
@@ -57,6 +59,27 @@
                 <action android:name="com.google.android.systemui.QUICK_TAP_TARGET_REQUEST"/>
             </intent-filter>
         </service>
+
+        <!-- Game Dashboard -->
+        <activity
+            android:theme="@style/GameMenuTheme"
+            android:name="com.google.android.systemui.gamedashboard.GameMenuActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="behind"
+            android:finishOnCloseSystemDialogs="true"
+            android:showForAllUsers="true"/>
+
+        <activity
+            android:theme="@style/GameMenuTheme"
+            android:name="com.google.android.systemui.gamedashboard.GameDndConfigActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="behind"
+            android:finishOnCloseSystemDialogs="true"
+            android:showForAllUsers="true"/>
 
     </application>
 
