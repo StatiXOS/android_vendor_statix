@@ -9,6 +9,7 @@ android_library {
     static_libs: [
         "accountfeatureprovidergoogle",
         "powerusagefeaturegoogle",
+        "gamemode-settingsgoogle",
         "Settings-core",
     ],
     resource_dirs: [
