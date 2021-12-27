@@ -1,17 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
 <permissions>
-    <privapp-permissions package="com.custom.ambient.display">
-        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
-    </privapp-permissions>
-
-    <privapp-permissions package="com.android.phone">
-        <permission name="android.permission.OVERRIDE_WIFI_CONFIG"/>
-    </privapp-permissions>
-
-    <privapp-permissions package="com.android.wallpaper">
-        <permission name="android.permission.SET_WALLPAPER_COMPONENT"/>
-        <permission name="android.permission.READ_WALLPAPER_INTERNAL"/>
-        <permission name="android.permission.BIND_WALLPAPER"/>
-    </privapp-permissions>
-
 </permissions>
