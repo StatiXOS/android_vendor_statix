@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <!-- Additional permissions on top of privapp-permissions-platform.xml -->
+    <privapp-permissions package="com.android.launcher3">
+        <permission name="android.permission.DEVICE_POWER"/>
+    </privapp-permissions>
+</permissions>

@@ -44,7 +44,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 # copy privapp permissions
 PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/common/etc/permissions/privapp-permissions-statix-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-statix-product.xml \
-    vendor/statix/prebuilt/common/etc/permissions/privapp-permissions-statix-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-statix-system.xml
+    vendor/statix/prebuilt/common/etc/permissions/privapp-permissions-statix-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-statix-system.xml \
+    vendor/statix/prebuilt/common/etc/permissions/privapp-permissions-statix-se.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-statix-se.xml
 
 # Copy quick tap enable sysconfig
 PRODUCT_COPY_FILES += \
