@@ -37,6 +37,7 @@ import com.android.systemui.qs.tiles.WorkModeTile;
 import com.android.systemui.util.leak.GarbageMonitor;
 
 // Custom tiles
+import com.statix.android.systemui.qs.tiles.GloveModeTile;
 import com.statix.android.systemui.qs.tiles.PowerShareTile;
 import com.statix.android.systemui.qs.tiles.CaffeineTile;
 
@@ -47,8 +48,9 @@ import dagger.Lazy;
 
 public class QSFactoryImplStatix extends QSFactoryImpl {
 
-    private final Provider<PowerShareTile> mPowerShareTileProvider;
     private final Provider<CaffeineTile> mCaffeineTileProvider;
+    private final Provider<GloveModeTile> mGloveModeTileProvider;
+    private final Provider<PowerShareTile> mPowerShareTileProvider;
 
     @Inject
     public QSFactoryImplStatix(
@@ -81,23 +83,27 @@ public class QSFactoryImplStatix extends QSFactoryImpl {
             Provider<DeviceControlsTile> deviceControlsTileProvider,
             Provider<AlarmTile> alarmTileProvider,
             Provider<QuickAccessWalletTile> quickAccessWalletTileProvider,
+            Provider<CaffeineTile> caffeineTileProvider,
             Provider<PowerShareTile> powerShareTileProvider,
-            Provider<CaffeineTile> caffeineTileProvider) {
+            Provider<GloveModeTile> gloveModeTileProvider) {
         super(qsHostLazy, customTileBuilderProvider, wifiTileProvider, internetTileProvider, bluetoothTileProvider, cellularTileProvider, dndTileProvider, colorInversionTileProvider,
             airplaneModeTileProvider, workModeTileProvider, rotationLockTileProvider, flashlightTileProvider, locationTileProvider, castTileProvider, hotspotTileProvider, userTileProvider,
             batterySaverTileProvider, dataSaverTileProvider, nightDisplayTileProvider, nfcTileProvider, memoryTileProvider, uiModeNightTileProvider, screenRecordTileProvider, reduceBrightColorsTileProvider,
             cameraToggleTileProvider, microphoneToggleTileProvider, deviceControlsTileProvider, alarmTileProvider, quickAccessWalletTileProvider);
         // custom tile
-        mPowerShareTileProvider = powerShareTileProvider;
         mCaffeineTileProvider = caffeineTileProvider;
+        mGloveModeTileProvider = gloveModeTileProvider;
+        mPowerShareTileProvider = powerShareTileProvider;
     }
 
     private QSTileImpl createTileStatix(String tileSpec) {
         switch(tileSpec) {
-            case "powershare":
-                return mPowerShareTileProvider.get();
             case "caffeine":
                 return mCaffeineTileProvider.get();
+            case "glovemode":
+                return mGloveModeTileProvider.get();
+            case "powershare":
+                return mPowerShareTileProvider.get();
             default:
                 return null;
         }
