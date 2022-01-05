@@ -18,6 +18,7 @@ android_library {
         "res-smartspace",
     ],
     static_libs: [
+        "adaptivecharging-sysui-google",
         "assistmanager-google",
         "backgesture-google",
         "colorkt",
@@ -29,6 +30,8 @@ android_library {
         "SystemUI-core",
         "tensorflowlite_java",
         "com.google.hardware.pixel.display-V3-java",
+        "vendor.google.google_battery-V1.0-java",
+        "vendor.google.google_battery-V1.1-java",
         "vendor.lineage.powershare-V1.0-java",
         "vendor-pixelatoms-java",
     ],

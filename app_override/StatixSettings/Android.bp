@@ -5,12 +5,17 @@ android_library {
     name: "StatixSettings-core",
     platform_apis: true,
 
-    srcs: ["src/**/*.java"],
+    srcs: [
+        "src/**/*.java"
+    ],
     static_libs: [
         "accountfeatureprovidergoogle",
+        "adaptivecharging-settingsgoogle",
         "powerusagefeaturegoogle",
         "gamemode-settingsgoogle",
         "Settings-core",
+        "vendor.google.google_battery-V1.0-java",
+        "vendor.google.google_battery-V1.1-java",
     ],
     resource_dirs: [
         "res",
@@ -47,6 +52,12 @@ android_app {
 java_import {
     name: "accountfeatureprovidergoogle",
     jars: ["libs/accountfeatureprovidergoogle.jar"],
+    sdk_version: "current",
+}
+
+java_import {
+    name: "adaptivecharging-settingsgoogle",
+    jars: ["libs/adaptivecharging.jar"],
     sdk_version: "current",
 }
 

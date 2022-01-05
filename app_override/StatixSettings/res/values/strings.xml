@@ -5,6 +5,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Adaptive Charging -->
+    <string name="adaptive_charging">Adaptive Charging</string>
+    <string name="adaptive_charging_description">Charge steadily overnight to preserve long-term battery life. Uses alarm to completely charge by wakeup.</string>
+    <string name="adaptive_charging_time_estimate"><b>Adaptive charging</b> • Full by %1$s</string>
+    <string name="keywords_adaptive_charging">charge, charging, smart charging, adaptive charging, battery, battery health</string>
+
     <!-- Game -->
     <string name="game_dashboard_always_on_summary">Show Game Dashboard shortcut in games</string>
     <string name="game_dashboard_always_on_title">Game Dashboard</string>

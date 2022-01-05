@@ -1,4 +1,10 @@
 java_import {
+    name: "adaptivecharging-sysui-google",
+    jars: ["adaptivecharging.jar"],
+    sdk_version: "current",
+}
+
+java_import {
     name: "assistmanager-google",
     jars: ["assistmanager.jar"],
     sdk_version: "current",

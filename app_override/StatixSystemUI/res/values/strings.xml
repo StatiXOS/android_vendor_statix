@@ -15,6 +15,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Adaptive Charging -->
+    <string name="adaptive_charging_time_estimate">%1$s • Adaptive charging (full by %2$s)</string>
+
     <!-- PowerShare QS tile -->
     <string name="quick_settings_powershare_label">Wireless PowerShare</string>
     <string name="quick_settings_powershare_off_powersave_label">Wireless PowerShare off\nBattery saver</string>
