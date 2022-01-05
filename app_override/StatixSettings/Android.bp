@@ -5,12 +5,16 @@ android_library {
     name: "StatixSettings-core",
     platform_apis: true,
 
-    srcs: ["src/**/*.java"],
+    srcs: [
+        ":AdaptiveChargingSystemUILib",
+        "src/**/*.java"
+    ],
     static_libs: [
         "accountfeatureprovidergoogle",
         "powerusagefeaturegoogle",
         "gamemode-settingsgoogle",
         "Settings-core",
+        "vendor.google.google_battery-V1.0-java",
     ],
     resource_dirs: [
         "res",

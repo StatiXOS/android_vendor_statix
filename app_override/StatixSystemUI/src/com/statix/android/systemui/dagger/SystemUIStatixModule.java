@@ -66,6 +66,7 @@ import com.statix.android.systemui.assist.AssistManagerGoogle;
 import com.statix.android.systemui.biometrics.StatixUdfpsHbmProvider;
 import com.statix.android.systemui.qs.tileimpl.QSFactoryImplStatix;
 import com.statix.android.systemui.smartspace.KeyguardSmartspaceController;
+import com.statix.android.systemui.statusbar.KeyguardIndicationControllerGoogle;
 import com.statix.android.systemui.theme.ThemeOverlayControllerStatix;
 
 import com.android.internal.app.AssistUtils;
@@ -108,6 +109,7 @@ import com.android.systemui.settings.UserTracker;
 import com.android.systemui.statusbar.commandline.CommandRegistry;
 import com.android.systemui.statusbar.CommandQueue;
 import com.android.systemui.statusbar.FeatureFlags;
+import com.android.systemui.statusbar.KeyguardIndicationController;
 import com.android.systemui.statusbar.NotificationLockscreenUserManager;
 import com.android.systemui.statusbar.NotificationLockscreenUserManagerImpl;
 import com.android.systemui.statusbar.NotificationMediaManager;
@@ -291,6 +293,9 @@ public abstract class SystemUIStatixModule {
     @Binds
     @SysUISingleton
     abstract UdfpsHbmProvider bindUdfpsHbmProvider(StatixUdfpsHbmProvider udfpsHbmProvider);
+
+    @Binds
+    abstract KeyguardIndicationController bindKeyguardIndicationControllerGoogle(KeyguardIndicationControllerGoogle keyguardIndicationControllerGoogle);
 
     @Provides
     @SysUISingleton
@@ -641,5 +646,4 @@ public abstract class SystemUIStatixModule {
     static ViewGroup provideParentViewGroup(OverlayUiHost overlayUiHost) {
         return overlayUiHost.getParent();
     }
-
 }

@@ -2,9 +2,15 @@ soong_namespace {
     imports: ["hardware/google/interfaces"],
 }
 
+filegroup {
+    name: "AdaptiveChargingSystemUILib",
+    srcs: ["src/com/statix/android/systemui/adaptivecharging/*.java"],
+}
+
 android_library {
     name: "StatixSystemUI-core",
     srcs: [
+        ":AdaptiveChargingSystemUILib",
         "src/**/*.kt",
         "src/**/*.java",
         "src/**/I*.aidl",
@@ -29,6 +35,7 @@ android_library {
         "SystemUI-core",
         "tensorflowlite_java",
         "com.google.hardware.pixel.display-V3-java",
+        "vendor.google.google_battery-V1.0-java",
         "vendor.lineage.powershare-V1.0-java",
         "vendor-pixelatoms-java",
     ],
