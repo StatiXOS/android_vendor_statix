@@ -27,4 +27,5 @@
     <dimen name="game_mode_text_width">230.0dip</dimen>
     <dimen name="game_mode_title_text_size">16.0sp</dimen>
     <dimen name="game_toast_margin">20.0dip</dimen>
+    <dimen name="navigation_bar_gesture_height">20.0dip</dimen>
 </resources>
