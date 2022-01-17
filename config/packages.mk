@@ -10,9 +10,6 @@ PRODUCT_PACKAGES += \
     StatiXOSWalls \
     QuickAccessWallet
 
-PRODUCT_SOONG_NAMESPACES += \
-    vendor/statix/app_override/StatixSystemUI
-
 # App overrides
 PRODUCT_PACKAGES += \
     StatixLauncher \
