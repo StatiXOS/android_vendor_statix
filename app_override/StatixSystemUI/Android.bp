@@ -1,7 +1,3 @@
-soong_namespace {
-    imports: ["hardware/google/interfaces"],
-}
-
 android_library {
     name: "StatixSystemUI-core",
     aaptflags: [
@@ -28,8 +24,8 @@ android_library {
         "themelib",
         "SystemUI-core",
         "tensorflowlite_java",
-        "com.google.hardware.pixel.display-V3-java",
         "vendor.lineage.powershare-V1.0-java",
+        "//hardware/google/interfaces:com.google.hardware.pixel.display-V3-java",
     ],
     manifest: "AndroidManifest.xml",
 
