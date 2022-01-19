@@ -114,6 +114,23 @@ def is_in_manifest(repo_name, branch, path):
         if (local_path.get("name") == repo_name and local_path.get("revision") == branch) or local_path.get("path") == path:
             return True
 
+def get_branch_for_remote(remote_name):
+    """ Gets branch for a remote name, from main manifest. """
+    manifest = subprocess.check_output(['repo', 'manifest'])
+    xml_root = ElementTree.fromstring(manifest)
+    remotes = xml_root.findall("remote")
+    # Default must exist or repo is very sad
+    default_remote = xml_root.find("default").get("remote")
+    for remote in remotes:
+        if remote.get("name") == default_remote:
+            remote.set("revision", xml_root.find("default").get("revision"))
+        if remote_name == remote.get("name"):
+            if remote.get("revision"):
+                return remote.get("revision")
+            else:
+                return BRANCH
+    return BRANCH
+
 
 def add_dependencies(repos, is_initial_fetch):
     """ Adds repositories to local manifest. """
@@ -151,7 +168,7 @@ def add_dependencies(repos, is_initial_fetch):
                     "path": repo_target,
                     "remote": repo["remote"],
                     "name": repo_name,
-                    "revision": BRANCH,
+                    "revision": get_branch_for_remote(repo["remote"]),
                 },
             )
             if "branch" in repo:
@@ -276,4 +293,7 @@ def main():
 
             fetch_dependencies(repository_path)
             print("Done")
-main()
+
+
+if __name__ == "__main__":
+    main()
