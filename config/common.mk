@@ -58,6 +58,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/common/etc/init.statix.rc:system/etc/init/init.statix.rc
 
+# Sysconfig
+PRODUCT_COPY_FILES += \
+    vendor/statix/prebuilt/common/etc/sysconfig/game_overlay.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/game_overlay.xml
+
 # Build ID
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_DISPLAY_ID="$(BUILD_ID)-$(TARGET_BUILD_VARIANT)"
