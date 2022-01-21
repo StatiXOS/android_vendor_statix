@@ -38,7 +38,20 @@
 
         <uses-library android:name="org.apache.http.legacy" />
 
-            <receiver android:name="com.google.android.settings.fuelgauge.BatteryBroadcastReceiver" android:exported="true">
+        <activity android:name="com.google.android.settings.games.GameSettingsActivity" android:exported="true" android:screenOrientation="behind" android:showForAllUsers="true" android:enabled="true">
+            <intent-filter android:priority="1">
+                <action android:name="com.google.android.settings.games.GAME_SETTINGS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.VOICE_LAUNCH"/>
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS" android:value="com.google.android.settings.games.GameSettings"/>
+        </activity>
+
+        <receiver android:name="com.google.android.settings.fuelgauge.BatteryBroadcastReceiver" android:exported="true">
             <intent-filter>
                 <action android:name="settings.intelligence.battery.action.FETCH_BATTERY_USAGE_DATA"/>
             </intent-filter>
