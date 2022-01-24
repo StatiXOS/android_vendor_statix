@@ -8,8 +8,9 @@ android_library {
     srcs: ["src/**/*.java"],
     static_libs: [
         "accountfeatureprovidergoogle",
-        "powerusagefeaturegoogle",
+        "columbus-settingsgoogle",
         "gamemode-settingsgoogle",
+        "powerusagefeaturegoogle",
         "Settings-core",
     ],
     resource_dirs: [
@@ -51,13 +52,19 @@ java_import {
 }
 
 java_import {
-    name: "powerusagefeaturegoogle",
-    jars: ["libs/powerusagefeaturegoogle.jar"],
+    name: "columbus-settingsgoogle",
+    jars: ["libs/columbus-settings.jar"],
     sdk_version: "current",
 }
 
 java_import {
     name: "gamemode-settingsgoogle",
     jars: ["libs/gamemode.jar"],
+    sdk_version: "current",
+}
+
+java_import {
+    name: "powerusagefeaturegoogle",
+    jars: ["libs/powerusagefeaturegoogle.jar"],
     sdk_version: "current",
 }
