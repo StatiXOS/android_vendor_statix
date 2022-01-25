@@ -65,4 +65,8 @@
     <string name="game_dashboard_dnd_summary">Only get notified by important people and apps when playing a game</string>
     <string name="game_dashboard_dnd_title">Do Not Disturb for games</string>
 
+    <!-- Swipe to screenshot -->
+    <string name="swipe_to_screenshot_title">Swipe to screenshot</string>
+    <string name="swipe_to_screenshot_summary">Swipe 3 fingers down the screen to take a screenshot</string>
+
 </resources>
