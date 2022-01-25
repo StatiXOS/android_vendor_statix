@@ -21,6 +21,8 @@ import android.app.WallpaperColors
 import android.app.WallpaperManager
 import android.content.Context
 import android.content.om.FabricatedOverlay
+import android.database.ContentObserver
+import android.net.Uri
 import android.os.Handler
 import android.os.UserManager
 import android.provider.Settings
@@ -50,6 +52,7 @@ import java.util.concurrent.Executor
 import javax.inject.Inject
 import kotlin.math.log10
 import kotlin.math.pow
+import org.json.JSONObject
 
 @SysUISingleton
 class ThemeOverlayControllerStatix @Inject constructor(
@@ -114,6 +117,7 @@ class ThemeOverlayControllerStatix @Inject constructor(
             useLinearLightness = linearLightness,
             cond = cond,
         )
+        ThemeSettingsObserver(bgHandler).observe()
     }
 
     // Seed colors
@@ -162,6 +166,26 @@ class ThemeOverlayControllerStatix @Inject constructor(
         }
     }
 
+    inner class ThemeSettingsObserver(handler: Handler?) : ContentObserver(handler) {
+        private val COLOR_OVERRIDE_URI = Settings.System.getUriFor(PREF_COLOR_OVERRIDE)
+        fun observe() {
+            mContext.contentResolver.registerContentObserver(COLOR_OVERRIDE_URI, false, this)
+        }
+
+        override fun onChange(selfChange: Boolean, uri: Uri?) {
+            if (uri == COLOR_OVERRIDE_URI) {
+                val jsonObj = JSONObject()
+                val color = Settings.System.getInt(mContext.contentResolver, PREF_COLOR_OVERRIDE)
+                val colorStr = String.format("#%08x", color or (0xff shl 24))
+                jsonObj.put(OVERLAY_COLOR_SOURCE, COLOR_SOURCE_PRESET)
+                jsonObj.put(OVERLAY_CATEGORY_ACCENT_COLOR, colorStr)
+                jsonObj.put(OVERLAY_CATEGORY_SYSTEM_PALETTE, colorStr)
+                jsonObj.put(TIMESTAMP_FIELD, System.currentTimeMillis())
+                Settings.Secure.putString(mContext.contentResolver, Settings.Secure.THEME_CUSTOMIZATION_OVERLAY_PACKAGES, jsonObj.toString())
+            }
+        }
+    }
+
     companion object {
         private const val TAG = "CustomThemeOverlayController"
 
@@ -171,6 +195,12 @@ class ThemeOverlayControllerStatix @Inject constructor(
         private const val PREF_ACCURATE_SHADES = "${PREF_PREFIX}_accurate_shades"
         private const val PREF_LINEAR_LIGHTNESS = "${PREF_PREFIX}_linear_lightness"
         private const val PREF_WHITE_LUMINANCE = "${PREF_PREFIX}_white_luminance_user"
+
+        private val OVERLAY_CATEGORY_ACCENT_COLOR = "android.theme.customization.accent_color"
+        private val OVERLAY_CATEGORY_SYSTEM_PALETTE = "android.theme.customization.system_palette"
+        private val OVERLAY_COLOR_SOURCE = "android.theme.customization.color_source"
+        private val COLOR_SOURCE_PRESET = "preset"
+        private val TIMESTAMP_FIELD = "_applied_timestamp"
 
         private const val WHITE_LUMINANCE_MIN = 1.0
         private const val WHITE_LUMINANCE_MAX = 10000.0
