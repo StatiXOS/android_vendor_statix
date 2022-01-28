@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2018 The Android Open Source Project
+            (C) 2021 StatiX
+  SPDX-License-Identifer: Apache-2.0
+  -->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:key="double_tap_sleep_screen"
+    android:title="@string/double_tap_sleep_title">
+
+    <com.statix.support.preferences.SystemSettingSwitchPreference
+        android:key="double_tap_sleep_gesture"
+        android:title="@string/double_tap_sleep_statusbar_title"
+        android:summary="@string/double_tap_sleep_statusbar_summary"
+        android:defaultValue="false" />
+
+    <com.statix.support.preferences.SystemSettingSwitchPreference
+        android:key="double_tap_sleep_lockscreen"
+        android:title="@string/double_tap_sleep_lockscreen_title"
+        android:summary="@string/double_tap_sleep_lockscreen_summary"
+        android:defaultValue="false" />
+
+</PreferenceScreen>
