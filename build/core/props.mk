@@ -10,4 +10,4 @@ ADDITIONAL_SYSTEM_PROPERTIES += \
     ro.mod.version=$(BUILD_ID)-$(BUILD_DATE)-$(STATIX_BASE_VERSION) \
     ro.statix.fingerprint=$(ROM_FINGERPRINT) \
     ro.statix.buildtype=$(STATIX_BUILD_TYPE) \
-    ro.statix.device=$(TARGET_PRODUCT)
+    ro.statix.device=$(TARGET_DEVICE)
