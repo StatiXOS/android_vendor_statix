@@ -21,6 +21,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     GoogleCameraGo
 
+# Google Pixel Launcher
+ifeq ($(INCLUDE_PIXEL_LAUNCHER),true)
+PRODUCT_PACKAGES += \
+    PixelLauncher
+endif
+
 # Updaters
 ifeq ($(STATIX_BUILD_TYPE),OFFICIAL)
 PRODUCT_PACKAGES += \
