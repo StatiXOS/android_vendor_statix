@@ -30,3 +30,10 @@ endif
 # Empty
 PRODUCT_PACKAGES += \
     EmptyOverlay
+
+# Pixel Launcher
+ifeq ($(INCLUDE_PIXEL_LAUNCHER),true)
+PRODUCT_PACKAGES += \
+    NexusLauncherOverlay \
+    PixelLauncherConfigOverlay
+endif
