@@ -36,6 +36,7 @@
     <dimen name="keyboard_icon_right_margin">10.0dip</dimen>
     <dimen name="keyboard_icon_size">24.0dip</dimen>
     <dimen name="keyboard_icon_tap_padding">12.0dip</dimen>
+    <dimen name="opa_dot_diam">10.0dip</dimen>
     <dimen name="transcription_space_bottom_margin">73.0dip</dimen>
     <dimen name="transcription_text_size">16.0sp</dimen>
     <dimen name="voice_reply_cta_divider_size">8.0dip</dimen>
