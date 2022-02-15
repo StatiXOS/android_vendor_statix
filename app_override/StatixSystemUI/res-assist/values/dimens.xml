@@ -24,6 +24,7 @@
     <dimen name="assist_prompt_rise_distance">31.0dip</dimen>
     <dimen name="assist_prompt_start_height">11.0dip</dimen>
     <dimen name="glow_gone_min_y">-4.0dip</dimen>
+    <dimen name="glow_gone_max_y">0.0dip</dimen>
     <dimen name="glow_height">180.0dip</dimen>
     <dimen name="glow_invocation_max">46.0dip</dimen>
     <dimen name="glow_short_blur">29.0dip</dimen>
@@ -36,6 +37,7 @@
     <dimen name="keyboard_icon_right_margin">10.0dip</dimen>
     <dimen name="keyboard_icon_size">24.0dip</dimen>
     <dimen name="keyboard_icon_tap_padding">12.0dip</dimen>
+    <dimen name="scrim_touchable_height">132.0dip</dimen>
     <dimen name="transcription_space_bottom_margin">73.0dip</dimen>
     <dimen name="transcription_text_size">16.0sp</dimen>
     <dimen name="voice_reply_cta_divider_size">8.0dip</dimen>
