@@ -3,6 +3,9 @@
     <!-- SystemUIFactory component -->
     <string name="config_systemUIFactoryComponent" translatable="false">com.statix.android.systemui.SystemUIStatixFactory</string>
 
+    <!-- Status bar component -->
+    <string name="config_statusBarComponent">com.statix.android.systemui.statusbar.phone.StatusBarStatix</string>
+
     <!-- SystemUI vendor service, used in config_systemUIServiceComponents. -->
     <string name="config_systemUIVendorServiceComponent">com.statix.android.systemui.StatixServices</string>
 
