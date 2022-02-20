@@ -295,8 +295,8 @@ public abstract class SystemUIStatixModule {
 
     @Provides
     @SysUISingleton
-    static StatixServices provideStatixServices(Context context, UiEventLogger uiEventLogger, Lazy<ServiceConfigurationGoogle> lazy, Lazy<ColumbusServiceWrapper> lazyB) {
-        return new StatixServices(context, uiEventLogger, lazy, lazyB);
+    static StatixServices provideStatixServices(Context context, UiEventLogger uiEventLogger, Lazy<ServiceConfigurationGoogle> lazy, Lazy<ColumbusServiceWrapper> lazyB, AlarmManager am, StatusBar sb) {
+        return new StatixServices(context, uiEventLogger, lazy, lazyB, am, sb);
     }
 
     // Google
