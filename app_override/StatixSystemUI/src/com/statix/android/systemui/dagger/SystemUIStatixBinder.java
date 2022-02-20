@@ -34,7 +34,6 @@ import com.android.systemui.privacy.television.TvOngoingPrivacyChip;
 import com.android.systemui.recents.Recents;
 import com.android.systemui.recents.RecentsModule;
 import com.android.systemui.shortcut.ShortcutKeyDispatcher;
-import com.android.systemui.statusbar.dagger.StatusBarModule;
 import com.android.systemui.statusbar.notification.InstantAppNotifier;
 import com.android.systemui.statusbar.phone.StatusBar;
 import com.android.systemui.statusbar.tv.TvStatusBar;
@@ -50,6 +49,7 @@ import com.google.android.systemui.columbus.ColumbusTargetRequestService;
 import com.google.android.systemui.gamedashboard.GameMenuActivity;
 
 import com.statix.android.systemui.StatixServices;
+import com.statix.android.systemui.statusbar.dagger.StatusBarStatixModule;
 import com.statix.android.systemui.theme.ThemeOverlayControllerStatix;
 
 import dagger.Binds;
@@ -57,7 +57,7 @@ import dagger.Module;
 import dagger.multibindings.ClassKey;
 import dagger.multibindings.IntoMap;
 
-@Module(includes = {RecentsModule.class, StatusBarModule.class, KeyguardModule.class})
+@Module(includes = {RecentsModule.class, StatusBarStatixModule.class, KeyguardModule.class})
 public abstract class SystemUIStatixBinder {
     /**
      * Inject into AuthController.
