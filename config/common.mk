@@ -97,3 +97,7 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/lib64/libRSSupport.so \
     system/lib64/libblasV8.so \
     system/lib64/librsjni.so
+
+# Optimizations
+$(call add_soong_config_var_value,ANDROID,SYSTEMUI_OPTIMIZE_JAVA,true)
+$(call add_soong_config_var_value,ANDROID,SYSTEM_OPTIMIZE_JAVA,true)
