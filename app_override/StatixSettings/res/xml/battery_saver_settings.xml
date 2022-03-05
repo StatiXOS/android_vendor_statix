@@ -29,7 +29,8 @@
         android:key="smart_pixels"
         android:title="@string/smart_pixels_title"
         android:summary="@string/smart_pixels_summary"
-        android:fragment="com.statix.android.settings.fuelgauge.batterysaver.SmartPixels" />
+        android:fragment="com.statix.android.settings.fuelgauge.batterysaver.SmartPixels"
+        settings:controller="com.statix.android.settings.fuelgauge.batterysaver.SmartPixelsPreferenceController" />
 
     <Preference
         android:order="50"
