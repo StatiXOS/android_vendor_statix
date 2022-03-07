@@ -6,12 +6,14 @@ import com.android.settings.overlay.FeatureFactoryImpl;
 import com.android.settings.fuelgauge.PowerUsageFeatureProvider;
 import com.android.settings.accounts.AccountFeatureProvider;
 import com.android.settings.applications.GameSettingsFeatureProvider;
+/*
 import com.google.android.settings.accounts.AccountFeatureProviderGoogleImpl;
 import com.google.android.settings.fuelgauge.PowerUsageFeatureProviderGoogleImpl;
 import com.google.android.settings.games.GameSettingsFeatureProviderGoogleImpl;
-
+*/
 public final class FeatureFactoryImplStatix extends FeatureFactoryImpl {
 
+/*
     private PowerUsageFeatureProvider mPowerUsageFeatureProvider;
     private AccountFeatureProvider mAccountFeatureProvider;
     private GameSettingsFeatureProvider mGameSettingsFeatureProvider;
@@ -40,4 +42,5 @@ public final class FeatureFactoryImplStatix extends FeatureFactoryImpl {
         }
         return mGameSettingsFeatureProvider;
     }
+*/
 }
