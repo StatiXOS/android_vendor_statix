@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.Handler;
 
-import com.google.android.systemui.gesture.BackGestureTfClassifierProviderGoogle;
+//import com.google.android.systemui.gesture.BackGestureTfClassifierProviderGoogle;
 
 import com.statix.android.systemui.dagger.DaggerGlobalRootComponentStatix;
 import com.statix.android.systemui.dagger.GlobalRootComponentStatix;
@@ -25,7 +25,7 @@ public class SystemUIStatixFactory extends SystemUIFactory {
                 .context(context)
                 .build();
     }
-
+/*
     @Override
     public BackGestureTfClassifierProvider createBackGestureTfClassifierProvider(AssetManager am, String modelName) {
         return new BackGestureTfClassifierProviderGoogle(am, modelName);
@@ -38,4 +38,5 @@ public class SystemUIStatixFactory extends SystemUIFactory {
             ((SysUIComponentStatix) getSysUIComponent()).createKeyguardSmartspaceController();
         }
     }
+*/
 }
