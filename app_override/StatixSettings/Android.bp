@@ -7,10 +7,10 @@ android_library {
 
     srcs: ["src/**/*.java"],
     static_libs: [
-        "accountfeatureprovidergoogle",
-        "columbus-settingsgoogle",
-        "gamemode-settingsgoogle",
-        "powerusagefeaturegoogle",
+//        "accountfeatureprovidergoogle",
+//        "columbus-settingsgoogle",
+//        "gamemode-settingsgoogle",
+//        "powerusagefeaturegoogle",
         "Settings-core",
     ],
     resource_dirs: [
