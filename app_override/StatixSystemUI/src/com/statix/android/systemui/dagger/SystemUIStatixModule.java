@@ -23,7 +23,7 @@ import android.view.ViewGroup;
 import androidx.annotation.Nullable;
 
 import com.android.internal.logging.UiEventLogger;
-
+/*
 import com.google.android.systemui.assist.GoogleAssistLogger;
 import com.google.android.systemui.assist.OpaEnabledDispatcher;
 import com.google.android.systemui.assist.OpaEnabledReceiver;
@@ -61,7 +61,7 @@ import com.google.android.systemui.smartspace.BcSmartspaceDataProvider;
 import com.google.android.systemui.smartspace.KeyguardMediaViewController;
 import com.google.android.systemui.smartspace.KeyguardZenAlarmViewController;
 import com.google.android.systemui.smartspace.SmartSpaceController;
-
+*/
 import com.statix.android.systemui.StatixServices;
 import com.statix.android.systemui.assist.AssistManagerGoogle;
 import com.statix.android.systemui.biometrics.StatixUdfpsHbmProvider;
@@ -293,6 +293,7 @@ public abstract class SystemUIStatixModule {
     @SysUISingleton
     abstract UdfpsHbmProvider bindUdfpsHbmProvider(StatixUdfpsHbmProvider udfpsHbmProvider);
 
+/*
     @Provides
     @SysUISingleton
     static StatixServices provideStatixServices(Context context, UiEventLogger uiEventLogger, Lazy<ServiceConfigurationGoogle> lazy, Lazy<ColumbusServiceWrapper> lazyB, AlarmManager am, StatusBar sb) {
@@ -642,5 +643,5 @@ public abstract class SystemUIStatixModule {
     static ViewGroup provideParentViewGroup(OverlayUiHost overlayUiHost) {
         return overlayUiHost.getParent();
     }
-
+*/
 }
