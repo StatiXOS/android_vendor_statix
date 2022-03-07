@@ -27,6 +27,7 @@ import com.android.systemui.dagger.SysUISingleton;
 import com.android.systemui.statusbar.FeatureFlags;
 import com.android.systemui.statusbar.phone.StatusBar;
 
+/*
 import com.google.android.systemui.ambientmusic.AmbientIndicationContainer;
 import com.google.android.systemui.ambientmusic.AmbientIndicationService;
 import com.google.android.systemui.columbus.ColumbusContext;
@@ -34,7 +35,7 @@ import com.google.android.systemui.columbus.ColumbusServiceWrapper;
 import com.google.android.systemui.elmyra.ElmyraContext;
 import com.google.android.systemui.elmyra.ElmyraService;
 import com.google.android.systemui.elmyra.ServiceConfigurationGoogle;
-
+*/
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -46,13 +47,14 @@ import dagger.Lazy;
 @SysUISingleton
 public class StatixServices extends VendorServices {
 
-    private final AlarmManager mAlarmManager;
-    private final StatusBar mStatusBar;
-    private final UiEventLogger mUiEventLogger;
-    private final Lazy<ColumbusServiceWrapper> mColumbusServiceLazy;
-    private final Lazy<ServiceConfigurationGoogle> mServiceConfigurationGoogle;
+//    private final AlarmManager mAlarmManager;
+//    private final StatusBar mStatusBar;
+//    private final UiEventLogger mUiEventLogger;
+//    private final Lazy<ColumbusServiceWrapper> mColumbusServiceLazy;
+//    private final Lazy<ServiceConfigurationGoogle> mServiceConfigurationGoogle;
     private final ArrayList<Object> mServices = new ArrayList<>();
 
+/*
     @Inject
     public StatixServices(Context context, UiEventLogger uiEventLogger, Lazy<ServiceConfigurationGoogle> serviceConfigurationGoogle, Lazy<ColumbusServiceWrapper> columbusService, AlarmManager alarmManager, StatusBar statusBar) {
         super(context);
@@ -74,6 +76,12 @@ public class StatixServices extends VendorServices {
         if (new ColumbusContext(mContext).isAvailable()) {
             addService(mColumbusServiceLazy.get());
         }
+    }
+*/
+
+    @Inject
+    public StatixServices(Context context) {
+        super(context);
     }
 
     @Override
