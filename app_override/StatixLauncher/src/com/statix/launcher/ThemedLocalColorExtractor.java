@@ -31,6 +31,7 @@ import android.widget.RemoteViews;
 import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.Launcher;
 import com.android.launcher3.Utilities;
+import com.android.launcher3.views.ActivityContext;
 import com.android.launcher3.widget.LocalColorExtractor;
 
 import dev.kdrag0n.colorkt.Color;
@@ -43,6 +44,7 @@ import dev.kdrag0n.monet.theme.ColorScheme;
 import dev.kdrag0n.monet.theme.DynamicColorScheme;
 import dev.kdrag0n.monet.theme.MaterialYouTargets;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -60,8 +62,6 @@ public class ThemedLocalColorExtractor extends LocalColorExtractor implements
     private Listener listener;
 
     // For calculating and returning bounds
-    private final float[] tempFloatArray = new float[4];
-    private final Rect tempRect = new Rect();
     private final RectF tempRectF = new RectF();
 
     static {
@@ -159,16 +159,6 @@ public class ThemedLocalColorExtractor extends LocalColorExtractor implements
     }
 
     @Override
-    public void addLocation(List<RectF> locations) {
-        wallpaperManager.addOnColorsChangedListener(this, locations);
-    }
-
-    @Override
-    public void removeLocations() {
-        wallpaperManager.removeOnColorsChangedListener(this);
-    }
-
-    @Override
     public SparseIntArray generateColorsOverride(WallpaperColors colors) {
         SparseIntArray colorRes = new SparseIntArray(5 * 13);
         double luminance = (double) Settings.Secure.getLong(mContext.getContentResolver(), "monet_engine_white_luminance_user", (long) CieXyzAbs.DEFAULT_SDR_WHITE_LUMINANCE);
@@ -194,6 +184,46 @@ public class ThemedLocalColorExtractor extends LocalColorExtractor implements
     }
 
     @Override
+    public void setWorkspaceLocation(Rect pos, View child, int screenId) {
+        ActivityContext activityContext = (ActivityContext) ActivityContext.lookupContext(child.getContext());
+        if (!(activityContext instanceof Launcher)) {
+            tempRectF.setEmpty();
+            return;
+        }
+        Launcher launcher = (Launcher) activityContext;
+        Resources res = launcher.getResources();
+        DeviceProfile dp = launcher.getDeviceProfile().inv.getDeviceProfile(launcher);
+        float screenWidth = dp.widthPx;
+        float screenHeight = dp.heightPx;
+        int numScreens = launcher.getWorkspace().getNumPagesForWallpaperParallax();
+        float relativeScreenWidth = 1f / numScreens;
+
+        int[] dragLayerBounds = new int[2];
+        launcher.getDragLayer().getLocationOnScreen(dragLayerBounds);
+        // Translate from drag layer coordinates to screen coordinates.
+        int screenLeft = pos.left + dragLayerBounds[0];
+        int screenTop = pos.top + dragLayerBounds[1];
+        int screenRight = pos.right + dragLayerBounds[0];
+        int screenBottom = pos.bottom + dragLayerBounds[1];
+        tempRectF.left = (screenLeft / screenWidth + screenId) * relativeScreenWidth;
+        tempRectF.right = (screenRight / screenWidth + screenId) * relativeScreenWidth;
+        tempRectF.top = screenTop / screenHeight;
+        tempRectF.bottom = screenBottom / screenHeight;
+
+        if (tempRectF.left < 0
+                || tempRectF.right > 1
+                || tempRectF.top < 0
+                || tempRectF.bottom > 1) {
+            tempRectF.setEmpty();
+        }
+
+        if (wallpaperManager != null && !tempRectF.isEmpty()) {
+            wallpaperManager.removeOnColorsChangedListener(this);
+            wallpaperManager.addOnColorsChangedListener(this, new ArrayList<RectF>(List.of(tempRectF)));
+        }
+    }
+
+    @Override
     public void applyColorsOverride(Context base, WallpaperColors colors) {
         RemoteViews.ColorResources res =
                 RemoteViews.ColorResources.create(base, generateColorsOverride(colors));
@@ -203,66 +233,9 @@ public class ThemedLocalColorExtractor extends LocalColorExtractor implements
     }
 
     @Override
-    public void getExtractedRectForView(Launcher launcher, int pageId, View v,
-            RectF colorExtractionRectOut) {
-        Rect viewRect = tempRect;
-        viewRect.set(0, 0, v.getWidth(), v.getHeight());
-        Utilities.getBoundsForViewInDragLayer(launcher.getDragLayer(), v, viewRect, false,
-                tempFloatArray, tempRectF);
-        Utilities.setRect(tempRectF, viewRect);
-        getExtractedRectForViewRect(launcher, pageId, viewRect, colorExtractionRectOut);
-    }
-
-    @Override
-    public void getExtractedRectForViewRect(Launcher launcher, int pageId, Rect rectInDragLayer,
-            RectF colorExtractionRectOut) {
-        // If the view hasn't been measured and laid out, we cannot do this.
-        if (rectInDragLayer.isEmpty()) {
-            colorExtractionRectOut.setEmpty();
-            return;
-        }
-
-        Resources res = launcher.getResources();
-        DeviceProfile dp = launcher.getDeviceProfile().inv.getDeviceProfile(launcher);
-        float screenWidth = dp.widthPx;
-        float screenHeight = dp.heightPx;
-        int numScreens = launcher.getWorkspace().getNumPagesForWallpaperParallax();
-        pageId = Utilities.isRtl(res) ? numScreens - pageId - 1 : pageId;
-        float relativeScreenWidth = 1f / numScreens;
-
-        int[] dragLayerBounds = new int[2];
-        launcher.getDragLayer().getLocationOnScreen(dragLayerBounds);
-        // Translate from drag layer coordinates to screen coordinates.
-        int screenLeft = rectInDragLayer.left + dragLayerBounds[0];
-        int screenTop = rectInDragLayer.top + dragLayerBounds[1];
-        int screenRight = rectInDragLayer.right + dragLayerBounds[0];
-        int screenBottom = rectInDragLayer.bottom + dragLayerBounds[1];
-
-        // This is the position of the view relative to the wallpaper, as expected by the
-        // local color extraction of the WallpaperManager.
-        // The coordinate system is such that, on the horizontal axis, each screen has a
-        // distinct range on the [0,1] segment. So if there are 3 screens, they will have the
-        // ranges [0, 1/3], [1/3, 2/3] and [2/3, 1]. The position on the subrange should be
-        // the position of the view relative to the screen. For the vertical axis, this is
-        // simply the location of the view relative to the screen.
-        // Translate from drag layer coordinates to screen coordinates
-        colorExtractionRectOut.left = (screenLeft / screenWidth + pageId) * relativeScreenWidth;
-        colorExtractionRectOut.right = (screenRight / screenWidth + pageId) * relativeScreenWidth;
-        colorExtractionRectOut.top = screenTop / screenHeight;
-        colorExtractionRectOut.bottom = screenBottom / screenHeight;
-
-        if (colorExtractionRectOut.left < 0
-                || colorExtractionRectOut.right > 1
-                || colorExtractionRectOut.top < 0
-                || colorExtractionRectOut.bottom > 1) {
-            colorExtractionRectOut.setEmpty();
-        }
-    }
-
-    @Override
     public void onColorsChanged(RectF area, WallpaperColors colors) {
         if (listener != null) {
-            listener.onColorsChanged(area, generateColorsOverride(colors));
+            listener.onColorsChanged(generateColorsOverride(colors));
         }
     }
 
