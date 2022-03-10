@@ -10,7 +10,7 @@ android_library {
 //        "accountfeatureprovidergoogle",
 //        "columbus-settingsgoogle",
 //        "gamemode-settingsgoogle",
-//        "powerusagefeaturegoogle",
+        "powerusagefeaturegoogle",
         "Settings-core",
     ],
     resource_dirs: [
