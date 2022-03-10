@@ -6,17 +6,16 @@ import com.android.settings.overlay.FeatureFactoryImpl;
 import com.android.settings.fuelgauge.PowerUsageFeatureProvider;
 import com.android.settings.accounts.AccountFeatureProvider;
 import com.android.settings.applications.GameSettingsFeatureProvider;
-/*
-import com.google.android.settings.accounts.AccountFeatureProviderGoogleImpl;
+//import com.google.android.settings.accounts.AccountFeatureProviderGoogleImpl;
+//import com.google.android.settings.games.GameSettingsFeatureProviderGoogleImpl;
+
 import com.google.android.settings.fuelgauge.PowerUsageFeatureProviderGoogleImpl;
-import com.google.android.settings.games.GameSettingsFeatureProviderGoogleImpl;
-*/
+
 public final class FeatureFactoryImplStatix extends FeatureFactoryImpl {
 
-/*
     private PowerUsageFeatureProvider mPowerUsageFeatureProvider;
-    private AccountFeatureProvider mAccountFeatureProvider;
-    private GameSettingsFeatureProvider mGameSettingsFeatureProvider;
+//    private AccountFeatureProvider mAccountFeatureProvider;
+//    private GameSettingsFeatureProvider mGameSettingsFeatureProvider;
 
     @Override
     public PowerUsageFeatureProvider getPowerUsageFeatureProvider(Context context) {
@@ -26,7 +25,7 @@ public final class FeatureFactoryImplStatix extends FeatureFactoryImpl {
         }
         return mPowerUsageFeatureProvider;
     }
-
+/*
     @Override
     public AccountFeatureProvider getAccountFeatureProvider() {
         if (mAccountFeatureProvider == null) {
