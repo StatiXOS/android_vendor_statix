@@ -52,7 +52,7 @@
             tools:node="remove" />
 
         <provider android:name="com.statix.android.systemui.keyguard.KeyguardSliceProviderStatix"
-            android:enabled="true"
+            android:enabled="false"
             android:exported="true"
             android:authorities="com.android.systemui.keyguard"/>
 
