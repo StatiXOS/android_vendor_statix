@@ -120,11 +120,6 @@ public class AssistManagerGoogle extends AssistManager {
         mWindowManagerService = iWindowManager;
     }
 
-    @Override
-    public boolean shouldShowOrb() {
-        return false;
-    }
-
     public boolean shouldUseHomeButtonAnimations() {
         return !QuickStepContract.isGesturalMode(mNavigationMode);
     }
