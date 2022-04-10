@@ -9,6 +9,7 @@ android_library {
     static_libs: [
         "accountfeatureprovidergoogle",
         "columbus-settingsgoogle",
+        "elmyra-settingsgoogle",
         "gamemode-settingsgoogle",
         "powerusagefeaturegoogle",
         "Settings-core",
@@ -59,6 +60,12 @@ java_import {
 java_import {
     name: "columbus-settingsgoogle",
     jars: ["libs/columbus-settings.jar"],
+    sdk_version: "current",
+}
+
+java_import {
+    name: "elmyra-settingsgoogle",
+    jars: ["libs/elmyra-settingsgoogle.jar"],
     sdk_version: "current",
 }
 
