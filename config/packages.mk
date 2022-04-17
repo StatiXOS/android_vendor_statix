@@ -5,7 +5,6 @@ PRODUCT_PACKAGES += \
 # StatiX Packages
 PRODUCT_PACKAGES += \
     CustomDoze \
-    ThemePicker \
     SimpleDeviceConfig \
     StatiXOSWalls \
     QuickAccessWallet
@@ -15,7 +14,8 @@ $(call inherit-product, vendor/lawnicons/product.mk)
 PRODUCT_PACKAGES += \
     StatixLauncher \
     StatixSystemUI \
-    StatixSettings
+    StatixSettings \
+    StatixThemePicker
 
 # Preopt StatixSystemUI
 PRODUCT_DEXPREOPT_SPEED_APPS += \
