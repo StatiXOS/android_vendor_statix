@@ -3,5 +3,6 @@
     <!-- Additional permissions on top of privapp-permissions-platform.xml -->
     <privapp-permissions package="com.android.systemui">
         <permission name="android.permission.ACCESS_CONTEXT_HUB"/>
+        <permission name="android.permission.READ_PHONE_STATE"/>
     </privapp-permissions>
 </permissions>
