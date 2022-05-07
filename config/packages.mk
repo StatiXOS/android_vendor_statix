@@ -10,7 +10,7 @@ PRODUCT_PACKAGES += \
     QuickAccessWallet
 
 # App overrides
-$(call inherit-product, vendor/lawnicons/product.mk)
+$(call inherit-product, vendor/rkicons/product.mk)
 PRODUCT_PACKAGES += \
     StatixLauncher \
     StatixSystemUI \
