@@ -96,4 +96,6 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/lib/librsjni.so \
     system/lib64/libRSSupport.so \
     system/lib64/libblasV8.so \
-    system/lib64/librsjni.so
+    system/lib64/librsjni.so \
+    system/etc/permissions/privapp_whitelist_com.statix.updater.xml \
+    system/priv-app/Updater/Updater.apk
