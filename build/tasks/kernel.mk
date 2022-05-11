@@ -346,6 +346,7 @@ alldefconfig: $(KERNEL_OUT)
 ifeq ($(TARGET_NEEDS_DTBOIMAGE),true)
 $(BOARD_PREBUILT_DTBOIMAGE): $(HOST_OUT_EXECUTABLES)/dtc
 	echo -e ${CL_GRN}"Building DTBO.img"${CL_RST}
+        rm -rf $(DTB_OUT)
 	$(call make-dtbo-target,$(KERNEL_DEFCONFIG))
 	$(call make-dtbo-target,dtbo.img)
 endif # TARGET_NEEDS_DTBOIMAGE
