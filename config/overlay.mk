@@ -14,6 +14,12 @@
 # limitations under the License.
 #
 
+# Fonts
+PRODUCT_PACKAGES += \
+    FontArvoLatoOverlay \
+    FontBarlowOverlay \
+    FontInterOverlay
+
 # Navbar
 PRODUCT_PACKAGES += \
     GesturalNavigationOverlayLong \
