@@ -3,8 +3,3 @@ on post-fs-data
     # Create an additional OTA package directory that unlike /data/ota_package
     # will not be touched by GmsCore.
     mkdir /data/statix_updates 0770 system cache
-
-# AOSP recovery install script
-service vendor_flash_recovery /vendor/bin/install-recovery.sh
-    class main
-    disabled
