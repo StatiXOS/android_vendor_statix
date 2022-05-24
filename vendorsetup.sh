@@ -8,3 +8,7 @@ function lunch_devices() {
 for device in ${devices[@]}; do
     lunch_devices
 done
+
+echo "Fetching Bromite..."
+bash vendor/bromite/pull_bromite.sh
+echo "Done."
