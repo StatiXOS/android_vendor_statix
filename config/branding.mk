@@ -1,3 +1,9 @@
+#
+# Copyright (C) 2018-2022 StatiXOS
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
 # Set date and time
 BUILD_DATE := $(shell date +%Y%m%d)
 BUILD_TIME := $(shell date +%H%M)

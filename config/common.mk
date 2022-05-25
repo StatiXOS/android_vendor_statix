@@ -1,3 +1,9 @@
+#
+# Copyright (C) 2018-2022 StatiXOS
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
 include vendor/statix/build/core/vendor/*.mk
 
 ifneq ($(TARGET_DOES_NOT_USE_GAPPS), true)
@@ -55,17 +61,15 @@ endif
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_one_handed_mode=true
 
-# IORap app launch prefetching using Perfetto traces and madvise
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.iorapd.enable=true
-
 # Statix-specific init file
 PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/common/etc/init.statix.rc:system/etc/init/init.statix.rc
 
 # Sysconfig
+ifeq ($(ENABLE_GAMETOOLS), true)
 PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/common/etc/sysconfig/game_overlay.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/game_overlay.xml
+endif
 
 # Build ID
 PRODUCT_BUILD_PROP_OVERRIDES += \

@@ -1,5 +1,5 @@
 #
-#  Copyright 2019 The StatiXOS Project
+#  Copyright 2019-2022 The StatiXOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,19 +19,6 @@ PRODUCT_PACKAGES += \
     FontArvoLatoOverlay \
     FontBarlowOverlay \
     FontInterOverlay
-
-# Navbar
-PRODUCT_PACKAGES += \
-    GesturalNavigationOverlayLong \
-    GesturalNavigationOverlayMedium \
-    NavigationBarNoHintOverlay
-
-# Cutout Overlays
-ifeq ($(TARGET_HAS_NOTCH),true)
-PRODUCT_PACKAGES += \
-    NotchBarKiller \
-    NotchHideOverlay
-endif
 
 # Empty
 PRODUCT_PACKAGES += \
