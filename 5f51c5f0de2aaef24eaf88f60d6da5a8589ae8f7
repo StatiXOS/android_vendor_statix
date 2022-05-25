@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1fea767f_62755ad9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-05-25T20:31:36Z",
+      "side": 1,
+      "message": "check prebuilts and gsm.mk before doing something like this",
+      "revId": "5f51c5f0de2aaef24eaf88f60d6da5a8589ae8f7",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
