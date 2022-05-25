@@ -20,10 +20,6 @@ PRODUCT_PACKAGES += \
     FontBarlowOverlay \
     FontInterOverlay
 
-# Empty
-PRODUCT_PACKAGES += \
-    EmptyOverlay
-
 # Pixel Launcher
 ifeq ($(INCLUDE_PIXEL_LAUNCHER),true)
 PRODUCT_PACKAGES += \
