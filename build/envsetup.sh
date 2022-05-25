@@ -60,3 +60,25 @@ function aospmerge()
     T=$(gettop)
     python3 $T/vendor/statix/scripts/merge-aosp.py target_branch
 }
+
+function pull_bromite()
+{
+    local TOP=$(gettop)
+    if [[ -z "${TOP}" ]]; then
+    echo "\$TOP not defined! run build/envsetup.sh"
+    exit 1
+    fi
+
+    case $1 in
+      arm|arm64|x86|x86_64)
+      echo "Fetching bromite for architecture $1...";
+      local FETCH_ROOT=${TOP}/vendor/bromite
+      mkdir -p ${FETCH_ROOT}/app/$1
+      local url_stem="https://github.com/bromite/bromite/releases/download";
+      local latest_tag=$(curl -s https://api.github.com/repos/bromite/bromite/releases/latest | jq -r '.tag_name');
+
+      wget -q --show-progress ${url_stem}/${latest_tag}/$1_ChromePublic.apk -O ${FETCH_ROOT}/app/$1/ChromePublic.apk;
+      wget -q --show-progress ${url_stem}/${latest_tag}/$1_SystemWebView.apk -O ${FETCH_ROOT}/app/$1/SystemWebView.apk;;
+      *) echo "unknown architecture $1, skipping Bromite fetch";;
+    esac
+}

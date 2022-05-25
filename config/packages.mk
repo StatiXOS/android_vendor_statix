@@ -50,4 +50,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger_res_images
 
+$(call inherit-product, vendor/bromite/bromite.mk)
 -include vendor/statix/config/overlay.mk
