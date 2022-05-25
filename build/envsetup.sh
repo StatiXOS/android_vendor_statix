@@ -77,8 +77,8 @@ function pull_bromite()
       local url_stem="https://github.com/bromite/bromite/releases/download";
       local latest_tag=$(curl -s https://api.github.com/repos/bromite/bromite/releases/latest | jq -r '.tag_name');
 
-      wget -q --show-progress ${url_stem}/${latest_tag}/$1_ChromePublic.apk -O ${FETCH_ROOT}/app/$1_ChromePublic.apk;
-      wget -q --show-progress ${url_stem}/${latest_tag}/$1_SystemWebView.apk -O ${FETCH_ROOT}/app/$1_SystemWebView.apk;;
+      wget -q --show-progress ${url_stem}/${latest_tag}/$1_ChromePublic.apk -O ${FETCH_ROOT}/app/$1/ChromePublic.apk;
+      wget -q --show-progress ${url_stem}/${latest_tag}/$1_SystemWebView.apk -O ${FETCH_ROOT}/app/$1/SystemWebView.apk;;
       *) echo "unknown architecture $1, skipping Bromite fetch";;
     esac
 }
