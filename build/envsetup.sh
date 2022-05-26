@@ -73,7 +73,7 @@ function pull_bromite()
       arm|arm64|x86|x86_64)
       echo "Fetching bromite for architecture $1...";
       local FETCH_ROOT=${TOP}/vendor/bromite
-      mkdir -p ${FETCH_ROOT}/app
+      mkdir -p ${FETCH_ROOT}/app/$1
       local url_stem="https://github.com/bromite/bromite/releases/download";
       local latest_tag=$(curl -s https://api.github.com/repos/bromite/bromite/releases/latest | jq -r '.tag_name');
 
