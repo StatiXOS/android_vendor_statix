@@ -99,4 +99,7 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/lib64/libblasV8.so \
     system/lib64/librsjni.so \
     system/etc/permissions/privapp_whitelist_com.statix.updater.xml \
-    system/priv-app/Updater/Updater.apk
+    system/priv-app/Updater/Updater.apk \
+    system/app/Bromite/Bromite.apk \
+    system/app/BromiteSystemWebView/BromiteSystemWebView.apk \
+    system/overlay/BromiteWebViewStatixOverlay.apk
