@@ -16,6 +16,7 @@ $(call inherit-product, vendor/qcom/opensource/power/power-vendor-board.mk)
 # Define some properties for GMS
 ifneq ($(TARGET_DOES_NOT_USE_GAPPS), true)
 $(call inherit-product-if-exists, vendor/gms/products/gms.mk)
+$(call inherit-product-if-exists, vendor/partner_modules/mainline_modules_s.mk)
 endif
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0

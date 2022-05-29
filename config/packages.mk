@@ -38,10 +38,8 @@ PRODUCT_PACKAGES += \
 endif
 
 # Updaters
-ifeq ($(STATIX_BUILD_TYPE),OFFICIAL)
 PRODUCT_PACKAGES += \
     Updater
-endif
 
 # Some useful shell based utilities for Android
 PRODUCT_PACKAGES += \
@@ -53,5 +51,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger_res_images
 
-$(call inherit-product, vendor/bromite/bromite.mk)
+#$(call inherit-product, vendor/bromite/bromite.mk)
 -include vendor/statix/config/overlay.mk
