@@ -84,6 +84,9 @@ include vendor/statix/config/bootanimation.mk
 # Fonts
 include vendor/statix/config/fonts.mk
 
+# Conditionally inherit mainline modules
+include vendor/partner_modules/build/mainline_modules.mk
+
 # Overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/statix/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/statix/overlay/common
