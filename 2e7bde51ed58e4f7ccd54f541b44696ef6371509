@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d291f50e_c14567b6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2022-06-08T22:30:22Z",
+      "side": 1,
+      "message": "same version of bromite is still being fetched every time after lunch",
+      "revId": "2e7bde51ed58e4f7ccd54f541b44696ef6371509",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
