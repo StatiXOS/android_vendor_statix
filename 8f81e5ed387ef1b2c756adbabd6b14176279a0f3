@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3944d3dc_9e83154c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-06-21T05:49:42Z",
+      "side": 1,
+      "message": "we can include DTB_OBJ as well",
+      "revId": "8f81e5ed387ef1b2c756adbabd6b14176279a0f3",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
