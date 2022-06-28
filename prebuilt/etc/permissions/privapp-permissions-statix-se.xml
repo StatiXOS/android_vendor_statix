@@ -4,5 +4,6 @@
     <privapp-permissions package="com.android.systemui">
         <permission name="android.permission.ACCESS_CONTEXT_HUB"/>
         <permission name="android.permission.READ_PHONE_STATE"/>
+        <permission name="android.permission.WRITE_APN_SETTINGS"/>
     </privapp-permissions>
 </permissions>
