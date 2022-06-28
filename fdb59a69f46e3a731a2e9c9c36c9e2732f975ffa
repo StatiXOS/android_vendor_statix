@@ -16,6 +16,24 @@
       "message": "we really should make a CleanSpec.mk for vendor",
       "revId": "fdb59a69f46e3a731a2e9c9c36c9e2732f975ffa",
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3cfc9f33_fff6b353",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2022-06-28T03:21:16Z",
+      "side": 1,
+      "message": "yea",
+      "parentUuid": "17bfa8c4_eca7e3c3",
+      "revId": "fdb59a69f46e3a731a2e9c9c36c9e2732f975ffa",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     }
   ]
 }
