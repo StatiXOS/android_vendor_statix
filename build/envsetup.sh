@@ -74,7 +74,7 @@ function pull_bromite()
       local FETCH_ROOT=${TOP}/vendor/bromite
       mkdir -p ${FETCH_ROOT}/app/$1
       local url_stem="https://github.com/bromite/bromite/releases/download"
-      local latest_tag=$(curl -s https://api.github.com/repos/bromite/bromite/releases/latest | jq -r '.tag_name')
+      local latest_tag=$(curl -s https://api.github.com/repos/bromite/bromite/releases/latest | $FETCH_ROOT/jq -r '.tag_name')
       if [ ! -f ${FETCH_ROOT}/app/$1/fetched_tag.txt ]; then
         is_latest=0
       else
