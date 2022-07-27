@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4c55418_f394b967",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2022-07-27T13:10:38Z",
+      "side": 1,
+      "message": "i dont want more fonts",
+      "revId": "d6ed1ad2cdf5cfca5a64ca7a2bbdf82a7f2b3a03",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
