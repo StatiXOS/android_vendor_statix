@@ -18,7 +18,8 @@
 PRODUCT_PACKAGES += \
     FontArvoLatoOverlay \
     FontBarlowOverlay \
-    FontInterOverlay
+    FontInterOverlay \
+    FontOPlusSansOverlay
 
 # Pixel Launcher
 ifeq ($(INCLUDE_PIXEL_LAUNCHER),true)

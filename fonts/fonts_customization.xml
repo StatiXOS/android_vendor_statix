@@ -167,4 +167,23 @@
     <font weight="700" style="italic">Inter-BoldItalic.ttf</font>
   </family>
   <alias name="inter-medium" to="inter" weight="500" />
+
+  <family customizationType="new-named-family" name="oneplus-sans">
+    <font weight="100" style="normal">OplusSansText-25Th.ttf</font>
+    <font weight="100" style="italic">OplusSansText-26ThIt.ttf</font>
+    <font weight="200" style="normal">OplusSansText-35ExLt.ttf</font>
+    <font weight="200" style="italic">OplusSansText-36ExLtIt.ttf</font>
+    <font weight="300" style="normal">OplusSansText-45Lt.ttf</font>
+    <font weight="300" style="italic">OplusSansText-46LtIt.ttf</font>
+    <font weight="400" style="normal">OplusSansText-55Rg.ttf</font>
+    <font weight="400" style="italic">OplusSansText-56It.ttf</font>
+    <font weight="500" style="normal">OplusSansText-65Md.ttf</font>
+    <font weight="500" style="italic">OplusSansText-66MdIt.ttf</font>
+    <font weight="700" style="normal">OplusSansText-75Bd.ttf</font>
+    <font weight="700" style="italic">OplusSansText-76BdIt.ttf</font>
+  </family>
+  <alias name="oneplus-sans-thin" to="oneplus-sans" weight="100" />
+  <alias name="oneplus-sans-extra-light" to="oneplus-sans" weight="200" />
+  <alias name="oneplus-sans-light" to="oneplus-sans" weight="300" />
+  <alias name="oneplus-sans-medium" to="oneplus-sans" weight="500" />
 </fonts-modification>
