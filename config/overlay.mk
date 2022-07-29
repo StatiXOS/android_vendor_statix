@@ -17,7 +17,8 @@
 # Fonts
 PRODUCT_PACKAGES += \
     FontArvoLatoOverlay \
-    FontInterOverlay
+    FontInterOverlay \
+    FontQuicksandOverlay
 
 # Pixel Launcher
 ifeq ($(INCLUDE_PIXEL_LAUNCHER),true)
