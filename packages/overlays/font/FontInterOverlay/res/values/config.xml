@@ -22,6 +22,6 @@
 
     <!-- Name of a font family to use for headlines. If empty, falls back to platform default -->
     <string name="config_headlineFontFamily">inter</string>
-    <string name="config_headlineFontFamilyMedium">inter-medium</string>
+    <string name="config_headlineFontFamilyMedium">inter-bold</string>
 </resources>
 
