@@ -180,4 +180,16 @@
   <alias name="inter-semi-bold" to="inter" weight="600" />
   <alias name="inter-extra-bold" to="inter" weight="800" />
   <alias name="inter-black" to="inter" weight="900" />
+
+  <family customizationType="new-named-family" name="dmsans">
+    <font weight="400" style="normal">DMSans-Regular.ttf</font>
+    <font weight="400" style="italic">DMSans-Italic.ttf</font>
+    <font weight="500" style="normal">DMSans-Medium.ttf</font>
+    <font weight="500" style="italic">DMSans-MediumItalic.ttf</font>
+    <font weight="700" style="normal">DMSans-Bold.ttf</font>
+    <font weight="700" style="italic">DMSans-BoldItalic.ttf</font>
+  </family>
+  <alias name="dmsans-medium" to="dmsans" weight="500" />
+  <alias name="dmsans-bold" to="dmsans" weight="700" />
+
 </fonts-modification>
