@@ -18,7 +18,8 @@
 PRODUCT_PACKAGES += \
     FontDMSansOverlay \
     FontInterOverlay \
-    FontQuicksandOverlay
+    FontQuicksandOverlay \
+    FontSwitzerOverlay
 
 # Pixel Launcher
 ifeq ($(INCLUDE_PIXEL_LAUNCHER),true)
