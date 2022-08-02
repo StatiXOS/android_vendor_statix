@@ -192,4 +192,32 @@
   <alias name="dmsans-medium" to="dmsans" weight="500" />
   <alias name="dmsans-bold" to="dmsans" weight="700" />
 
+  <family customizationType="new-named-family" name="switzer">
+    <font weight="100" style="normal">Switzer-Thin.ttf</font>
+    <font weight="100" style="italic">Switzer-ThinItalic.ttf</font>
+    <font weight="200" style="normal">Switzer-ExtraLight.ttf</font>
+    <font weight="200" style="italic">Switzer-ExtraLightItalic.ttf</font>
+    <font weight="300" style="normal">Switzer-Light.ttf</font>
+    <font weight="300" style="italic">Switzer-LightItalic.ttf</font>
+    <font weight="400" style="normal">Switzer-Regular.ttf</font>
+    <font weight="400" style="italic">Switzer-Italic.ttf</font>
+    <font weight="500" style="normal">Switzer-Medium.ttf</font>
+    <font weight="500" style="italic">Switzer-MediumItalic.ttf</font>
+    <font weight="600" style="normal">Switzer-SemiBold.ttf</font>
+    <font weight="600" style="italic">Switzer-SemiBoldItalic.ttf</font>
+    <font weight="700" style="normal">Switzer-Bold.ttf</font>
+    <font weight="700" style="italic">Switzer-BoldItalic.ttf</font>
+    <font weight="800" style="normal">Switzer-ExtraBold.ttf</font>
+    <font weight="800" style="italic">Switzer-ExtraBoldItalic.ttf</font>
+    <font weight="900" style="normal">Switzer-Black.ttf</font>
+    <font weight="900" style="italic">Switzer-BlackItalic.ttf</font>
+  </family>
+  <alias name="switzer-thin" to="switzer" weight="100" />
+  <alias name="switzer-extra-light" to="switzer" weight="200" />
+  <alias name="switzer-light" to="switzer" weight="300" />
+  <alias name="switzer-medium" to="switzer" weight="500" />
+  <alias name="switzer-semi-bold" to="switzer" weight="600" />
+  <alias name="switzer-bold" to="switzer" weight="700" />
+  <alias name="switzer-extra-bold" to="switzer" weight="800" />
+  <alias name="switzer-black" to="switzer" weight="900" />
 </fonts-modification>
