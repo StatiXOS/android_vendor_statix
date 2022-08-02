@@ -16,6 +16,7 @@
 
 # Fonts
 PRODUCT_PACKAGES += \
+    FontDMSansOverlay \
     FontInterOverlay \
     FontQuicksandOverlay
 
