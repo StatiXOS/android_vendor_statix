@@ -141,14 +141,6 @@
   </font>
   </family>
 
-  <family customizationType="new-named-family" name="lato">
-    <font weight="400" style="normal">Lato-Regular.ttf</font>
-    <font weight="400" style="italic">Lato-Italic.ttf</font>
-    <font weight="700" style="normal">Lato-Bold.ttf</font>
-    <font weight="700" style="italic">Lato-BoldItalic.ttf</font>
-  </family>
-  <alias name="lato-bold" to="lato" weight="700" />
-
   <family customizationType="new-named-family" name="inter">
     <font weight="400" style="normal">Inter-Regular.ttf</font>
     <font weight="400" style="italic">Inter-Italic.ttf</font>

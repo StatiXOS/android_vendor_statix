@@ -16,7 +16,6 @@
 
 # Fonts
 PRODUCT_PACKAGES += \
-    FontArvoLatoOverlay \
     FontInterOverlay
 
 # Pixel Launcher
