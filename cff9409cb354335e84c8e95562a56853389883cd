@@ -16,6 +16,24 @@
       "message": "this too genius",
       "revId": "cff9409cb354335e84c8e95562a56853389883cd",
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "87eccb52_961c27e8",
+        "filename": "config/branding.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2022-08-15T23:49:47Z",
+      "side": 1,
+      "message": "i swear i changed it lol",
+      "parentUuid": "3494c58b_64c49263",
+      "revId": "cff9409cb354335e84c8e95562a56853389883cd",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     }
   ]
 }
