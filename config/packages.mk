@@ -17,7 +17,7 @@ PRODUCT_PACKAGES += \
     QuickAccessWallet
 
 # App overrides
-$(call inherit-product, vendor/rkicons/product.mk)
+#$(call inherit-product, vendor/rkicons/product.mk)
 PRODUCT_PACKAGES += \
     StatixLauncher \
     StatixSystemUI \
@@ -54,5 +54,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger_res_images
 
-$(call inherit-product, vendor/bromite/bromite.mk)
+#$(call inherit-product, vendor/bromite/bromite.mk)
 -include vendor/statix/config/overlay.mk
