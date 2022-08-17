@@ -11,7 +11,7 @@ ifeq ($(PRODUCT_USES_QCOM_HARDWARE), true)
 include vendor/statix/build/core/ProductConfigQcom.mk
 endif
 
-$(call inherit-product, vendor/qcom/opensource/power/power-vendor-board.mk)
+#$(call inherit-product, vendor/qcom/opensource/power/power-vendor-board.mk)
 
 # Define some properties for GMS
 ifneq ($(TARGET_DOES_NOT_USE_GAPPS), true)
