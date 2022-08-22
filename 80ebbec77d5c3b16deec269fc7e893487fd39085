@@ -16,6 +16,23 @@
       "message": "need to make a change to drop rkicons",
       "revId": "80ebbec77d5c3b16deec269fc7e893487fd39085",
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e8c1fb2_8d5c5fea",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2022-08-22T06:55:20Z",
+      "side": 1,
+      "message": "We should ship bromite",
+      "revId": "80ebbec77d5c3b16deec269fc7e893487fd39085",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     }
   ]
 }
