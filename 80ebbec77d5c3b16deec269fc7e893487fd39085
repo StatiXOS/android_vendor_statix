@@ -50,6 +50,24 @@
       "message": "Shouldn\u0027t this be device specific?",
       "revId": "80ebbec77d5c3b16deec269fc7e893487fd39085",
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2d4bd5f_690acd23",
+        "filename": "config/common.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-08-29T23:21:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "15fad1f0_34baa12e",
+      "revId": "80ebbec77d5c3b16deec269fc7e893487fd39085",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     }
   ]
 }
