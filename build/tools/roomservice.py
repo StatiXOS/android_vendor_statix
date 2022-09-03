@@ -36,6 +36,11 @@ LOCAL_MANIFESTS_PATH = ".repo/local_manifests/"
 LOCAL_MANIFESTS_FILE_NAME = "electric_manifest.xml"
 CUSTOM_MANIFEST_NAME = "include.xml"
 
+if len(sys.argv) > 2:
+    DEPSONLY = sys.argv[2]
+else:
+    DEPSONLY = None
+
 try:
     DEVICE = PRODUCT[PRODUCT.index("_") + 1:]
 except ValueError:
@@ -243,17 +248,18 @@ def main():
         with open(f"{LOCAL_MANIFESTS_PATH}{LOCAL_MANIFESTS_FILE_NAME}", "w"):
             pass
 
-    print(
-        f"Device {DEVICE} not found. "
-        f"Attempting to retrieve device repository from {ORGANIZATION_NAME} "
-        f"Github (http://github.com/{ORGANIZATION_NAME})."
-    )
+    if not DEPSONLY:
+        print(
+            f"Device {DEVICE} not found. "
+            f"Attempting to retrieve device repository from {ORGANIZATION_NAME} "
+            f"Github (http://github.com/{ORGANIZATION_NAME})."
+        )
 
     for repository in get_repositories():
         repository_name = repository["name"]
         if repository_name.startswith("android_device_") and repository_name.endswith(
             "_" + DEVICE
-        ):
+        ) and not DEPSONLY:
             print(f"Found repository: {repository['name']}")
             manufacturer = repository_name.replace("android_device_", "").replace(
                 "_{0}".format(DEVICE), ""
@@ -273,7 +279,8 @@ def main():
             subprocess.run(
                 ["repo", "sync", "--force-sync", "--no-tag", "--no-clone-bundle", repository_path], check=False,
             )
-
-            fetch_dependencies(repository_path)
-            print("Done")
+        elif DEPSONLY:
+            repository_path = get_from_manifest()
+        fetch_dependencies(repository_path)
+        print("Done")
 main()
