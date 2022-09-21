@@ -256,31 +256,31 @@ def main():
         )
 
     for repository in get_repositories():
+        print(repository)
         repository_name = repository["name"]
         if repository_name.startswith("android_device_") and repository_name.endswith(
             "_" + DEVICE
-        ) and not DEPSONLY:
+        ):
             print(f"Found repository: {repository['name']}")
             manufacturer = repository_name.replace("android_device_", "").replace(
                 "_{0}".format(DEVICE), ""
             )
             repository_path = f"device/{manufacturer}/{DEVICE}"
-            add_dependencies(
-                [
-                    {
-                        "repository": repository_name,
-                        "target_path": repository_path,
-                        "branch": BRANCH,
-                    }
-                ],
-                True
-            )
-            print("Syncing repository to retrieve project.")
-            subprocess.run(
-                ["repo", "sync", "--force-sync", "--no-tag", "--no-clone-bundle", repository_path], check=False,
-            )
-        elif DEPSONLY:
-            repository_path = get_from_manifest()
-        fetch_dependencies(repository_path)
-        print("Done")
+            if not DEPSONLY:
+                add_dependencies(
+                    [
+                        {
+                            "repository": repository_name,
+                            "target_path": repository_path,
+                            "branch": BRANCH,
+                        }
+                    ],
+                    True
+                )
+                print("Syncing repository to retrieve project.")
+                subprocess.run(
+                    ["repo", "sync", "--force-sync", "--no-tag", "--no-clone-bundle", repository_path], check=False,
+                )
+            fetch_dependencies(repository_path)
+            print("Done")
 main()
