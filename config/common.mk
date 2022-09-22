@@ -14,6 +14,7 @@ endif
 # Define some properties for GMS
 ifneq ($(TARGET_DOES_NOT_USE_GAPPS), true)
 $(call inherit-product-if-exists, vendor/gms/products/gms.mk)
+$(call inherit-product-if-exists, vendor/mainline_modules/apex.mk)
 endif
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
