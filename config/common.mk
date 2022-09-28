@@ -64,6 +64,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/etc/init.statix.rc:system/etc/init/init.statix.rc \
     vendor/statix/prebuilt/etc/permissions/privapp-permissions-statix-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-statix-product.xml \
+    vendor/statix/prebuilt/etc/permissions/privapp-permissions-statix-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-statix-system.xml \
     vendor/statix/prebuilt/etc/permissions/privapp-permissions-statix-se.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-statix-se.xml
 
 # Build ID
@@ -98,4 +99,5 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/lib/librsjni.so \
     system/lib64/libRSSupport.so \
     system/lib64/libblasV8.so \
-    system/lib64/librsjni.so
+    system/lib64/librsjni.so \
+    system/etc/permissions/privapp-permissions-statix-system.xml
