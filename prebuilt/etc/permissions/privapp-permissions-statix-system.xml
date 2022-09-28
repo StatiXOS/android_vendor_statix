@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <privapp-permissions package="com.google.android.ext.services">
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.MONITOR_DEFAULT_SMS_PACKAGE"/>
+        <permission name="android.permission.PROVIDE_RESOLVER_RANKER_SERVICE"/>
+        <permission name="android.permission.REQUEST_NOTIFICATION_ASSISTANT_SERVICE"/>
+    </privapp-permissions>
+</permissions>
