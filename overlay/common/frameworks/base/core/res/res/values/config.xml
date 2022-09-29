@@ -144,6 +144,10 @@
     <!-- Fingerprint from a certified device -->
     <string name="config_certifiedFingerprint" translatable="false">google/cheetah/cheetah:13/TQ2A.230505.002/9891397:user/release-keys</string>
 
+    <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
+         in hardware. -->
+    <bool name="config_setColorTransformAccelerated">true</bool>
+
     <!-- Default list of files pinned by the Pinner Service -->
     <string-array translatable="false" name="config_defaultPinnerServiceFiles">
         <item>"/apex/com.android.art/javalib/core-oj.jar"</item>
