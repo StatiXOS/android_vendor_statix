@@ -94,12 +94,9 @@ DEVICE_PACKAGE_OVERLAYS += vendor/statix/overlay/common
 # Artifact path requirements
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/etc/init/init.statix.rc \
-    system/etc/permissions/privapp-permissions-statix-system.xml \
     system/lib/libRSSupport.so \
     system/lib/libblasV8.so \
     system/lib/librsjni.so \
     system/lib64/libRSSupport.so \
     system/lib64/libblasV8.so \
-    system/lib64/librsjni.so \
-    system/etc/permissions/privapp_whitelist_com.statix.updater.xml \
-    system/priv-app/Updater/Updater.apk
+    system/lib64/librsjni.so
