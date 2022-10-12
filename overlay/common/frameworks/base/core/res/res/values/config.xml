@@ -138,6 +138,9 @@
     -->
     <integer name="config_defaultNightMode">0</integer>
 
+    <!-- Whether or not to enable the lock screen entry point for the QR code scanner. -->
+    <bool name="config_enableQrCodeScannerOnLockScreen">true</bool>
+
     <!-- Fingerprint from a certified device -->
     <string name="config_certifiedFingerprint" translatable="false">google/cheetah/cheetah:13/TQ1A.230105.002/9325679:user/release-keys</string>
 </resources>
