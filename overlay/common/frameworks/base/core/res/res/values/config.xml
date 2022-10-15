@@ -136,5 +136,10 @@
     <integer name="config_defaultNightMode">0</integer>
 
     <!-- Fingerprint from a certified device -->
+<<<<<<< PATCH SET (019dfe statix: Use angler fp and model)
+    <string name="config_certifiedFingerprint" translatable="false">google/angler/angler:6.0/MDB08L/2343525:user/release-keys</string>
+    <string name="config_certifiedModel" translatable="false">Nexus 6P</string>
+=======
     <string name="config_certifiedFingerprint" translatable="false">google/cheetah/cheetah:13/TD1A.221105.001/9104446:user/release-keys</string>
+>>>>>>> BASE      (2a8601 statix: Add support for the UM 5.10 family)
 </resources>
