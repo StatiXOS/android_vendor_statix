@@ -136,5 +136,6 @@
     <integer name="config_defaultNightMode">0</integer>
 
     <!-- Fingerprint from a certified device -->
-    <string name="config_certifiedFingerprint" translatable="false">google/cheetah/cheetah:13/TD1A.221105.001/9104446:user/release-keys</string>
+    <string name="config_certifiedFingerprint" translatable="false">google/angler/angler:6.0/MDB08L/2343525:user/release-keys</string>
+    <string name="config_certifiedModel" translatable="false">Nexus 6P</string>
 </resources>
