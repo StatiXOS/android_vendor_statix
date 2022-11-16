@@ -112,3 +112,8 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
 
 # Enable Compose in SystemUI by default.
 SYSTEMUI_USE_COMPOSE ?= true
+
+# Flags
+ifeq ($(TARGET_BUILD_VARIANT), user)
+    PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
+endif
