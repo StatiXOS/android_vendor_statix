@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b7ca7f1_78f37ed3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2022-11-20T17:30:10Z",
+      "side": 1,
+      "message": "need to see if we need to pickup ar and pal namespaces",
+      "revId": "86db6fa2f3ce75be12d58bef5a683f63a37a3cff",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
