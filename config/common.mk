@@ -55,7 +55,7 @@ endif
 # Make some features conditional
 ifeq ($(ENABLE_GAMETOOLS), true)
 PRODUCT_COPY_FILES += \
-    vendor/statix/prebuilt/etc/sysconfig/game_overlay.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/game_overlay.xml
+    vendor/statix/prebuilt/etc/sysconfig/game_service.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/game_service.xml
 endif
 ifneq ($(DISABLE_COLUMBUS), true)
 PRODUCT_COPY_FILES += \
