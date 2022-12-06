@@ -10,7 +10,7 @@ BUILD_TIME := $(shell date +%H%M)
 
 ## Versioning System
 # Set all versions
-STATIX_BASE_VERSION := v6.0
+STATIX_BASE_VERSION := v6.1
 STATIX_PLATFORM_VERSION := 13
 
 # Use signing keys and don't print date & time in the final zip for official builds
