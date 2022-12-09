@@ -141,6 +141,10 @@
   </font>
   </family>
 
+  <family customizationType="new-named-family" name="google-sans-clock">
+    <font>GoogleSansClock-Regular.ttf</font>
+  </family>
+
   <family customizationType="new-named-family" name="quicksand">
     <font weight="300" style="normal">Quicksand-Light.ttf</font>
     <font weight="400" style="normal">Quicksand-Regular.ttf</font>
