@@ -35,6 +35,9 @@
         <!-- Use new privacy indicators for location -->
         <item>privacy/location_indicators_enabled=true</item>
 
+        <!-- Globally enable the new photo picker -->
+        <item>storage_native_boot/take_over_get_content=true</item>
+
         <!--
             Keep track of more app ops for privacy dashboard display.
             From AppOpsManager.RUNTIME_AND_APPOP_PERMISSIONS_OPS:
