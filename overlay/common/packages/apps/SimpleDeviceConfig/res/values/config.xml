@@ -36,6 +36,9 @@
         <!-- Enable smart actions in the clipboard overlay -->
         <item>systemui/clipboard_overlay_show_actions=true</item>
 
+        <!-- Globally enable the new photo picker -->
+        <item>storage_native_boot/take_over_get_content=true</item>
+
         <!--
             Keep track of more app ops for privacy dashboard display.
             From AppOpsManager.RUNTIME_AND_APPOP_PERMISSIONS_OPS:
