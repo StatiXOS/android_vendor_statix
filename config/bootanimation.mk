@@ -16,17 +16,8 @@
 #
 
 # Boot Animation
-scr_resolution := 1440
-statix_device := $(patsubst %f,%,$(subst statix_,,$(TARGET_PRODUCT)))
-
-ifneq ($(filter mido oneplus3,$(statix_device)),)
-scr_resolution := 1080
-endif
-
-ifneq ($(wildcard vendor/statix/bootanimation/$(scr_resolution).zip),)
 PRODUCT_COPY_FILES += \
-    vendor/statix/bootanimation/$(scr_resolution).zip:$(TARGET_COPY_OUT_SYSTEM)/media/bootanimation.zip
-endif
+    vendor/statix/bootanimation/bootanimation.zip:$(TARGET_COPY_OUT_SYSTEM)/media/bootanimation.zip
 
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/media/bootanimation.zip
