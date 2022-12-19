@@ -8,3 +8,5 @@ function lunch_devices() {
 for device in ${devices[@]}; do
     lunch_devices
 done
+
+cat vendor/statix/bootanimation/bootanimation.00 vendor/statix/bootanimation/bootanimation.01 > vendor/statix/bootanimation/bootanimation.zip
