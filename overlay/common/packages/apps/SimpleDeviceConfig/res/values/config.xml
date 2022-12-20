@@ -35,6 +35,9 @@
         <!-- Use new privacy indicators for location -->
         <item>privacy/location_indicators_enabled=true</item>
 
+        <!-- Enable smart actions in the clipboard overlay -->
+        <item>systemui/clipboard_overlay_show_actions=true</item>
+
         <!--
             Keep track of more app ops for privacy dashboard display.
             From AppOpsManager.RUNTIME_AND_APPOP_PERMISSIONS_OPS:
