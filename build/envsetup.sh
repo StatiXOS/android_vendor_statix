@@ -60,38 +60,3 @@ function aospmerge()
     T=$(gettop)
     python3 $T/vendor/statix/scripts/merge-aosp.py target_branch
 }
-
-function pull_bromite()
-{
-    local TOP=$(gettop)
-    if [[ -z "${TOP}" ]]; then
-    echo "\$TOP not defined! run build/envsetup.sh"
-    exit 1
-    fi
-
-    case $1 in
-      arm|arm64|x86|x86_64)
-      local FETCH_ROOT=${TOP}/vendor/bromite
-      mkdir -p ${FETCH_ROOT}/app/$1
-      local url_stem="https://github.com/bromite/bromite/releases/download"
-      local latest_tag=$(curl -s https://api.github.com/repos/bromite/bromite/releases/latest | $FETCH_ROOT/jq -r '.tag_name')
-      if [ ! -f ${FETCH_ROOT}/app/$1/fetched_tag.txt ]; then
-        is_latest=0
-      else
-        local cur_tag=$(cat ${FETCH_ROOT}/app/$1/fetched_tag.txt)
-        if [ $cur_tag != $latest_tag ]; then
-            is_latest=0
-        else
-            is_latest=1
-        fi
-      fi
-      if [ $is_latest = 0 ]; then
-        echo "Fetching bromite for architecture $1..."
-        wget -q --show-progress ${url_stem}/${latest_tag}/$1_ChromePublic.apk -O ${FETCH_ROOT}/app/$1/ChromePublic.apk
-        wget -q --show-progress ${url_stem}/${latest_tag}/$1_SystemWebView.apk -O ${FETCH_ROOT}/app/$1/SystemWebView.apk
-        echo "$latest_tag" > ${FETCH_ROOT}/app/$1/fetched_tag.txt
-      fi
-      ;;
-      *) echo "unknown architecture $1, skipping Bromite fetch";;
-    esac
-}
