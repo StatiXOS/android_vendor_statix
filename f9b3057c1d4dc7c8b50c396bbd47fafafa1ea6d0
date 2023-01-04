@@ -16,6 +16,23 @@
       "message": "Doesn\u0027t work at all on sake. https://i.imgur.com/KmOuHap.png",
       "revId": "f9b3057c1d4dc7c8b50c396bbd47fafafa1ea6d0",
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "42f5d517_f1b624eb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2023-01-04T01:56:11Z",
+      "side": 1,
+      "message": "I suggest we wait for QPR2",
+      "revId": "f9b3057c1d4dc7c8b50c396bbd47fafafa1ea6d0",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     }
   ]
 }
