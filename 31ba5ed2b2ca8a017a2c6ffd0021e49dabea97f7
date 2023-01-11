@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d41f35a7_da892a4a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2023-01-11T02:04:49Z",
+      "side": 1,
+      "message": "It enables the \"Protected by Android\" text iirc\nhttps://www.google.com/amp/s/9to5google.com/2022/05/12/android-13-security-privacy/amp/",
+      "revId": "31ba5ed2b2ca8a017a2c6ffd0021e49dabea97f7",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
