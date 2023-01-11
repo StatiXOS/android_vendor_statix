@@ -143,8 +143,7 @@ endif
 # Add display-commonsys and display for non-GKI platforms
 ifneq ($(filter $(UM_NO_GKI_PLATFORMS),$(PRODUCT_BOARD_PLATFORM)),)
 PRODUCT_SOONG_NAMESPACES += \
-    vendor/qcom/opensource/commonsys/display \
-    vendor/qcom/opensource/display
+    vendor/qcom/opensource/commonsys/display
 endif
 
 # Add data-ipa-cfg-mgr to PRODUCT_SOONG_NAMESPACES if needed
