@@ -34,6 +34,23 @@
       "parentUuid": "d41f35a7_da892a4a",
       "revId": "31ba5ed2b2ca8a017a2c6ffd0021e49dabea97f7",
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "894b0691_5ef3ab63",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-01-12T02:03:08Z",
+      "side": 1,
+      "message": "requires safety_protection_display_text in fwb core config.xml to be set as well afaict",
+      "revId": "31ba5ed2b2ca8a017a2c6ffd0021e49dabea97f7",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     }
   ]
 }
