@@ -51,6 +51,24 @@
       "message": "requires safety_protection_display_text in fwb core config.xml to be set as well afaict",
       "revId": "31ba5ed2b2ca8a017a2c6ffd0021e49dabea97f7",
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a0957a4e_24804076",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2023-01-12T20:22:56Z",
+      "side": 1,
+      "message": "I see...\nhttps://cs.android.com/android/platform/superproject/+/master:frameworks/base/core/res/res/values/config.xml;drc\u003dab5439531a2f695e5b6f1200976b38de66577eb7;l\u003d5852\n\nSo I took the string from\nhttps://github.com/hentaiOS/platform_vendor_hentai/blob/9dead3912b59c714abbdf42f34f7f04a9062c3f8/rro_overlays/GoogleConfigOverlay/res/values/strings.xml#L34",
+      "parentUuid": "894b0691_5ef3ab63",
+      "revId": "31ba5ed2b2ca8a017a2c6ffd0021e49dabea97f7",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     }
   ]
 }
