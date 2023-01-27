@@ -118,7 +118,7 @@
         <item>device_personalization_services/Overview__enable_japanese_ocr=true</item>
         <item>device_personalization_services/Overview__enable_lens_r_overview_long_press=true</item>
         <item>device_personalization_services/Overview__enable_lens_r_overview_select_mode=true</item>
-        <item>device_personalization_services/Overview__enable_lens_r_overview_translate_action=false</item>
+        <item>device_personalization_services/Overview__enable_lens_r_overview_translate_action=true</item>
         <item>device_personalization_services/Overview__enable_overview=true</item>
         <item>device_personalization_services/Overview__enable_pir_clearcut_logging=true</item>
         <item>device_personalization_services/Overview__enable_pir_westworld_logging=true</item>
