@@ -1,0 +1,24 @@
+python_defaults {
+    name: "releasetools_add_kernel_img_to_target_files_defaults",
+    srcs: [
+        "add_kernel_img_to_target_files.py",
+    ],
+    libs: [
+        "ota_metadata_proto",
+        "releasetools_apex_utils",
+        "releasetools_build_image",
+        "releasetools_build_super_image",
+        "releasetools_common",
+    ],
+    required: [
+        "care_map_generator",
+    ],
+}
+
+python_binary_host {
+    name: "add_kernel_img_to_target_files",
+    defaults: [
+        "releasetools_binary_defaults",
+        "releasetools_add_kernel_img_to_target_files_defaults",
+    ],
+}
