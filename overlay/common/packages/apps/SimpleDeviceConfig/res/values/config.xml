@@ -32,8 +32,6 @@
         <!-- Keep up to 7 days of permission usage history -->
         <item>privacy/discrete_history_cutoff_millis=604800000</item>
 
-        <!-- Use new privacy indicators for location -->
-        <item>privacy/location_indicators_enabled=true</item>
 
         <!-- Enable smart actions in the clipboard overlay -->
         <item>systemui/clipboard_overlay_show_actions=true</item>
