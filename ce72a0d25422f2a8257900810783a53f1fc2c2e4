@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "249113ba_7d85cf58",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2023-02-19T05:31:52Z",
+      "side": 1,
+      "message": "Also if you flash via fastboot update, it\u0027ll resize your super partitions and make your devices unbootable. kthx",
+      "revId": "ce72a0d25422f2a8257900810783a53f1fc2c2e4",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8d946d91_ccf939fe",
@@ -14,6 +31,30 @@
       "writtenOn": "2023-02-19T02:05:03Z",
       "side": 1,
       "message": "is this needed",
+      "range": {
+        "startLine": 326,
+        "startChar": 0,
+        "endLine": 338,
+        "endChar": 69
+      },
+      "revId": "ce72a0d25422f2a8257900810783a53f1fc2c2e4",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94bf56e5_d434eaf5",
+        "filename": "build/tools/add_kernel_img_to_target_files.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2023-02-19T05:31:52Z",
+      "side": 1,
+      "message": "Actually not, it\u0027s stripped down version of add_img_to_target_files.py, there a lot of redundant stuff.",
+      "parentUuid": "8d946d91_ccf939fe",
       "range": {
         "startLine": 326,
         "startChar": 0,
