@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d946d91_ccf939fe",
+        "filename": "build/tools/add_kernel_img_to_target_files.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-02-19T02:05:03Z",
+      "side": 1,
+      "message": "is this needed",
+      "range": {
+        "startLine": 326,
+        "startChar": 0,
+        "endLine": 338,
+        "endChar": 69
+      },
+      "revId": "ce72a0d25422f2a8257900810783a53f1fc2c2e4",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
