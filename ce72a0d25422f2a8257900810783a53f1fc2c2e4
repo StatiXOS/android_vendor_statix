@@ -18,6 +18,24 @@
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3020569_f2645bb6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2023-02-20T01:57:15Z",
+      "side": 1,
+      "message": "Yeah of course. But in my opinion, what this target gives you i.e., the *.zip file, it should be enough for you to take over from there onwards. Basically, not being able to fastboot update isn\u0027t an instant dealbreaker for me.",
+      "parentUuid": "249113ba_7d85cf58",
+      "revId": "ce72a0d25422f2a8257900810783a53f1fc2c2e4",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8d946d91_ccf939fe",
