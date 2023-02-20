@@ -16,6 +16,24 @@
       "message": "I agree. Will need someone else\u0027s opinion though.",
       "revId": "3e6a577920b32873fb2d28c3e27c1f7b54d70a8e",
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e582edd3_b75a1430",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2023-02-20T04:01:08Z",
+      "side": 1,
+      "message": "A friend told me that it\u0027s also disabled on Google Pixel by default",
+      "parentUuid": "351ebcbb_01579050",
+      "revId": "3e6a577920b32873fb2d28c3e27c1f7b54d70a8e",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     }
   ]
 }
