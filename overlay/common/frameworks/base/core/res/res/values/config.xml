@@ -143,4 +143,14 @@
 
     <!-- Fingerprint from a certified device -->
     <string name="config_certifiedFingerprint" translatable="false">google/cheetah/cheetah:13/TQ1A.230205.002/9471150:user/release-keys</string>
+
+    <!-- Default list of files pinned by the Pinner Service -->
+    <string-array translatable="false" name="config_defaultPinnerServiceFiles">
+        <item>"/apex/com.android.art/javalib/core-oj.jar"</item>
+        <item>"/apex/com.android.art/javalib/core-libart.jar"</item>
+        <item>"/system/framework/framework.jar"</item>
+        <item>"/system/framework/services.jar"</item>
+        <item>"/system/bin/surfaceflinger"</item>
+        <item>"/system_ext/priv-app/StatixSystemUI/StatixSystemUI.apk"</item>
+    </string-array>
 </resources>
