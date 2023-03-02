@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "921da396_7ba9cd49",
+        "filename": "vendorsetup.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-03-02T04:27:24Z",
+      "side": 1,
+      "message": "this should be a build step imo",
+      "revId": "fb6ac6605e3c86338fae55200f8e76f8d7d5ba7d",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
