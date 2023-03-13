@@ -142,7 +142,7 @@
     <bool name="config_enableQrCodeScannerOnLockScreen">true</bool>
 
     <!-- Fingerprint from a certified device -->
-    <string name="config_certifiedFingerprint" translatable="false">google/cheetah/cheetah:13/TQ1A.230205.002/9471150:user/release-keys</string>
+    <string name="config_certifiedFingerprint" translatable="false">google/cheetah/cheetah:13/TQ2A.230305.008.C1/9619669:user/release-keys</string>
 
     <!-- Default list of files pinned by the Pinner Service -->
     <string-array translatable="false" name="config_defaultPinnerServiceFiles">
