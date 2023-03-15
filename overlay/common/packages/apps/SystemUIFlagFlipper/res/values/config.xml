@@ -29,5 +29,6 @@
         <item>enable_font_scaling_tile=true</item>
         <item>lockscreen_custom_clocks=true</item>
         <item>media_explicit_indicator=true</item>
+        <item>revamped_wallpaper_ui=true</item>
     </string-array>
 </resources>
