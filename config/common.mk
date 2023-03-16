@@ -109,3 +109,6 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/lib64/libRSSupport.so \
     system/lib64/libblasV8.so \
     system/lib64/librsjni.so
+
+# Enable Compose in SystemUI by default.
+SYSTEMUI_USE_COMPOSE ?= true
