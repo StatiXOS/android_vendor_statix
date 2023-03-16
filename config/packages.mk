@@ -21,7 +21,8 @@ PRODUCT_PACKAGES += \
     StatixLauncher \
     StatixSystemUI \
     StatixSettings \
-    StatixThemePicker
+    StatixThemePicker \
+    SystemUIFlagFlipper
 
 # Preopt StatixSystemUI
 PRODUCT_DEXPREOPT_SPEED_APPS += \
