@@ -17,5 +17,6 @@
 <resources>
     <string-array name="flags">
         <item>216=true</item>
+        <item>901=true</item>
     </string-array>
 </resources>
