@@ -11,7 +11,7 @@
     <string name="config_headlineFontFeatureSettings">ss03</string>
 
     <!-- Name of the font family to use in the default lockscreen clock -->
-    <string name="config_clockFontFamily" translatable="false">google-sans-text</string>
+    <string name="config_clockFontFamily" translatable="false">@string/config_bodyFontFamily</string>
 
     <string-array name="config_locationProviderPackageNames" translatable="false">
         <!-- The Google provider -->
