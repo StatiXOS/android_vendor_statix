@@ -19,6 +19,7 @@ PRODUCT_PACKAGES += \
     FontDMSansOverlay \
     FontHarmonyOSSansOverlay \
     FontInterOverlay \
+    FontManropeOverlay \
     FontQuicksandOverlay \
     FontSwitzerOverlay
 
