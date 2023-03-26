@@ -238,4 +238,31 @@
   <alias name="harmonyos-sans-medium" to="harmonyos-sans" weight="500" />
   <alias name="harmonyos-sans-bold" to="harmonyos-sans" weight="600" />
   <alias name="harmonyos-sans-black" to="harmonyos-sans" weight="700" />
+
+  <family customizationType="new-named-family" name="manrope">
+    <font weight="100" style="normal">Manrope-Thin.ttf</font>
+    <font weight="100" style="italic">Manrope-ThinItalic.ttf</font>
+    <font weight="200" style="normal">Manrope-ExtraLight.ttf</font>
+    <font weight="200" style="italic">Manrope-ExtraLightItalic.ttf</font>
+    <font weight="300" style="normal">Manrope-Light.ttf</font>
+    <font weight="300" style="italic">Manrope-LightItalic.ttf</font>
+    <font weight="400" style="normal">Manrope-Regular.ttf</font>
+    <font weight="400" style="italic">Manrope-Italic.ttf</font>
+    <font weight="500" style="normal">Manrope-Medium.ttf</font>
+    <font weight="500" style="italic">Manrope-MediumItalic.ttf</font>
+    <font weight="600" style="normal">Manrope-SemiBold.ttf</font>
+    <font weight="600" style="italic">Manrope-SemiBoldItalic.ttf</font>
+    <font weight="700" style="normal">Manrope-Bold.ttf</font>
+    <font weight="700" style="italic">Manrope-BoldItalic.ttf</font>
+    <font weight="800" style="normal">Manrope-ExtraBold.ttf</font>
+    <font weight="800" style="italic">Manrope-ExtraBoldItalic.ttf</font>
+  </family>
+  <alias name="manrope-thin" to="manrope" weight="100" />
+  <alias name="manrope-extra-light" to="manrope" weight="200" />
+  <alias name="manrope-light" to="manrope" weight="300" />
+  <alias name="manrope-medium" to="manrope" weight="500" />
+  <alias name="manrope-semibold" to="manrope" weight="600" />
+  <alias name="manrope-bold" to="manrope" weight="700" />
+  <alias name="manrope-extra-bold" to="manrope" weight="800" />
+  <alias name="manrope-black" to="manrope" weight="900" />
 </fonts-modification>
