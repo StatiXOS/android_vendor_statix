@@ -146,37 +146,123 @@
   </family>
 
   <family customizationType="new-named-family" name="quicksand">
-    <font weight="300" style="normal">Quicksand-Light.ttf</font>
-    <font weight="400" style="normal">Quicksand-Regular.ttf</font>
-    <font weight="500" style="normal">Quicksand-Medium.ttf</font>
-    <font weight="600" style="normal">Quicksand-SemiBold.ttf</font>
-    <font weight="700" style="normal">Quicksand-Bold.ttf</font>
-  </family>
+        <font weight="300" style="normal">Quicksand-Variable.ttf
+          <axis tag="ital" stylevalue="0" />
+          <axis tag="wdth" stylevalue="100" />
+          <axis tag="wght" stylevalue="300" />
+        </font>
+        <font weight="400" style="normal">Quicksand-Variable.ttf</font>
+        <font weight="500" style="normal">Quicksand-Variable.ttf
+          <axis tag="ital" stylevalue="0" />
+          <axis tag="wdth" stylevalue="100" />
+          <axis tag="wght" stylevalue="500" />
+        </font>
+        <font weight="600" style="normal">Quicksand-Variable.ttf
+          <axis tag="ital" stylevalue="0" />
+          <axis tag="wdth" stylevalue="100" />
+          <axis tag="wght" stylevalue="600" />
+        </font>
+        <font weight="700" style="normal">Quicksand-Variable.ttf
+          <axis tag="ital" stylevalue="0" />
+          <axis tag="wdth" stylevalue="100" />
+          <axis tag="wght" stylevalue="700" />
+        </font>
+   </family>
+
   <alias name="quicksand-light" to="quicksand" weight="300" />
   <alias name="quicksand-medium" to="quicksand" weight="500" />
   <alias name="quicksand-semibold" to="quicksand" weight="600" />
   <alias name="quicksand-bold" to="quicksand" weight="700" />
 
   <family customizationType="new-named-family" name="inter">
-    <font weight="100" style="normal">Inter-Thin.ttf</font>
-    <font weight="100" style="italic">Inter-ThinItalic.ttf</font>
-    <font weight="200" style="normal">Inter-ExtraLight.ttf</font>
-    <font weight="200" style="italic">Inter-ExtraLightItalic.ttf</font>
-    <font weight="300" style="normal">Inter-Light.ttf</font>
-    <font weight="300" style="italic">Inter-LightItalic.ttf</font>
-    <font weight="400" style="normal">Inter-Regular.ttf</font>
-    <font weight="400" style="italic">Inter-Italic.ttf</font>
-    <font weight="500" style="normal">Inter-Medium.ttf</font>
-    <font weight="500" style="italic">Inter-MediumItalic.ttf</font>
-    <font weight="600" style="normal">Inter-SemiBold.ttf</font>
-    <font weight="600" style="italic">Inter-SemiBoldItalic.ttf</font>
-    <font weight="700" style="normal">Inter-Bold.ttf</font>
-    <font weight="700" style="italic">Inter-BoldItalic.ttf</font>
-    <font weight="800" style="normal">Inter-ExtraBold.ttf</font>
-    <font weight="800" style="italic">Inter-ExtraBoldItalic.ttf</font>
-    <font weight="900" style="normal">Inter-Black.ttf</font>
-    <font weight="900" style="italic">Inter-BlackItalic.ttf</font>
-  </family>
+        <font weight="100" style="normal">Inter-Variable.ttf
+          <axis tag="ital" stylevalue="0" />
+          <axis tag="wdth" stylevalue="100" />
+          <axis tag="wght" stylevalue="100" />
+        </font>
+        <font weight="200" style="normal">Inter-Variable.ttf
+          <axis tag="ital" stylevalue="0" />
+          <axis tag="wdth" stylevalue="100" />
+          <axis tag="wght" stylevalue="200" />
+        </font>
+        <font weight="300" style="normal">Inter-Variable.ttf
+          <axis tag="ital" stylevalue="0" />
+          <axis tag="wdth" stylevalue="100" />
+          <axis tag="wght" stylevalue="300" />
+        </font>
+        <font weight="400" style="normal">Inter-Variable.ttf</font>
+        <font weight="500" style="normal">Inter-Variable.ttf
+          <axis tag="ital" stylevalue="0" />
+          <axis tag="wdth" stylevalue="100" />
+          <axis tag="wght" stylevalue="500" />
+        </font>
+        <font weight="600" style="normal">Inter-Variable.ttf
+          <axis tag="ital" stylevalue="0" />
+          <axis tag="wdth" stylevalue="100" />
+          <axis tag="wght" stylevalue="600" />
+        </font>
+        <font weight="700" style="normal">Inter-Variable.ttf
+          <axis tag="ital" stylevalue="0" />
+          <axis tag="wdth" stylevalue="100" />
+          <axis tag="wght" stylevalue="700" />
+        </font>
+        <font weight="800" style="normal">Inter-Variable.ttf
+          <axis tag="ital" stylevalue="0" />
+          <axis tag="wdth" stylevalue="100" />
+          <axis tag="wght" stylevalue="800" />
+        </font>
+        <font weight="900" style="normal">Inter-Variable.ttf
+          <axis tag="ital" stylevalue="0" />
+          <axis tag="wdth" stylevalue="100" />
+          <axis tag="wght" stylevalue="900" />
+        </font>
+        <font weight="100" style="italic">Inter-Italic.ttf
+          <axis tag="ital" stylevalue="1" />
+          <axis tag="wdth" stylevalue="100" />
+          <axis tag="wght" stylevalue="100" />
+        </font>
+        <font weight="200" style="italic">Inter-Italic.ttf
+          <axis tag="ital" stylevalue="1" />
+          <axis tag="wdth" stylevalue="100" />
+          <axis tag="wght" stylevalue="200" />
+        </font>
+        <font weight="300" style="italic">Inter-Italic.ttf
+          <axis tag="ital" stylevalue="1" />
+          <axis tag="wdth" stylevalue="100" />
+          <axis tag="wght" stylevalue="300" />
+        </font>
+        <font weight="400" style="italic">Inter-Italic.ttf
+          <axis tag="ital" stylevalue="1" />
+          <axis tag="wdth" stylevalue="100" />
+          <axis tag="wght" stylevalue="400" />
+        </font>
+        <font weight="500" style="italic">Inter-Italic.ttf
+          <axis tag="ital" stylevalue="1" />
+          <axis tag="wdth" stylevalue="100" />
+          <axis tag="wght" stylevalue="500" />
+        </font>
+        <font weight="600" style="italic">Inter-Italic.ttf
+          <axis tag="ital" stylevalue="1" />
+          <axis tag="wdth" stylevalue="100" />
+          <axis tag="wght" stylevalue="600" />
+        </font>
+        <font weight="700" style="italic">Inter-Italic.ttf
+          <axis tag="ital" stylevalue="1" />
+          <axis tag="wdth" stylevalue="100" />
+          <axis tag="wght" stylevalue="700" />
+        </font>
+        <font weight="800" style="italic">Inter-Italic.ttf
+          <axis tag="ital" stylevalue="1" />
+          <axis tag="wdth" stylevalue="100" />
+          <axis tag="wght" stylevalue="800" />
+        </font>
+        <font weight="900" style="italic">Inter-Italic.ttf
+          <axis tag="ital" stylevalue="1" />
+          <axis tag="wdth" stylevalue="100" />
+          <axis tag="wght" stylevalue="900" />
+        </font>
+   </family>
+
   <alias name="inter-thin" to="inter" weight="100" />
   <alias name="inter-extra-light" to="inter" weight="200" />
   <alias name="inter-light" to="inter" weight="300" />
@@ -197,24 +283,92 @@
   <alias name="dmsans-bold" to="dmsans" weight="700" />
 
   <family customizationType="new-named-family" name="switzer">
-    <font weight="100" style="normal">Switzer-Thin.ttf</font>
-    <font weight="100" style="italic">Switzer-ThinItalic.ttf</font>
-    <font weight="200" style="normal">Switzer-ExtraLight.ttf</font>
-    <font weight="200" style="italic">Switzer-ExtraLightItalic.ttf</font>
-    <font weight="300" style="normal">Switzer-Light.ttf</font>
-    <font weight="300" style="italic">Switzer-LightItalic.ttf</font>
-    <font weight="400" style="normal">Switzer-Regular.ttf</font>
-    <font weight="400" style="italic">Switzer-Italic.ttf</font>
-    <font weight="500" style="normal">Switzer-Medium.ttf</font>
-    <font weight="500" style="italic">Switzer-MediumItalic.ttf</font>
-    <font weight="600" style="normal">Switzer-SemiBold.ttf</font>
-    <font weight="600" style="italic">Switzer-SemiBoldItalic.ttf</font>
-    <font weight="700" style="normal">Switzer-Bold.ttf</font>
-    <font weight="700" style="italic">Switzer-BoldItalic.ttf</font>
-    <font weight="800" style="normal">Switzer-ExtraBold.ttf</font>
-    <font weight="800" style="italic">Switzer-ExtraBoldItalic.ttf</font>
-    <font weight="900" style="normal">Switzer-Black.ttf</font>
-    <font weight="900" style="italic">Switzer-BlackItalic.ttf</font>
+    <font weight="100" style="normal">Switzer-Variable.ttf
+      <axis tag="ital" stylevalue="0" />
+      <axis tag="wdth" stylevalue="100" />
+      <axis tag="wght" stylevalue="100" />
+    </font>
+    <font weight="200" style="normal">Switzer-Variable.ttf
+      <axis tag="ital" stylevalue="0" />
+      <axis tag="wdth" stylevalue="100" />
+      <axis tag="wght" stylevalue="200" />
+    </font>
+      <font weight="300" style="normal">Switzer-Variable.ttf
+         <axis tag="ital" stylevalue="0" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="300" />
+       </font>
+       <font weight="400" style="normal">Switzer-Variable.ttf</font>
+       <font weight="500" style="normal">Switzer-Variable.ttf
+         <axis tag="ital" stylevalue="0" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="500" />
+       </font>
+       <font weight="600" style="normal">Switzer-Variable.ttf
+         <axis tag="ital" stylevalue="0" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="600" />
+       </font>
+       <font weight="700" style="normal">Switzer-Variable.ttf
+         <axis tag="ital" stylevalue="0" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="700" />
+       </font>
+       <font weight="800" style="normal">Switzer-Variable.ttf
+         <axis tag="ital" stylevalue="0" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="800" />
+       </font>
+       <font weight="900" style="normal">Switzer-Variable.ttf
+         <axis tag="ital" stylevalue="0" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="900" />
+       </font>
+       <font weight="100" style="italic">Switzer-VariableItalic.ttf
+         <axis tag="ital" stylevalue="1" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="100" />
+       </font>
+       <font weight="200" style="italic">Switzer-VariableItalic.ttf
+         <axis tag="ital" stylevalue="1" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="200" />
+       </font>
+       <font weight="300" style="italic">Switzer-VariableItalic.ttf
+         <axis tag="ital" stylevalue="1" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="300" />
+       </font>
+       <font weight="400" style="italic">Switzer-VariableItalic.ttf
+         <axis tag="ital" stylevalue="1" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="400" />
+       </font>
+       <font weight="500" style="italic">Switzer-VariableItalic.ttf
+         <axis tag="ital" stylevalue="1" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="500" />
+       </font>
+       <font weight="600" style="italic">Switzer-VariableItalic.ttf
+         <axis tag="ital" stylevalue="1" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="600" />
+       </font>
+       <font weight="700" style="italic">Switzer-VariableItalic.ttf
+         <axis tag="ital" stylevalue="1" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="700" />
+       </font>
+       <font weight="800" style="italic">Switzer-VariableItalic.ttf
+         <axis tag="ital" stylevalue="1" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="800" />
+       </font>
+       <font weight="900" style="italic">Switzer-VariableItalic.ttf
+         <axis tag="ital" stylevalue="1" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="900" />
+       </font>
   </family>
   <alias name="switzer-thin" to="switzer" weight="100" />
   <alias name="switzer-extra-light" to="switzer" weight="200" />
@@ -239,30 +393,78 @@
   <alias name="harmonyos-sans-bold" to="harmonyos-sans" weight="600" />
   <alias name="harmonyos-sans-black" to="harmonyos-sans" weight="700" />
 
-  <family customizationType="new-named-family" name="manrope">
-    <font weight="100" style="normal">Manrope-Thin.ttf</font>
-    <font weight="100" style="italic">Manrope-ThinItalic.ttf</font>
-    <font weight="200" style="normal">Manrope-ExtraLight.ttf</font>
-    <font weight="200" style="italic">Manrope-ExtraLightItalic.ttf</font>
-    <font weight="300" style="normal">Manrope-Light.ttf</font>
-    <font weight="300" style="italic">Manrope-LightItalic.ttf</font>
-    <font weight="400" style="normal">Manrope-Regular.ttf</font>
-    <font weight="400" style="italic">Manrope-Italic.ttf</font>
-    <font weight="500" style="normal">Manrope-Medium.ttf</font>
-    <font weight="500" style="italic">Manrope-MediumItalic.ttf</font>
-    <font weight="600" style="normal">Manrope-SemiBold.ttf</font>
-    <font weight="600" style="italic">Manrope-SemiBoldItalic.ttf</font>
-    <font weight="700" style="normal">Manrope-Bold.ttf</font>
-    <font weight="700" style="italic">Manrope-BoldItalic.ttf</font>
-    <font weight="800" style="normal">Manrope-ExtraBold.ttf</font>
-    <font weight="800" style="italic">Manrope-ExtraBoldItalic.ttf</font>
+   <family customizationType="new-named-family" name="manrope">
+       <font weight="200" style="normal">Manrope-Variable.ttf
+         <axis tag="ital" stylevalue="0" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="200" />
+       </font>
+       <font weight="300" style="normal">Manrope-Variable.ttf
+         <axis tag="ital" stylevalue="0" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="300" />
+       </font>
+       <font weight="400" style="normal">Manrope-Variable.ttf</font>
+       <font weight="500" style="normal">Manrope-Variable.ttf
+         <axis tag="ital" stylevalue="0" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="500" />
+       </font>
+       <font weight="600" style="normal">Manrope-Variable.ttf
+         <axis tag="ital" stylevalue="0" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="600" />
+       </font>
+       <font weight="700" style="normal">Manrope-Variable.ttf
+         <axis tag="ital" stylevalue="0" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="700" />
+       </font>
+       <font weight="800" style="normal">Manrope-Variable.ttf
+         <axis tag="ital" stylevalue="0" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="800" />
+       </font>
+       <font weight="200" style="italic">Manrope-ExtraLightItalic.ttf
+         <axis tag="ital" stylevalue="1" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="300" />
+       </font>
+       <font weight="300" style="italic">Manrope-LightItalic.ttf
+         <axis tag="ital" stylevalue="1" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="300" />
+       </font>
+       <font weight="400" style="italic">Manrope-Italic.ttf
+         <axis tag="ital" stylevalue="1" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="400" />
+       </font>
+       <font weight="500" style="italic">Manrope-MediumItalic.ttf
+         <axis tag="ital" stylevalue="1" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="500" />
+       </font>
+       <font weight="600" style="italic">Manrope-SemiBoldItalic.ttf
+         <axis tag="ital" stylevalue="1" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="600" />
+       </font>
+       <font weight="700" style="italic">Manrope-BoldItalic.ttf
+         <axis tag="ital" stylevalue="1" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="700" />
+       </font>
+       <font weight="800" style="italic">Manrope-ExtraBoldItalic.ttf
+         <axis tag="ital" stylevalue="1" />
+         <axis tag="wdth" stylevalue="100" />
+         <axis tag="wght" stylevalue="800" />
+       </font>
   </family>
-  <alias name="manrope-thin" to="manrope" weight="100" />
   <alias name="manrope-extra-light" to="manrope" weight="200" />
   <alias name="manrope-light" to="manrope" weight="300" />
   <alias name="manrope-medium" to="manrope" weight="500" />
   <alias name="manrope-semibold" to="manrope" weight="600" />
   <alias name="manrope-bold" to="manrope" weight="700" />
   <alias name="manrope-extra-bold" to="manrope" weight="800" />
-  <alias name="manrope-black" to="manrope" weight="900" />
 </fonts-modification>
