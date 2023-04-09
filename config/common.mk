@@ -49,7 +49,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 ifeq ($(TARGET_USES_BLUR), true)
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.launcher.blur.appLaunch=0 \
-    ro.sf.blurs_are_expensive=1 \
     ro.surface_flinger.supports_background_blur=1
 endif
 
