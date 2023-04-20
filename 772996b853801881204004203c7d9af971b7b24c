@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aa033668_4eb9dcdc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2023-04-20T15:15:07Z",
+      "side": 1,
+      "message": "without this, expensive rendering hints are not used by the powerhal which will causes stuttering even if the blur quality is lowered (more evident on non-flagship hardware)",
+      "revId": "772996b853801881204004203c7d9af971b7b24c",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
