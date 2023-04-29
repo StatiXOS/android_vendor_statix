@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "101f3c7e_afc8679a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2023-04-29T00:28:03Z",
+      "side": 1,
+      "message": "Gboard Assistant Voice Typing is already enabled by default, ig there\u0027s no need to force enable them",
+      "revId": "1136779e9d240ab24c0c5b9b392145e24140a2b8",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
