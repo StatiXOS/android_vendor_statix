@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7fea46f_dde4f461",
+        "filename": "overlay/common/packages/apps/SimpleDeviceConfig/res/values/config.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-04-30T16:04:52Z",
+      "side": 1,
+      "message": "i don\u0027t believe any of these are actually present",
+      "revId": "b46b81a0ed08854d4f053a52e7314d16ff3a0f9a",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
