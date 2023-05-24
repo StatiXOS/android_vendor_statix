@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "776bdddd_f16ead10",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000160
+      },
+      "writtenOn": "2023-05-24T13:12:42Z",
+      "side": 1,
+      "message": "Required for\nhttps://review.statixos.com/c/android_frameworks_base/+/9941",
+      "revId": "2b8dd092814c318617979151c18dac5c3911344a",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
