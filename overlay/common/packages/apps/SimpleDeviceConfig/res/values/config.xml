@@ -64,6 +64,10 @@
 
         <!-- Enable protected by android banner -->
         <item>privacy/safety_protection_enabled=true</item>
+        
+        <!-- Enable permission hub v2 -->
+        <item>privacy/permissions_hub_enabled=true</item>
+        <item>privacy/permissions_hub_2_enabled=true</item>
 
         <!--
             Device Personalization Services (AiAi)
