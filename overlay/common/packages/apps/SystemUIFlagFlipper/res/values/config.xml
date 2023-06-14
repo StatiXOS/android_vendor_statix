@@ -16,9 +16,21 @@
 -->
 <resources>
     <string-array name="flags">
-        <item>216=true</item>
-        <item>901=true</item>
-        <item>907=true</item>
-        <item>909=true</item>
+        <item>customizable_lock_screen_quick_affordances=true</item>
+        <item>media_session_actions=true</item>
+        <item>umo_surface_ripple=true</item>
+        <item>umo_turbulence_noise=true</item>
+        <item>plug_in_status_bar_chip=true</item>
+        <item>ongoing_call_status_bar_chip=true</item>
+        <item>enable_new_qs_edit_mode=true</item>
+        <item>new_status_bar_mobile_icons=true</item>
+        <item>new_status_bar_mobile_icons_backend=true</item>
+        <item>new_status_bar_wifi_icon_backend=true</item>    
+        <item>wallpaper_picker_ui_for_aiwp=true</item>
+        <item>wallpaper_fullscreen_preview=true</item>
+        <item>auto_pin_confirmation=true</item>
+        <item>revamped_wallpaper_ui=true</item>
+        <item>biometrics_animation_revamp=true</item>
+        <item>lockscreen_custom_clocks=true</item>
     </string-array>
 </resources>
