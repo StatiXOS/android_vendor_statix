@@ -25,5 +25,11 @@
         <item>enable_new_qs_edit_mode=true</item>
         <item>auto_pin_confirmation=true</item>
         <item>biometrics_animation_revamp=true</item>
+<<<<<<< PATCH SET (18bb7c SystemUI: flags: Enable media explicit indicator)
+        <item>monochromatic=true</item>
+        <item>enable_font_scaling_tile=true</item>
+        <item>media_explicit_indicator=true</item>
+=======
+>>>>>>> BASE      (1f7d04 statix: Fix indentation in SimpleDeviceConfig overlay)
     </string-array>
 </resources>
