@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "303c207a_3ad123a0",
+        "filename": "overlay/common/packages/apps/SystemUIFlagFlipper/res/values/config.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-15T14:48:31Z",
+      "side": 1,
+      "message": "delet dis",
+      "revId": "9b8627c770d432dd4917d07f68f504d38176e71b",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54a49901_6b297fbf",
+        "filename": "overlay/common/packages/apps/SystemUIFlagFlipper/res/values/config.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-15T14:48:31Z",
+      "side": 1,
+      "message": "this",
+      "revId": "9b8627c770d432dd4917d07f68f504d38176e71b",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9a75d34_24310b0d",
+        "filename": "overlay/common/packages/apps/SystemUIFlagFlipper/res/values/config.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-15T14:48:31Z",
+      "side": 1,
+      "message": "this",
+      "revId": "9b8627c770d432dd4917d07f68f504d38176e71b",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8db7d892_3e7d6e70",
+        "filename": "overlay/common/packages/apps/SystemUIFlagFlipper/res/values/config.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-15T14:48:31Z",
+      "side": 1,
+      "message": "and this",
+      "revId": "9b8627c770d432dd4917d07f68f504d38176e71b",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
