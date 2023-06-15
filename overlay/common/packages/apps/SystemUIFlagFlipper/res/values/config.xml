@@ -28,5 +28,6 @@
         <item>monochromatic=true</item>
         <item>enable_font_scaling_tile=true</item>
         <item>lockscreen_custom_clocks=true</item>
+        <item>media_explicit_indicator=true</item>
     </string-array>
 </resources>
