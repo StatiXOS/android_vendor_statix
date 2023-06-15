@@ -27,5 +27,6 @@
         <item>biometrics_animation_revamp=true</item>
         <item>monochromatic=true</item>
         <item>enable_font_scaling_tile=true</item>
+        <item>lockscreen_custom_clocks=true</item>
     </string-array>
 </resources>
