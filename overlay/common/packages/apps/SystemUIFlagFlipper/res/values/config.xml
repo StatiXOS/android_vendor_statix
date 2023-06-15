@@ -28,5 +28,6 @@
         <item>media_explicit_indicator=true</item>
         <item>new_back_affordance=true</item>
         <item>monochromatic=true</item>
+        <item>enable_font_scaling_tile=true</item>
     </string-array>
 </resources>
