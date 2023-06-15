@@ -205,5 +205,8 @@
         <item>device_personalization_services/Echo_smartspace__enable_hotel_smartspace_aiai=true</item>
         <item>device_personalization_services/Echo_smartspace__smartspace_enable_daily_forecast=true</item>
         <item>device_personalization_services/Echo_smartspace__smartspace_enable_timely_reminder=true</item>
+
+        <!-- Separated notification and ringtone volumes control -->
+        <item>systemui/volume_separate_notification=true</item>
     </string-array>
 </resources>
