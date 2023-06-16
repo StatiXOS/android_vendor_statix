@@ -22,9 +22,9 @@
 
         <!-- Nexus (Pixel) Launcher -->
         <item>launcher/ENABLE_QUICK_LAUNCH_V2=true</item>
-	<item>launcher/GBOARD_UPDATE_ENTER_KEY=true</item>
-	<item>launcher/enable_one_search=true</item>
-	<item>launcher/enable_quick_launch_v2=true</item>
+        <item>launcher/GBOARD_UPDATE_ENTER_KEY=true</item>
+        <item>launcher/enable_one_search=true</item>
+        <item>launcher/enable_quick_launch_v2=true</item>
 
         <!-- Enable the new and advanced Privacy Hub -->
         <item>privacy/safety_center_is_enabled=true</item>
@@ -34,7 +34,6 @@
 
         <!-- Keep up to 7 days of permission usage history -->
         <item>privacy/discrete_history_cutoff_millis=604800000</item>
-
 
         <!-- Enable smart actions in the clipboard overlay -->
         <item>systemui/clipboard_overlay_show_actions=true</item>
