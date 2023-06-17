@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc8da40a_98113c77",
+        "filename": "overlay/common/packages/apps/SimpleDeviceConfig/res/values/config.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1000141
+      },
+      "writtenOn": "2023-06-17T08:03:33Z",
+      "side": 1,
+      "message": "separeted \u003e separated",
+      "revId": "61a282aedfa26246f9c5b703a522893fab974b80",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
