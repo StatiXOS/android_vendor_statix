@@ -16,6 +16,23 @@
       "message": "I don\u0027t think I have noticed this crash?",
       "revId": "1fac4eea0d99b4b238949b74f26fac4c7ad8a35e",
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c687d11_98c1e64c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000047
+      },
+      "writtenOn": "2023-06-18T06:11:38Z",
+      "side": 1,
+      "message": "I think it is on by default, I\u0027ve not faced this crash either",
+      "revId": "1fac4eea0d99b4b238949b74f26fac4c7ad8a35e",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     }
   ]
 }
