@@ -33,6 +33,23 @@
       "message": "I think it is on by default, I\u0027ve not faced this crash either",
       "revId": "1fac4eea0d99b4b238949b74f26fac4c7ad8a35e",
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "445ddd83_8f516c96",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000122
+      },
+      "writtenOn": "2023-06-18T12:08:32Z",
+      "side": 1,
+      "message": "Sometimes I\u0027ve noticed that the initial setup \"reloads\" 2 or 3 times on the language selection screen, which didn\u0027t happen with this commit",
+      "revId": "1fac4eea0d99b4b238949b74f26fac4c7ad8a35e",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     }
   ]
 }
