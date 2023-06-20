@@ -70,6 +70,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     sys.fflag.override.settings_volume_panel_in_systemui=true
 
+# Enable Monochromatic Theme on ThemePicker
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    persist.sysui.monochromatic=true
+
 # Copy over some StatiX assets
 PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/etc/init.statix.rc:system/etc/init/init.statix.rc \
