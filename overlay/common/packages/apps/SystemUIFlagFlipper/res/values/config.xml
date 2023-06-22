@@ -26,6 +26,10 @@
         <item>auto_pin_confirmation=true</item>
         <item>biometrics_animation_revamp=true</item>
         <item>media_explicit_indicator=true</item>
+<<<<<<< PATCH SET (90b2db statix: SystemUIFlagFlipper: Enable the new back affordance)
+        <item>new_back_affordance=true</item>
+=======
         <item>monochromatic=true</item>
+>>>>>>> BASE      (d53e2c statix: SystemUIFlagFlipper: Enable monochromatic monet styl)
     </string-array>
 </resources>
