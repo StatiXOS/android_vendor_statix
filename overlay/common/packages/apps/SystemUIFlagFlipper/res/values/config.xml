@@ -25,6 +25,7 @@
         <item>enable_new_qs_edit_mode=true</item>
         <item>auto_pin_confirmation=true</item>
         <item>biometrics_animation_revamp=true</item>
-        <item>media_explicit_indicator=true</item>
+	<item>media_explicit_indicator=true</item>
+	<item>new_back_affordance=true</item>
     </string-array>
 </resources>
