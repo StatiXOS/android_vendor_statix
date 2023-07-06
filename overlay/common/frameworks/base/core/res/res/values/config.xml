@@ -142,7 +142,7 @@
     <bool name="config_enableQrCodeScannerOnLockScreen">true</bool>
 
     <!-- Fingerprint from a certified device -->
-    <string name="config_certifiedFingerprint" translatable="false">google/cheetah/cheetah:13/TQ3A.230605.012/10204971:user/release-keys</string>
+    <string name="config_certifiedFingerprint" translatable="false">google/cheetah/cheetah:13/TQ3A.230705.001/10216780:user/release-keys</string>
 
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
          in hardware. -->
