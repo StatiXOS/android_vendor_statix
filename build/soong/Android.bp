@@ -143,6 +143,7 @@ soong_config_module_type {
         "target_health_charging_control_charging_enabled",
         "target_health_charging_control_charging_disabled",
         "target_health_charging_control_deadline_path",
+        "target_health_charging_control_stage_path",
     ],
     properties: ["cppflags"],
 }
@@ -170,6 +171,9 @@ health_charging_control {
         },
         target_health_charging_control_deadline_path: {
             cppflags: ["-DHEALTH_CHARGING_CONTROL_DEADLINE_PATH=\"%s\""],
+        },
+        target_health_charging_control_stage_path: {
+            cppflags: ["-DHEALTH_CHARGING_CONTROL_STAGE_PATH=\"%s\""],
         },
     },
 }
