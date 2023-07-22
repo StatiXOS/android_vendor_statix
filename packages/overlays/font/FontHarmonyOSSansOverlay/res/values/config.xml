@@ -23,5 +23,8 @@
     <!-- Name of a font family to use for headlines. If empty, falls back to platform default -->
     <string name="config_headlineFontFamily">harmonyos-sans</string>
     <string name="config_headlineFontFamilyMedium">harmonyos-sans-medium</string>
+
+    <!-- Name of the font family to use in the default lockscreen clock -->
+    <string name="config_clockFontFamily" translatable="false">harmonyos-sans-clock</string>
 </resources>
 
