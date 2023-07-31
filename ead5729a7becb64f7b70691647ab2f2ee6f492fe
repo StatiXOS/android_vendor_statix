@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "687a07b7_2d308646",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2023-07-31T14:11:45Z",
+      "side": 1,
+      "message": "This just makes the NFC settings page less boring :D",
+      "revId": "ead5729a7becb64f7b70691647ab2f2ee6f492fe",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
