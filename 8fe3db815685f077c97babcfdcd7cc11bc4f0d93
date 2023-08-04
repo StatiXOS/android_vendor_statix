@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec2b3a71_a11d1067",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2023-08-04T17:17:49Z",
+      "side": 1,
+      "message": "What should be kept in Settings overlay?\nhttps://github.com/StatiXOS/android_vendor_statix/tree/tm-qpr3/overlay/common/packages/apps/Settings/res",
+      "revId": "8fe3db815685f077c97babcfdcd7cc11bc4f0d93",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
