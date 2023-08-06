@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:androidprv="http://schemas.android.com/apk/prv/res/android">
+    <dimen name="enhanced_smartspace_icon_margin">4.0dip</dimen>
+    <dimen name="enhanced_smartspace_subtitle_size">16.0sp</dimen>
+    <dimen name="enhanced_smartspace_title_size">20.0sp</dimen>
+    <item type="dimen" name="smartspaceLetterSpacing">0.01</item>
+</resources>
