@@ -16,6 +16,24 @@
       "message": "What should be kept in Settings overlay?\nhttps://github.com/StatiXOS/android_vendor_statix/tree/tm-qpr3/overlay/common/packages/apps/Settings/res",
       "revId": "8fe3db815685f077c97babcfdcd7cc11bc4f0d93",
       "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1cb2e048_fcd90e04",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000122
+      },
+      "writtenOn": "2023-08-08T14:04:39Z",
+      "side": 1,
+      "message": "res/values/dimens.xml can be removed, they\u0027re old overlays from A11",
+      "parentUuid": "ec2b3a71_a11d1067",
+      "revId": "8fe3db815685f077c97babcfdcd7cc11bc4f0d93",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
     }
   ]
 }
