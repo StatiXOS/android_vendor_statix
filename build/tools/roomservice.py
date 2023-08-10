@@ -165,6 +165,12 @@ def add_dependencies(repos, is_initial_fetch):
             lm.append(project)
 
     indent(lm, 0)
+    raw_xml = "\n".join(
+        ('<?xml version="1.0" encoding="UTF-8"?>', ElementTree.tostring(lm).decode(),)
+    )
+    with open(f"{LOCAL_MANIFESTS_PATH}{LOCAL_MANIFESTS_FILE_NAME}", "w") as f:
+        f.write(raw_xml)
+
 
 def fetch_dependencies(repo_path):
     """ Adds repos that are in the dependency file to the manifest, and syncs them. """
