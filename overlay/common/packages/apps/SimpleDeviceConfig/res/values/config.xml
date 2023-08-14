@@ -21,10 +21,9 @@
         -->
 
         <!-- Nexus (Pixel) Launcher -->
-        <item>launcher/ENABLE_QUICK_LAUNCH_V2=true</item>
-        <item>launcher/GBOARD_UPDATE_ENTER_KEY=true</item>
         <item>launcher/enable_one_search=true</item>
-        <item>launcher/enable_quick_launch_v2=true</item>
+	<item>launcher/enable_quick_launch_v3_aa=true</item>
+	<item>launcher/enable_quick_launch_v3_qsb=true</item>
 
         <!-- Enable the new and advanced Privacy Hub -->
         <item>privacy/safety_center_is_enabled=true</item>
