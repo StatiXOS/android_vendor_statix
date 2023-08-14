@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd9cd5d6_2d3b28d2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2023-08-14T19:39:45Z",
+      "side": 1,
+      "message": "This fixes loslckscreen-\u003elauncher smartspace font inconsistency.",
+      "revId": "191ad54898f818a8546a30a31300d497b8c9abf5",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
