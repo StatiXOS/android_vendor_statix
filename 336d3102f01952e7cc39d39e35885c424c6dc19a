@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "13b8814a_ebdedd42",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2023-09-10T00:58:43Z",
+      "side": 1,
+      "message": "I haven\u0027t pushed the StxSettings commit, we should wait for that before merging",
+      "revId": "336d3102f01952e7cc39d39e35885c424c6dc19a",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
