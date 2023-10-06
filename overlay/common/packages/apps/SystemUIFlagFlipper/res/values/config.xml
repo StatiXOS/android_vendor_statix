@@ -16,18 +16,8 @@
 -->
 <resources>
     <string-array name="flags">
-        <item>customizable_lock_screen_quick_affordances=true</item>
         <item>media_session_actions=true</item>
-        <item>umo_surface_ripple=true</item>
-        <item>umo_turbulence_noise=true</item>
-        <item>plug_in_status_bar_chip=true</item>
-        <item>ongoing_call_status_bar_chip=true</item>
         <item>enable_new_qs_edit_mode=true</item>
-        <item>auto_pin_confirmation=true</item>
         <item>biometrics_animation_revamp=true</item>
-        <item>media_explicit_indicator=true</item>
-        <item>new_back_affordance=true</item>
-        <item>monochromatic=true</item>
-        <item>enable_font_scaling_tile=true</item>
     </string-array>
 </resources>
