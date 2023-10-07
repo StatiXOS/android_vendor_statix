@@ -35,7 +35,7 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 # Google Pixel Launcher
 ifeq ($(INCLUDE_PIXEL_LAUNCHER),true)
 PRODUCT_PACKAGES += \
-    PixelLauncher
+    NexusLauncherRelease
 endif
 
 # Updaters
