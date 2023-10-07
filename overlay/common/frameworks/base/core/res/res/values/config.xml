@@ -97,7 +97,7 @@
     </string-array>
 
     <!-- Flag indicating which package name can access DeviceConfig table -->
-    <string name="config_deviceConfiguratorPackageName" translatable="false">org.protonaosp.deviceconfig</string>
+    <!-- string name="config_deviceConfiguratorPackageName" translatable="false">org.protonaosp.deviceconfig</string -->
 
     <!-- Whether safe headphone volume is enabled or not. -->
     <bool name="config_safe_media_volume_enabled">false</bool>
