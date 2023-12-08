@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d38b40e_4db5c049",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2023-12-08T03:22:35Z",
+      "side": 1,
+      "message": "Comment removed by: Sourajit Karmakar; Reason: obsolete reply",
+      "revId": "2b19567239e533a25bfcb6f0b619b14a4fa02d47",
+      "serverId": "039621b9-0c7c-40f3-867c-684f4bc911d6"
+    }
+  ]
+}
