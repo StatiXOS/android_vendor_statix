@@ -32,6 +32,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     StatixSystemUI
 
+# Google Carrier Settings
+ifeq ($(INCLUDE_CARRIER_SETTINGS),true)
+$(call inherit-product, vendor/statix-prebuilts/CarrierSettings/CarrierSettings.mk)
+endif
+
 # Google Pixel Launcher
 ifeq ($(INCLUDE_PIXEL_LAUNCHER),true)
 PRODUCT_PACKAGES += \
