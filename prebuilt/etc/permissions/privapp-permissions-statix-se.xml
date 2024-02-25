@@ -10,4 +10,7 @@
     <privapp-permissions package="com.android.launcher3">
         <permission name="android.permission.PACKAGE_USAGE_STATS"/>
     </privapp-permissions>
+    <privapp-permissions package="com.android.wallpaper">
+        <permission name="android.permission.READ_WALLPAPER_INTERNAL"/>
+    </privapp-permissions>
 </permissions>
