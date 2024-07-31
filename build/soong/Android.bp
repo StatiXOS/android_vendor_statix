@@ -21,6 +21,27 @@ gralloc_10_usage_bits {
 }
 
 soong_config_module_type {
+    name: "libcameraservice_ext_lib",
+    module_type: "cc_defaults",
+    config_namespace: "statixGlobalVars",
+    value_variables: ["target_libcameraservice_ext_lib"],
+    properties: [
+        "cppflags",
+        "whole_static_libs",
+    ],
+}
+
+libcameraservice_ext_lib {
+    name: "libcameraservice_ext_lib_defaults",
+    soong_config_variables: {
+        target_libcameraservice_ext_lib: {
+            cppflags: ["-DTARGET_PROVIDES_CAMERA_PROVIDER_EXT_LIB"],
+            whole_static_libs: ["%s"],
+        },
+    },
+}
+
+soong_config_module_type {
     name: "target_process_sdk_version_overrides",
     module_type: "cc_defaults",
     config_namespace: "statixGlobalVars",
