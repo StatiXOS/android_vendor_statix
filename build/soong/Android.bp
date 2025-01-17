@@ -2,6 +2,22 @@ kernel_headers {
     name: "device_kernel_headers_system",
 }
 
+bootstrap_go_package {
+    name: "soong-statix-mkdir",
+    pkgPath: "statix/soong/mkdir",
+    deps: [
+        "blueprint",
+        "blueprint-pathtools",
+        "soong",
+        "soong-android",
+    ],
+    srcs: [
+        "mkdir/init.go",
+        "mkdir/mkdir.go",
+    ],
+    pluginFor: ["soong_build"],
+}
+
 // Target platform agnostic config modules
 soong_config_module_type {
     name: "gralloc_10_usage_bits",
