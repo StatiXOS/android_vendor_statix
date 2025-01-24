@@ -68,6 +68,10 @@ endif
 PRODUCT_PRODUCT_PROPERTIES += \
     is_expressive_design_enabled=true
 
+# Enable the new fast charging threshold
+PRODUCT_PRODUCT_PROPERTIES += \
+    charging_string.apply_v2=true
+
 # Enable support of one-handed mode
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_one_handed_mode?=true
