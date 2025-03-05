@@ -84,6 +84,15 @@
     <font>GoogleSansClock-Regular.ttf</font>
   </family>
 
+  <family-list customizationType="new-named-family" name="google-sans-flex-clock">
+    <family>
+      <font>GoogleSansFlexClock-Regular.ttf</font>
+    </family>
+    <family>
+      <font>GoogleSansClock-Regular.ttf</font>
+    </family>
+  </family-list>
+
   <family customizationType="new-named-family" name="google-sans-bold">
     <font weight="700" style="normal">GoogleSans-Regular.ttf
       <axis tag="GRAD" stylevalue="0"/>
