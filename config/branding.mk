@@ -9,7 +9,7 @@ BUILD_DATE := $(shell date +%Y%m%d)
 
 ## Versioning System
 # Set all versions
-STATIX_BASE_VERSION := v8.5
+STATIX_BASE_VERSION := v8.6
 STATIX_PLATFORM_VERSION := $(PLATFORM_VERSION)
 
 ifndef STATIX_BUILD_TYPE
