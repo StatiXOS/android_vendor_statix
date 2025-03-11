@@ -158,6 +158,11 @@
         <item>"/system_ext/priv-app/StatixSystemUI/StatixSystemUI.apk"</item>
     </string-array>
 
+    <!-- Wallpaper cropper package. Used as the default cropper if the active launcher doesn't
+         handle wallpaper cropping.
+    -->
+    <string name="config_wallpaperCropperPackage" translatable="false">com.google.android.apps.wallpaper</string>
+
     <!-- Define device configs on boot -->
     <string-array name="global_device_configs_override">
         <!--
