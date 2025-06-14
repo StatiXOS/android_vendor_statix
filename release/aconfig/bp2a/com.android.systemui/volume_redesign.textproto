@@ -1,0 +1,6 @@
+flag_value {
+  package: "com.android.systemui"
+  name: "volume_redesign"
+  state: ENABLED
+  permission: READ_ONLY
+}

@@ -1,0 +1,6 @@
+flag_value {
+  package: "com.android.systemui"
+  name: "status_bar_swipe_over_chip"
+  state: ENABLED
+  permission: READ_ONLY
+}
