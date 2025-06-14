@@ -61,6 +61,10 @@ PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/etc/sysconfig/quick_tap.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/quick_tap.xml
 endif
 
+# Enable Material Design 3 Expressive
+PRODUCT_PRODUCT_PROPERTIES += \
+    is_expressive_design_enabled=true
+
 # Enable support of one-handed mode
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_one_handed_mode?=true
