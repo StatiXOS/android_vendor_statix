@@ -1,0 +1,6 @@
+flag_value {
+  package: "com.android.settings.flags"
+  name: "catalyst_language_setting"
+  state: ENABLED
+  permission: READ_ONLY
+}
