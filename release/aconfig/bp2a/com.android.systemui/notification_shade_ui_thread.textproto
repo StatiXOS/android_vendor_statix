@@ -1,0 +1,6 @@
+flag_value {
+  package: "com.android.systemui"
+  name: "notification_shade_ui_thread"
+  state: ENABLED
+  permission: READ_ONLY
+}

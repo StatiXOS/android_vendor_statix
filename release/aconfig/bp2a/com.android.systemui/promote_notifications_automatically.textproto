@@ -1,0 +1,6 @@
+flag_value {
+  package: "com.android.systemui"
+  name: "promote_notifications_automatically"
+  state: ENABLED
+  permission: READ_ONLY
+}
