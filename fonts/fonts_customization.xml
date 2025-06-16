@@ -42,33 +42,369 @@
     </font>
   </family>
 
-  <family customizationType="new-named-family" name="google-sans-flex">
-    <font weight="100" style="normal">GoogleSansFlex-Regular.ttf
-      <axis tag="wght" stylevalue="100"/>
-    </font>
-    <font weight="200" style="normal">GoogleSansFlex-Regular.ttf
-      <axis tag="wght" stylevalue="200"/>
-    </font>
-    <font weight="300" style="normal">GoogleSansFlex-Regular.ttf
-      <axis tag="wght" stylevalue="300"/>
-    </font>
-    <font weight="400" style="normal">GoogleSansFlex-Regular.ttf
+  <family-list customizationType="new-named-family" name="google-sans-flex">
+    <family>
+      <font style="normal" weight="100">GoogleSansFlex-Regular.ttf
+        <axis stylevalue="100" tag="wght" />
+      </font>
+      <font style="normal" weight="200">GoogleSansFlex-Regular.ttf
+        <axis stylevalue="200" tag="wght" />
+      </font>
+      <font style="normal" weight="300">GoogleSansFlex-Regular.ttf
+        <axis stylevalue="300" tag="wght" />
+      </font>
+      <font style="normal" weight="400">GoogleSansFlex-Regular.ttf
+        <axis stylevalue="400" tag="wght" />
+      </font>
+      <font style="normal" weight="500">GoogleSansFlex-Regular.ttf
+        <axis stylevalue="500" tag="wght" />
+      </font>
+      <font style="normal" weight="600">GoogleSansFlex-Regular.ttf
+        <axis stylevalue="600" tag="wght" />
+      </font>
+      <font style="normal" weight="700">GoogleSansFlex-Regular.ttf
+        <axis stylevalue="700" tag="wght" />
+      </font>
+      <font style="normal" weight="800">GoogleSansFlex-Regular.ttf
+        <axis stylevalue="800" tag="wght" />
+      </font>
+      <font style="normal" weight="900">GoogleSansFlex-Regular.ttf
+        <axis stylevalue="900" tag="wght" />
+      </font>
+      <font style="italic" weight="100">GoogleSansFlex-Regular.ttf
+        <axis stylevalue="100" tag="wght" />
+        <axis tag="slnt" stylevalue="-10"/>
+      </font>
+      <font style="italic" weight="200">GoogleSansFlex-Regular.ttf
+        <axis stylevalue="200" tag="wght" />
+        <axis tag="slnt" stylevalue="-10"/>
+      </font>
+      <font style="italic" weight="300">GoogleSansFlex-Regular.ttf
+        <axis stylevalue="300" tag="wght" />
+        <axis tag="slnt" stylevalue="-10"/>
+      </font>
+      <font style="italic" weight="400">GoogleSansFlex-Regular.ttf
+        <axis stylevalue="400" tag="wght" />
+        <axis tag="slnt" stylevalue="-10"/>
+      </font>
+      <font style="italic" weight="500">GoogleSansFlex-Regular.ttf
+        <axis stylevalue="500" tag="wght" />
+        <axis tag="slnt" stylevalue="-10"/>
+      </font>
+      <font style="italic" weight="600">GoogleSansFlex-Regular.ttf
+        <axis stylevalue="600" tag="wght" />
+        <axis tag="slnt" stylevalue="-10"/>
+      </font>
+      <font style="italic" weight="700">GoogleSansFlex-Regular.ttf
+        <axis stylevalue="700" tag="wght" />
+        <axis tag="slnt" stylevalue="-10"/>
+      </font>
+      <font style="italic" weight="800">GoogleSansFlex-Regular.ttf
+        <axis stylevalue="800" tag="wght" />
+        <axis tag="slnt" stylevalue="-10"/>
+      </font>
+      <font style="italic" weight="900">GoogleSansFlex-Regular.ttf
+        <axis stylevalue="900" tag="wght" />
+        <axis tag="slnt" stylevalue="-10"/>
+      </font>
+    </family>
+    <family>
+      <font style="normal" weight="100">GoogleSans-Regular.ttf
+        <axis stylevalue="100" tag="wght" />
+      </font>
+      <font style="normal" weight="200">GoogleSans-Regular.ttf
+        <axis stylevalue="200" tag="wght" />
+      </font>
+      <font style="normal" weight="300">GoogleSans-Regular.ttf
+        <axis stylevalue="300" tag="wght" />
+      </font>
+      <font style="normal" weight="400">GoogleSans-Regular.ttf
+        <axis stylevalue="400" tag="wght" />
+      </font>
+      <font style="normal" weight="500">GoogleSans-Regular.ttf
+        <axis stylevalue="500" tag="wght" />
+      </font>
+      <font style="normal" weight="600">GoogleSans-Regular.ttf
+        <axis stylevalue="600" tag="wght" />
+      </font>
+      <font style="normal" weight="700">GoogleSans-Regular.ttf
+        <axis stylevalue="700" tag="wght" />
+      </font>
+      <font style="normal" weight="800">GoogleSans-Regular.ttf
+        <axis stylevalue="800" tag="wght" />
+      </font>
+      <font style="normal" weight="900">GoogleSans-Regular.ttf
+        <axis stylevalue="900" tag="wght" />
+      </font>
+    </family>
+  </family-list>
+
+  <!--  baseline -->
+  <!--  display -->
+  <family customizationType="new-named-family" name="variable-display-large">
+    <font style="normal" weight="400">GoogleSansFlex-Regular.ttf
       <axis tag="wght" stylevalue="400"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="57.0"/>
     </font>
-    <font weight="500" style="normal">GoogleSansFlex-Regular.ttf
+  </family>
+  <family customizationType="new-named-family" name="variable-display-medium">
+    <font style="normal" weight="400">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="400"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="45.0"/>
+    </font>
+  </family>
+  <family customizationType="new-named-family" name="variable-display-small">
+    <font style="normal" weight="400">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="400"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="36.0"/>
+    </font>
+  </family>
+  <!--  headline -->
+  <family customizationType="new-named-family" name="variable-headline-large">
+    <font style="normal" weight="400">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="400"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="32.0"/>
+    </font>
+  </family>
+  <family customizationType="new-named-family" name="variable-headline-medium">
+    <font style="normal" weight="400">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="400"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="28.0"/>
+    </font>
+  </family>
+  <family customizationType="new-named-family" name="variable-headline-small">
+    <font style="normal" weight="400">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="400"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="24.0"/>
+    </font>
+  </family>
+  <!--  title -->
+  <family customizationType="new-named-family" name="variable-title-large">
+    <font style="normal" weight="400">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="400"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="22.0"/>
+    </font>
+  </family>
+  <family customizationType="new-named-family" name="variable-title-medium">
+    <font style="normal" weight="500">GoogleSansFlex-Regular.ttf
       <axis tag="wght" stylevalue="500"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="16.0"/>
     </font>
-    <font weight="600" style="normal">GoogleSansFlex-Regular.ttf
+  </family>
+  <family customizationType="new-named-family" name="variable-title-small">
+    <font style="normal" weight="500">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="500"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="14.0"/>
+    </font>
+  </family>
+  <!--  label -->
+  <family customizationType="new-named-family" name="variable-label-large">
+    <font style="normal" weight="500">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="500"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="14.0"/>
+    </font>
+  </family>
+  <family customizationType="new-named-family" name="variable-label-medium">
+    <font style="normal" weight="500">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="500"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="12.0"/>
+    </font>
+  </family>
+  <family customizationType="new-named-family" name="variable-label-small">
+    <font style="normal" weight="500">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="500"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="11.0"/>
+    </font>
+  </family>
+  <!--  body -->
+  <family customizationType="new-named-family" name="variable-body-large">
+    <font style="normal" weight="400">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="400"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="16.0"/>
+    </font>
+  </family>
+  <family customizationType="new-named-family" name="variable-body-medium">
+    <font style="normal" weight="400">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="400"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="14.0"/>
+    </font>
+  </family>
+  <family customizationType="new-named-family" name="variable-body-small">
+    <font style="normal" weight="400">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="400"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="12.0"/>
+    </font>
+  </family>
+
+  <!--  emphasized -->
+  <!--  display -->
+  <family customizationType="new-named-family" name="variable-display-large-emphasized">
+    <font style="normal" weight="500">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="500"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="ROND" stylevalue="100"/>
+      <axis tag="opsz" stylevalue="57.0"/>
+    </font>
+  </family>
+  <family customizationType="new-named-family" name="variable-display-medium-emphasized">
+    <font style="normal" weight="500">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="500"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="ROND" stylevalue="100"/>
+      <axis tag="opsz" stylevalue="45.0"/>
+    </font>
+  </family>
+  <family customizationType="new-named-family" name="variable-display-small-emphasized">
+    <font style="normal" weight="500">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="500"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="ROND" stylevalue="100"/>
+      <axis tag="opsz" stylevalue="36.0"/>
+    </font>
+  </family>
+  <!--  headline -->
+  <family customizationType="new-named-family" name="variable-headline-large-emphasized">
+    <font style="normal" weight="500">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="500"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="ROND" stylevalue="100"/>
+      <axis tag="opsz" stylevalue="32.0"/>
+    </font>
+  </family>
+  <family customizationType="new-named-family" name="variable-headline-medium-emphasized">
+    <font style="normal" weight="500">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="500"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="ROND" stylevalue="100"/>
+      <axis tag="opsz" stylevalue="28.0"/>
+    </font>
+  </family>
+  <family customizationType="new-named-family" name="variable-headline-small-emphasized">
+    <font style="normal" weight="500">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="500"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="ROND" stylevalue="100"/>
+      <axis tag="opsz" stylevalue="24.0"/>
+    </font>
+  </family>
+  <!--  title -->
+  <family customizationType="new-named-family" name="variable-title-large-emphasized">
+    <font style="normal" weight="500">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="500"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="ROND" stylevalue="100"/>
+      <axis tag="opsz" stylevalue="22.0"/>
+    </font>
+  </family>
+  <family customizationType="new-named-family" name="variable-title-medium-emphasized">
+    <font style="normal" weight="600">GoogleSansFlex-Regular.ttf
       <axis tag="wght" stylevalue="600"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="ROND" stylevalue="100"/>
+      <axis tag="opsz" stylevalue="16.0"/>
     </font>
-    <font weight="700" style="normal">GoogleSansFlex-Regular.ttf
-      <axis tag="wght" stylevalue="700"/>
+  </family>
+  <family customizationType="new-named-family" name="variable-title-small-emphasized">
+    <font style="normal" weight="600">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="600"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="ROND" stylevalue="100"/>
+      <axis tag="opsz" stylevalue="14.0"/>
     </font>
-    <font weight="800" style="normal">GoogleSansFlex-Regular.ttf
-      <axis tag="wght" stylevalue="800"/>
+  </family>
+  <!--  label -->
+  <family customizationType="new-named-family" name="variable-label-large-emphasized">
+    <font style="normal" weight="600">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="600"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="ROND" stylevalue="100"/>
+      <axis tag="opsz" stylevalue="14.0"/>
     </font>
-    <font weight="900" style="normal">GoogleSansFlex-Regular.ttf
-      <axis tag="wght" stylevalue="900"/>
+  </family>
+  <family customizationType="new-named-family" name="variable-label-medium-emphasized">
+    <font style="normal" weight="600">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="600"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="ROND" stylevalue="100"/>
+      <axis tag="opsz" stylevalue="12.0"/>
+    </font>
+  </family>
+  <family customizationType="new-named-family" name="variable-label-small-emphasized">
+    <font style="normal" weight="600">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="600"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="ROND" stylevalue="100"/>
+      <axis tag="opsz" stylevalue="11.0"/>
+    </font>
+  </family>
+  <!--  body -->
+  <family customizationType="new-named-family" name="variable-body-large-emphasized">
+    <font style="normal" weight="500">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="500"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="ROND" stylevalue="100"/>
+      <axis tag="opsz" stylevalue="16.0"/>
+    </font>
+  </family>
+  <family customizationType="new-named-family" name="variable-body-medium-emphasized">
+    <font style="normal" weight="500">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="500"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="ROND" stylevalue="100"/>
+      <axis tag="opsz" stylevalue="14.0"/>
+    </font>
+  </family>
+  <family customizationType="new-named-family" name="variable-body-small-emphasized">
+    <font style="normal" weight="500">GoogleSansFlex-Regular.ttf
+      <axis tag="wght" stylevalue="500"/>
+      <axis tag="wdth" stylevalue="100"/>
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="ROND" stylevalue="100"/>
+      <axis tag="opsz" stylevalue="12.0"/>
     </font>
   </family>
 
@@ -77,6 +413,11 @@
       <axis tag="GRAD" stylevalue="0"/>
       <axis tag="opsz" stylevalue="18.0"/>
       <axis tag="wght" stylevalue="500"/>
+    </font>
+    <font weight="700" style="normal">GoogleSans-Regular.ttf
+      <axis tag="GRAD" stylevalue="0"/>
+      <axis tag="opsz" stylevalue="18.0"/>
+      <axis tag="wght" stylevalue="700"/>
     </font>
   </family>
 
