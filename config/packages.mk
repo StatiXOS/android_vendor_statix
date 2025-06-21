@@ -13,6 +13,12 @@ PRODUCT_PACKAGES += \
     StatiXOSWalls \
     QuickAccessWallet
 
+# APEX
+DISABLE_DEXPREOPT_CHECK := true
+
+PRODUCT_PACKAGES += \
+    com.google.android.permission
+
 # App overrides
 PRODUCT_PACKAGES += \
     StatixLauncher \
