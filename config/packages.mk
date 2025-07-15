@@ -42,10 +42,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Aperture
 
-# Preopt StatixSystemUI
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    StatixSystemUI
-
 # Google Pixel Launcher
 ifneq ($(STATIX_MINIMAL), true)
 ifeq ($(INCLUDE_PIXEL_LAUNCHER),true)
