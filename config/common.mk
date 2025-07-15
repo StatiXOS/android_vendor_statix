@@ -76,8 +76,10 @@ PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/etc/permissions/privapp-permissions-statix-se.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-statix-se.xml
 
 # Set on-device compilation mode for SystemUI.
+ifeq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.systemuicompilerfilter=speed-profile
+endif
 
 # Packages
 include vendor/statix/config/packages.mk
