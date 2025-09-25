@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+include vendor/statix/build/core/pathmap.mk
+include vendor/statix/build/core/utils.mk
+
 # Conditionally call QCOM makefiles
 ifeq ($(PRODUCT_USES_QCOM_HARDWARE), true)
 include hardware/qcom-caf/common/build/core/ProductConfigQcom.mk
