@@ -53,8 +53,10 @@ PRODUCT_PACKAGES += \
     PermissionControllerOverlay
 
 # Pixel Launcher
+PRODUCT_PACKAGES += \
+    NexusLauncherOverlay
+
 ifeq ($(INCLUDE_PIXEL_LAUNCHER),true)
 PRODUCT_PACKAGES += \
-    NexusLauncherOverlay \
     PixelLauncherConfigOverlay
 endif

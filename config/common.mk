@@ -13,6 +13,7 @@ include hardware/qcom-caf/common/build/core/ProductConfigQcom.mk
 endif
 
 # Define some properties for GMS
+ifneq ($(STATIX_MINIMAL),true)
 ifneq ($(TARGET_DOES_NOT_USE_GAPPS), true)
 $(call inherit-product-if-exists, vendor/gms/products/gms.mk)
 # Anything including updatable_apex.mk should have done so by now.
@@ -24,6 +25,7 @@ endif
 # Enable certified props overlay
 PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/etc/overlay/config-system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/overlay/config/config.xml
+endif
 endif
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
@@ -55,6 +57,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 endif
 
 # Make some features conditional
+ifneq ($(STATIX_MINIMAL), true)
 ifeq ($(ENABLE_GAMETOOLS), true)
 PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/etc/sysconfig/game_service.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/game_service.xml
@@ -62,6 +65,7 @@ endif
 ifneq ($(DISABLE_COLUMBUS), true)
 PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/etc/sysconfig/quick_tap.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/quick_tap.xml
+endif
 endif
 
 # Enable Material Design 3 Expressive
