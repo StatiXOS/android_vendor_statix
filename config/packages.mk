@@ -10,8 +10,12 @@ PRODUCT_PACKAGES += \
 
 # StatiX Packages
 PRODUCT_PACKAGES += \
-    StatiXOSWalls \
+    StatiXOSWalls
+
+ifneq ($(STATIX_MINIMAL), true)
+PRODUCT_PACKAGES += \
     QuickAccessWallet
+endif
 
 # APEX
 DISABLE_DEXPREOPT_CHECK := true
@@ -23,8 +27,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     StatixLauncher \
     StatixSystemUI \
-    StatixSettings \
+    StatixSettings
+
+ifneq ($(STATIX_MINIMAL), true)
+PRODUCT_PACKAGES += \
     WallpaperPickerGoogleRelease
+endif
 
 # BtHelper
 PRODUCT_PACKAGES += \
@@ -39,9 +47,11 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     StatixSystemUI
 
 # Google Pixel Launcher
+ifneq ($(STATIX_MINIMAL), true)
 ifeq ($(INCLUDE_PIXEL_LAUNCHER),true)
 PRODUCT_PACKAGES += \
     NexusLauncherRelease
+endif
 endif
 
 # Updaters
