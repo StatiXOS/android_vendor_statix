@@ -27,7 +27,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     StatixLauncher \
     StatixSystemUI \
-    StatixSettings
+    StatixSettings \
+    StatixThemePicker
 
 ifneq ($(STATIX_MINIMAL), true)
 PRODUCT_PACKAGES += \
