@@ -408,6 +408,7 @@
     </font>
   </family>
 
+
   <family customizationType="new-named-family" name="google-sans-medium">
     <font weight="500" style="normal">GoogleSans-Regular.ttf
       <axis tag="GRAD" stylevalue="0"/>
@@ -485,21 +486,8 @@
     </font>
   </family>
 
-  <family customizationType="new-named-family" name="google-sans-text-medium">
-    <font weight="500" style="normal">GoogleSans-Regular.ttf
-      <axis tag="GRAD" stylevalue="0"/>
-      <axis tag="opsz" stylevalue="17.0"/>
-      <axis tag="wght" stylevalue="500"/>
-    </font>
-  </family>
-
-  <family customizationType="new-named-family" name="google-sans-text-bold">
-    <font weight="700" style="normal">GoogleSans-Regular.ttf
-      <axis tag="GRAD" stylevalue="0"/>
-      <axis tag="opsz" stylevalue="17.0"/>
-      <axis tag="wght" stylevalue="700"/>
-    </font>
-  </family>
+  <alias name="google-sans-text-medium" to="google-sans-text" weight="500" />
+  <alias name="google-sans-text-bold" to="google-sans-text" weight="700" />
 
   <family customizationType="new-named-family" name="google-sans-text-italic">
     <font weight="400" style="italic">GoogleSans-Italic.ttf
