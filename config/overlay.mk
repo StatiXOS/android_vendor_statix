@@ -56,5 +56,6 @@ PRODUCT_PACKAGES += \
 ifeq ($(INCLUDE_PIXEL_LAUNCHER),true)
 PRODUCT_PACKAGES += \
     NexusLauncherOverlay \
-    PixelLauncherConfigOverlay
+    PixelLauncherConfigOverlay \
+    PixelLauncherSystemUIOverlay
 endif
