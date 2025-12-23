@@ -47,6 +47,10 @@ PRODUCT_PACKAGES += \
     NexusLauncherRelease
 endif
 
+# Multiuser
+PRODUCT_PACKAGES += \
+    Multiuser
+
 # Updaters
 ifeq ($(STATIX_BUILD_TYPE),OFFICIAL)
 PRODUCT_PACKAGES += \
