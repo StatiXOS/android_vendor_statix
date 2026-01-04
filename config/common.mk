@@ -47,13 +47,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.sys.disable_rescue=true \
     ro.build.selinux=1
 
-# Conditionally enable blur
-ifeq ($(TARGET_USES_BLUR), true)
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.sf.blurs_are_expensive=1 \
-    ro.surface_flinger.supports_background_blur=1
-endif
-
 # Make some features conditional
 ifeq ($(ENABLE_GAMETOOLS), true)
 PRODUCT_COPY_FILES += \
