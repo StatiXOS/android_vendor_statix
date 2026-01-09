@@ -13,6 +13,10 @@ PRODUCT_PACKAGES += \
     StatiXOSWalls \
     QuickAccessWallet
 
+# Ambient-Music
+PRODUCT_PACKAGES += \
+    Ambient-Music
+
 # APEX
 DISABLE_DEXPREOPT_CHECK := true
 
