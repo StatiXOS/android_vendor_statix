@@ -57,6 +57,10 @@ PRODUCT_COPY_FILES += \
     vendor/statix/prebuilt/etc/sysconfig/quick_tap.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/quick_tap.xml
 endif
 
+# Lineage interfaces
+PRODUCT_PACKAGES += \
+    framework_compatibility_matrix.lineage.xml
+
 # Enable Material Design 3 Expressive
 PRODUCT_PRODUCT_PROPERTIES += \
     is_expressive_design_enabled=true
